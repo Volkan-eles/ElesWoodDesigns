@@ -56,25 +56,25 @@ export default function ProductDetailPage() {
           {/* Left: Images & Info */}
           <div className="lg:col-span-7">
             <div className="card bg-white overflow-hidden mb-8 animate-fade">
-              <div className="relative aspect-square bg-gray-200 overflow-hidden group">
-                {/* Blurred Background to fill space beautifully */}
-                <Image 
-                  src={activeImage || product.image} 
-                  alt=""
-                  fill 
-                  className="object-cover blur-xl opacity-30 scale-110"
-                />
-                {/* Sharp Foreground Image */}
+              <div className="relative bg-gray-100 flex items-center justify-center" style={{ minHeight: "400px", maxHeight: "700px" }}>
                 <Image 
                   src={activeImage || product.image} 
                   alt={product.name} 
-                  fill 
-                  className="object-contain transition-all duration-500 z-10"
+                  width={1200}
+                  height={1200}
+                  style={{ 
+                    width: 'auto', 
+                    height: 'auto', 
+                    maxWidth: '100%', 
+                    maxHeight: '700px',
+                    objectFit: 'contain'
+                  }}
+                  className="transition-all duration-300"
                   priority
-                  quality={95}
+                  unoptimized={true}
                 />
                 {product.badge && (
-                  <span className="absolute top-6 left-6 badge badge-orange scale-125 origin-top-left">
+                  <span className="absolute top-6 left-6 badge badge-orange scale-125 origin-top-left z-20">
                     {product.badge}
                   </span>
                 )}
