@@ -56,12 +56,12 @@ export default function ProductDetailPage() {
           {/* Left: Images & Info */}
           <div className="lg:col-span-7">
             <div className="card bg-white overflow-hidden mb-8 animate-fade">
-              <div className="relative aspect-video bg-gray-100">
+              <div className="relative aspect-square bg-gray-100">
                 <Image 
                   src={activeImage || product.image} 
                   alt={product.name} 
                   fill 
-                  className="object-cover transition-all duration-500"
+                  className="object-contain p-4 transition-all duration-300"
                   priority
                 />
                 {product.badge && (
