@@ -99,8 +99,8 @@ const products = items.map((item, index) => {
   // Etsy URL optimization logic
   const toThumbnail = (url) => {
     if (!url || url.includes('placeholder')) return url;
-    // Replace 'fullxfull' with '342xN' for thumbnails
-    return url.replace('fullxfull', '342xN');
+    // Upgrade to 794xN for much higher clarity (HD)
+    return url.replace('fullxfull', '794xN');
   };
 
   const images = [];

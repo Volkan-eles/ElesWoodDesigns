@@ -45,6 +45,7 @@ export default function ProductCard({ product, priority = false }: { product: Pr
           style={{ objectFit: "cover" }}
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           priority={priority}
+          quality={90}
         />
         {product.badge && (
           <span className={`badge ${BADGE_CLASS[product.badge] || "badge-orange"} ${styles.badge}`}>
