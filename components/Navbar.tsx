@@ -14,9 +14,13 @@ export default function Navbar() {
     <header className={styles.header}>
       <nav className={styles.nav}>
         <Link href="/" className={styles.logo}>
-          <Hammer size={24} />
-          <span>WoodCraft</span>
-          <span className={styles.logoSub}>Plans</span>
+          <div className={styles.logoIcon}>
+            <Hammer size={24} />
+          </div>
+          <div className={styles.logoText}>
+            <span className={styles.logoMain}>WOODCRAFT</span>
+            <span className={styles.logoSub}>PLANS</span>
+          </div>
         </Link>
 
         <ul className={`${styles.links} ${mobileOpen ? styles.linksOpen : ""}`}>

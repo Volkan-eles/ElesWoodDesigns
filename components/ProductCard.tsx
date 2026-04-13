@@ -36,77 +36,49 @@ export default function ProductCard({ product, priority = false }: { product: Pr
   };
 
   return (
-    <article className={styles.card} id={`product-${product.id}`}>
+    <article className={styles.card}>
       <Link href={`/products/${product.slug}`} className={styles.imageWrap}>
         <Image
           src={product.thumbnail || product.image}
           alt={product.name}
           fill
-          style={{ objectFit: "contain", padding: "12px" }}
+          className="object-contain p-4"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           priority={priority}
           quality={90}
         />
         {product.badge && (
-          <span className={`badge ${BADGE_CLASS[product.badge] || "badge-orange"} ${styles.badge}`}>
+          <span className={`badge badge-orange ${styles.badge}`}>
             {product.badge}
           </span>
         )}
-        <div className={styles.overlay}>
-          <span className={styles.overlayText}>See Details →</span>
-        </div>
       </Link>
 
       <div className={styles.body}>
         <div className={styles.meta}>
-          <span
-            className={`badge badge-cream`}
-            style={{ borderColor: "currentColor" }}
-          >
-            {product.category}
-          </span>
-          <span
-            className={styles.difficulty}
-            style={{ color: DIFFICULTY_COLOR[product.difficulty] }}
-          >
-            ● {product.difficulty}
-          </span>
+          <span className="badge badge-orange text-xs">{product.category}</span>
+          <div className={styles.stat}>
+            <Star size={14} fill="#FFB800" color="#FFB800" />
+            <span className={styles.rating}>{product.rating}</span>
+            <span className={styles.reviews}>({product.reviewCount})</span>
+          </div>
         </div>
 
         <Link href={`/products/${product.slug}`}>
           <h3 className={styles.name}>{product.name}</h3>
         </Link>
 
-        <p className={styles.desc}>{product.description}</p>
-
-        <div className={styles.stats}>
-          <span className={styles.stat}>
-            <Star size={12} fill="#FFD60A" color="#FFD60A" />
-            <span className="mono">{product.rating}</span>
-            <span className={styles.reviews}>({product.reviewCount} reviews)</span>
-          </span>
-          <span className={styles.stat}>
-            <Clock size={12} />
-            {product.estimatedTime}
-          </span>
-          <span className={styles.stat}>
-            <BookOpen size={12} />
-            {product.pages} pages
-          </span>
-        </div>
-
         <div className={styles.footer}>
           <div className={styles.price}>
-            <span className={styles.priceLabel}>PDF Plan</span>
+            <span className={styles.priceLabel}>Instant PDF</span>
             <span className={styles.priceValue}>${product.price.toFixed(2)}</span>
           </div>
           <button
-            id={`add-to-cart-${product.id}`}
-            className={`btn btn-primary btn-sm ${styles.addBtn}`}
+            className={styles.addBtn}
             onClick={() => addItem(product)}
+            aria-label="Add to cart"
           >
-            <ShoppingCart size={14} />
-            Add
+            <ShoppingCart size={18} />
           </button>
         </div>
       </div>
