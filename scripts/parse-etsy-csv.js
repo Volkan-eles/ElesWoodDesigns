@@ -94,6 +94,15 @@ const products = items.map((item, index) => {
   const slug = generateSlug(name);
   const category = inferCategory(item.TAGS || '', name);
   
+  const image = item.IMAGE1 || '/placeholder.png';
+  const images = [];
+  for (let i = 1; i <= 10; i++) {
+    const img = item[`IMAGE${i}`];
+    if (img && img.trim()) {
+      images.push(img.trim());
+    }
+  }
+  
   return {
     id: `etsy-${index + 1}`,
     slug: slug,
@@ -109,7 +118,8 @@ const products = items.map((item, index) => {
     longDescription: item.DESCRIPTION || '',
     features: (item.TAGS || '').split(',').slice(0, 5).map(t => t.trim().replace(/_/g, ' ')),
     materials: (item.MATERIALS || '').split(',').map(m => m.trim()),
-    image: item.IMAGE1 || '/placeholder.png',
+    image: image,
+    images: images,
     etsy_url: "https://www.etsy.com/shop/ElesWoodDesigns", // Generic shop link or listing if available
     bestseller: Math.random() > 0.8
   };

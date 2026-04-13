@@ -17,6 +17,13 @@ export default function ProductDetailPage() {
   const router = useRouter();
   const { addItem } = useCart();
   const product = products.find(p => p.slug === params.slug);
+  const [activeImage, setActiveImage] = useState<string>(product?.image || "");
+
+  useEffect(() => {
+    if (product) {
+      setActiveImage(product.image);
+    }
+  }, [product]);
 
   if (!product) {
     return (
@@ -49,12 +56,13 @@ export default function ProductDetailPage() {
           {/* Left: Images & Info */}
           <div className="lg:col-span-7">
             <div className="card bg-white overflow-hidden mb-8 animate-fade">
-              <div className="relative aspect-video">
+              <div className="relative aspect-video bg-gray-100">
                 <Image 
-                  src={product.image} 
+                  src={activeImage || product.image} 
                   alt={product.name} 
                   fill 
-                  className="object-cover"
+                  className="object-cover transition-all duration-500"
+                  priority
                 />
                 {product.badge && (
                   <span className="absolute top-6 left-6 badge badge-orange scale-125 origin-top-left">
@@ -63,6 +71,28 @@ export default function ProductDetailPage() {
                 )}
               </div>
             </div>
+
+            {/* Gallery Thumbnails */}
+            {product.images && product.images.length > 1 && (
+              <div className="flex gap-4 mb-8 overflow-x-auto pb-4 scrollbar-hide">
+                {product.images.map((img, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setActiveImage(img)}
+                    className={`relative w-24 h-24 flex-shrink-0 border-4 transition-all ${
+                      activeImage === img ? "border-black scale-105" : "border-transparent hover:border-gray-300"
+                    }`}
+                  >
+                    <Image 
+                      src={img} 
+                      alt={`${product.name} thumbnail ${idx + 1}`} 
+                      fill 
+                      className="object-cover"
+                    />
+                  </button>
+                ))}
+              </div>
+            )}
 
             <div className="card bg-white p-8 animate-fade" style={{ animationDelay: "0.1s" }}>
               <h2 className="mb-6 pb-4 border-b">Project Details</h2>

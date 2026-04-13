@@ -18,6 +18,7 @@ export interface Product {
   features: string[];
   materials: string[];
   image: string;
+  images: string[];
   badge?: string;
   etsy_url?: string;
   bestseller?: boolean;
