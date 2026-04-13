@@ -58,28 +58,29 @@ export default function ProductDetailPage() {
             {/* Gallery as Primary View */}
             <div className="card bg-white p-6 mb-8 animate-fade">
               <h2 className="text-sm font-bold uppercase mono text-gray mb-4">Product Gallery</h2>
-
-            {/* Gallery Thumbnails */}
-            {product.images && product.images.length > 1 && (
-              <div className="flex gap-4 mb-8 overflow-x-auto pb-4 scrollbar-hide">
-                {product.imagesThumbnails.map((thumb, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setActiveImage(product.images[idx])}
-                    className={`relative w-24 h-24 flex-shrink-0 border-4 transition-all ${
-                      activeImage === product.images[idx] ? "border-black scale-105" : "border-transparent hover:border-gray-300"
-                    }`}
-                  >
-                    <Image 
-                      src={thumb} 
-                      alt={`${product.name} thumbnail ${idx + 1}`} 
-                      fill 
-                      className="object-cover"
-                    />
-                  </button>
-                ))}
-              </div>
-            )}
+              
+              {/* Gallery Thumbnails */}
+              {product.images && product.images.length > 1 && (
+                <div className="flex gap-4 mb-4 overflow-x-auto pb-4 scrollbar-hide">
+                  {product.imagesThumbnails.map((thumb, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setActiveImage(product.images[idx])}
+                      className={`relative w-24 h-24 flex-shrink-0 border-4 transition-all ${
+                        activeImage === product.images[idx] ? "border-black scale-105" : "border-transparent hover:border-gray-300"
+                      }`}
+                    >
+                      <Image 
+                        src={thumb} 
+                        alt={`${product.name} thumbnail ${idx + 1}`} 
+                        fill 
+                        className="object-cover"
+                      />
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
 
             <div className="card bg-white p-8 animate-fade" style={{ animationDelay: "0.1s" }}>
               <h2 className="mb-6 pb-4 border-b">Project Details</h2>
