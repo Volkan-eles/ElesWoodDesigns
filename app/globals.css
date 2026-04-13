@@ -334,7 +334,7 @@ a {
   border: 2px solid var(--cream);
 }
 
-/* ============ SELECTION ============ */
+::selection {
   background: var(--yellow);
   color: var(--black);
 }
