@@ -53,62 +53,75 @@ export default function ProductDetailPage() {
         </nav>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          {/* Left: Images & Info */}
+          {/* Left: Images & Gallery */}
           <div className="lg:col-span-7">
-            {/* Gallery as Primary View */}
-            <div className="card bg-white p-6 mb-8 animate-fade">
-              <h2 className="text-sm font-bold uppercase mono text-gray mb-4">Product Gallery</h2>
-              
-              {/* Gallery Thumbnails */}
-              {product.images && product.images.length > 1 && (
-                <div className="flex gap-4 mb-4 overflow-x-auto pb-4 scrollbar-hide">
-                  {product.imagesThumbnails.map((thumb, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => setActiveImage(product.images[idx])}
-                      className={`relative w-24 h-24 flex-shrink-0 border-4 transition-all ${
-                        activeImage === product.images[idx] ? "border-black scale-105" : "border-transparent hover:border-gray-300"
-                      }`}
-                    >
-                      <Image 
-                        src={thumb} 
-                        alt={`${product.name} thumbnail ${idx + 1}`} 
-                        fill 
-                        className="object-cover"
-                      />
-                    </button>
-                  ))}
-                </div>
+            {/* Main Image Stage */}
+            <div className="image-stage aspect-square mb-8 animate-fade">
+              <Image 
+                src={activeImage || product.image} 
+                alt={product.name} 
+                fill 
+                className="object-contain p-8 transition-all duration-500"
+                priority
+                unoptimized={true}
+              />
+              {product.badge && (
+                <span className="absolute top-8 left-8 badge badge-orange scale-125 z-20">
+                  {product.badge}
+                </span>
               )}
             </div>
+            
+            {/* Interactive Gallery */}
+            {product.images && product.images.length > 1 && (
+              <div className="flex gap-4 mb-12 overflow-x-auto pb-4 scrollbar-hide">
+                {product.imagesThumbnails.map((thumb, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setActiveImage(product.images[idx])}
+                    className={`relative w-28 h-28 flex-shrink-0 border-4 transition-all ${
+                      activeImage === product.images[idx] ? "border-black scale-105" : "border-transparent hover:border-gray-400"
+                    }`}
+                  >
+                    <Image 
+                      src={thumb} 
+                      alt={`${product.name} thumbnail ${idx + 1}`} 
+                      fill 
+                      className="object-cover"
+                    />
+                  </button>
+                ))}
+              </div>
+            )}
 
-            <div className="card bg-white p-8 animate-fade" style={{ animationDelay: "0.1s" }}>
-              <h2 className="mb-6 pb-4 border-b">Project Details</h2>
-              <p className="text-lg leading-relaxed mb-8">{product.longDescription}</p>
+            {/* Description Card */}
+            <div className="card bg-white p-10 animate-fade" style={{ animationDelay: "0.1s" }}>
+              <h2 className="text-3xl font-bold mb-8 pb-4 border-b">Project Details</h2>
+              <p className="text-xl leading-relaxed mb-10 text-gray-700">{product.longDescription}</p>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                  <h3 className="flex items-center gap-2 mb-4 text-orange">
-                    <Check size={20} strokeWidth={3} /> Features
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div className="bg-cream-light p-6 border-2 border-black shadow-sm">
+                  <h3 className="flex items-center gap-2 mb-6 font-bold text-xl uppercase">
+                    <Check size={24} strokeWidth={3} className="text-green" /> Features
                   </h3>
-                  <ul className="space-y-3">
+                  <ul className="space-y-4">
                     {product.features.map(f => (
-                      <li key={f} className="flex items-start gap-2">
-                        <span className="text-black font-bold">•</span>
-                        <span>{f}</span>
+                      <li key={f} className="flex items-start gap-3">
+                        <span className="text-black font-black text-lg">●</span>
+                        <span className="font-medium text-lg">{f}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
-                <div>
-                  <h3 className="flex items-center gap-2 mb-4 text-green">
-                    <Toolbox size={20} strokeWidth={3} /> Materials
+                <div className="bg-cream-light p-6 border-2 border-black shadow-sm">
+                  <h3 className="flex items-center gap-2 mb-6 font-bold text-xl uppercase">
+                    <Toolbox size={24} strokeWidth={3} className="text-orange" /> Materials
                   </h3>
-                  <ul className="space-y-3">
+                  <ul className="space-y-4">
                     {product.materials.map(m => (
-                      <li key={m} className="flex items-start gap-2">
-                        <span className="text-black font-bold">•</span>
-                        <span>{m}</span>
+                      <li key={m} className="flex items-start gap-3">
+                        <span className="text-black font-black text-lg">●</span>
+                        <span className="font-medium text-lg">{m}</span>
                       </li>
                     ))}
                   </ul>
