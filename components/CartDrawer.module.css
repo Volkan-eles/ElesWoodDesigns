@@ -1,0 +1,248 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 200;
+  cursor: pointer;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 400px;
+  max-width: 100vw;
+  height: 100vh;
+  background: var(--white);
+  border-left: var(--border-thick);
+  z-index: 201;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: -8px 0 0 var(--black);
+}
+
+.open {
+  transform: translateX(0);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  background: var(--black);
+  color: var(--white);
+  border-bottom: var(--border);
+  flex-shrink: 0;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.count {
+  background: var(--orange);
+  color: white;
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  padding: 2px 8px;
+  border: 2px solid var(--cream);
+}
+
+.closeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: 2px solid var(--gray-600);
+  color: var(--white);
+  cursor: pointer;
+  transition: border-color var(--transition), background var(--transition);
+}
+
+.closeBtn:hover {
+  border-color: var(--orange);
+  background: var(--orange);
+}
+
+.body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 16px;
+  text-align: center;
+  color: var(--gray-400);
+}
+
+.emptyIcon {
+  opacity: 0.2;
+}
+
+.empty p {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.item {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  border: var(--border);
+  background: var(--cream);
+  position: relative;
+  transition: box-shadow var(--transition);
+}
+
+.item:hover {
+  box-shadow: var(--shadow-sm);
+}
+
+.imgWrap {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  flex-shrink: 0;
+  border: 2px solid var(--black);
+  overflow: hidden;
+  background: var(--gray-100);
+}
+
+.info {
+  flex: 1;
+  min-width: 0;
+}
+
+.name {
+  font-weight: 700;
+  font-size: 0.9rem;
+  line-height: 1.3;
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.category {
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  color: var(--gray-600);
+  margin-bottom: 8px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.qtyBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  background: var(--white);
+  border: 2px solid var(--black);
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.qtyBtn:hover {
+  background: var(--black);
+  color: white;
+}
+
+.qty {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.9rem;
+  min-width: 24px;
+  text-align: center;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.price {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--orange);
+}
+
+.removeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 2px solid var(--black);
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  color: var(--black);
+  transition: background var(--transition), color var(--transition);
+}
+
+.removeBtn:hover {
+  background: var(--red);
+  border-color: var(--red);
+  color: white;
+}
+
+.footer {
+  padding: 20px 24px;
+  border-top: var(--border-thick);
+  background: var(--cream);
+  flex-shrink: 0;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  font-size: 1.1rem;
+}
+
+.total span:first-child {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.totalPrice {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--orange);
+}
