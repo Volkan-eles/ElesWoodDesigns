@@ -55,26 +55,26 @@ export default function ProductDetailPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Left: Images & Info */}
           <div className="lg:col-span-7">
-            <div className="card bg-white overflow-hidden mb-8 animate-fade">
-              <div className="relative bg-gray-100 flex items-center justify-center" style={{ minHeight: "400px", maxHeight: "700px" }}>
+            <div className="card bg-white p-4 mb-8 animate-fade">
+              <div className="relative flex items-center justify-center bg-gray-50 border-2 border-dashed border-gray-200 min-h-[400px]">
                 <Image 
                   src={activeImage || product.image} 
                   alt={product.name} 
-                  width={1200}
-                  height={1200}
+                  width={1000}
+                  height={1000}
                   style={{ 
                     width: 'auto', 
                     height: 'auto', 
                     maxWidth: '100%', 
-                    maxHeight: '700px',
+                    maxHeight: '650px',
                     objectFit: 'contain'
                   }}
-                  className="transition-all duration-300"
+                  className="rounded-sm"
                   priority
                   unoptimized={true}
                 />
                 {product.badge && (
-                  <span className="absolute top-6 left-6 badge badge-orange scale-125 origin-top-left z-20">
+                  <span className="absolute top-4 left-4 badge badge-orange z-20">
                     {product.badge}
                   </span>
                 )}
