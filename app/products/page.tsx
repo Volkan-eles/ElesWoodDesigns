@@ -90,9 +90,9 @@ export default function ProductsPage() {
 
         {/* Results Grid */}
         <div className="grid-3">
-          {filteredProducts.map((p) => (
-            <div key={p.id} className="animate-fade">
-              <ProductCard product={p} />
+          {filteredProducts.map((product, index) => (
+            <div key={product.id} className="animate-fade" style={{ animationDelay: `${(index % 8) * 0.1}s` }}>
+              <ProductCard product={product} priority={index < 4} />
             </div>
           ))}
         </div>

@@ -75,16 +75,16 @@ export default function ProductDetailPage() {
             {/* Gallery Thumbnails */}
             {product.images && product.images.length > 1 && (
               <div className="flex gap-4 mb-8 overflow-x-auto pb-4 scrollbar-hide">
-                {product.images.map((img, idx) => (
+                {product.imagesThumbnails.map((thumb, idx) => (
                   <button
                     key={idx}
-                    onClick={() => setActiveImage(img)}
+                    onClick={() => setActiveImage(product.images[idx])}
                     className={`relative w-24 h-24 flex-shrink-0 border-4 transition-all ${
-                      activeImage === img ? "border-black scale-105" : "border-transparent hover:border-gray-300"
+                      activeImage === product.images[idx] ? "border-black scale-105" : "border-transparent hover:border-gray-300"
                     }`}
                   >
                     <Image 
-                      src={img} 
+                      src={thumb} 
                       alt={`${product.name} thumbnail ${idx + 1}`} 
                       fill 
                       className="object-cover"

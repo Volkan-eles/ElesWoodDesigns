@@ -18,7 +18,9 @@ export interface Product {
   features: string[];
   materials: string[];
   image: string;
+  thumbnail: string;
   images: string[];
+  imagesThumbnails: string[];
   badge?: string;
   etsy_url?: string;
   bestseller?: boolean;

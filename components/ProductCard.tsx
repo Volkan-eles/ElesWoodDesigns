@@ -21,7 +21,7 @@ const DIFFICULTY_COLOR: Record<string, string> = {
   Hard: "#E63946",
 };
 
-export default function ProductCard({ product }: { product: Product }) {
+export default function ProductCard({ product, priority = false }: { product: Product, priority?: boolean }) {
   const { addItem } = useCart();
 
   const renderStars = (rating: number) => {
@@ -39,11 +39,12 @@ export default function ProductCard({ product }: { product: Product }) {
     <article className={styles.card} id={`product-${product.id}`}>
       <Link href={`/products/${product.slug}`} className={styles.imageWrap}>
         <Image
-          src={product.image}
+          src={product.thumbnail || product.image}
           alt={product.name}
           fill
           style={{ objectFit: "cover" }}
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+          priority={priority}
         />
         {product.badge && (
           <span className={`badge ${BADGE_CLASS[product.badge] || "badge-orange"} ${styles.badge}`}>

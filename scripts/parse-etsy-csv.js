@@ -95,11 +95,21 @@ const products = items.map((item, index) => {
   const category = inferCategory(item.TAGS || '', name);
   
   const image = item.IMAGE1 || '/placeholder.png';
+  
+  // Etsy URL optimization logic
+  const toThumbnail = (url) => {
+    if (!url || url.includes('placeholder')) return url;
+    // Replace 'fullxfull' with '342xN' for thumbnails
+    return url.replace('fullxfull', '342xN');
+  };
+
   const images = [];
+  const imagesThumbnails = [];
   for (let i = 1; i <= 10; i++) {
     const img = item[`IMAGE${i}`];
     if (img && img.trim()) {
       images.push(img.trim());
+      imagesThumbnails.push(toThumbnail(img.trim()));
     }
   }
   
@@ -119,7 +129,9 @@ const products = items.map((item, index) => {
     features: (item.TAGS || '').split(',').slice(0, 5).map(t => t.trim().replace(/_/g, ' ')),
     materials: (item.MATERIALS || '').split(',').map(m => m.trim()),
     image: image,
+    thumbnail: toThumbnail(image),
     images: images,
+    imagesThumbnails: imagesThumbnails,
     etsy_url: "https://www.etsy.com/shop/ElesWoodDesigns", // Generic shop link or listing if available
     bestseller: Math.random() > 0.8
   };
