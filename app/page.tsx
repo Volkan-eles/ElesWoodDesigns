@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { getProducts } from "@/lib/products";
 import ProductCard from "@/components/ProductCard";
-import { ArrowRight, Hammer, Download, CheckCircle, Mail, Star, Quote } from "lucide-react";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import { ArrowRight, Hammer, Download, CheckCircle, Mail, Star } from "lucide-react";
 
 export default function HomePage() {
   const products = getProducts();
@@ -128,20 +129,7 @@ export default function HomePage() {
       </section>
 
       {/* 5. CUSTOMER TESTIMONIAL / SOCIAL PROOF */}
-      <section className="bg-white py-20 border-b-4 border-black">
-         <div className="max-w-4xl mx-auto px-4 text-center">
-            <Quote className="w-16 h-16 mx-auto mb-8 text-[#FFE500]" />
-            <h2 className="text-3xl md:text-4xl font-black uppercase mb-8 leading-tight">
-               "The cut list was perfectly accurate, and the 3D diagrams made assembly a breeze. Built the farmstand in one weekend!"
-            </h2>
-             <div className="flex justify-center items-center gap-2 mb-2">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-6 h-6 fill-[#FFE500] text-black" />
-                ))}
-              </div>
-              <p className="font-bold text-gray-500 uppercase tracking-widest">Mark S. — Verified Buyer</p>
-         </div>
-      </section>
+      <TestimonialsSection />
 
       {/* 6. NEWSLETTER CTA */}
       <section className="bg-[#FFE500] py-20">

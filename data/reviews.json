@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": "Michael S.",
+    "avatar": "M",
+    "date": "Oct 12, 2023",
+    "rating": 5,
+    "review": "The cut list was perfectly accurate. As a beginner, I was nervous about building the farmstand, but the step-by-step 3D diagrams made it foolproof. Highly recommend!",
+    "product": "DIY Farmstand Plans"
+  },
+  {
+    "id": 2,
+    "name": "Sarah Jenkins",
+    "avatar": "S",
+    "date": "Sep 28, 2023",
+    "rating": 5,
+    "review": "Instant download and exactly what I was looking for. Saved me days of trying to figure out the angles myself. The kids absolutely love their new playhouse.",
+    "product": "Outdoor Playhouse"
+  },
+  {
+    "id": 3,
+    "name": "David W.",
+    "avatar": "D",
+    "date": "Nov 05, 2023",
+    "rating": 5,
+    "review": "Excellent woodworking plans! Very detailed and easy to follow. I appreciated the materials shopping list—it made my trip to Home Depot a breeze.",
+    "product": "Garden Pergola Blueprint"
+  },
+  {
+    "id": 4,
+    "name": "Emily R.",
+    "avatar": "E",
+    "date": "Aug 15, 2023",
+    "rating": 5,
+    "review": "So happy with how my chicken coop turned out. The measurements were spot on in the PDF. Will definitely be buying more plans from this shop.",
+    "product": "Chicken Coop Plans"
+  },
+  {
+    "id": 5,
+    "name": "John Carmichael",
+    "avatar": "J",
+    "date": "Jan 10, 2024",
+    "rating": 5,
+    "review": "Great quality plans. I've bought plans from other Etsy sellers before that were confusing, but ElesWoodDesigns does it right. Clear, concise, and bold diagrams.",
+    "product": "Outdoor Dining Table"
+  },
+  {
+    "id": 6,
+    "name": "Amanda P.",
+    "avatar": "A",
+    "date": "Dec 22, 2023",
+    "rating": 5,
+    "review": "I built the modern Adirondack chair over the weekend. The instructions are incredibly well thought out. They even give tips on which screws to use.",
+    "product": "Lounge Chair PDF"
+  },
+  {
+    "id": 7,
+    "name": "Robert B.",
+    "avatar": "R",
+    "date": "Feb 18, 2024",
+    "rating": 5,
+    "review": "Worth every penny. The project is finished and looks perfectly professional. The dimensions are perfect.",
+    "product": "Planter Box"
+  },
+  {
+    "id": 8,
+    "name": "Chris T.",
+    "avatar": "C",
+    "date": "Mar 02, 2024",
+    "rating": 5,
+    "review": "It was exactly as described on the listing. Very satisfied with the digital download. Customer service was also very quick when I asked a question about wood rot.",
+    "product": "Patio Deck Blueprint"
+  },
+  {
+    "id": 9,
+    "name": "Lisa M.",
+    "avatar": "L",
+    "date": "Nov 30, 2023",
+    "rating": 5,
+    "review": "My husband and I built this together! The step-by-step coloring made it really simple to understand what attaches where. Beautiful final result.",
+    "product": "Picnic Table Plans"
+  },
+  {
+    "id": 10,
+    "name": "Thomas G.",
+    "avatar": "T",
+    "date": "Apr 05, 2024",
+    "rating": 5,
+    "review": "Highly detailed format and super affordable. If you have a saw and a drill, these plans will guide you through the rest. Fantastic.",
+    "product": "Firewood Shed"
+  }
+]
