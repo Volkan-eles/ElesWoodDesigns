@@ -10,7 +10,7 @@ export async function GET() {
       <g:title><![CDATA[${product.name.slice(0, 150)}]]></g:title>
       <g:description><![CDATA[${product.description}]]></g:description>
       <g:link>${baseUrl}/products/${product.slug}/</g:link>
-      <g:image_link>${product.image}</g:image_link>
+      <g:image_link>${baseUrl}/api/pin/${product.slug}</g:image_link>
       ${(product.images || []).filter(img => img !== product.image).map(img => `<g:additional_image_link>${img}</g:additional_image_link>`).join('\n      ')}
       <g:price>${product.price} USD</g:price>
       <g:availability>in stock</g:availability>
