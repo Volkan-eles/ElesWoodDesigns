@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     q: "WHAT IF I GET STUCK DURING A BUILD?",
-    a: "Don't sweat it. You can email us at support@eleswooddesigns.com anytime. We're woodworkers too and happy to help you get your project back on track."
+    a: "Don't sweat it. You can email us at eleswooddesigns@gmail.com anytime. We're woodworkers too and happy to help you get your project back on track."
   },
   {
     q: "DO YOU OFFER METRIC OR IMPERIAL MEASUREMENTS?",

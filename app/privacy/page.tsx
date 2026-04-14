@@ -59,7 +59,7 @@ export default function PrivacyPage() {
         <section className="bg-white border-4 border-black p-8 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
           <h2 className="text-3xl font-black uppercase mb-6 bg-[#FFE500] inline-block px-2 border-2 border-black">5. Contact Us</h2>
           <p>
-            If there are any questions regarding this privacy policy, you may contact us at support@eleswooddesigns.com.
+            If there are any questions regarding this privacy policy, you may contact us at eleswooddesigns@gmail.com.
           </p>
         </section>
       </div>

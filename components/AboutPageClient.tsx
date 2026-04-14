@@ -65,7 +65,7 @@ export default function AboutPageClient() {
       <div className="bg-black text-white p-12 text-center border-4 border-black shadow-[20px_20px_0px_0px_rgba(255,229,0,1)]">
         <h2 className="text-4xl font-black uppercase mb-6 tracking-tighter">Have a Question?</h2>
         <p className="mb-8 font-bold text-gray-400">You can contact us for any technical support regarding our projects.</p>
-        <a href="mailto:support@eleswooddesigns.com" className="inline-block bg-[#FFE500] text-black px-10 py-5 font-black uppercase tracking-widest hover:scale-105 transition-transform border-4 border-black shadow-[8px_8px_0px_0px_rgba(255,255,255,0.2)]">
+        <a href="mailto:eleswooddesigns@gmail.com" className="inline-block bg-[#FFE500] text-black px-10 py-5 font-black uppercase tracking-widest hover:scale-105 transition-transform border-4 border-black shadow-[8px_8px_0px_0px_rgba(255,255,255,0.2)]">
           Send Us a Message
         </a>
       </div>
