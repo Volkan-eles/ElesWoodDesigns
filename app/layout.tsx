@@ -13,10 +13,55 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://eleswooddesigns.com/"),
-  title: "ElesWoodDesigns — Build It Yourself",
-  description: "Bold DIY woodworking plans for furniture, garden, and more. Download and build today.",
+  title: {
+    default: "ElesWoodDesigns — Build It Yourself Woodworking Plans",
+    template: "%s | ElesWoodDesigns"
+  },
+  description: "Bold DIY woodworking plans for furniture, garden, and more. Step-by-step PDF guides, 3D diagrams, and precise cut lists. Download and build today.",
+  keywords: ["DIY woodworking plans", "woodworking blueprints", "garden project plans", "furniture building guides", "PDF woodworking plans", "beginner woodworking", "woodcraft designs"],
+  authors: [{ name: "ElesWoodDesigns" }],
+  creator: "ElesWoodDesigns",
+  publisher: "ElesWoodDesigns",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   alternates: {
     canonical: "/",
+  },
+  openGraph: {
+    title: "ElesWoodDesigns — Premium DIY Woodworking Plans",
+    description: "Download step-by-step woodworking blueprints. Precise, bold, and beginner-friendly.",
+    url: "https://eleswooddesigns.com/",
+    siteName: "ElesWoodDesigns",
+    images: [
+      {
+        url: "/logo.png",
+        width: 800,
+        height: 600,
+        alt: "ElesWoodDesigns Logo",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ElesWoodDesigns — DIY Woodworking Plans",
+    description: "Bold DIY woodworking plans for furniture, garden, and more.",
+    images: ["/logo.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
   icons: {
     icon: "/logo.png",
@@ -40,6 +85,44 @@ export default function RootLayout({
     <html lang="en" className={`${spaceGrotesk.variable} scroll-smooth`}>
       <head>
         <meta name="p:domain_verify" content="d4e7e5496616f25c319df35abbbdb4b1"/>
+        {/* Organization JSON-LD */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "ElesWoodDesigns",
+              "url": "https://eleswooddesigns.com/",
+              "logo": "https://eleswooddesigns.com/logo.png",
+              "sameAs": [
+                "https://www.pinterest.com/eleswooddesigns/",
+                "https://www.etsy.com/shop/ElesWoodDesigns"
+              ],
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "email": "eleswooddesigns@gmail.com",
+                "contactType": "customer service"
+              }
+            })
+          }}
+        />
+        {/* WebSite JSON-LD for Sitelinks Searchbox */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "url": "https://eleswooddesigns.com/",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://eleswooddesigns.com/products?search={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            })
+          }}
+        />
       </head>
       <body className="font-sans antialiased text-black bg-[#FFFDF0]">
         {/* Google Tag (gtag.js) */}
