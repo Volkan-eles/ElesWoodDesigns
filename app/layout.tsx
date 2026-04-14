@@ -3,6 +3,7 @@ import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Script from "next/script";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -41,6 +42,20 @@ export default function RootLayout({
         <meta name="p:domain_verify" content="d4e7e5496616f25c319df35abbbdb4b1"/>
       </head>
       <body className="font-sans antialiased text-black bg-[#FFFDF0]">
+        {/* Google Tag (gtag.js) */}
+        <Script 
+          src="https://www.googletagmanager.com/gtag/js?id=G-144E244HYN"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-144E244HYN');
+          `}
+        </Script>
         <div className="flex flex-col min-h-screen border-t-4 border-black">
           <Navbar />
           <main className="flex-grow">{children}</main>
