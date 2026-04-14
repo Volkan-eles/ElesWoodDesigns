@@ -8,7 +8,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
         <Link href="/" className="hover:opacity-80 transition-opacity">
           <Image 
-            src="/logo.jpg" 
+            src="/logo.png" 
             alt="ElesWoodDesigns Logo" 
             width={120} 
             height={120} 
