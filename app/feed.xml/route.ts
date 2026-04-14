@@ -6,6 +6,8 @@ export async function GET() {
 
   const items = products.map((product) => `
     <item>
+      <title><![CDATA[${product.name.slice(0, 150)}]]></title>
+      <link>${baseUrl}/products/${product.slug}/</link>
       <g:id>${product.slug}</g:id>
       <g:title><![CDATA[${product.name.slice(0, 150)}]]></g:title>
       <g:description><![CDATA[${product.description}]]></g:description>
