@@ -1,6 +1,16 @@
 import { getProducts } from "@/lib/products";
 import ProductListingClient from "./ProductListingClient";
 
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "All Plans | ElesWoodDesigns",
+  description: "Browse all our high-quality DIY woodworking plans.",
+  alternates: {
+    canonical: "/products/",
+  },
+};
+
 export const dynamic = 'force-dynamic';
 
 export default function ProductsPage() {

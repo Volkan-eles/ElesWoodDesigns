@@ -2,6 +2,16 @@
 
 import { Hammer, Users, ShieldCheck, HeartPulse, Send } from "lucide-react";
 
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Us | ElesWoodDesigns",
+  description: "Learn more about ElesWoodDesigns and our passion for woodworking.",
+  alternates: {
+    canonical: "/about/",
+  },
+};
+
 export default function AboutPage() {
   return (
     <div className="bg-cream min-h-screen pt-24 pb-20">

@@ -72,7 +72,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Link href="/products" className="inline-flex items-center gap-2 font-black uppercase text-sm mb-8 hover:underline decoration-4 underline-offset-4 decoration-[#FFE500]">
+      <Link href="/products/" className="inline-flex items-center gap-2 font-black uppercase text-sm mb-8 hover:underline decoration-4 underline-offset-4 decoration-[#FFE500]">
         <ArrowLeft className="w-4 h-4" />
         Back to all plans
       </Link>

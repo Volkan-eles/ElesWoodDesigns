@@ -30,7 +30,7 @@ export default function HomePage() {
               Premium woodworking blueprints. Step-by-step guides, 3D diagrams, and precise cut lists for makers of all levels.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link href="/products" className="btn-neo text-xl py-5 px-8 group">
+              <Link href="/products/" className="btn-neo text-xl py-5 px-8 group">
                 SHOP ALL PLANS
                 <ArrowRight className="w-6 h-6 group-hover:translate-x-1.5 transition-transform" />
               </Link>
@@ -83,21 +83,21 @@ export default function HomePage() {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <Link href="/products" className="group card-neo block">
+          <Link href="/products/" className="group card-neo block">
              <div className="aspect-video bg-blue-100 border-b-2 border-black flex flex-col items-center justify-center p-8 group-hover:bg-[#FFE500] transition-colors relative overflow-hidden">
                 <Hammer className="w-16 h-16 mb-4 z-10" />
                 <h3 className="text-3xl font-black uppercase z-10">Outdoor</h3>
                 <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjZmZmIiAvPgo8cGF0aCBkPSJNMCAwTDggOFpNOCAwTDAgOFoiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLXdpZHRoPSIxIiAvPgo8L3N2Zz4=')]"></div>
              </div>
           </Link>
-          <Link href="/products" className="group card-neo block">
+          <Link href="/products/" className="group card-neo block">
              <div className="aspect-video bg-green-100 border-b-2 border-black flex flex-col items-center justify-center p-8 group-hover:bg-[#FFE500] transition-colors relative overflow-hidden">
                 <Hammer className="w-16 h-16 mb-4 z-10" />
                 <h3 className="text-3xl font-black uppercase z-10">Furniture</h3>
                 <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjZmZmIiAvPgo8cGF0aCBkPSJNMCAwTDggOFpNOCAwTDAgOFoiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLXdpZHRoPSIxIiAvPgo8L3N2Zz4=')]"></div>
              </div>
           </Link>
-          <Link href="/products" className="group card-neo block">
+          <Link href="/products/" className="group card-neo block">
              <div className="aspect-video bg-red-100 border-b-2 border-black flex flex-col items-center justify-center p-8 group-hover:bg-[#FFE500] transition-colors relative overflow-hidden">
                 <Hammer className="w-16 h-16 mb-4 z-10" />
                 <h3 className="text-3xl font-black uppercase z-10">Kids & Play</h3>
@@ -115,7 +115,7 @@ export default function HomePage() {
               <span className="bg-[#FFE500] text-black border-2 border-black px-3 py-1 font-bold text-xs uppercase tracking-widest shadow-neo-sm">Trending Now</span>
               <h2 className="text-5xl md:text-6xl font-black tracking-tighter mt-4 uppercase">Popular Plans</h2>
             </div>
-            <Link href="/products" className="btn-neo-secondary whitespace-nowrap">
+            <Link href="/products/" className="btn-neo-secondary whitespace-nowrap">
               VIEW ALL <ArrowRight className="w-4 h-4 inline ml-1" />
             </Link>
           </div>

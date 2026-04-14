@@ -40,7 +40,7 @@ export default function ProductCard({ product }: { product: Product }) {
         </div>
         <div className="mt-auto flex items-center justify-between gap-4">
           <span className="text-2xl font-black">${product.price}</span>
-          <Link href={`/products/${product.slug}`} className="btn-neo py-2 px-4 text-xs uppercase whitespace-nowrap">
+          <Link href={`/products/${product.slug}/`} className="btn-neo py-2 px-4 text-xs uppercase whitespace-nowrap">
             View Plan
           </Link>
         </div>
