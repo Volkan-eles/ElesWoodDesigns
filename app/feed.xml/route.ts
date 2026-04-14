@@ -26,7 +26,7 @@ export async function GET() {
 <rss xmlns:g="http://base.google.com/ns/1.0" version="2.0">
   <channel>
     <title>ElesWoodDesigns Plans</title>
-    <link>${baseUrl}/</link>
+    <link>${baseUrl}</link>
     <description>Woodworking and DIY plans by ElesWoodDesigns</description>
     ${items}
   </channel>
@@ -36,7 +36,6 @@ export async function GET() {
     headers: {
       'Content-Type': 'application/xml',
       'Cache-Control': 's-maxage=86400, stale-while-revalidate',
-      'Link': `<${baseUrl}/feed.xml/>; rel="canonical"`,
     },
   });
 }
