@@ -26,6 +26,7 @@ export const metadata: Metadata = {
     other: {
       "p:domain_verify": "d4e7e5496616f25c319df35abbbdb4b1",
     },
+    google: "-D6vWp2aorp2dn1-jvYaYitpms2RNEaBOAp3f0QgyZk",
   },
 };
 
