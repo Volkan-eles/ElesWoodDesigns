@@ -1,10 +1,11 @@
 import { getProductBySlug, getProducts } from "@/lib/products";
+import { getPosts } from "@/lib/blog";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import ImageGallery from "@/components/ImageGallery";
 import Badge from "@/components/Badge";
 import RelatedProducts from "@/components/RelatedProducts";
-import { Star, CheckCircle, ExternalLink, ArrowLeft, Clock, Ruler, BarChart } from "lucide-react";
+import { Star, CheckCircle, ExternalLink, ArrowLeft, Clock, Ruler, BarChart, BookOpen } from "lucide-react";
 import Link from "next/link";
 
 export async function generateStaticParams() {
@@ -24,14 +25,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   return {
     title: `${product.name} | ElesWoodDesigns`,
-    description: product.description.slice(0, 160),
-    keywords: product.tags,
-    openGraph: {
-      images: [product.image],
-    },
     alternates: {
       canonical: `/products/${product.slug}/`,
     },
+    description: `Build your own ${product.name} with our professional DIY woodworking plans. This detailed step-by-step PDF guide includes 3D diagrams, a precise cut list, and a full material shopping list. Instant digital download.`,
   };
 }
 
@@ -158,7 +155,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
           <ImageGallery 
             images={product.images} 
             thumbnails={product.imagesThumbnails} 
-            alt={product.name} 
+            alt={`DIY ${product.name} Woodworking Blueprint - Step-by-Step Plan`} 
           />
           
           <div>
@@ -323,6 +320,32 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
               </div>
             </div>
           )}
+        </div>
+      </div>
+
+      {/* Internal Linking: Related Blog Guides */}
+      <div className="mt-20 pt-20 border-t-4 border-black mb-20">
+        <h3 className="text-3xl font-black uppercase mb-8 flex items-center gap-4">
+          <BookOpen className="w-8 h-8" />
+          Related Building Guides
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {getPosts()
+            .filter(post => post.category.toLowerCase() === product.category.toLowerCase() || post.category === "Tips & Tricks")
+            .slice(0, 3)
+            .map(post => (
+              <Link key={post.slug} href={`/blog/${post.slug}/`} className="card-neo bg-white p-6 group">
+                <div className="text-xs font-black text-[#FF5C00] uppercase mb-2">{post.category}</div>
+                <h4 className="font-black text-xl uppercase mb-4 group-hover:underline decoration-4 underline-offset-4 decoration-[#FFE500]">
+                  {post.title}
+                </h4>
+                <div className="flex items-center justify-between text-xs font-bold text-gray-400 uppercase pt-4 border-t border-gray-100">
+                  <span>Read Guide</span>
+                  <span>→</span>
+                </div>
+              </Link>
+            ))
+          }
         </div>
       </div>
 

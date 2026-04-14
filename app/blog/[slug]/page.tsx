@@ -1,4 +1,6 @@
 import { getPostBySlug, getPosts } from "@/lib/blog";
+import { getProducts } from "@/lib/products";
+import ProductCard from "@/components/ProductCard";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import Link from "next/link";
@@ -113,7 +115,20 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         dangerouslySetInnerHTML={{ __html: post.content }}
       />
 
-      <div className="mt-20 p-12 bg-[#FFE500] border-4 border-black shadow-neo text-center">
+      <div className="mt-20 pt-20 border-t-4 border-black">
+        <h3 className="text-3xl font-black uppercase mb-8">Recommended Plans for this Project:</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          {getProducts()
+            .filter(p => p.category.toLowerCase() === post.category.toLowerCase() || post.category === "Guides")
+            .slice(0, 2)
+            .map(product => (
+              <ProductCard key={product.slug} product={product} />
+            ))
+          }
+        </div>
+      </div>
+
+      <div className="mt-12 p-12 bg-[#FFE500] border-4 border-black shadow-neo text-center">
         <h3 className="text-3xl font-black uppercase mb-4">Ready to start building?</h3>
         <p className="font-bold mb-8 max-w-lg mx-auto">
           Check out our premium woodworking plans and build your next masterpiece with confidence.

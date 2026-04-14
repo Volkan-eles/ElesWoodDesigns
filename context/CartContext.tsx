@@ -27,7 +27,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    const stored = localStorage.getItem("woodcraft-cart");
+    const stored = localStorage.getItem("eleswood-cart");
     if (stored) {
       try {
         setItems(JSON.parse(stored));
@@ -36,7 +36,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("woodcraft-cart", JSON.stringify(items));
+    localStorage.setItem("eleswood-cart", JSON.stringify(items));
   }, [items]);
 
   const addItem = (product: Product) => {

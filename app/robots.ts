@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
     },
     // Replace with the actual production domain later (e.g., https://eleswooddesigns.com)
-    sitemap: 'https://eleswooddesigns.com/sitemap.xml/',
+    sitemap: 'https://eleswooddesigns.com/sitemap.xml',
   };
 }
