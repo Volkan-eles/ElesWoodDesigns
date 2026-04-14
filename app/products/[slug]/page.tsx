@@ -1,7 +1,9 @@
 import { getProductBySlug, getProducts } from "@/lib/products";
 import { notFound } from "next/navigation";
+import { Metadata } from "next";
 import ImageGallery from "@/components/ImageGallery";
 import Badge from "@/components/Badge";
+import RelatedProducts from "@/components/RelatedProducts";
 import { Star, CheckCircle, ExternalLink, ArrowLeft, Clock, Ruler, BarChart } from "lucide-react";
 import Link from "next/link";
 
@@ -12,20 +14,66 @@ export async function generateStaticParams() {
   }));
 }
 
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const product = getProductBySlug(slug);
+  
+  if (!product) {
+    return { title: 'Product Not Found' };
+  }
+
+  return {
+    title: `${product.name} | ElesWoodDesigns`,
+    description: product.description.slice(0, 160),
+    openGraph: {
+      images: [product.image],
+    },
+  };
+}
+
 export default async function ProductDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const product = getProductBySlug(slug);
   
   if (!product) notFound();
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: product.name,
+    image: product.images,
+    description: product.description,
+    sku: product.id,
+    offers: {
+      '@type': 'Offer',
+      url: `https://eleswooddesigns.com/products/${product.slug}`,
+      priceCurrency: 'USD',
+      price: product.price,
+      availability: 'https://schema.org/InStock',
+      seller: {
+        '@type': 'Organization',
+        name: 'ElesWoodDesigns'
+      }
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: product.rating,
+      reviewCount: product.reviewCount || 1,
+    }
+  };
+
   return (
     <div className="max-w-7xl mx-auto px-4 py-12 md:py-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Link href="/products" className="inline-flex items-center gap-2 font-black uppercase text-sm mb-8 hover:underline decoration-4 underline-offset-4 decoration-[#FFE500]">
         <ArrowLeft className="w-4 h-4" />
         Back to all plans
       </Link>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-16">
         {/* Left: Interactive Image Gallery */}
         <ImageGallery 
           images={product.images} 
@@ -133,6 +181,9 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
           )}
         </div>
       </div>
+
+      {/* Cross-Selling Section */}
+      <RelatedProducts currentSlug={product.slug} category={product.category} />
     </div>
   );
 }
