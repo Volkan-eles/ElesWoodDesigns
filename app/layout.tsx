@@ -22,9 +22,6 @@ export const metadata: Metadata = {
     shortcut: "/logo.png",
     apple: "/logo.png",
   },
-  other: {
-    "p:domain_verify": "d4e7e5496616f25c319df35abbbdb4b1",
-  },
 };
 
 export default function RootLayout({
@@ -34,6 +31,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${spaceGrotesk.variable} scroll-smooth`}>
+      <head>
+        <meta name="p:domain_verify" content="d4e7e5496616f25c319df35abbbdb4b1"/>
+      </head>
       <body className="font-sans antialiased text-black bg-[#FFFDF0]">
         <div className="flex flex-col min-h-screen border-t-4 border-black">
           <Navbar />
