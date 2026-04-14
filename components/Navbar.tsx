@@ -10,7 +10,13 @@ export default function Navbar() {
         </Link>
         <div className="flex gap-4 md:gap-8 items-center">
           <Link href="/products/" className="font-bold hover:underline decoration-4 underline-offset-4 text-sm md:text-base">
-            ALL PLANS
+            PLANS
+          </Link>
+          <Link href="/faq/" className="font-bold hover:underline decoration-4 underline-offset-4 text-sm md:text-base hidden sm:block">
+            FAQ
+          </Link>
+          <Link href="/contact/" className="font-bold hover:underline decoration-4 underline-offset-4 text-sm md:text-base hidden md:block">
+            CONTACT
           </Link>
           <a
             href="https://www.etsy.com/shop/ElesWoodDesigns"
