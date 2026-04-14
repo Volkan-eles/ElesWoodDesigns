@@ -103,7 +103,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
               {product.bestseller && <Badge className="bg-[#FFE500]">BESTSELLER</Badge>}
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter leading-[0.9] mb-4">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-black uppercase tracking-tighter leading-tight mb-4">
               {product.name}
             </h1>
 

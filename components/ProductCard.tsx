@@ -30,7 +30,7 @@ export default function ProductCard({ product }: { product: Product }) {
         )}
       </div>
       <div className="p-4 flex flex-col flex-grow bg-white">
-        <h3 className="font-black text-lg mb-2 line-clamp-2 uppercase leading-tight">
+        <h3 className="font-black text-base mb-2 line-clamp-2 uppercase leading-tight">
           {product.name}
         </h3>
         <div className="flex items-center gap-1 mb-4">
