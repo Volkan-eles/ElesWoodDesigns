@@ -38,11 +38,23 @@ export default function ProductCard({ product }: { product: Product }) {
           <span className="font-bold text-sm">{product.rating}</span>
           <span className="text-gray-500 text-xs">({product.reviewCount} reviews)</span>
         </div>
-        <div className="mt-auto flex items-center justify-between gap-4">
-          <span className="text-2xl font-black">${product.price}</span>
-          <Link href={`/products/${product.slug}/`} className="btn-neo py-2 px-4 text-xs uppercase whitespace-nowrap">
-            View Plan
-          </Link>
+        <div className="mt-auto flex flex-col gap-2">
+          {product.originalPrice && (
+            <div className="flex items-center gap-2">
+              <span className="bg-[#FF5C00] text-white font-black text-[10px] px-2 py-0.5 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] uppercase">
+                70% OFF
+              </span>
+              <span className="text-gray-400 line-through font-bold text-sm">
+                ${product.originalPrice}
+              </span>
+            </div>
+          )}
+          <div className="flex items-center justify-between gap-4">
+            <span className="text-2xl font-black text-black">${product.price}</span>
+            <Link href={`/products/${product.slug}/`} className="btn-neo py-2 px-4 text-xs uppercase whitespace-nowrap">
+              View Plan
+            </Link>
+          </div>
         </div>
       </div>
     </div>

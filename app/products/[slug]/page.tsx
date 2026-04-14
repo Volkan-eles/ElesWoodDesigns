@@ -135,8 +135,20 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
               </div>
             </div>
 
-            <div className="text-6xl font-black mb-8 underline decoration-8 decoration-[#FFE500] underline-offset-[-4px] inline-block tracking-tighter">
-              ${product.price}
+            <div className="flex flex-col gap-1 mb-8">
+              {product.originalPrice && (
+                <div className="flex items-center gap-3">
+                  <span className="text-2xl md:text-3xl font-bold text-gray-400 line-through tracking-tighter decoration-4">
+                    ${product.originalPrice}
+                  </span>
+                  <span className="bg-[#FF5C00] text-white font-black text-sm px-3 py-1 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] uppercase">
+                    70% OFF SITEWIDE
+                  </span>
+                </div>
+              )}
+              <div className="text-6xl md:text-7xl font-black underline decoration-8 decoration-[#FFE500] underline-offset-[-4px] inline-block tracking-tighter">
+                ${product.price}
+              </div>
             </div>
           </div>
 
