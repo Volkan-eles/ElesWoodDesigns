@@ -133,7 +133,7 @@ const products = items.map((item, index) => {
     thumbnail: toThumbnail(image),
     images: images,
     imagesThumbnails: imagesThumbnails,
-    etsy_url: "https://www.etsy.com/shop/ElesWoodDesigns", // Generic shop link or listing if available
+    etsy_url: `https://www.etsy.com/shop/ElesWoodDesigns?search_query=${encodeURIComponent(name.split(':')[0].split('|')[0].trim())}`,
     bestseller: Math.random() > 0.8
   };
 });
