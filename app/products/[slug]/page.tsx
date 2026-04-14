@@ -78,12 +78,21 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
       </Link>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-16">
-        {/* Left: Interactive Image Gallery */}
-        <ImageGallery 
-          images={product.images} 
-          thumbnails={product.imagesThumbnails} 
-          alt={product.name} 
-        />
+        {/* Left: Interactive Image Gallery & Project Details */}
+        <div className="flex flex-col gap-12">
+          <ImageGallery 
+            images={product.images} 
+            thumbnails={product.imagesThumbnails} 
+            alt={product.name} 
+          />
+          
+          <div>
+            <h3 className="font-black text-2xl mb-4 uppercase inline-block border-b-4 border-[#FFE500]">Project Details</h3>
+            <div className="text-lg font-bold text-gray-700 leading-relaxed whitespace-pre-wrap card-neo p-6 bg-white">
+              {product.longDescription || product.description}
+            </div>
+          </div>
+        </div>
 
         {/* Right: Info */}
         <div className="flex flex-col gap-8">
@@ -166,12 +175,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
             </ul>
           </div>
 
-          <div className="mt-4">
-            <h3 className="font-black text-2xl mb-4 uppercase inline-block border-b-4 border-[#FFE500]">Project Details</h3>
-            <div className="text-lg font-bold text-gray-700 leading-relaxed whitespace-pre-wrap card-neo p-6 bg-white">
-              {product.longDescription || product.description}
-            </div>
-          </div>
+
 
           {product.materials.length > 0 && product.materials[0] !== "" && (
             <div className="mt-4">
