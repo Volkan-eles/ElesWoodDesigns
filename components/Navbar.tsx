@@ -1,12 +1,20 @@
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
 
 export default function Navbar() {
   return (
     <nav className="bg-white border-b-4 border-black sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        <Link href="/" className="text-xl md:text-2xl font-black tracking-tighter hover:text-[#FFE500] transition-colors">
-          ELESWOOD<span className="bg-[#FFE500] px-1 border-2 border-black ml-1">DESIGNS</span>
+        <Link href="/" className="hover:opacity-80 transition-opacity">
+          <Image 
+            src="/logo.jpg" 
+            alt="ElesWoodDesigns Logo" 
+            width={120} 
+            height={120} 
+            className="h-12 w-auto md:h-16 object-contain"
+            priority
+          />
         </Link>
         <div className="flex gap-4 md:gap-8 items-center">
           <Link href="/products" className="font-bold hover:underline decoration-4 underline-offset-4 text-sm md:text-base">
