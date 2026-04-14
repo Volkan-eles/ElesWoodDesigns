@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, DM_Mono } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
-import { CartProvider } from "@/context/CartContext";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import CartDrawer from "@/components/CartDrawer";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -12,35 +10,24 @@ const spaceGrotesk = Space_Grotesk({
   display: "swap",
 });
 
-const dmMono = DM_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-mono",
-  display: "swap",
-});
-
 export const metadata: Metadata = {
-  title: "WoodCraft Plans — Woodworking DIY Plans",
-  description:
-    "Professional DIY plans for building wooden furniture and decorations. Coffee tables, bookshelves, garden benches, and more.",
-  keywords: ["woodworking diy", "woodworking plans", "carpentry", "diy plans", "wooden furniture"],
-  openGraph: {
-    title: "WoodCraft Plans — Woodworking DIY Plans",
-    description: "Professional DIY plans for building wooden furniture and decorations.",
-    type: "website",
-  },
+  title: "ElesWoodDesigns — Build It Yourself",
+  description: "Bold DIY woodworking plans for furniture, garden, and more. Download and build today.",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${dmMono.variable}`}>
-      <body>
-        <CartProvider>
+    <html lang="en" className={`${spaceGrotesk.variable} scroll-smooth`}>
+      <body className="font-sans antialiased text-black bg-[#FFFDF0]">
+        <div className="flex flex-col min-h-screen border-t-4 border-black">
           <Navbar />
-          <CartDrawer />
-          <main>{children}</main>
+          <main className="flex-grow">{children}</main>
           <Footer />
-        </CartProvider>
+        </div>
       </body>
     </html>
   );

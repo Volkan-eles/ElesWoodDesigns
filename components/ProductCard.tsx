@@ -1,87 +1,50 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import { Star, Clock, BookOpen, ShoppingCart, Zap } from "lucide-react";
-import { Product } from "@/data/products";
-import { useCart } from "@/context/CartContext";
-import styles from "./ProductCard.module.css";
+import Image from "next/image";
+import { Product } from "@/lib/products";
+import Badge from "./Badge";
+import { Star } from "lucide-react";
 
-const BADGE_CLASS: Record<string, string> = {
-  "BESTSELLER": "badge-orange",
-  "NEW": "badge-green",
-  "MOST POPULAR": "badge-yellow",
-  "BEST SELLER": "badge-red",
-  "SALE": "badge-black",
-};
-
-const DIFFICULTY_COLOR: Record<string, string> = {
-  Easy: "#2D5016",
-  Medium: "#FF6B35",
-  Hard: "#E63946",
-};
-
-export default function ProductCard({ product, priority = false }: { product: Product, priority?: boolean }) {
-  const { addItem } = useCart();
-
-  const renderStars = (rating: number) => {
-    return Array.from({ length: 5 }, (_, i) => (
-      <Star
-        key={i}
-        size={12}
-        fill={i < Math.floor(rating) ? "#FFD60A" : "none"}
-        color={i < Math.floor(rating) ? "#FFD60A" : "#9B9B95"}
-      />
-    ));
-  };
-
+export default function ProductCard({ product }: { product: Product }) {
   return (
-    <article className={styles.card}>
-      <Link href={`/products/${product.slug}`} className={styles.imageWrap}>
+    <div className="card-neo flex flex-col h-full group">
+      <div className="relative aspect-video border-b-2 border-black overflow-hidden">
         <Image
-          src={product.thumbnail || product.image}
+          src={product.image}
           alt={product.name}
           fill
-          className="object-contain p-4"
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-          priority={priority}
-          quality={90}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="object-cover transition-transform group-hover:scale-105"
         />
-        {product.badge && (
-          <span className={`badge badge-orange ${styles.badge}`}>
-            {product.badge}
-          </span>
-        )}
-      </Link>
-
-      <div className={styles.body}>
-        <div className={styles.meta}>
-          <span className="badge badge-orange text-xs">{product.category}</span>
-          <div className={styles.stat}>
-            <Star size={14} fill="#FFB800" color="#FFB800" />
-            <span className={styles.rating}>{product.rating}</span>
-            <span className={styles.reviews}>({product.reviewCount})</span>
-          </div>
+        <div className="absolute top-2 left-2">
+          <Badge>{product.category}</Badge>
         </div>
-
-        <Link href={`/products/${product.slug}`}>
-          <h3 className={styles.name}>{product.name}</h3>
-        </Link>
-
-        <div className={styles.footer}>
-          <div className={styles.price}>
-            <span className={styles.priceLabel}>Instant PDF</span>
-            <span className={styles.priceValue}>${product.price.toFixed(2)}</span>
+        <div className="absolute bottom-2 right-2">
+          <Badge className="bg-white">{product.difficulty}</Badge>
+        </div>
+        {product.bestseller && (
+           <div className="absolute top-2 right-2">
+            <Badge className="bg-[#FFE500]">BESTSELLER</Badge>
           </div>
-          <button
-            className={styles.addBtn}
-            onClick={() => addItem(product)}
-            aria-label="Add to cart"
-          >
-            <ShoppingCart size={18} />
-          </button>
+        )}
+      </div>
+      <div className="p-4 flex flex-col flex-grow bg-white">
+        <h3 className="font-black text-lg mb-2 line-clamp-2 uppercase leading-tight">
+          {product.name}
+        </h3>
+        <div className="flex items-center gap-1 mb-4">
+          <Star className="w-4 h-4 fill-[#FFE500] text-black" />
+          <span className="font-bold text-sm">{product.rating}</span>
+          <span className="text-gray-500 text-xs">({product.reviewCount} reviews)</span>
+        </div>
+        <div className="mt-auto flex items-center justify-between gap-4">
+          <span className="text-2xl font-black">${product.price}</span>
+          <Link href={`/products/${product.slug}`} className="btn-neo py-2 px-4 text-xs uppercase whitespace-nowrap">
+            View Plan
+          </Link>
         </div>
       </div>
-    </article>
+    </div>
   );
 }

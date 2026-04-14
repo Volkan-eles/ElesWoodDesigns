@@ -54,7 +54,7 @@ export default function AboutPage() {
           <div className="relative z-10">
             <h2 className="text-4xl mb-6">Have a Question?</h2>
             <p className="mb-8 text-gray-200">You can contact us for any technical support regarding our projects.</p>
-            <a href="mailto:support@woodcraftplans.com" className="btn btn-primary btn-lg">
+            <a href="mailto:support@eleswooddesigns.com" className="btn-neo text-xl w-full sm:w-auto">
               <Send size={20} />
               Send Us a Message
             </a>

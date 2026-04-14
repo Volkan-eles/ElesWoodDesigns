@@ -1,215 +1,52 @@
-/* ============================================
-   WOODCRAFT PLANS — MODERN MARKETPLACE SYSTEM
-   ============================================ */
+@import "tailwindcss";
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@700&display=swap');
+@layer base {
+  :root {
+    --neo-yellow: #FFE500;
+    --neo-bg: #FFFDF0;
+  }
 
-:root {
-  --primary: #F27A1A; /* Trendyol Orange */
-  --primary-dark: #D4630D;
-  --secondary: #272727;
-  --success: #0BC15C;
-  --warning: #FFBE00;
-  --danger: #FF4F4F;
-  --info: #0087FF;
+  * {
+    border-color: #000000;
+  }
+
+  body {
+    background-color: #FFFDF0;
+    color: #000000;
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .btn-neo {
+    @apply bg-[#FFE500] border-2 border-black shadow-[4px_4px_0px_black] hover:shadow-[2px_2px_0_black] hover:translate-x-[2px] hover:translate-y-[2px] transition-all font-bold px-6 py-3 flex items-center justify-center gap-2;
+  }
   
-  --bg-main: #FFFFFF;
-  --bg-sub: #F5F5F5;
-  --text-main: #333333;
-  --text-sub: #666666;
-  --text-light: #999999;
+  .btn-neo-secondary {
+    @apply bg-white border-2 border-black shadow-[4px_4px_0px_black] hover:shadow-[2px_2px_0_black] hover:translate-x-[2px] hover:translate-y-[2px] transition-all font-bold px-6 py-3 flex items-center justify-center gap-2;
+  }
   
-  --border-color: #E6E6E6;
-  --border-radius: 10px;
-  --border-radius-lg: 16px;
-  --border-radius-sm: 6px;
+  .card-neo {
+    @apply border-2 border-black shadow-[6px_6px_0px_black] hover:shadow-[3px_3px_0_black] hover:translate-x-[3px] hover:translate-y-[3px] transition-all bg-white overflow-hidden;
+  }
   
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
-  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
-  --shadow-lg: 0 10px 24px rgba(0,0,0,0.12);
+  .badge-neo {
+    @apply border-2 border-black bg-[#FFE500] font-bold text-[10px] uppercase tracking-wider px-2 py-0.5 inline-block;
+  }
   
-  --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  --font-main: 'Inter', sans-serif;
-  --font-display: 'Space Grotesk', sans-serif;
+  .input-neo {
+    @apply border-2 border-black shadow-[4px_4px_0px_black] px-4 py-2 focus:outline-none focus:translate-x-[1px] focus:translate-y-[1px] focus:shadow-[2px_2px_0_black] transition-all bg-white w-full;
+  }
+
+  .shadow-neo-sm {
+    @apply shadow-[2px_2px_0_black];
+  }
+
+  .shadow-neo {
+    @apply shadow-[4px_4px_0_black];
+  }
+
+  .shadow-neo-lg {
+    @apply shadow-[8px_8px_0_black];
+  }
 }
-
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: var(--font-main);
-  background-color: var(--bg-sub);
-  color: var(--text-main);
-  line-height: 1.5;
-  min-height: 100vh;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* ============ TYPOGRAPHY ============ */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-main);
-  font-weight: 700;
-  color: var(--text-main);
-  letter-spacing: -0.01em;
-}
-
-h1 { font-size: 2.5rem; }
-h2 { font-size: 1.75rem; }
-h3 { font-size: 1.25rem; }
-
-a {
-  color: inherit;
-  text-decoration: none;
-  transition: var(--transition);
-}
-
-/* ============ BUTTONS ============ */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  padding: 12px 24px;
-  border-radius: var(--border-radius);
-  border: 1px solid transparent;
-  cursor: pointer;
-  transition: var(--transition);
-  text-align: center;
-}
-
-.btn:active {
-  transform: scale(0.98);
-}
-
-.btn-primary {
-  background: var(--primary);
-  color: #fff;
-}
-
-.btn-primary:hover {
-  background: var(--primary-dark);
-}
-
-.btn-secondary {
-  background: #fff;
-  border: 1px solid var(--primary);
-  color: var(--primary);
-}
-
-.btn-secondary:hover {
-  background: #FFF0E5;
-}
-
-.btn-outline {
-  border: 1px solid var(--border-color);
-  background: #fff;
-  color: var(--text-main);
-}
-
-.btn-outline:hover {
-  border-color: var(--primary);
-  color: var(--primary);
-}
-
-.btn-block { width: 100%; }
-
-/* ============ BADGE ============ */
-.badge {
-  display: inline-flex;
-  padding: 4px 10px;
-  border-radius: 4px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.badge-orange { background: #FFEFD9; color: var(--primary); }
-.badge-green { background: #E6F7ED; color: var(--success); }
-.badge-yellow { background: #FFF9E6; color: var(--warning); }
-.badge-red { background: #FFF0F0; color: var(--danger); }
-
-/* ============ CARDS ============ */
-.card {
-  background: var(--bg-main);
-  border: 1px solid var(--border-color);
-  border-radius: var(--border-radius-lg);
-  box-shadow: var(--shadow-sm);
-  transition: var(--transition);
-}
-
-.card:hover {
-  box-shadow: var(--shadow-md);
-  border-color: #D1D1D1;
-}
-
-/* ============ LAYOUT ============ */
-.container {
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.section {
-  padding: 60px 0;
-}
-
-/* ============ GRID ============ */
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.grid-4 {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-
-@media (max-width: 1024px) {
-  .grid-4, .grid-3 { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 640px) {
-  .grid-4, .grid-3 { grid-template-columns: 1fr; }
-}
-
-.mono { font-family: var(--font-main); }
-.text-orange { color: var(--primary); }
-.text-green { color: var(--success); }
-.text-gray { color: var(--text-light); }
-.bg-white { background: #fff; }
-
-.animate-fade {
-  animation: fadeIn 0.4s ease-out forwards;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ============ CUSTOM UTILS ============ */
-.image-stage {
-  position: relative;
-  background: #FFF;
-  border-radius: var(--border-radius-lg);
-  overflow: hidden;
-  border: 1px solid var(--border-color);
-}
-
-.scrollbar-hide::-webkit-scrollbar { display: none; }
-.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
-
-.text-sm { font-size: 0.875rem; }
-.text-xs { font-size: 0.75rem; }
-.font-bold { font-weight: 700; }
