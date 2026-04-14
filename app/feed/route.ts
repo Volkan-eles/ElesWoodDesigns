@@ -36,7 +36,7 @@ export async function GET() {
     headers: {
       'Content-Type': 'application/xml',
       'Cache-Control': 's-maxage=86400, stale-while-revalidate',
-      'Link': `<${baseUrl}/feed.xml/>; rel="canonical"`,
+      'Link': `<${baseUrl}/feed/>; rel="canonical"`,
     },
   });
 }

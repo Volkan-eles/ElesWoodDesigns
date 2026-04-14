@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { getProducts } from '@/lib/products';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://eleswooddesigns.com'; // Replace with actual domain
+  const baseUrl = 'https://eleswooddesigns.com/'; // Replace with actual domain
   
   const products = getProducts();
   const productUrls = products.map((product) => ({

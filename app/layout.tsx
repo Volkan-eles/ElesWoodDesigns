@@ -11,7 +11,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://eleswooddesigns.com"),
+  metadataBase: new URL("https://eleswooddesigns.com/"),
   title: "ElesWoodDesigns — Build It Yourself",
   description: "Bold DIY woodworking plans for furniture, garden, and more. Download and build today.",
   alternates: {
