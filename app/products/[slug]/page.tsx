@@ -25,6 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${product.name} | ElesWoodDesigns`,
     description: product.description.slice(0, 160),
+    keywords: product.tags,
     openGraph: {
       images: [product.image],
     },
@@ -178,6 +179,19 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
               <div className="flex flex-wrap gap-2">
                 {product.materials.map((m, i) => (
                   <Badge key={i} className="bg-gray-100 border-dashed">{m}</Badge>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {product.tags && product.tags.length > 0 && (
+             <div className="mt-8 pt-8 border-t-2 border-dashed border-gray-300">
+              <h4 className="font-bold text-sm text-gray-500 uppercase mb-3">Tags & Keywords</h4>
+              <div className="flex flex-wrap gap-1.5">
+                {product.tags.map((tag, i) => (
+                  <span key={i} className="text-xs uppercase bg-gray-100 text-gray-600 px-2 py-1 rounded-sm">
+                    {tag}
+                  </span>
                 ))}
               </div>
             </div>

@@ -14,6 +14,7 @@ export interface Product {
   description: string;
   longDescription: string;
   features: string[];
+  tags: string[];
   materials: string[];
   image: string;
   thumbnail: string;

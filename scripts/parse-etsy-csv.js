@@ -127,6 +127,7 @@ const products = items.map((item, index) => {
     description: name.split(':')[0].split('|')[0].trim(),
     longDescription: item.DESCRIPTION || '',
     features: (item.TAGS || '').split(',').slice(0, 5).map(t => t.trim().replace(/_/g, ' ')),
+    tags: (item.TAGS || '').split(',').map(t => t.trim().replace(/_/g, ' ')).filter(Boolean),
     materials: (item.MATERIALS || '').split(',').map(m => m.trim()),
     image: image,
     thumbnail: toThumbnail(image),
