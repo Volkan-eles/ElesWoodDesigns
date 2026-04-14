@@ -28,6 +28,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     openGraph: {
       images: [product.image],
     },
+    alternates: {
+      canonical: `/products/${product.slug}/`,
+    },
   };
 }
 
@@ -46,7 +49,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
     sku: product.id,
     offers: {
       '@type': 'Offer',
-      url: `https://eleswooddesigns.com/products/${product.slug}`,
+      url: `https://eleswooddesigns.com/products/${product.slug}/`,
       priceCurrency: 'USD',
       price: product.price,
       availability: 'https://schema.org/InStock',
