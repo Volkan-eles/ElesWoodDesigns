@@ -29,7 +29,7 @@ export default function ImageGallery({ images, thumbnails, alt }: ImageGalleryPr
       </div>
 
       {/* Thumbnails */}
-      <div className="grid grid-cols-5 gap-2 md:gap-4">
+      <div className="grid grid-cols-4 sm:grid-cols-5 gap-2 md:gap-4">
         {thumbnails.map((thumb, idx) => (
           <button
             key={idx}

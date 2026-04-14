@@ -1,17 +1,18 @@
 @import "tailwindcss";
 
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
 @layer base {
   :root {
     --neo-yellow: #FFE500;
     --neo-bg: #FFFDF0;
   }
 
-  * {
-    border-color: #000000;
-  }
-
   body {
-    background-color: #FFFDF0;
     color: #000000;
     min-height: 100vh;
   }
