@@ -9,6 +9,9 @@ export default function Navbar() {
           ELESWOOD<span className="bg-[#FFE500] px-1 border-2 border-black ml-1">DESIGNS</span>
         </Link>
         <div className="flex gap-4 md:gap-8 items-center">
+          <Link href="/about/" className="font-bold hover:underline decoration-4 underline-offset-4 text-sm md:text-base">
+            ABOUT
+          </Link>
           <Link href="/products/" className="font-bold hover:underline decoration-4 underline-offset-4 text-sm md:text-base">
             PLANS
           </Link>
