@@ -43,14 +43,13 @@ export default function ContactPage() {
           <div className="bg-white border-4 border-black p-8 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
             <h3 className="text-2xl font-black uppercase mb-4 tracking-tighter">Business Hours</h3>
             <div className="space-y-2 font-bold uppercase text-sm">
-              <div className="flex justify-between border-b-2 border-black pb-2">
-                <span>MON - FRI</span>
-                <span>09:00 - 18:00</span>
+              <div className="flex justify-between items-center bg-[#FFE500] border-2 border-black p-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                <span className="text-xl font-black italic">OPEN 24/7</span>
+                <span className="text-xs tracking-tighter">EVERY SINGLE DAY</span>
               </div>
-              <div className="flex justify-between pt-2">
-                <span>SAT - SUN</span>
-                <span className="text-gray-500">OFF DUTY</span>
-              </div>
+              <p className="mt-4 text-xs text-gray-500 leading-tight">
+                Digital downloads are accessible instantly. Email support is monitored around the clock.
+              </p>
             </div>
           </div>
 
