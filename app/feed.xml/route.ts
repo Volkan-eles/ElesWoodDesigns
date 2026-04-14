@@ -26,7 +26,7 @@ export async function GET() {
 <rss xmlns:g="http://base.google.com/ns/1.0" version="2.0">
   <channel>
     <title>ElesWoodDesigns Plans</title>
-    <link>${baseUrl}</link>
+    <link>${baseUrl}/</link>
     <description>Woodworking and DIY plans by ElesWoodDesigns</description>
     ${items}
   </channel>
