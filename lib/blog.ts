@@ -36,7 +36,7 @@ const blogPosts: BlogPost[] = [
     publishedAt: "2026-04-10",
     author: "ElesWood",
     category: "Tips & Tricks",
-    image: "https://cdn.pixabay.com/photo/2014/11/21/17/17/wood-540846_1280.jpg"
+    image: "/blog/best_woods_for_outdoor.png"
   },
   {
     slug: "essential-tools-for-beginners",
@@ -61,7 +61,7 @@ const blogPosts: BlogPost[] = [
     publishedAt: "2026-04-12",
     author: "ElesWood",
     category: "Guides",
-    image: "https://cdn.pixabay.com/photo/2015/05/11/15/07/wood-762635_1280.jpg"
+    image: "/blog/essential_woodworking_tools.png"
   }
 ];
 
