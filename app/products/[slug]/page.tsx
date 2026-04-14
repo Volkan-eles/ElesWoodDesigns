@@ -150,24 +150,17 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
       </Link>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-16">
-        {/* Left: Interactive Image Gallery & Project Details */}
-        <div className="flex flex-col gap-12">
+        {/* Left: Interactive Image Gallery */}
+        <div className="lg:col-start-1 lg:row-start-1 flex flex-col gap-12">
           <ImageGallery 
             images={product.images} 
             thumbnails={product.imagesThumbnails} 
             alt={`DIY ${product.name} Woodworking Blueprint - Step-by-Step Plan`} 
           />
-          
-          <div>
-            <h3 className="font-black text-2xl mb-4 uppercase inline-block border-b-4 border-[#FFE500]">Project Details</h3>
-            <div className="text-lg font-bold text-gray-700 leading-relaxed whitespace-pre-wrap card-neo p-6 bg-white">
-              {product.longDescription || product.description}
-            </div>
-          </div>
         </div>
 
-        {/* Right: Info */}
-        <div className="flex flex-col gap-8">
+        {/* Right: Info - Stacks below gallery on mobile, stays right on desktop */}
+        <div className="lg:col-start-2 lg:row-start-1 lg:row-span-2 flex flex-col gap-8">
           <div>
             <div className="flex flex-wrap gap-2 mb-4">
               <Badge>{product.category}</Badge>
@@ -320,6 +313,14 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
               </div>
             </div>
           )}
+        </div>
+
+        {/* Project Details - Stacks below Info on mobile, moves back to left column on desktop */}
+        <div className="lg:col-start-1 lg:row-start-2 mt-8 lg:mt-0">
+          <h3 className="font-black text-2xl mb-4 uppercase inline-block border-b-4 border-[#FFE500]">Project Details</h3>
+          <div className="text-lg font-bold text-gray-700 leading-relaxed whitespace-pre-wrap card-neo p-6 bg-white">
+            {product.longDescription || product.description}
+          </div>
         </div>
       </div>
 
