@@ -98,7 +98,15 @@ export async function GET(
               width: '100%',
             }}
           >
-            <span style={{ fontSize: 60, fontWeight: 900, textTransform: 'uppercase', color: 'black', lineHeight: 1.1 }}>
+            <span style={{ 
+              fontSize: product.name.length > 60 ? 45 : 60, 
+              fontWeight: 900, 
+              textTransform: 'uppercase', 
+              color: 'black', 
+              lineHeight: 1.1,
+              maxHeight: '400px',
+              overflow: 'hidden'
+            }}>
               {product.name}
             </span>
           </div>
