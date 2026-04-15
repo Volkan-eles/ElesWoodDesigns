@@ -124,6 +124,28 @@ export async function GET(
             </div>
           </div>
           
+          {/* 70% OFF Badge */}
+          <div
+            style={{
+              position: 'absolute',
+              top: '30%',
+              right: '-20px',
+              backgroundColor: '#FF5C00',
+              border: '8px solid black',
+              padding: '15px 30px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              boxShadow: '10px 10px 0px 0px rgba(0,0,0,1)',
+              transform: 'rotate(-10deg)',
+              zIndex: 30,
+            }}
+          >
+            <span style={{ fontSize: 60, fontWeight: 900, textTransform: 'uppercase', color: 'white' }}>
+              70% OFF
+            </span>
+          </div>
+          
           <div
             style={{
               marginTop: '40px',
