@@ -27,11 +27,12 @@ export async function GET(
           justifyContent: 'space-between',
           width: '1000px',
           height: '1500px',
-          backgroundColor: '#fff',
+          backgroundColor: '#000',
           position: 'relative',
+          padding: '40px',
         }}
       >
-        {/* Background Image */}
+        {/* Background Image with slight zoom/scale */}
         <img
           src={product.image}
           style={{
@@ -44,71 +45,83 @@ export async function GET(
           }}
         />
 
-        {/* Gradient Overlay to make text readable */}
+        {/* Dark Overlay for readability */}
         <div
           style={{
             position: 'absolute',
-            bottom: 0,
+            top: 0,
             left: 0,
             right: 0,
-            height: '60%',
-            background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent)',
+            bottom: 0,
+            background: 'linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0.6) 100%)',
           }}
         />
 
-        {/* Top Header / Branding */}
+        {/* Top Header: DIY Badge */}
         <div
           style={{
-            marginTop: '80px',
+            marginTop: '40px',
             backgroundColor: '#FFE500',
-            border: '8px solid black',
-            padding: '24px 48px',
+            border: '10px solid black',
+            padding: '20px 80px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            boxShadow: '16px 16px 0px 0px rgba(0,0,0,1)',
+            boxShadow: '15px 15px 0px 0px rgba(0,0,0,1)',
             zIndex: 10,
           }}
         >
-          <span style={{ fontSize: 40, fontWeight: 900, textTransform: 'uppercase', color: 'black' }}>
-            🔨 ElesWoodDesigns Plans
+          <span style={{ fontSize: 100, fontWeight: 900, textTransform: 'uppercase', color: 'black' }}>
+            DIY
           </span>
         </div>
 
-        {/* Bottom Product Title */}
+        {/* Bottom Section: Project Name & Plans Label */}
         <div
           style={{
-            marginBottom: '100px',
+            marginBottom: '40px',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             zIndex: 10,
-            width: '850px',
-            textAlign: 'center',
+            width: '100%',
           }}
         >
           <div
             style={{
               backgroundColor: 'white',
-              border: '8px solid black',
-              padding: '40px',
+              border: '10px solid black',
+              padding: '50px 40px',
               display: 'flex',
               flexDirection: 'column',
-              boxShadow: '16px 16px 0px 0px rgba(0,0,0,1)',
+              boxShadow: '20px 20px 0px 0px rgba(0,0,0,1)',
               width: '100%',
+              textAlign: 'center',
             }}
           >
             <span style={{ 
-              fontSize: product.name.length > 60 ? 45 : 60, 
+              fontSize: 65,
               fontWeight: 900, 
               textTransform: 'uppercase', 
               color: 'black', 
               lineHeight: 1.1,
-              maxHeight: '400px',
-              overflow: 'hidden'
+              marginBottom: '20px',
             }}>
               {product.name}
             </span>
+            <div style={{ 
+              display: 'flex',
+              justifyContent: 'center',
+              backgroundColor: '#FF5C00',
+              padding: '10px 30px',
+              border: '6px solid black',
+              alignSelf: 'center',
+              boxShadow: '8px 8px 0px 0px rgba(0,0,0,1)',
+            }}>
+              <span style={{ fontSize: 50, fontWeight: 900, color: 'white', textTransform: 'uppercase' }}>
+                BUILD PLANS
+              </span>
+            </div>
           </div>
           
           <div
@@ -116,14 +129,14 @@ export async function GET(
               marginTop: '40px',
               backgroundColor: '#FFE500',
               border: '8px solid black',
-              padding: '20px 40px',
+              padding: '15px 40px',
               display: 'flex',
               alignItems: 'center',
-              boxShadow: '16px 16px 0px 0px rgba(0,0,0,1)',
+              boxShadow: '10px 10px 0px 0px rgba(0,0,0,1)',
             }}
           >
-            <span style={{ fontSize: 40, fontWeight: 900, textTransform: 'uppercase', color: 'black' }}>
-              PDF Download • Instant Access
+            <span style={{ fontSize: 35, fontWeight: 900, textTransform: 'uppercase', color: 'black' }}>
+              Instant PDF Download
             </span>
           </div>
         </div>

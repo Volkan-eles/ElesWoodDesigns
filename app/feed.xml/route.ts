@@ -11,7 +11,7 @@ export async function GET() {
     const title = product.name;
     const description = `${product.description} - Professional DIY woodworking plans with 3D diagrams, material lists, and precision cut lists. Instant PDF download.`.slice(0, 5000);
     const link = `${baseUrl}/products/${product.slug}/`;
-    const imageLink = product.image; // Using the direct image URL for better crawling
+    const imageLink = `${baseUrl}/api/pin/${product.slug}`; // Using the dynamic Pin generator with text
     const price = `${product.price} USD`;
     const availability = 'in stock';
     
