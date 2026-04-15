@@ -5,8 +5,9 @@ import { Metadata } from "next";
 import ImageGallery from "@/components/ImageGallery";
 import Badge from "@/components/Badge";
 import RelatedProducts from "@/components/RelatedProducts";
-import { Star, CheckCircle, ExternalLink, ArrowLeft, Clock, Ruler, BarChart, BookOpen } from "lucide-react";
 import Link from "next/link";
+import PinterestSaveButton from "@/components/PinterestSaveButton";
+import { Star, CheckCircle, ExternalLink, ArrowLeft, Clock, Ruler, BarChart, BookOpen, ShoppingBag } from "lucide-react";
 
 export async function generateStaticParams() {
   const products = getProducts();
@@ -29,6 +30,27 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       canonical: `/products/${product.slug}/`,
     },
     description: `Build your own ${product.name} with our professional DIY woodworking plans. This detailed step-by-step PDF guide includes 3D diagrams, a precise cut list, and a full material shopping list. Instant digital download.`,
+    openGraph: {
+      title: `${product.name} | ElesWoodDesigns`,
+      description: product.description,
+      url: `https://eleswooddesigns.com/products/${product.slug}/`,
+      type: 'website', // Keep as website but Pinterest will see the product tags below
+      images: [
+        {
+          url: product.image,
+          width: 1000,
+          height: 1500,
+          alt: `${product.name} Woodworking Plans`,
+        },
+      ],
+    },
+    other: {
+      'product:price:amount': product.price.toString(),
+      'product:price:currency': 'USD',
+      'og:availability': 'instock',
+      'product:retailer_item_id': product.id,
+      'product:condition': 'new',
+    }
   };
 }
 
@@ -156,6 +178,8 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
             images={product.images} 
             thumbnails={product.imagesThumbnails} 
             alt={`DIY ${product.name} Woodworking Blueprint - Step-by-Step Plan`} 
+            productName={product.name}
+            productUrl={`${baseUrl}/products/${product.slug}/`}
           />
         </div>
 
@@ -227,6 +251,25 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
               DOWNLOAD PLANS ON ETSY
               <ExternalLink className="w-8 h-8 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </a>
+
+            {product.polar_price_id && (
+              <Link 
+                href={`/api/checkout?price_id=${product.polar_price_id}`}
+                className="btn-neo text-2xl h-24 md:h-28 group text-center flex items-center justify-center gap-4 bg-[#FFE500]"
+              >
+                BUY PDF PLANS DIRECTLY
+                <ShoppingBag className="w-8 h-8 group-hover:scale-110 transition-transform" />
+              </Link>
+            )}
+
+            <PinterestSaveButton 
+              url={`${baseUrl}/products/${product.slug}/`}
+              media={product.image}
+              description={`${product.name} - DIY Woodworking Plans by ElesWoodDesigns. Professional PDF blueprints with 3D diagrams and cut lists.`}
+              variant="large"
+              className="h-24 md:h-28 text-2xl"
+            />
+
             <p className="text-center font-bold text-xs text-gray-400 uppercase tracking-widest bg-gray-100 py-3 border-2 border-black border-dashed">
               Instant PDF Access • Secure Checkout • 5-Star Rated
             </p>

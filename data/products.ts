@@ -23,6 +23,7 @@ export interface Product {
   imagesThumbnails: string[];
   badge?: string;
   etsy_url?: string;
+  polar_price_id?: string;
   bestseller?: boolean;
 }
 

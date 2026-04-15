@@ -21,6 +21,7 @@ export interface Product {
   images: string[];
   imagesThumbnails: string[];
   etsy_url: string;
+  polar_price_id?: string;
   originalPrice?: number;
   bestseller?: boolean;
 }
