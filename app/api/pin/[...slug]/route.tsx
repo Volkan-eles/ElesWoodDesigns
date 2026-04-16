@@ -5,10 +5,11 @@ export const runtime = 'edge';
 
 export async function GET(
   request: Request,
-  { params }: { params: Promise<{ slug: string }> }
+  { params }: { params: Promise<{ slug: string[] }> }
 ) {
   const { slug } = await params;
-  const product = getProductBySlug(slug);
+  const productSlug = slug[0];
+  const product = getProductBySlug(productSlug);
 
   if (!product) {
     return new Response('Not Found', { status: 404 });

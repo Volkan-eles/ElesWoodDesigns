@@ -11,9 +11,16 @@ export async function GET() {
     const title = product.name;
     const description = `${product.description} - Professional DIY woodworking plans with 3D diagrams, material lists, and precision cut lists. Instant PDF download.`.slice(0, 5000);
     const link = `${baseUrl}/products/${product.slug}/`;
-    const imageLink = `${baseUrl}/api/pin/${product.slug}`; // Using the dynamic Pin generator with text
-    const price = `${product.price} USD`;
-    const availability = 'in stock';
+    
+    // Dynamic branded image (Pinterest optimized)
+    // Adding .jpg/ to hint image type and handle trailingSlash: true redirect
+    const imageLink = `${baseUrl}/api/pin/${product.slug}/pin.jpg/`; 
+    
+    // Raw product image from Etsy as additional image
+    const additionalImageLink = product.image;
+    
+    const price = `${product.price.toFixed(2)} USD`;
+    const availability = 'in_stock'; // Standard Google/Pinterest value
     
     return `
     <item>
@@ -23,11 +30,11 @@ export async function GET() {
       <g:id>${product.slug}</g:id>
       <g:price>${price}</g:price>
       <g:image_link>${imageLink}</g:image_link>
-      <g:additional_image_link>${baseUrl}/api/pin/${product.slug}</g:additional_image_link>
+      <g:additional_image_link>${additionalImageLink}</g:additional_image_link>
       <g:availability>${availability}</g:availability>
       <g:condition>new</g:condition>
       <g:brand>ElesWoodDesigns</g:brand>
-      <g:google_product_category>6103</g:google_product_category>
+      <g:google_product_category>505307</g:google_product_category>
       <g:product_type><![CDATA[Hardware > Tools > Blueprints & Templates]]></g:product_type>
     </item>`;
   }).join('');
