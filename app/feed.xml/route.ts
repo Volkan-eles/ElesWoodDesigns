@@ -32,7 +32,9 @@ export async function GET() {
     const rawDescription = product.longDescription || product.description || title;
     const description = cleanText(rawDescription).slice(0, 5000);
 
-    const productUrl = `${baseUrl}/products/${product.slug}/`;
+    // Product URL - direct Etsy listing
+    const productUrl = product.etsy_url || `${baseUrl}/products/${product.slug}/`;
+    const siteUrl = `${baseUrl}/products/${product.slug}/`;
 
     // Main image: use the first real Etsy image (no trailing slash, direct jpg)
     // Pinterest requires a stable, direct image URL
@@ -67,6 +69,7 @@ export async function GET() {
       <g:id>${escapeXml(product.slug)}</g:id>
       <title><![CDATA[${title}]]></title>
       <link>${escapeXml(productUrl)}</link>
+      <g:link>${escapeXml(siteUrl)}</g:link>
       <description><![CDATA[${description}]]></description>
       <g:image_link>${escapeXml(primaryImage)}</g:image_link>
 ${extraImages}

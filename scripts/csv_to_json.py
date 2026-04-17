@@ -173,6 +173,20 @@ def get_images_thumbnails(images_full):
         thumbs.append(thumb)
     return thumbs
 
+def get_etsy_listing_url(images_full: list, title: str) -> str:
+    """Extract the Etsy listing URL from the image CDN URL.
+    Etsy CDN pattern: /HASH/LISTING_ID/il_fullxfull.LISTING_ID_xxx.jpg
+    """
+    import re
+    for img in images_full:
+        m = re.search(r'/(\d{8,})/il_fullxfull', img)
+        if m:
+            listing_id = m.group(1)
+            return f'https://www.etsy.com/listing/{listing_id}/'
+    # Fallback: search URL
+    return f'https://www.etsy.com/shop/ElesWoodDesigns?search_query={title[:50].replace(" ", "%20")}'
+
+
 def main():
     if not os.path.exists(CSV_PATH):
         print(f"ERROR: CSV not found at {CSV_PATH}")
@@ -254,7 +268,7 @@ def main():
                 "thumbnail": main_thumb,
                 "images": images_full,
                 "imagesThumbnails": images_thumbs,
-                "etsy_url": f"https://www.etsy.com/shop/ElesWoodDesigns?search_query={title[:50].replace(' ', '%20')}",
+                "etsy_url": get_etsy_listing_url(images_full, title),
                 "bestseller": idx < 5,
             }
             products.append(product)

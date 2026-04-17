@@ -41,12 +41,14 @@ export async function GET() {
     const primaryImage = product.images?.[0] ?? '';
     const origPrice = product.originalPrice ?? Math.round((product.price / 0.30) * 100) / 100;
     const salePrice = product.price;
+    // Link directly to the Etsy listing
+    const productLink = product.etsy_url || `${baseUrl}/products/${product.slug}/`;
 
     return [
       product.slug,
       cleanText(product.name),
       desc,
-      `${baseUrl}/products/${product.slug}/`,
+      productLink,
       primaryImage,
       `${origPrice.toFixed(2)} USD`,
       `${salePrice.toFixed(2)} USD`,
