@@ -198,8 +198,9 @@ def main():
             except ValueError:
                 price = 9.99
 
-            # Calculate original price (reverse from 70% discount)
-            original_price = round(price / (1 - SALE_DISCOUNT), 2)
+            # CSV price = original price, apply 70% discount to get sale price
+            original_price = round(price, 2)
+            sale_price = round(price * (1 - SALE_DISCOUNT), 2)
 
             # Slug
             base_slug = slugify(title)
@@ -237,7 +238,7 @@ def main():
                 "slug": slug,
                 "name": title,
                 "category": category,
-                "price": round(price, 2),
+                "price": sale_price,
                 "originalPrice": original_price,
                 "rating": 4.7,
                 "reviewCount": 285,
@@ -264,7 +265,7 @@ def main():
 
     print(f"OK: {len(products)} urun JSON'a yazildi: {JSON_PATH}")
     for p in products[:5]:
-        print(f"  - {p['name'][:60]} | ${p['price']} -> original: ${p['originalPrice']} | imgs: {len(p['images'])}")
+        print(f"  - {p['name'][:60]} | orig=${p['originalPrice']} -> sale: ${p['price']} (70% off)")
 
 if __name__ == "__main__":
     main()
