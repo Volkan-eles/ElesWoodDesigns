@@ -27,9 +27,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  alternates: {
-    canonical: "/",
-  },
+
   openGraph: {
     title: "ElesWoodDesigns — Premium DIY Woodworking Plans",
     description: "Download step-by-step woodworking blueprints. Precise, bold, and beginner-friendly.",

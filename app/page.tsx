@@ -3,6 +3,13 @@ import { getProducts } from "@/lib/products";
 import ProductCard from "@/components/ProductCard";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import { ArrowRight, Hammer, Download, CheckCircle, Mail, Star } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+  },
+};
 
 export default function HomePage() {
   const products = getProducts();
