@@ -174,17 +174,14 @@ def get_images_thumbnails(images_full):
     return thumbs
 
 def get_etsy_listing_url(images_full: list, title: str) -> str:
-    """Extract the Etsy listing URL from the image CDN URL.
-    Etsy CDN pattern: /HASH/LISTING_ID/il_fullxfull.LISTING_ID_xxx.jpg
+    """Build an Etsy shop search URL for this product title.
+    The image IDs in the CDN URLs are NOT the same as Etsy listing IDs,
+    so we use the shop search URL as the closest reliable link.
     """
-    import re
-    for img in images_full:
-        m = re.search(r'/(\d{8,})/il_fullxfull', img)
-        if m:
-            listing_id = m.group(1)
-            return f'https://www.etsy.com/listing/{listing_id}/'
-    # Fallback: search URL
-    return f'https://www.etsy.com/shop/ElesWoodDesigns?search_query={title[:50].replace(" ", "%20")}'
+    # URL-encode the product title for the search query
+    import urllib.parse
+    encoded = urllib.parse.quote(title[:120])
+    return f'https://www.etsy.com/shop/ElesWoodDesigns?search_query={encoded}'
 
 
 def main():
