@@ -24,23 +24,25 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return { title: 'Product Not Found' };
   }
 
+  const description = `Build your own ${product.name} with our professional DIY woodworking plans. This detailed step-by-step PDF guide includes 3D diagrams, a precise cut list, and a full material shopping list. Instant digital download.`;
+
   return {
-    title: `${product.name} | ElesWoodDesigns`,
+    title: `${product.name} | DIY Woodworking Plans PDF | ElesWoodDesigns`,
     alternates: {
       canonical: `/products/${product.slug}/`,
     },
-    description: `Build your own ${product.name} with our professional DIY woodworking plans. This detailed step-by-step PDF guide includes 3D diagrams, a precise cut list, and a full material shopping list. Instant digital download.`,
+    description,
     openGraph: {
       title: `${product.name} | ElesWoodDesigns`,
-      description: product.description,
+      description,
       url: `https://eleswooddesigns.com/products/${product.slug}/`,
-      type: 'website', // Keep as website but Pinterest will see the product tags below
+      type: 'website',
       images: [
         {
-          url: product.image,
+          url: product.image.startsWith('http') ? product.image : `https://eleswooddesigns.com${product.image}`,
           width: 1000,
           height: 1500,
-          alt: `${product.name} Woodworking Plans`,
+          alt: `${product.name} DIY Woodworking Plans`,
         },
       ],
     },
@@ -79,13 +81,24 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
       url: `${baseUrl}/products/${product.slug}/`,
       priceCurrency: 'USD',
       price: product.price,
-      priceValidUntil: '2026-12-31',
+      priceValidUntil: '2027-12-31',
       availability: 'https://schema.org/InStock',
       itemCondition: 'https://schema.org/NewCondition',
       seller: {
         '@type': 'Organization',
         name: 'ElesWoodDesigns'
-      }
+      },
+      ...(product.originalPrice && {
+        priceSpecification: {
+          '@type': 'UnitPriceSpecification',
+          priceCurrency: 'USD',
+          price: product.price,
+          referenceQuantity: {
+            '@type': 'QuantitativeValue',
+            value: 1,
+          },
+        },
+      }),
     },
     aggregateRating: {
       '@type': 'AggregateRating',

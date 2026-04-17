@@ -18,7 +18,20 @@ export const metadata: Metadata = {
     template: "%s | ElesWoodDesigns"
   },
   description: "Bold DIY woodworking plans for furniture, garden, and more. Step-by-step PDF guides, 3D diagrams, and precise cut lists. Download and build today.",
-  keywords: ["DIY woodworking plans", "woodworking blueprints", "garden project plans", "furniture building guides", "PDF woodworking plans", "beginner woodworking", "woodcraft designs"],
+  keywords: [
+    "DIY woodworking plans",
+    "woodworking blueprints PDF",
+    "garden woodworking plans",
+    "furniture building plans",
+    "outdoor woodworking plans",
+    "kitchen cart plans",
+    "workshop workbench plans",
+    "beginner woodworking projects",
+    "PDF woodworking download",
+    "farm stand plans",
+    "pergola plans",
+    "bar cart plans",
+  ],
   authors: [{ name: "ElesWoodDesigns" }],
   creator: "ElesWoodDesigns",
   publisher: "ElesWoodDesigns",
@@ -30,15 +43,15 @@ export const metadata: Metadata = {
 
   openGraph: {
     title: "ElesWoodDesigns — Premium DIY Woodworking Plans",
-    description: "Download step-by-step woodworking blueprints. Precise, bold, and beginner-friendly.",
+    description: "Download step-by-step woodworking blueprints. Precise, bold, and beginner-friendly. 60+ plans for furniture, garden, outdoor & more.",
     url: "https://eleswooddesigns.com/",
     siteName: "ElesWoodDesigns",
     images: [
       {
-        url: "/logo.png",
+        url: "https://eleswooddesigns.com/logo.png",
         width: 800,
         height: 600,
-        alt: "ElesWoodDesigns Logo",
+        alt: "ElesWoodDesigns — Premium DIY Woodworking Plans",
       },
     ],
     locale: "en_US",
@@ -47,8 +60,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "ElesWoodDesigns — DIY Woodworking Plans",
-    description: "Bold DIY woodworking plans for furniture, garden, and more.",
-    images: ["/logo.png"],
+    description: "60+ professional DIY woodworking PDF plans. Furniture, garden, outdoor, kitchen & more.",
+    images: ["https://eleswooddesigns.com/logo.png"],
   },
   robots: {
     index: true,

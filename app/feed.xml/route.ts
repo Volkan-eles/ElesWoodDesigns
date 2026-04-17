@@ -1,5 +1,4 @@
 import { getProducts } from '@/lib/products';
-import { NextResponse } from 'next/server';
 
 export const dynamic = 'force-dynamic';
 
@@ -9,28 +8,45 @@ export async function GET() {
 
   const items = products.map((product) => {
     const title = product.name;
-    const description = `${product.description} - Professional DIY woodworking plans with 3D diagrams, material lists, and precision cut lists. Instant PDF download.`.slice(0, 5000);
+
+    // Full description (long first, fallback to short)
+    const rawDescription = product.longDescription || product.description || title;
+    const description = rawDescription
+      .replace(/\n+/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim()
+      .slice(0, 5000);
+
     const link = `${baseUrl}/products/${product.slug}/`;
-    
-    // Dynamic branded image (Pinterest optimized)
-    // Adding .jpg/ to hint image type and handle trailingSlash: true redirect
-    const imageLink = `${baseUrl}/api/pin/${product.slug}/pin.jpg/`; 
-    
-    // Raw product image from Etsy as additional image
-    const additionalImageLink = product.image;
-    
-    const price = `${product.price.toFixed(2)} USD`;
-    const availability = 'in_stock'; // Standard Google/Pinterest value
-    
+
+    // Pinterest-optimised branded image (1000x1500, product name as text overlay)
+    const imageLink = `${baseUrl}/api/pin/${product.slug}/pin.jpg/`;
+
+    // All product images as additional_image_link entries
+    const additionalImages = (product.images || [])
+      .filter(Boolean)
+      .slice(0, 10)
+      .map((img) => `      <g:additional_image_link>${img}</g:additional_image_link>`)
+      .join('\n');
+
+    // Prices
+    const salePrice  = product.price;
+    const origPrice  = product.originalPrice ?? Math.round(salePrice / 0.30 * 100) / 100;
+    const salePriceStr = `${salePrice.toFixed(2)} USD`;
+    const origPriceStr = `${origPrice.toFixed(2)} USD`;
+
+    const availability = 'in stock';
+
     return `
     <item>
       <title><![CDATA[${title}]]></title>
       <link>${link}</link>
       <description><![CDATA[${description}]]></description>
       <g:id>${product.slug}</g:id>
-      <g:price>${price}</g:price>
+      <g:price>${origPriceStr}</g:price>
+      <g:sale_price>${salePriceStr}</g:sale_price>
       <g:image_link>${imageLink}</g:image_link>
-      <g:additional_image_link>${additionalImageLink}</g:additional_image_link>
+${additionalImages}
       <g:availability>${availability}</g:availability>
       <g:condition>new</g:condition>
       <g:brand>ElesWoodDesigns</g:brand>

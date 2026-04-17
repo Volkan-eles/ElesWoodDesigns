@@ -3,8 +3,9 @@ import { getProducts } from '@/lib/products';
 import { getPosts } from '@/lib/blog';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://eleswooddesigns.com'; // Removed trailing slash to prevent double slashes
-  
+  const baseUrl = 'https://eleswooddesigns.com';
+
+  // --- Products ---
   const products = getProducts();
   const productUrls = products.map((product) => ({
     url: `${baseUrl}/products/${product.slug}/`,
@@ -13,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  // --- Blog Posts ---
   const blogPosts = getPosts();
   const blogUrls = blogPosts.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}/`,
@@ -21,35 +23,51 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  const categories = ["furniture", "garden", "kids", "decoration"];
+  // --- Category pages ---
+  const categories = [
+    'furniture',
+    'garden',
+    'outdoor',
+    'kitchen',
+    'workshop',
+    'digital',
+  ];
   const categoryUrls = categories.map((cat) => ({
     url: `${baseUrl}/plans/${cat}/`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
-    priority: 0.9,
+    priority: 0.85,
   }));
 
   return [
+    // Core pages — highest priority
     {
       url: `${baseUrl}/`,
       lastModified: new Date(),
       changeFrequency: 'daily',
-      priority: 1,
+      priority: 1.0,
     },
     {
       url: `${baseUrl}/products/`,
       lastModified: new Date(),
       changeFrequency: 'daily',
-      priority: 0.9,
+      priority: 0.95,
     },
     {
       url: `${baseUrl}/blog/`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.85,
     },
+    // Secondary pages
     {
       url: `${baseUrl}/about/`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/contact/`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.5,
@@ -60,8 +78,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.5,
     },
-    ...productUrls,
+    {
+      url: `${baseUrl}/terms/`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/privacy/`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
+    // Category pages
     ...categoryUrls,
+    // All 64 product pages
+    ...productUrls,
+    // Blog posts
     ...blogUrls,
   ];
 }
