@@ -81,7 +81,7 @@ export const metadata: Metadata = {
   },
   verification: {
     other: {
-      "p:domain_verify": "d4e7e5496616f25c319df35abbbdb4b1",
+      "p:domain_verify": "430ef5365f677551ce6edf59a6c4c49e",
     },
     google: "-D6vWp2aorp2dn1-jvYaYitpms2RNEaBOAp3f0QgyZk",
   },
@@ -95,7 +95,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${spaceGrotesk.variable} scroll-smooth`}>
       <head>
-        <meta name="p:domain_verify" content="d4e7e5496616f25c319df35abbbdb4b1"/>
+        <meta name="p:domain_verify" content="430ef5365f677551ce6edf59a6c4c49e"/>
         {/* Organization JSON-LD */}
         <script
           type="application/ld+json"
