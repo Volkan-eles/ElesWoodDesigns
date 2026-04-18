@@ -1,282 +1,207 @@
-#!/usr/bin/env python3
-"""
-Etsy CSV -> etsy_products.json converter
-- Reads EtsyListingsDownload.csv from project root
-- Outputs data/etsy_products.json with full image arrays, descriptions, and sale prices
-"""
+import csv, json, re, sys
+from pathlib import Path
 
-import csv
-import json
-import re
-import os
-import sys
+ROOT = Path(__file__).parent.parent
+CSV_PATH = ROOT / "EtsyListingsDownload.csv"
+JSON_OUT = ROOT / "data" / "etsy_products.json"
+LOG_OUT = ROOT / "scripts" / "csv_run.log"
 
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
-CSV_PATH = os.path.join(PROJECT_ROOT, "EtsyListingsDownload.csv")
-JSON_PATH = os.path.join(PROJECT_ROOT, "data", "etsy_products.json")
+DISCOUNT_RATE = 0.30
+DEFAULT_RATING = 4.7
+DEFAULT_REVIEW_COUNT = 285
+DEFAULT_DIFFICULTY = "Easy"
+DEFAULT_TIME = "8 hours"
+DEFAULT_PAGES = 15
 
-# Original prices (manual mapping, update as needed)
-SALE_DISCOUNT = 0.70  # 70% discount from original
+CATEGORY_MAP = [
+    (["bar cart", "charcuterie", "serving cart", "beverage cart", "coffee cart",
+      "mobile bar", "food cart", "vendor cart", "catering"], "Kitchen"),
+    (["outdoor kitchen", "grill station", "bbq", "grill table"], "Kitchen"),
+    (["farmstand", "farm stand", "farm cart", "flower cart", "produce", "roadside",
+      "flower stand", "planter", "garden"], "Garden"),
+    (["workbench", "workshop", "garage", "shop table", "tool bench"], "Workshop"),
+    (["bed frame", "bunk bed", "loft bed"], "Bedroom"),
+]
 
-CATEGORIES = {
-    # Furniture
-    "table": "Furniture",
-    "coffee table": "Furniture",
-    "desk": "Furniture",
-    "bookshelf": "Furniture",
-    "shelves": "Furniture",
-    "storage": "Furniture",
-    "cabinet": "Furniture",
-    "dresser": "Furniture",
-    "sofa": "Furniture",
-    "monitor": "Furniture",
-    "murphy bed": "Furniture",
-    "loft bed": "Furniture",
-    "bed": "Furniture",
-    "console": "Furniture",
-    "floating shelf": "Furniture",
-    "shelf": "Furniture",
-    "shoe": "Furniture",
-    "stool": "Furniture",
-    "lounge chair": "Furniture",
-    "chaise": "Furniture",
-    "dog house": "Furniture",
-    # Outdoor / Garden
-    "pergola": "Outdoor",
-    "gazebo": "Outdoor",
-    "swing": "Outdoor",
-    "sandbox": "Outdoor",
-    "playhouse": "Outdoor",
-    "treehouse": "Outdoor",
-    "ping pong": "Outdoor",
-    "picnic": "Outdoor",
-    "bench": "Outdoor",
-    "sauna": "Outdoor",
-    "fence": "Outdoor",
-    "outdoor lounge": "Outdoor",
-    "outdoor bench": "Outdoor",
-    "outdoor kitchen": "Outdoor",
-    # Garden
-    "planter": "Garden",
-    "garden": "Garden",
-    "farmstand": "Garden",
-    "farm stand": "Garden",
-    "farm-stand": "Garden",
-    "potting bench": "Garden",
-    "mailbox": "Garden",
-    "greenhouse": "Garden",
-    "windmill": "Garden",
-    "produce stand": "Garden",
-    "flower stand": "Garden",
-    "bakery stand": "Garden",
-    "roadside": "Garden",
-    # Workshop
-    "workbench": "Workshop",
-    "workshop": "Workshop",
-    "tool storage": "Workshop",
-    "pegboard": "Workshop",
-    # Kitchen / Entertaining
-    "charcuterie": "Kitchen",
-    "serving": "Kitchen",
-    "bar cart": "Kitchen",
-    "coffee cart": "Kitchen",
-    "vendor cart": "Kitchen",
-    "mobile bar": "Kitchen",
-    "food cart": "Kitchen",
-    "mobile food": "Kitchen",
-    "checkout stand": "Kitchen",
-    "beverage": "Kitchen",
-    "mobile cart": "Kitchen",
-    # Outdoor structures
-    "shed": "Outdoor",
-    "coop": "Outdoor",
-    "chicken": "Outdoor",
-    "rabbit": "Outdoor",
-    "hutch": "Outdoor",
-    "firewood": "Outdoor",
-    # Digital / Non-woodworking
-    "watercolor": "Digital",
-    "portrait": "Digital",
-    "svg": "Digital",
-    "costco": "Digital",
-    "christmas art": "Digital",
-    "christmas prints": "Digital",
-    "printable": "Digital",
-    "pencil sketch": "Digital",
-    "memorial": "Digital",
-    "couple portrait": "Digital",
-}
+DIFFICULTY_HINTS = [
+    (["folding", "foldable", "collapsible", "beginner", "simple"], "Easy"),
+    (["rotating", "lift top", "lift-top", "ping pong", "outdoor kitchen", "modular"], "Hard"),
+]
 
-DIFFICULTIES = ["Easy", "Medium", "Hard"]
 
 def slugify(text):
-    text = text.lower()
+    text = text.lower().strip()
     text = re.sub(r"[^\w\s-]", "", text)
     text = re.sub(r"[\s_]+", "-", text)
     text = re.sub(r"-+", "-", text)
-    return text.strip("-")[:100]
+    return text[:120].strip("-")
 
-def guess_category(title):
-    title_lower = title.lower()
-    for keyword, cat in CATEGORIES.items():
-        if keyword in title_lower:
+
+def guess_category(title, desc=""):
+    combined = (title + " " + desc[:200]).lower()
+    for keywords, cat in CATEGORY_MAP:
+        if any(kw in combined for kw in keywords):
             return cat
     return "Furniture"
 
-def guess_difficulty(title, description):
-    combined = (title + " " + description).lower()
-    if any(w in combined for w in ["beginner", "easy", "simple", "basic"]):
-        return "Easy"
-    if any(w in combined for w in ["advanced", "complex", "hard", "expert"]):
-        return "Hard"
-    return "Medium"
 
-def extract_pages(description):
-    match = re.search(r"(\d+)\s*pages?", description, re.IGNORECASE)
-    if match:
-        return int(match.group(1))
-    return 15
+def guess_difficulty(title, desc=""):
+    combined = (title + " " + desc[:200]).lower()
+    for keywords, diff in DIFFICULTY_HINTS:
+        if any(kw in combined for kw in keywords):
+            return diff
+    return DEFAULT_DIFFICULTY
 
-def extract_time(description):
-    match = re.search(r"(\d+[-–]\d+|\d+)\s*(hours?|hrs?|days?)", description, re.IGNORECASE)
-    if match:
-        return match.group(0).strip()
-    return "8 hours"
 
-def parse_tags(tags_str):
-    if not tags_str:
-        return []
-    return [t.strip() for t in tags_str.split(",") if t.strip()][:13]
+def build_image_url(url, size="fullxfull"):
+    if not url:
+        return ""
+    return re.sub(r"il_[^./]+\.", f"il_{size}.", url)
 
-def parse_materials(materials_str):
-    if not materials_str:
-        return ["Wood", "Plywood", "Wood Screws", "Wood Glue"]
-    return [m.strip() for m in materials_str.split(",") if m.strip()][:10]
 
-def get_images_fullxfull(row):
-    images = []
+def collect_images(row):
+    full_images, thumb_images = [], []
     for i in range(1, 11):
-        key = f"IMAGE{i}"
-        val = row.get(key, "").strip()
-        if val:
-            # Convert to fullxfull if not already
-            url = re.sub(r"il_\d+xN\.", "il_fullxfull.", val)
-            url = re.sub(r"il_\d+x\d+\.", "il_fullxfull.", url)
-            images.append(url)
-    return images
+        url = row.get(f"IMAGE{i}", "").strip()
+        if url:
+            full_images.append(build_image_url(url, "fullxfull"))
+            thumb_images.append(build_image_url(url, "794xN"))
+    return full_images, thumb_images
 
-def get_images_thumbnails(images_full):
-    thumbs = []
-    for url in images_full:
-        thumb = url.replace("il_fullxfull.", "il_794xN.")
-        thumbs.append(thumb)
-    return thumbs
 
-def get_etsy_listing_url(images_full: list, title: str) -> str:
-    """Build an Etsy shop search URL for this product title.
-    The image IDs in the CDN URLs are NOT the same as Etsy listing IDs,
-    so we use the shop search URL as the closest reliable link.
-    """
-    # URL-encode the product title for the search query
-    import urllib.parse
-    encoded = urllib.parse.quote(title[:120])
-    return f'https://www.etsy.com/shop/ElesWoodDesigns?search_query={encoded}'
+def parse_price(s):
+    try:
+        return float(re.sub(r"[^\d.]", "", s))
+    except Exception:
+        return 0.0
+
+
+def parse_tags(s):
+    if not s:
+        return []
+    parts = [t.strip() for t in s.split(",") if t.strip()]
+    return [re.sub(r"\s+", "_", t) for t in parts]
+
+
+def load_url_map(json_path):
+    if not json_path.exists():
+        return {}
+    try:
+        data = json.loads(json_path.read_text(encoding="utf-8"))
+        result = {}
+        for p in data:
+            name = re.sub(r"\s+", " ", p.get("name", "").lower().strip())
+            url = p.get("etsy_url", "")
+            if name and url:
+                result[name] = url
+        return result
+    except Exception:
+        return {}
+
+
+def find_url(title, url_map):
+    key = re.sub(r"\s+", " ", title.lower().strip())
+    if key in url_map:
+        return url_map[key]
+    for existing_key, url in url_map.items():
+        if existing_key[:45] == key[:45]:
+            return url
+    return ""
 
 
 def main():
-    if not os.path.exists(CSV_PATH):
-        print(f"ERROR: CSV not found at {CSV_PATH}")
-        sys.exit(1)
+    preview = "--preview" in sys.argv
+
+    lines = []
+    lines.append(f"CSV: {CSV_PATH}")
+    lines.append(f"Preview: {preview}")
+
+    if not CSV_PATH.exists():
+        lines.append("ERROR: CSV not found")
+        LOG_OUT.write_text("\n".join(lines), encoding="utf-8")
+        return
+
+    url_map = load_url_map(JSON_OUT)
+    lines.append(f"Loaded {len(url_map)} existing URLs")
 
     products = []
-    seen_slugs = {}
+    idx = 1
 
-    with open(CSV_PATH, encoding="utf-8-sig", newline="") as f:
+    # CSV'yi okurken newline='' kullan (cok satirli alan sorunu)
+    with open(CSV_PATH, encoding="utf-8-sig", errors="replace", newline="") as f:
         reader = csv.DictReader(f)
-        for idx, row in enumerate(reader):
+        for row in reader:
             title = row.get("TITLE", "").strip()
             if not title:
                 continue
 
-            description_raw = row.get("DESCRIPTION", "").strip()
-            price_str = row.get("PRICE", "0").strip()
-            tags_str = row.get("TAGS", "")
-            materials_str = row.get("MATERIALS", "")
+            desc = row.get("DESCRIPTION", "").strip()
+            raw_price = parse_price(row.get("PRICE", "0"))
+            if raw_price <= 0:
+                raw_price = 9.99
 
-            try:
-                price = float(price_str)
-            except ValueError:
-                price = 9.99
-
-            # CSV price = original price, apply 70% discount to get sale price
-            original_price = round(price, 2)
-            sale_price = round(price * (1 - SALE_DISCOUNT), 2)
-
-            # Slug
-            base_slug = slugify(title)
-            if base_slug in seen_slugs:
-                seen_slugs[base_slug] += 1
-                slug = f"{base_slug}-{seen_slugs[base_slug]}"
-            else:
-                seen_slugs[base_slug] = 0
-                slug = base_slug
-
-            # Images
-            images_full = get_images_fullxfull(row)
-            images_thumbs = get_images_thumbnails(images_full)
-            main_image = images_full[0] if images_full else ""
-            main_thumb = images_thumbs[0] if images_thumbs else ""
-
-            # Short description (first 200 chars of description)
-            short_desc = description_raw[:200].strip() if description_raw else title
-
-            # Tags & materials
-            tags = parse_tags(tags_str)
-            materials = parse_materials(materials_str)
-
-            # Features from tags
-            features = tags[:5] if tags else [title[:50]]
-
-            # Category, difficulty, pages, time
-            category = guess_category(title)
-            difficulty = guess_difficulty(title, description_raw)
-            pages = extract_pages(description_raw)
-            est_time = extract_time(description_raw)
+            sale_price = round(raw_price * DISCOUNT_RATE, 2)
+            full_images, thumb_images = collect_images(row)
+            tags = parse_tags(row.get("TAGS", ""))
+            category = guess_category(title, desc)
+            difficulty = guess_difficulty(title, desc)
+            etsy_url = find_url(title, url_map)
+            slug = slugify(title)
+            short_desc = re.sub(r"\s+", " ", desc[:220]).strip()
 
             product = {
-                "id": f"etsy-{idx + 1}",
+                "id": f"etsy-{idx}",
                 "slug": slug,
                 "name": title,
                 "category": category,
                 "price": sale_price,
-                "originalPrice": original_price,
-                "rating": 4.7,
-                "reviewCount": 285,
+                "originalPrice": raw_price,
+                "rating": DEFAULT_RATING,
+                "reviewCount": DEFAULT_REVIEW_COUNT,
                 "difficulty": difficulty,
-                "estimatedTime": est_time,
-                "pages": pages,
+                "estimatedTime": DEFAULT_TIME,
+                "pages": DEFAULT_PAGES,
                 "description": short_desc,
-                "longDescription": description_raw,
-                "features": features,
+                "longDescription": desc,
+                "features": tags[:5],
                 "tags": tags,
-                "materials": materials,
-                "image": main_image,
-                "thumbnail": main_thumb,
-                "images": images_full,
-                "imagesThumbnails": images_thumbs,
-                "etsy_url": get_etsy_listing_url(images_full, title),
-                "bestseller": idx < 5,
+                "materials": ["Digital Download", "PDF File", "Instant Download"],
+                "image": full_images[0] if full_images else "",
+                "thumbnail": thumb_images[0] if thumb_images else "",
+                "images": full_images,
+                "imagesThumbnails": thumb_images,
+                "etsy_url": etsy_url,
+                "bestseller": False,
             }
             products.append(product)
+            idx += 1
 
-    os.makedirs(os.path.dirname(JSON_PATH), exist_ok=True)
-    with open(JSON_PATH, "w", encoding="utf-8") as f:
-        json.dump(products, f, ensure_ascii=False, indent=2)
+    url_count = sum(1 for p in products if p["etsy_url"])
+    img_count = sum(1 for p in products if p["image"])
 
-    print(f"OK: {len(products)} urun JSON'a yazildi: {JSON_PATH}")
-    for p in products[:5]:
-        print(f"  - {p['name'][:60]} | orig=${p['originalPrice']} -> sale: ${p['price']} (70% off)")
+    lines.append(f"Products found: {len(products)}")
+    lines.append(f"With URL: {url_count}/{len(products)}")
+    lines.append(f"With image: {img_count}/{len(products)}")
+    lines.append("")
+
+    for p in products:
+        url_ok = "OK" if p["etsy_url"] else "--"
+        img_ok = "OK" if p["image"] else "--"
+        lid = p["etsy_url"].rstrip("/").split("/")[-1] if p["etsy_url"] else "no-url"
+        lines.append(f"  {p['id']:>8}  {p['name'][:55]:<55}  ${p['price']:5.2f}  url={url_ok}  img={img_ok}  lid={lid}")
+
+    LOG_OUT.write_text("\n".join(lines), encoding="utf-8")
+
+    if preview:
+        lines.append("")
+        lines.append("[PREVIEW MODE - not saved]")
+        return
+
+    JSON_OUT.parent.mkdir(parents=True, exist_ok=True)
+    JSON_OUT.write_text(json.dumps(products, ensure_ascii=False, indent=2), encoding="utf-8")
+    lines.append(f"SAVED -> {JSON_OUT}")
+    LOG_OUT.write_text("\n".join(lines), encoding="utf-8")
+
 
 if __name__ == "__main__":
     main()

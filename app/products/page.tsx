@@ -5,14 +5,14 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "DIY Woodworking Plans — PDF Blueprints for Every Skill Level | ElesWoodDesigns",
   description:
-    "Browse 60+ professional DIY woodworking plans. Instant PDF download with 3D diagrams, precise cut lists, and full material lists. Build furniture, garden projects, outdoor structures & more.",
+    "Browse 66+ professional DIY woodworking plans. Instant PDF download with 3D diagrams, precise cut lists, and full material lists. Build furniture, bookshelves, loft beds, garden projects & more.",
   alternates: {
     canonical: "/products/",
   },
   openGraph: {
-    title: "DIY Woodworking Plans — 60+ Premium PDF Blueprints | ElesWoodDesigns",
+    title: "DIY Woodworking Plans — 66+ Premium PDF Blueprints | ElesWoodDesigns",
     description:
-      "Step-by-step woodworking blueprints for furniture, garden, outdoor, kitchen, and workshop projects. Download instantly and build with confidence.",
+      "Step-by-step woodworking blueprints for furniture, loft beds, bookshelves, garden, outdoor, kitchen, and workshop projects. Download instantly and build with confidence.",
     url: "https://eleswooddesigns.com/products/",
     type: "website",
     images: [
