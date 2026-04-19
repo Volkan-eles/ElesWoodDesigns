@@ -93,7 +93,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} scroll-smooth`}>
+    <html lang="en" className={`${spaceGrotesk.variable} scroll-smooth`} suppressHydrationWarning>
       <head>
         <meta name="p:domain_verify" content="430ef5365f677551ce6edf59a6c4c49e"/>
         {/* Organization JSON-LD */}
@@ -135,7 +135,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="font-sans antialiased text-black bg-[#FFFDF0]">
+      <body className="font-sans antialiased text-black bg-[#FFFDF0]" suppressHydrationWarning>
         {/* Google Tag (gtag.js) */}
         <Script 
           src="https://www.googletagmanager.com/gtag/js?id=G-144E244HYN"
