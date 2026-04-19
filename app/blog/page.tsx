@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Woodworking Guides & Tips | ElesWoodDesigns Blog",
   description: "Expert advice on woodworking tools, lumber selection, and DIY tips to help you build your masterpiece.",
   alternates: {
-    canonical: "/blog/",
+    canonical: "https://eleswooddesigns.com/blog/",
   },
 };
 

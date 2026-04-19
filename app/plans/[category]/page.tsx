@@ -56,7 +56,7 @@ export async function generateMetadata({
     title: `Best DIY ${decodedCategory} Woodworking Plans | Step-by-Step PDF Guides | ElesWoodDesigns`,
     description: `Browse our collection of professional DIY ${decodedCategory.toLowerCase()} plans. Each download includes 3D diagrams, a precise cut list, and a full materials list. Instant PDF access.`,
     alternates: {
-      canonical: `/plans/${category}/`,
+      canonical: `https://eleswooddesigns.com/plans/${category}/`,
     },
     openGraph: {
       title: `Top Rated DIY ${decodedCategory} Plans | ElesWoodDesigns`,

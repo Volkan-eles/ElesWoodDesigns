@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Frequently Asked Questions | ElesWoodDesigns",
   description: "Find answers to common questions about our woodworking plans, difficulty levels, and tool requirements.",
   alternates: {
-    canonical: "/faq/",
+    canonical: "https://eleswooddesigns.com/faq/",
   },
 };
 

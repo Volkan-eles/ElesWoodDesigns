@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Terms of Service | ElesWoodDesigns",
   description: "Read our terms of service to understand the rules for using our website and purchasing our plans.",
   alternates: {
-    canonical: "/terms/",
+    canonical: "https://eleswooddesigns.com/terms/",
   },
 };
 

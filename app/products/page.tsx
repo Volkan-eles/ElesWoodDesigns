@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Browse 66+ professional DIY woodworking plans. Instant PDF download with 3D diagrams, precise cut lists, and full material lists. Build furniture, bookshelves, loft beds, garden projects & more.",
   alternates: {
-    canonical: "/products/",
+    canonical: "https://eleswooddesigns.com/products/",
   },
   openGraph: {
     title: "DIY Woodworking Plans — 66+ Premium PDF Blueprints | ElesWoodDesigns",

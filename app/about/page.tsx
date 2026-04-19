@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "About Us | ElesWoodDesigns",
   description: "Learn more about ElesWoodDesigns and our passion for woodworking.",
   alternates: {
-    canonical: "/about/",
+    canonical: "https://eleswooddesigns.com/about/",
   },
 };
 

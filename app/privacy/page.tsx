@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy | ElesWoodDesigns",
   description: "Read our privacy policy to understand how we handle your personal information.",
   alternates: {
-    canonical: "/privacy/",
+    canonical: "https://eleswooddesigns.com/privacy/",
   },
 };
 
