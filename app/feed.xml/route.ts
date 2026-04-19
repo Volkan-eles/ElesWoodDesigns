@@ -32,9 +32,10 @@ export async function GET() {
     const rawDescription = product.longDescription || product.description || title;
     const description = cleanText(rawDescription).slice(0, 5000);
 
-    // Product URL - direct Etsy listing
-    const productUrl = product.etsy_url || `${baseUrl}/products/${product.slug}/`;
+    // Product URL — must always be the verified domain for Pinterest
     const siteUrl = `${baseUrl}/products/${product.slug}/`;
+    // Etsy URL kept separately for g:ads_redirect (optional deep-link)
+    const etsyUrl = product.etsy_url || null;
 
     // Main image: use the first real Etsy image (no trailing slash, direct jpg)
     // Pinterest requires a stable, direct image URL
@@ -64,15 +65,20 @@ export async function GET() {
         <g:price>0.00 USD</g:price>
       </g:shipping>`;
 
+    const adsRedirectXml = etsyUrl
+      ? `      <g:ads_redirect>${escapeXml(etsyUrl)}</g:ads_redirect>`
+      : '';
+
     return `
     <item>
       <g:id>${escapeXml(product.slug)}</g:id>
       <title><![CDATA[${title}]]></title>
-      <link>${escapeXml(productUrl)}</link>
+      <link>${escapeXml(siteUrl)}</link>
       <g:link>${escapeXml(siteUrl)}</g:link>
       <description><![CDATA[${description}]]></description>
       <g:image_link>${escapeXml(primaryImage)}</g:image_link>
 ${extraImages}
+${adsRedirectXml}
       <g:price>${origPriceStr}</g:price>
       <g:sale_price>${salePriceStr}</g:sale_price>
       <g:availability>in stock</g:availability>
