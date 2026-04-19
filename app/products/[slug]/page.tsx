@@ -24,17 +24,17 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return { title: 'Product Not Found' };
   }
 
-  const description = `Build your own ${product.name} with our professional DIY woodworking plans. This detailed step-by-step PDF guide includes 3D diagrams, a precise cut list, and a full material shopping list. Instant digital download.`;
+  const description = `Build ${product.name.split('|')[0].trim()} with our professional DIY PDF plans. Includes 3D diagrams, cut lists, and material lists for easy assembly.`;
 
   const baseUrl = 'https://eleswooddesigns.com';
   return {
-    title: `${product.name} | DIY Woodworking Plans PDF | ElesWoodDesigns`,
+    title: `${product.name.split('|')[0].trim()} | DIY Woodworking Plans PDF`,
     alternates: {
       canonical: `${baseUrl}/products/${product.slug}/`,
     },
     description,
     openGraph: {
-      title: `${product.name} | ElesWoodDesigns`,
+      title: `${product.name.split('|')[0].trim()} | ElesWoodDesigns`,
       description,
       url: `https://eleswooddesigns.com/products/${product.slug}/`,
       type: 'website',
