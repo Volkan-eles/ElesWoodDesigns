@@ -14,8 +14,10 @@ function escapeXml(str: string): string {
 
 // Strip emoji and normalize whitespace for feed
 function cleanText(str: string): string {
+  if (!str) return '';
   return str
-    .replace(/[\u{1F300}-\u{1FFFF}]/gu, '')   // remove emoji
+    // Remove broad range of emojis and symbols (including checkmarks, arrows, etc.)
+    .replace(/[\u{1F300}-\u{1FFFF}\u{2600}-\u{27BF}\u{2300}-\u{23FF}\u{2B50}]/gu, '')
     .replace(/\n+/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
@@ -26,11 +28,12 @@ export async function GET() {
   const baseUrl = 'https://eleswooddesigns.com';
 
   const items = products.map((product) => {
-    const title = cleanText(product.name);
+    // Pinterest titles are best kept under 100 chars
+    const title = cleanText(product.name).slice(0, 100);
 
-    // Full description cleaned up
+    // Full description cleaned up and trimmed
     const rawDescription = product.longDescription || product.description || title;
-    const description = cleanText(rawDescription).slice(0, 5000);
+    const description = cleanText(rawDescription).slice(0, 500);
 
     // Product URL — must always be the verified domain for Pinterest
     const siteUrl = `${baseUrl}/products/${product.slug}/`;
