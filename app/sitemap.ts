@@ -2,6 +2,9 @@ import { MetadataRoute } from 'next';
 import { getProducts } from '@/lib/products';
 import { getPosts } from '@/lib/blog';
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://eleswooddesigns.com';
 
