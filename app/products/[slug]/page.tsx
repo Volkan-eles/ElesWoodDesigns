@@ -89,6 +89,44 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
         '@type': 'Organization',
         name: 'ElesWoodDesigns'
       },
+      // Shipping: instant digital download = free & immediate
+      shippingDetails: {
+        '@type': 'OfferShippingDetails',
+        shippingRate: {
+          '@type': 'MonetaryAmount',
+          value: '0',
+          currency: 'USD',
+        },
+        deliveryTime: {
+          '@type': 'ShippingDeliveryTime',
+          handlingTime: {
+            '@type': 'QuantitativeValue',
+            minValue: 0,
+            maxValue: 0,
+            unitCode: 'DAY',
+          },
+          transitTime: {
+            '@type': 'QuantitativeValue',
+            minValue: 0,
+            maxValue: 0,
+            unitCode: 'DAY',
+          },
+        },
+        shippingDestination: {
+          '@type': 'DefinedRegion',
+          addressCountry: 'US',
+        },
+      },
+      // Return policy: 30-day money-back (digital download)
+      hasMerchantReturnPolicy: {
+        '@type': 'MerchantReturnPolicy',
+        applicableCountry: 'US',
+        returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
+        merchantReturnDays: 30,
+        returnMethod: 'https://schema.org/ReturnByMail',
+        returnFees: 'https://schema.org/FreeReturn',
+        refundType: 'https://schema.org/FullRefund',
+      },
       ...(product.originalPrice && {
         priceSpecification: {
           '@type': 'UnitPriceSpecification',
