@@ -18,6 +18,12 @@ function cleanText(str: string): string {
   return str
     // Remove broad range of emojis and symbols (including checkmarks, arrows, etc.)
     .replace(/[\u{1F300}-\u{1FFFF}\u{2600}-\u{27BF}\u{2300}-\u{23FF}\u{2B50}]/gu, '')
+    // Replace non-ASCII dashes and quotes with ASCII equivalents for maximal compatibility
+    .replace(/[\u2013\u2014]/g, '-')
+    .replace(/[\u2018\u2019]/g, "'")
+    .replace(/[\u201C\u201D]/g, '"')
+    // Remove potential CDATA break sequence
+    .replace(/\]\]>/g, ']] ')
     .replace(/\n+/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
@@ -37,31 +43,31 @@ export async function GET() {
 
     // Product URL — must always be the verified domain for Pinterest
     const siteUrl = `${baseUrl}/products/${product.slug}/`;
-    // Etsy URL kept separately for g:ads_redirect (optional deep-link)
     const etsyUrl = product.etsy_url || null;
 
-    // Main image: use the first real Etsy image (no trailing slash, direct jpg)
-    // Pinterest requires a stable, direct image URL
+    // Main image
     const primaryImage = (product.images && product.images[0]) ? product.images[0] : '';
     
-    // Pinterest branded pin image as additional image
+    // Pinterest branded pin image
     const pinImage = `${baseUrl}/api/pin/${product.slug}/pin.jpg`;
 
-    // Additional Etsy images (skip the first one already used as primary, add pin image)
-    const extraImages = [
+    // Additional images (skip the first one already used as primary, add pin image)
+    const extraImagesList = [
       pinImage,
       ...(product.images || []).slice(1, 9).filter(Boolean),
-    ]
+    ];
+    
+    const extraImagesXml = extraImagesList
       .map((img) => `      <g:additional_image_link>${escapeXml(img)}</g:additional_image_link>`)
       .join('\n');
 
-    // Prices — product.price = sale price, product.originalPrice = full price
+    // Prices
     const salePrice = product.price;
     const origPrice = product.originalPrice ?? Math.round((salePrice / 0.30) * 100) / 100;
     const salePriceStr = `${salePrice.toFixed(2)} USD`;
     const origPriceStr = `${origPrice.toFixed(2)} USD`;
 
-    // Shipping — required by Pinterest for some categories; mark as free
+    // Shipping
     const shippingXml = `      <g:shipping>
         <g:country>US</g:country>
         <g:service>Digital Download</g:service>
@@ -72,6 +78,13 @@ export async function GET() {
       ? `      <g:ads_redirect>${escapeXml(etsyUrl)}</g:ads_redirect>`
       : '';
 
+    // Correct Google Product Category
+    // ID 839 is Media > Books > Carpentry & Woodworking Project Plans
+    // ID 500044 is Home & Garden > Decor > Artwork > Posters, Prints & Visual Artwork
+    const isPortrait = product.slug.includes('portrait') || product.slug.includes('sketch');
+    const googleCategory = isPortrait ? '500044' : '839';
+    const productType = isPortrait ? 'Decor > Digital Art' : 'Craft Supplies > Woodworking Plans';
+
     return `
     <item>
       <g:id>${escapeXml(product.slug)}</g:id>
@@ -80,16 +93,17 @@ export async function GET() {
       <g:link>${escapeXml(siteUrl)}</g:link>
       <description><![CDATA[${description}]]></description>
       <g:image_link>${escapeXml(primaryImage)}</g:image_link>
-${extraImages}
+${extraImagesXml}
 ${adsRedirectXml}
       <g:price>${origPriceStr}</g:price>
       <g:sale_price>${salePriceStr}</g:sale_price>
       <g:availability>in stock</g:availability>
       <g:condition>new</g:condition>
       <g:brand>ElesWoodDesigns</g:brand>
-      <g:google_product_category>505307</g:google_product_category>
-      <g:product_type><![CDATA[Craft Supplies & Tools > Patterns & Instructions > Woodworking Plans]]></g:product_type>
+      <g:google_product_category>${googleCategory}</g:google_product_category>
+      <g:product_type><![CDATA[${productType}]]></g:product_type>
       <g:item_group_id>${escapeXml(product.slug)}</g:item_group_id>
+      <g:identifier_exists>no</g:identifier_exists>
 ${shippingXml}
     </item>`;
   }).join('');
