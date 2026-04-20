@@ -78,12 +78,21 @@ export async function GET() {
       ? `      <g:ads_redirect>${escapeXml(etsyUrl)}</g:ads_redirect>`
       : '';
 
-    // Correct Google Product Category
-    // ID 839 is Media > Books > Carpentry & Woodworking Project Plans
-    // ID 500044 is Home & Garden > Decor > Artwork > Posters, Prints & Visual Artwork
+    // Correct Google Product Category (GPC)
+    // We use full strings for better compatibility and depth
     const isPortrait = product.slug.includes('portrait') || product.slug.includes('sketch');
-    const googleCategory = isPortrait ? '500044' : '839';
-    const productType = isPortrait ? 'Decor > Digital Art' : 'Craft Supplies > Woodworking Plans';
+    
+    // GPC for Woodworking Plans: Arts & Entertainment > Hobbies & Creative Arts > Woodworking > Carpentry & Woodworking Project Plans
+    // GPC for Art: Home & Garden > Decor > Artwork > Posters, Prints & Visual Artwork
+    const googleCategory = isPortrait 
+      ? 'Home & Garden > Decor > Artwork > Posters, Prints & Visual Artwork' 
+      : 'Arts & Entertainment > Hobbies & Creative Arts > Woodworking > Carpentry & Woodworking Project Plans';
+
+    // Product Type (Internal taxonomy) - Pinterest recommends 3+ levels
+    const internalCategory = product.category || 'Workshop';
+    const productType = isPortrait 
+      ? 'Decor > Digital Art > Portrait Sketches' 
+      : `Woodworking Plans > ${internalCategory} > DIY Blueprint`;
 
     return `
     <item>
