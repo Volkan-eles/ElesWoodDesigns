@@ -35,6 +35,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'kitchen',
     'workshop',
     'digital',
+    'kids',
+    'bedroom',
   ];
   const categoryUrls = categories.map((cat) => ({
     url: `${baseUrl}/plans/${cat}/`,

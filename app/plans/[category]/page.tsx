@@ -11,8 +11,8 @@ const VALID_CATEGORIES = [
   "kitchen",
   "workshop",
   "digital",
-  // Legacy slugs kept for backward-compat
   "kids",
+  "bedroom",
   "decoration",
 ];
 
@@ -26,6 +26,7 @@ const mapSlugToCategory = (slug: string): string | undefined => {
     workshop: "Workshop",
     digital: "Digital",
     kids: "Kids",
+    bedroom: "Bedroom",
     decoration: "Decoration",
   };
   return map[slug.toLowerCase()];
