@@ -84,7 +84,12 @@ export async function GET() {
     
     // 500044 = Arts & Entertainment > Hobbies & Creative Arts > Artwork > Posters, Prints, & Visual Artwork
     // 505307 = Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking
-    const googleCategory = isPortrait ? '500044' : '505307';
+    const googleCategory = isPortrait 
+      ? 'Arts & Entertainment > Hobbies & Creative Arts > Artwork > Posters, Prints, & Visual Artwork' 
+      : 'Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking';
+
+    // Pinterest limits g:id and g:item_group_id to 100 chars
+    const pinterestId = product.slug.slice(0, 100);
 
     // Product Type (Internal taxonomy) - Pinterest recommends 3+ levels
     const internalCategory = product.category || 'Workshop';
@@ -94,7 +99,7 @@ export async function GET() {
 
     return `
     <item>
-      <g:id>${escapeXml(product.slug)}</g:id>
+      <g:id>${escapeXml(pinterestId)}</g:id>
       <title><![CDATA[${title}]]></title>
       <link>${escapeXml(siteUrl)}</link>
       <g:link>${escapeXml(siteUrl)}</g:link>
@@ -107,9 +112,9 @@ ${adsRedirectXml}
       <g:availability>in stock</g:availability>
       <g:condition>new</g:condition>
       <g:brand>ElesWoodDesigns</g:brand>
-      <g:google_product_category>${escapeXml(googleCategory)}</g:google_product_category>
+      <g:google_product_category><![CDATA[${googleCategory}]]></g:google_product_category>
       <g:product_type><![CDATA[${productType}]]></g:product_type>
-      <g:item_group_id>${escapeXml(product.slug)}</g:item_group_id>
+      <g:item_group_id>${escapeXml(pinterestId)}</g:item_group_id>
       <g:identifier_exists>no</g:identifier_exists>
 ${shippingXml}
     </item>`;
