@@ -12,7 +12,7 @@ function normalizeSlug(slug: string): string {
     .replace(/ç/g, 'c').replace(/Ç/g, 'c');
 }
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname, search } = request.nextUrl;
 
   // We only care about product and plan paths

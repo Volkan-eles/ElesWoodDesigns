@@ -1,7 +1,6 @@
 import { ImageResponse } from 'next/og';
 import { getProductBySlug } from '@/lib/products';
 
-export const runtime = 'edge';
 
 export async function GET(
   request: Request,
