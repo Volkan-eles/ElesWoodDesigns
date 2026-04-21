@@ -82,11 +82,9 @@ export async function GET() {
     // We use full strings for better compatibility and depth
     const isPortrait = product.slug.includes('portrait') || product.slug.includes('sketch');
     
-    // GPC for Woodworking Plans: Arts & Entertainment > Hobbies & Creative Arts > Woodworking > Carpentry & Woodworking Project Plans
-    // GPC for Art: Home & Garden > Decor > Artwork > Posters, Prints & Visual Artwork
-    const googleCategory = isPortrait 
-      ? 'Home & Garden > Decor > Artwork > Posters, Prints & Visual Artwork' 
-      : 'Arts & Entertainment > Hobbies & Creative Arts > Woodworking > Carpentry & Woodworking Project Plans';
+    // 500044 = Arts & Entertainment > Hobbies & Creative Arts > Artwork > Posters, Prints, & Visual Artwork
+    // 505307 = Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking
+    const googleCategory = isPortrait ? '500044' : '505307';
 
     // Product Type (Internal taxonomy) - Pinterest recommends 3+ levels
     const internalCategory = product.category || 'Workshop';
