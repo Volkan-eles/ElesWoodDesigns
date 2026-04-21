@@ -109,7 +109,7 @@ ${adsRedirectXml}
       <g:availability>in stock</g:availability>
       <g:condition>new</g:condition>
       <g:brand>ElesWoodDesigns</g:brand>
-      <g:google_product_category>${googleCategory}</g:google_product_category>
+      <g:google_product_category>${escapeXml(googleCategory)}</g:google_product_category>
       <g:product_type><![CDATA[${productType}]]></g:product_type>
       <g:item_group_id>${escapeXml(product.slug)}</g:item_group_id>
       <g:identifier_exists>no</g:identifier_exists>
