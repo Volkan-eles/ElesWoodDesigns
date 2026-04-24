@@ -39,7 +39,7 @@ export async function GET() {
 
     // Full description cleaned up and trimmed
     const rawDescription = product.longDescription || product.description || title;
-    const description = cleanText(rawDescription).slice(0, 500);
+    const description = cleanText(rawDescription).slice(0, 9000);
 
     // Product URL — must always be the verified domain for Pinterest
     const siteUrl = `${baseUrl}/products/${product.slug}/`;
@@ -104,6 +104,7 @@ export async function GET() {
       <link>${escapeXml(siteUrl)}</link>
       <g:link>${escapeXml(siteUrl)}</g:link>
       <description><![CDATA[${description}]]></description>
+      <g:description><![CDATA[${description}]]></g:description>
       <g:image_link>${escapeXml(primaryImage)}</g:image_link>
 ${extraImagesXml}
 ${adsRedirectXml}
