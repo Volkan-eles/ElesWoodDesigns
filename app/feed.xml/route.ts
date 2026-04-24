@@ -78,24 +78,53 @@ export async function GET() {
       ? `      <g:ads_redirect>${escapeXml(etsyUrl)}</g:ads_redirect>`
       : '';
 
-    // Correct Google Product Category (GPC)
-    // We use full strings for better compatibility and depth
+    // Correct Google Product Category (GPC) — Full multi-level paths (fixes Uyarı 126)
+    // Using 4+ level paths for maximum search visibility on Pinterest
     const isPortrait = product.slug.includes('portrait') || product.slug.includes('sketch');
+    const isKids = product.category === 'Kids' || product.slug.includes('treehouse') || product.slug.includes('mud-kitchen') || product.slug.includes('playhouse');
+    const isBedroom = product.category === 'Bedroom' || product.slug.includes('loft-bed') || product.slug.includes('murphy-desk') || product.slug.includes('storage-bench');
+    const isGarden = product.category === 'Garden' || product.slug.includes('planter') || product.slug.includes('plant-stand') || product.slug.includes('garden') || product.slug.includes('farmstand') || product.slug.includes('farm-stand');
+    const isOutdoor = product.category === 'Outdoor' || product.slug.includes('pergola') || product.slug.includes('swing') || product.slug.includes('arbor') || product.slug.includes('sauna') || product.slug.includes('treehouse') || product.slug.includes('chicken-coop') || product.slug.includes('fence') || product.slug.includes('shed') || product.slug.includes('windmill');
+    const isDigitalArt = product.category === 'Digital' && (product.slug.includes('christmas') || product.slug.includes('costco') || product.slug.includes('watercolour') || product.slug.includes('memorial'));
     
-    // 500044 = Arts & Entertainment > Hobbies & Creative Arts > Artwork > Posters, Prints, & Visual Artwork
-    // 505307 = Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking
-    const googleCategory = isPortrait 
-      ? 'Arts & Entertainment > Hobbies & Creative Arts > Artwork > Posters, Prints, & Visual Artwork' 
-      : 'Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking';
+    // Full deep category paths per product type (4+ levels to fix Uyarı 126)
+    let googleCategory: string;
+    if (isPortrait) {
+      // Arts > Artwork > Prints
+      googleCategory = 'Arts & Entertainment > Hobbies & Creative Arts > Artwork > Posters, Prints, & Visual Artwork';
+    } else if (isDigitalArt) {
+      // Digital art prints category
+      googleCategory = 'Arts & Entertainment > Hobbies & Creative Arts > Artwork > Posters, Prints, & Visual Artwork';
+    } else if (isKids) {
+      // Toy > Outdoor play equipment for kids builds
+      googleCategory = 'Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking';
+    } else if (isBedroom) {
+      // Furniture plans specifically
+      googleCategory = 'Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking';
+    } else {
+      // Default: Woodworking plans — full 4-level path
+      googleCategory = 'Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking';
+    }
 
     // Pinterest limits g:id and g:item_group_id to 100 chars
     const pinterestId = product.slug.slice(0, 100);
 
-    // Product Type (Internal taxonomy) - Pinterest recommends 3+ levels
+    // Product Type (Internal taxonomy) — 4+ levels for Pinterest recommendations (fixes Uyarı 126)
     const internalCategory = product.category || 'Workshop';
-    const productType = isPortrait 
-      ? 'Decor > Digital Art > Portrait Sketches' 
-      : `Woodworking Plans > ${internalCategory} > DIY Blueprint`;
+    let productType: string;
+    if (isPortrait || isDigitalArt) {
+      productType = 'Decor > Digital Art > Printable Designs > Portrait & Wall Art';
+    } else if (isKids) {
+      productType = `Woodworking Plans > ${internalCategory} > DIY Blueprint > Outdoor Play Structures`;
+    } else if (isGarden) {
+      productType = `Woodworking Plans > ${internalCategory} > DIY Blueprint > Garden & Planter Builds`;
+    } else if (isOutdoor) {
+      productType = `Woodworking Plans > ${internalCategory} > DIY Blueprint > Outdoor Furniture & Structures`;
+    } else if (isBedroom) {
+      productType = `Woodworking Plans > ${internalCategory} > DIY Blueprint > Bedroom & Storage Furniture`;
+    } else {
+      productType = `Woodworking Plans > ${internalCategory} > DIY Blueprint > Beginner-Friendly PDF`;
+    }
 
     return `
     <item>
