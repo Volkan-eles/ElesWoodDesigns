@@ -45,12 +45,12 @@ export default function ProductCard({ product }: { product: Product }) {
                 70% OFF
               </span>
               <span className="text-gray-400 line-through font-bold text-sm">
-                ${product.originalPrice}
+                ${product.originalPrice.toFixed(2)}
               </span>
             </div>
           )}
           <div className="flex items-center justify-between gap-4">
-            <span className="text-2xl font-black text-black">${product.price}</span>
+            <span className="text-2xl font-black text-black">${product.price.toFixed(2)}</span>
             <Link href={`/products/${product.slug}/`} className="btn-neo py-2 px-4 text-xs uppercase whitespace-nowrap">
               View Plan
             </Link>
