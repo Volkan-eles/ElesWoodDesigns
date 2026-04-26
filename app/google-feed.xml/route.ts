@@ -37,9 +37,10 @@ export async function GET() {
     // Pinterest titles are best kept under 100 chars
     const title = cleanText(product.name).slice(0, 100);
 
-    // Full description cleaned up and trimmed
+    // Full description cleaned up and trimmed (Google Merchant Center max 5000 chars)
     const rawDescription = product.longDescription || product.description || title;
-    const description = cleanText(rawDescription).slice(0, 9000);
+    const tagsString = (product.tags && product.tags.length > 0) ? ` | Tags: ${product.tags.join(', ')}` : '';
+    const description = cleanText(rawDescription + tagsString).slice(0, 4990);
 
     // Product URL — must always be the verified domain for Pinterest
     const siteUrl = `${baseUrl}/products/${product.slug}/`;
@@ -47,14 +48,11 @@ export async function GET() {
 
     // Main image
     const primaryImage = (product.images && product.images[0]) ? product.images[0] : '';
-    
-    // Pinterest branded pin image
-    const pinImage = `${baseUrl}/api/pin/${product.slug}/pin.jpg`;
 
-    // Additional images (skip the first one already used as primary, add pin image)
+    // Additional images (skip the first one already used as primary)
+    // NOTE: We DO NOT include the Pinterest pinImage here because Google Merchant Center forbids text overlays
     const extraImagesList = [
-      pinImage,
-      ...(product.images || []).slice(1, 9).filter(Boolean),
+      ...(product.images || []).slice(1, 10).filter(Boolean),
     ];
     
     const extraImagesXml = extraImagesList
