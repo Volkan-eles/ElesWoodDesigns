@@ -104,8 +104,8 @@ export async function GET() {
       googleCategory = 'Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking';
     }
 
-    // Pinterest limits g:id and g:item_group_id to 100 chars
-    const pinterestId = product.slug.slice(0, 100);
+    // Google Merchant Center limits g:id to 50 chars. We use the short unique internal ID.
+    const googleId = product.id;
 
     // Product Type (Internal taxonomy) — 4+ levels for Pinterest recommendations (fixes Uyarı 126)
     const internalCategory = product.category || 'Workshop';
@@ -126,7 +126,7 @@ export async function GET() {
 
     return `
     <item>
-      <g:id>${escapeXml(pinterestId)}</g:id>
+      <g:id>${escapeXml(googleId)}</g:id>
       <title>${escapeXml(title)}</title>
       <link>${escapeXml(siteUrl)}</link>
       <g:link>${escapeXml(siteUrl)}</g:link>
@@ -142,7 +142,7 @@ ${adsRedirectXml}
       <g:brand>ElesWoodDesigns</g:brand>
       <g:google_product_category>${escapeXml(googleCategory)}</g:google_product_category>
       <g:product_type>${escapeXml(productType)}</g:product_type>
-      <g:item_group_id>${escapeXml(pinterestId)}</g:item_group_id>
+      <g:item_group_id>${escapeXml(googleId)}</g:item_group_id>
       <g:identifier_exists>no</g:identifier_exists>
 ${shippingXml}
     </item>`;
