@@ -98,7 +98,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     // Category pages
     ...categoryUrls,
-    // All 79 product pages
+    // All 81 product pages
     ...productUrls,
     // Blog posts
     ...blogUrls,
