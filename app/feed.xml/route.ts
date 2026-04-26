@@ -37,9 +37,10 @@ export async function GET() {
     // Pinterest titles are best kept under 100 chars
     const title = cleanText(product.name).slice(0, 100);
 
-    // Full description cleaned up and trimmed
+    // Full description cleaned up and trimmed (Google Merchant Center max 5000 chars)
     const rawDescription = product.longDescription || product.description || title;
-    const description = cleanText(rawDescription).slice(0, 9000);
+    const tagsString = (product.tags && product.tags.length > 0) ? ` | Tags: ${product.tags.join(', ')}` : '';
+    const description = cleanText(rawDescription + tagsString).slice(0, 4990);
 
     // Product URL — must always be the verified domain for Pinterest
     const siteUrl = `${baseUrl}/products/${product.slug}/`;
@@ -129,11 +130,11 @@ export async function GET() {
     return `
     <item>
       <g:id>${escapeXml(pinterestId)}</g:id>
-      <title><![CDATA[${title}]]></title>
+      <title>${escapeXml(title)}</title>
       <link>${escapeXml(siteUrl)}</link>
       <g:link>${escapeXml(siteUrl)}</g:link>
-      <description><![CDATA[${description}]]></description>
-      <g:description><![CDATA[${description}]]></g:description>
+      <description>${escapeXml(description)}</description>
+      <g:description>${escapeXml(description)}</g:description>
       <g:image_link>${escapeXml(primaryImage)}</g:image_link>
 ${extraImagesXml}
 ${adsRedirectXml}
