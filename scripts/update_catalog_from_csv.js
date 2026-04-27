@@ -130,7 +130,8 @@ for (const row of dataRows) {
   const title = row[headers.indexOf('TITLE')];
   const price = parseFloat(row[headers.indexOf('PRICE')]);
   const qty = parseInt(row[headers.indexOf('QUANTITY')], 10);
-  const tags = row[headers.indexOf('TAGS')] || '';
+  const tagsStr = row[headers.indexOf('TAGS')] || '';
+  const tags = tagsStr.split(',').map(t => t.trim()).filter(Boolean);
   const description = row[headers.indexOf('DESCRIPTION')] || '';
   const imgs = makeImages(row, headers);
   
