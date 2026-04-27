@@ -160,6 +160,21 @@ for (const product of products) {
       changed = true;
     }
     
+    // Update tags
+    if (csvMatch.tags && JSON.stringify(csvMatch.tags) !== JSON.stringify(product.tags)) {
+      product.tags = csvMatch.tags;
+      product.features = csvMatch.tags.slice(0, 5);
+      changed = true;
+    }
+
+    // Update descriptions
+    if (csvMatch.description && (product.longDescription !== csvMatch.description)) {
+      console.log(`  Updating description for "${product.name.slice(0,50)}"`);
+      product.longDescription = csvMatch.description;
+      product.description = csvMatch.description.slice(0, 220).split('\n')[0];
+      changed = true;
+    }
+
     // Update stock
     if (typeof csvMatch.qty === 'number' && !isNaN(csvMatch.qty)) {
       if (product.stockQuantity !== csvMatch.qty) {
