@@ -12,12 +12,9 @@ const ROOT = path.join(__dirname, '..');
 const CSV_PATH = path.join(ROOT, 'EtsyListingsDownload.csv');
 const JSON_PATH = path.join(ROOT, 'data', 'etsy_products.json');
 
-// The 4 new listing URLs (from user)
 const NEW_LISTING_URLS = {
-  'modern-firewood-shed-plan-8x10-lean-to-wood-storage-pdf-2-cord-capacity': 'https://www.etsy.com/listing/4494721445/modern-firewood-shed-plan-8x10-lean-to',
-  'diy-picnic-table-plans-outdoor-table-with-backrest-umbrella-hole-pdf-download': 'https://www.etsy.com/listing/4494695588/diy-picnic-table-plans-outdoor-table',
-  'diy-storage-bench-plans-modern-wooden-chest-blueprint-pdf-download': 'https://www.etsy.com/listing/4494429592/diy-storage-bench-plans-modern-wooden',
-  '8x10-firewood-shed-plans-diy-sloped-roof': 'https://www.etsy.com/listing/4380408404/8x10-firewood-shed-plans-diy-sloped-roof',
+  'diy-wardrobe-plans': 'https://www.etsy.com/listing/4495651856/diy-wardrobe-plans-montessori-kids?sr_prefetch=1&pf_from=shop_home&ref=shop_home_active_1&pro=1&dd=1&logging_key=19da5e1810faa3b19e4b8917615df4d21a97af91%3A4495651856',
+  'corner-bookshelf-plans': 'https://www.etsy.com/listing/4495514351/corner-bookshelf-plans-pdf-modern?sr_prefetch=1&pf_from=shop_home&ref=shop_home_active_4&pro=1&dd=1&logging_key=8e285ce20e9271b98297aed8ace5cd22888d4876%3A4495514351',
 };
 
 // --- CSV Parser (handles multi-line quoted fields) ---
@@ -198,12 +195,10 @@ let maxId = products.reduce((max, p) => {
   return isNaN(num) ? max : Math.max(max, num);
 }, 75);
 
-// Titles of the 4 specifically mentioned new products
+// Titles of the 2 specifically mentioned new products
 const newProductTitles = [
-  'Modern Firewood Shed Plan | 8x10 Lean-To Wood Storage PDF (2 Cord Capacity)',
-  'DIY Picnic Table Plans | Outdoor Table with Backrest, Umbrella Hole (PDF Download)',
-  'DIY Storage Bench Plans | Modern Wooden Chest Blueprint (PDF Download)',
-  '8x10 Firewood Shed Plans | DIY Sloped Roof Wood Storage (PDF Download)',
+  'DIY Wardrobe Plans | Montessori Kids Closet Blueprint (PDF Download)',
+  'Corner Bookshelf Plans PDF | Modern Freestanding Bookcase Blueprint (Digital Download)',
 ];
 
 // Also check: which CSV rows are new
@@ -253,14 +248,10 @@ for (const row of dataRows) {
   // Better matching: match by title keywords
   if (!etsyUrl) {
     const titleWords = title.toLowerCase();
-    if (titleWords.includes('8x10') && titleWords.includes('lean-to')) {
-      etsyUrl = 'https://www.etsy.com/listing/4494721445/modern-firewood-shed-plan-8x10-lean-to';
-    } else if (titleWords.includes('picnic table')) {
-      etsyUrl = 'https://www.etsy.com/listing/4494695588/diy-picnic-table-plans-outdoor-table';
-    } else if (titleWords.includes('storage bench') && titleWords.includes('modern wooden')) {
-      etsyUrl = 'https://www.etsy.com/listing/4494429592/diy-storage-bench-plans-modern-wooden';
-    } else if (titleWords.includes('8x10') && titleWords.includes('sloped')) {
-      etsyUrl = 'https://www.etsy.com/listing/4380408404/8x10-firewood-shed-plans-diy-sloped-roof';
+    if (titleWords.includes('wardrobe')) {
+      etsyUrl = 'https://www.etsy.com/listing/4495651856/diy-wardrobe-plans-montessori-kids';
+    } else if (titleWords.includes('corner bookshelf')) {
+      etsyUrl = 'https://www.etsy.com/listing/4495514351/corner-bookshelf-plans-pdf-modern';
     }
   }
   
