@@ -55,7 +55,7 @@ export async function GET() {
       'in stock',
       'new',
       'ElesWoodDesigns',
-      '505307',
+      '505371',
       'Craft Supplies & Tools > Patterns & Instructions',
       'US::Digital Download:0.00 USD',
     ].join('\t');

@@ -97,13 +97,13 @@ export async function GET() {
       googleCategory = 'Arts & Entertainment > Hobbies & Creative Arts > Artwork > Posters, Prints, & Visual Artwork';
     } else if (isKids) {
       // Toy > Outdoor play equipment for kids builds
-      googleCategory = 'Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking';
+      googleCategory = 'Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Crafting Patterns & Molds';
     } else if (isBedroom) {
       // Furniture plans specifically
-      googleCategory = 'Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking';
+      googleCategory = 'Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Crafting Patterns & Molds';
     } else {
       // Default: Woodworking plans — full 4-level path
-      googleCategory = 'Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking';
+      googleCategory = 'Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Crafting Patterns & Molds';
     }
 
     // Google Merchant Center limits g:id to 50 chars. We use the short unique internal ID.
