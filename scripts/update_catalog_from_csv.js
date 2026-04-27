@@ -153,10 +153,10 @@ for (const product of products) {
     let changed = false;
     
     // Update price
-    if (csvMatch.price && Math.abs(csvMatch.price - product.price) > 0.001) {
-      console.log(`  Updating price for "${product.name.slice(0,50)}": ${product.price} -> ${csvMatch.price}`);
-      product.price = csvMatch.price;
-      product.originalPrice = Math.round((csvMatch.price / 0.30) * 100) / 100;
+    if (csvMatch.price && Math.abs(csvMatch.price - product.originalPrice) > 0.001) {
+      console.log(`  Updating prices for "${product.name.slice(0,50)}": ${product.originalPrice} -> ${csvMatch.price}`);
+      product.originalPrice = csvMatch.price;
+      product.price = Math.round((csvMatch.price * 0.30) * 100) / 100;
       changed = true;
     }
     
@@ -262,8 +262,8 @@ for (const row of dataRows) {
     slug,
     name: title,
     category,
-    price,
-    originalPrice: Math.round((price / 0.30) * 100) / 100,
+    price: Math.round((price * 0.30) * 100) / 100,
+    originalPrice: price,
     rating: 0,
     reviewCount: 0,
     difficulty: 'Easy',
