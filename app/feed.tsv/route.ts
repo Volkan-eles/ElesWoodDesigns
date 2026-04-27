@@ -44,6 +44,44 @@ export async function GET() {
     // Link directly to the Etsy listing
     const productLink = product.etsy_url || `${baseUrl}/products/${product.slug}/`;
 
+    // Dynamic categorizations
+    const isPortrait = product.slug.includes('portrait') || product.slug.includes('sketch');
+    const isKids = product.category === 'Kids' || product.slug.includes('treehouse') || product.slug.includes('mud-kitchen') || product.slug.includes('playhouse');
+    const isBedroom = product.category === 'Bedroom' || product.slug.includes('loft-bed') || product.slug.includes('murphy-desk') || product.slug.includes('storage-bench');
+    const isGarden = product.category === 'Garden' || product.slug.includes('planter') || product.slug.includes('plant-stand') || product.slug.includes('garden') || product.slug.includes('farmstand') || product.slug.includes('farm-stand');
+    const isOutdoor = product.category === 'Outdoor' || product.slug.includes('pergola') || product.slug.includes('swing') || product.slug.includes('arbor') || product.slug.includes('sauna') || product.slug.includes('treehouse') || product.slug.includes('chicken-coop') || product.slug.includes('fence') || product.slug.includes('shed') || product.slug.includes('windmill');
+    const isDigitalArt = product.category === 'Digital' && (product.slug.includes('christmas') || product.slug.includes('costco') || product.slug.includes('watercolour') || product.slug.includes('memorial'));
+    
+    // Full deep category paths per product type (4+ levels to fix Uyarı 126)
+    let googleCategory: string;
+    if (isPortrait) {
+      googleCategory = 'Arts & Entertainment > Hobbies & Creative Arts > Artwork > Posters, Prints, & Visual Artwork';
+    } else if (isDigitalArt) {
+      googleCategory = 'Arts & Entertainment > Hobbies & Creative Arts > Artwork > Posters, Prints, & Visual Artwork';
+    } else if (isKids) {
+      googleCategory = 'Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Crafting Patterns & Molds';
+    } else if (isBedroom) {
+      googleCategory = 'Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Crafting Patterns & Molds';
+    } else {
+      googleCategory = 'Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Crafting Patterns & Molds';
+    }
+
+    const internalCategory = product.category || 'Workshop';
+    let productType: string;
+    if (isPortrait || isDigitalArt) {
+      productType = 'Decor > Digital Art > Printable Designs > Portrait & Wall Art';
+    } else if (isKids) {
+      productType = `Woodworking Plans > ${internalCategory} > DIY Blueprint > Outdoor Play Structures`;
+    } else if (isGarden) {
+      productType = `Woodworking Plans > ${internalCategory} > DIY Blueprint > Garden & Planter Builds`;
+    } else if (isOutdoor) {
+      productType = `Woodworking Plans > ${internalCategory} > DIY Blueprint > Outdoor Furniture & Structures`;
+    } else if (isBedroom) {
+      productType = `Woodworking Plans > ${internalCategory} > DIY Blueprint > Bedroom & Storage Furniture`;
+    } else {
+      productType = `Woodworking Plans > ${internalCategory} > DIY Blueprint > Beginner-Friendly PDF`;
+    }
+
     return [
       product.slug,
       cleanText(product.name),
@@ -55,8 +93,8 @@ export async function GET() {
       'in stock',
       'new',
       'ElesWoodDesigns',
-      '505371',
-      'Craft Supplies & Tools > Patterns & Instructions',
+      googleCategory,
+      productType,
       'US::Digital Download:0.00 USD',
     ].join('\t');
   });
