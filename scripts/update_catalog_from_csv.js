@@ -13,8 +13,8 @@ const CSV_PATH = path.join(ROOT, 'EtsyListingsDownload.csv');
 const JSON_PATH = path.join(ROOT, 'data', 'etsy_products.json');
 
 const NEW_LISTING_URLS = {
-  'diy-wardrobe-plans': 'https://www.etsy.com/listing/4495651856/diy-wardrobe-plans-montessori-kids?sr_prefetch=1&pf_from=shop_home&ref=shop_home_active_1&pro=1&dd=1&logging_key=19da5e1810faa3b19e4b8917615df4d21a97af91%3A4495651856',
-  'corner-bookshelf-plans': 'https://www.etsy.com/listing/4495514351/corner-bookshelf-plans-pdf-modern?sr_prefetch=1&pf_from=shop_home&ref=shop_home_active_4&pro=1&dd=1&logging_key=8e285ce20e9271b98297aed8ace5cd22888d4876%3A4495514351',
+  'heavy-duty-workbench-plans-shelves': 'https://www.etsy.com/listing/4495741700/heavy-duty-workbench-plans-shelves',
+  'diy-heavy-duty-workbench-plan-garage': 'https://www.etsy.com/listing/4378150447/diy-heavy-duty-workbench-plan-garage',
 };
 
 // --- CSV Parser (handles multi-line quoted fields) ---
@@ -211,10 +211,9 @@ let maxId = products.reduce((max, p) => {
   return isNaN(num) ? max : Math.max(max, num);
 }, 75);
 
-// Titles of the 2 specifically mentioned new products
 const newProductTitles = [
-  'DIY Wardrobe Plans | Montessori Kids Closet Blueprint (PDF Download)',
-  'Corner Bookshelf Plans PDF | Modern Freestanding Bookcase Blueprint (Digital Download)',
+  'Heavy Duty Workbench Plans | Shelves, Pegboard, Mobile Craft Table (PDF Download)',
+  'DIY Workbench Plans | Mobile Heavy Duty Craft Table with Shelves, Pegboard (PDF Download)',
 ];
 
 // Also check: which CSV rows are new
@@ -264,10 +263,10 @@ for (const row of dataRows) {
   // Better matching: match by title keywords
   if (!etsyUrl) {
     const titleWords = title.toLowerCase();
-    if (titleWords.includes('wardrobe')) {
-      etsyUrl = 'https://www.etsy.com/listing/4495651856/diy-wardrobe-plans-montessori-kids';
-    } else if (titleWords.includes('corner bookshelf')) {
-      etsyUrl = 'https://www.etsy.com/listing/4495514351/corner-bookshelf-plans-pdf-modern';
+    if (titleWords.includes('mobile heavy duty craft table')) {
+      etsyUrl = 'https://www.etsy.com/listing/4378150447/diy-heavy-duty-workbench-plan-garage';
+    } else if (titleWords.includes('heavy duty workbench plans | shelves')) {
+      etsyUrl = 'https://www.etsy.com/listing/4495741700/heavy-duty-workbench-plans-shelves';
     }
   }
   
