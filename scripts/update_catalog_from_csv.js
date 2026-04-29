@@ -13,8 +13,8 @@ const CSV_PATH = path.join(ROOT, 'EtsyListingsDownload.csv');
 const JSON_PATH = path.join(ROOT, 'data', 'etsy_products.json');
 
 const NEW_LISTING_URLS = {
-  'heavy-duty-workbench-plans-shelves': 'https://www.etsy.com/listing/4495741700/heavy-duty-workbench-plans-shelves',
-  'diy-heavy-duty-workbench-plan-garage': 'https://www.etsy.com/listing/4378150447/diy-heavy-duty-workbench-plan-garage',
+  'mid-century-modern-bookshelf-plans': 'https://www.etsy.com/listing/4496575305/mid-century-modern-bookshelf-plans',
+  'outdoor-dining-set-plans-table-and-six': 'https://www.etsy.com/listing/4496558846/outdoor-dining-set-plans-table-and-six',
 };
 
 // --- CSV Parser (handles multi-line quoted fields) ---
@@ -212,8 +212,8 @@ let maxId = products.reduce((max, p) => {
 }, 75);
 
 const newProductTitles = [
-  'Heavy Duty Workbench Plans | Shelves, Pegboard, Mobile Craft Table (PDF Download)',
-  'DIY Workbench Plans | Mobile Heavy Duty Craft Table with Shelves, Pegboard (PDF Download)',
+  'Mid-Century Modern Bookshelf Plans',
+  'Outdoor Dining Set Plans',
 ];
 
 // Also check: which CSV rows are new
@@ -263,10 +263,10 @@ for (const row of dataRows) {
   // Better matching: match by title keywords
   if (!etsyUrl) {
     const titleWords = title.toLowerCase();
-    if (titleWords.includes('mobile heavy duty craft table')) {
-      etsyUrl = 'https://www.etsy.com/listing/4378150447/diy-heavy-duty-workbench-plan-garage';
-    } else if (titleWords.includes('heavy duty workbench plans | shelves')) {
-      etsyUrl = 'https://www.etsy.com/listing/4495741700/heavy-duty-workbench-plans-shelves';
+    if (titleWords.includes('outdoor dining set plans')) {
+      etsyUrl = 'https://www.etsy.com/listing/4496558846/outdoor-dining-set-plans-table-and-six';
+    } else if (titleWords.includes('mid-century modern bookshelf')) {
+      etsyUrl = 'https://www.etsy.com/listing/4496575305/mid-century-modern-bookshelf-plans';
     }
   }
   
