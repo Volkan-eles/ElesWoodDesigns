@@ -52,18 +52,12 @@ export async function GET() {
     const isOutdoor = product.category === 'Outdoor' || product.slug.includes('pergola') || product.slug.includes('swing') || product.slug.includes('arbor') || product.slug.includes('sauna') || product.slug.includes('treehouse') || product.slug.includes('chicken-coop') || product.slug.includes('fence') || product.slug.includes('shed') || product.slug.includes('windmill');
     const isDigitalArt = product.category === 'Digital' && (product.slug.includes('christmas') || product.slug.includes('costco') || product.slug.includes('watercolour') || product.slug.includes('memorial'));
     
-    // Full deep category paths per product type (4+ levels to fix Uyarı 126)
+    // Full deep category paths per product type using numeric IDs to fix Uyarı 126
     let googleCategory: string;
-    if (isPortrait) {
-      googleCategory = 'Arts & Entertainment > Hobbies & Creative Arts > Artwork > Posters, Prints, & Visual Artwork';
-    } else if (isDigitalArt) {
-      googleCategory = 'Arts & Entertainment > Hobbies & Creative Arts > Artwork > Posters, Prints, & Visual Artwork';
-    } else if (isKids) {
-      googleCategory = 'Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Crafting Patterns & Molds';
-    } else if (isBedroom) {
-      googleCategory = 'Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Crafting Patterns & Molds';
+    if (isPortrait || isDigitalArt) {
+      googleCategory = '500044';
     } else {
-      googleCategory = 'Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Crafting Patterns & Molds';
+      googleCategory = '505378';
     }
 
     const internalCategory = product.category || 'Workshop';

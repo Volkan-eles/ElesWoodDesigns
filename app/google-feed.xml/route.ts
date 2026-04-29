@@ -87,23 +87,14 @@ export async function GET() {
     const isOutdoor = product.category === 'Outdoor' || product.slug.includes('pergola') || product.slug.includes('swing') || product.slug.includes('arbor') || product.slug.includes('sauna') || product.slug.includes('treehouse') || product.slug.includes('chicken-coop') || product.slug.includes('fence') || product.slug.includes('shed') || product.slug.includes('windmill');
     const isDigitalArt = product.category === 'Digital' && (product.slug.includes('christmas') || product.slug.includes('costco') || product.slug.includes('watercolour') || product.slug.includes('memorial'));
     
-    // Full deep category paths per product type (4+ levels to fix Uyarı 126)
+    // Full deep category paths per product type using numeric IDs to fix Uyarı 126
     let googleCategory: string;
-    if (isPortrait) {
+    if (isPortrait || isDigitalArt) {
       // Arts > Artwork > Prints
-      googleCategory = 'Arts & Entertainment > Hobbies & Creative Arts > Artwork > Posters, Prints, & Visual Artwork';
-    } else if (isDigitalArt) {
-      // Digital art prints category
-      googleCategory = 'Arts & Entertainment > Hobbies & Creative Arts > Artwork > Posters, Prints, & Visual Artwork';
-    } else if (isKids) {
-      // Toy > Outdoor play equipment for kids builds
-      googleCategory = 'Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Crafting Patterns & Molds';
-    } else if (isBedroom) {
-      // Furniture plans specifically
-      googleCategory = 'Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Crafting Patterns & Molds';
+      googleCategory = '500044';
     } else {
-      // Default: Woodworking plans — full 4-level path
-      googleCategory = 'Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Crafting Patterns & Molds';
+      // Woodworking plans — full 4-level path (Crafting Patterns & Molds)
+      googleCategory = '505378';
     }
 
     // Google Merchant Center limits g:id to 50 chars. We use the short unique internal ID.
