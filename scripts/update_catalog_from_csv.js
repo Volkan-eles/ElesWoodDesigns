@@ -15,6 +15,12 @@ const JSON_PATH = path.join(ROOT, 'data', 'etsy_products.json');
 const NEW_LISTING_URLS = {
   'mid-century-modern-bookshelf-plans': 'https://www.etsy.com/listing/4496575305/mid-century-modern-bookshelf-plans',
   'outdoor-dining-set-plans-table-and-six': 'https://www.etsy.com/listing/4496558846/outdoor-dining-set-plans-table-and-six',
+  'kentucky-derby-2026-horse-cards': 'https://www.etsy.com/listing/4496891343/kentucky-derby-2026-horse-cards',
+  'kentucky-derby-2026-betting-slipsi': 'https://www.etsy.com/listing/4496899815/kentucky-derby-2026-betting-slipsi',
+  'kentucky-derby-2026-party-games-bundle': 'https://www.etsy.com/listing/4496905529/kentucky-derby-2026-party-games-bundle',
+  'kentucky-derby-2026-wagering-ledger': 'https://www.etsy.com/listing/4496922638/kentucky-derby-2026-wagering-ledger',
+  'kentucky-derby-2026-party-game-horse': 'https://www.etsy.com/listing/4496921575/kentucky-derby-2026-party-game-horse',
+  '2026-kentucky-derby-jockey-silks-cards': 'https://www.etsy.com/listing/4496941166/2026-kentucky-derby-jockey-silks-cards',
 };
 
 // --- CSV Parser (handles multi-line quoted fields) ---
@@ -104,7 +110,7 @@ function determineCategory(title, tags) {
   if (t.includes('loft bed') || t.includes('murphy') || t.includes('bedroom') || t.includes('storage bench') || t.includes('bookshelf') || t.includes('bookcase') || t.includes('shoe rack') || t.includes('shoe carousel')) return 'Bedroom';
   if (t.includes('planter') || t.includes('garden') || t.includes('plant stand') || t.includes('farmstand') || t.includes('farm stand') || t.includes('raised bed') || t.includes('raised garden')) return 'Garden';
   if (t.includes('shed') || t.includes('firewood') || t.includes('pergola') || t.includes('swing') || t.includes('arbor') || t.includes('sauna') || t.includes('chicken') || t.includes('picnic') || t.includes('adirondack') || t.includes('bench') || t.includes('outdoor') || t.includes('patio') || t.includes('chaise') || t.includes('lounge') || t.includes('corner bench')) return 'Outdoor';
-  if (t.includes('cart') || t.includes('bar cart') || t.includes('vendor') || t.includes('digital') || t.includes('wall art') || t.includes('portrait')) return 'Digital';
+  if (t.includes('cart') || t.includes('bar cart') || t.includes('vendor') || t.includes('digital') || t.includes('wall art') || t.includes('portrait') || t.includes('kentucky derby') || t.includes('printable') || t.includes('pdf')) return 'Digital';
   return 'Workshop';
 }
 
@@ -214,6 +220,12 @@ let maxId = products.reduce((max, p) => {
 const newProductTitles = [
   'Mid-Century Modern Bookshelf Plans',
   'Outdoor Dining Set Plans',
+  '2026 Kentucky Derby Jockey Silks Cards',
+  'Kentucky Derby 2026 Party Game',
+  'Kentucky Derby 2026 Wagering Ledger',
+  'Kentucky Derby 2026 Party Games Bundle',
+  'Kentucky Derby 2026 Betting Slips',
+  'Kentucky Derby 2026 Horse Cards'
 ];
 
 // Also check: which CSV rows are new
@@ -251,23 +263,26 @@ for (const row of dataRows) {
   const category = determineCategory(title, tags);
   const tagsList = tags.split(',').map(t => t.trim()).filter(Boolean);
   
-  // Determine Etsy URL - match by slug
-  let etsyUrl = '';
-  for (const [urlSlug, url] of Object.entries(NEW_LISTING_URLS)) {
-    if (slug.includes(urlSlug.slice(0, 20)) || urlSlug.includes(slug.slice(0, 20))) {
-      etsyUrl = url;
-      break;
-    }
-  }
-  
   // Better matching: match by title keywords
-  if (!etsyUrl) {
-    const titleWords = title.toLowerCase();
-    if (titleWords.includes('outdoor dining set plans')) {
-      etsyUrl = 'https://www.etsy.com/listing/4496558846/outdoor-dining-set-plans-table-and-six';
-    } else if (titleWords.includes('mid-century modern bookshelf')) {
-      etsyUrl = 'https://www.etsy.com/listing/4496575305/mid-century-modern-bookshelf-plans';
-    }
+  let etsyUrl = '';
+  const titleWords = title.toLowerCase();
+  
+  if (titleWords.includes('outdoor dining set plans')) {
+    etsyUrl = 'https://www.etsy.com/listing/4496558846/outdoor-dining-set-plans-table-and-six';
+  } else if (titleWords.includes('mid-century modern bookshelf')) {
+    etsyUrl = 'https://www.etsy.com/listing/4496575305/mid-century-modern-bookshelf-plans';
+  } else if (titleWords.includes('party games bundle')) {
+    etsyUrl = 'https://www.etsy.com/listing/4496905529/kentucky-derby-2026-party-games-bundle';
+  } else if (titleWords.includes('party game – horse draw')) {
+    etsyUrl = 'https://www.etsy.com/listing/4496921575/kentucky-derby-2026-party-game-horse';
+  } else if (titleWords.includes('wagering ledger')) {
+    etsyUrl = 'https://www.etsy.com/listing/4496922638/kentucky-derby-2026-wagering-ledger';
+  } else if (titleWords.includes('betting slips')) {
+    etsyUrl = 'https://www.etsy.com/listing/4496899815/kentucky-derby-2026-betting-slipsi';
+  } else if (titleWords.includes('horse cards printable')) {
+    etsyUrl = 'https://www.etsy.com/listing/4496891343/kentucky-derby-2026-horse-cards';
+  } else if (titleWords.includes('jockey silks cards')) {
+    etsyUrl = 'https://www.etsy.com/listing/4496941166/2026-kentucky-derby-jockey-silks-cards';
   }
   
   const descShort = description.slice(0, 220).split('\n')[0];
