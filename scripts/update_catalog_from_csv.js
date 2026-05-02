@@ -225,7 +225,11 @@ const newProductTitles = [
   'Kentucky Derby 2026 Wagering Ledger',
   'Kentucky Derby 2026 Party Games Bundle',
   'Kentucky Derby 2026 Betting Slips',
-  'Kentucky Derby 2026 Horse Cards'
+  'Kentucky Derby 2026 Horse Cards',
+  'DIY Collapsible Coffee Cart Plans PDF',
+  'L Shaped Corner Bench Plans',
+  'Modern Firewood Shed Plan',
+  '2026 Kentucky Derby Race Lineup'
 ];
 
 // Also check: which CSV rows are new
@@ -283,6 +287,16 @@ for (const row of dataRows) {
     etsyUrl = 'https://www.etsy.com/listing/4496891343/kentucky-derby-2026-horse-cards';
   } else if (titleWords.includes('jockey silks cards')) {
     etsyUrl = 'https://www.etsy.com/listing/4496941166/2026-kentucky-derby-jockey-silks-cards';
+  } else if (titleWords.includes('collapsible coffee cart')) {
+    etsyUrl = 'https://www.etsy.com/listing/4377578931/diy-mobile-coffee-cart-plans-collapsible';
+  } else if (titleWords.includes('horse cards – jockey silks roster')) {
+    // We don't have this URL yet, handled later
+  } else if (titleWords.includes('race lineup & jockey silks')) {
+    // We don't have this URL yet, handled later
+  } else if (titleWords.includes('l shaped corner bench')) {
+    // We don't have this URL yet, handled later
+  } else if (titleWords.includes('modern firewood shed plan')) {
+    // We don't have this URL yet, handled later
   }
   
   const descShort = description.slice(0, 220).split('\n')[0];
