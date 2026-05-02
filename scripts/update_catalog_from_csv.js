@@ -290,13 +290,13 @@ for (const row of dataRows) {
   } else if (titleWords.includes('collapsible coffee cart')) {
     etsyUrl = 'https://www.etsy.com/listing/4377578931/diy-mobile-coffee-cart-plans-collapsible';
   } else if (titleWords.includes('horse cards – jockey silks roster')) {
-    // We don't have this URL yet, handled later
+    etsyUrl = 'https://www.etsy.com/listing/4497729297/kentucky-derby-2026-horse-cards-jockey';
   } else if (titleWords.includes('race lineup & jockey silks')) {
-    // We don't have this URL yet, handled later
+    etsyUrl = 'https://www.etsy.com/listing/4497486232/2026-kentucky-derby-race-lineup-jockey';
   } else if (titleWords.includes('l shaped corner bench')) {
-    // We don't have this URL yet, handled later
+    etsyUrl = 'https://www.etsy.com/listing/4494192465/l-shaped-corner-bench-plans-built-in';
   } else if (titleWords.includes('modern firewood shed plan')) {
-    // We don't have this URL yet, handled later
+    etsyUrl = 'https://www.etsy.com/listing/4380408404/8x10-firewood-shed-plans-diy-sloped-roof';
   }
   
   const descShort = description.slice(0, 220).split('\n')[0];
