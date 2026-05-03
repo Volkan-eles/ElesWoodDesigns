@@ -89,7 +89,7 @@ export async function GET() {
     const isGarden = product.category === 'Garden' || product.slug.includes('planter') || product.slug.includes('plant-stand') || product.slug.includes('garden') || product.slug.includes('farmstand') || product.slug.includes('farm-stand');
     const isOutdoor = product.category === 'Outdoor' || product.slug.includes('pergola') || product.slug.includes('swing') || product.slug.includes('arbor') || product.slug.includes('sauna') || product.slug.includes('treehouse') || product.slug.includes('chicken-coop') || product.slug.includes('fence') || product.slug.includes('shed') || product.slug.includes('windmill');
     const isDigitalArt = product.category === 'Digital' && (product.slug.includes('christmas') || product.slug.includes('costco') || product.slug.includes('watercolour') || product.slug.includes('memorial'));
-    const isPartyPrintable = product.category === 'Digital' && (product.slug.includes('kentucky-derby') || product.slug.includes('party') || product.slug.includes('game') || product.slug.includes('betting') || product.slug.includes('cards'));
+    const isPartyPrintable = product.category === 'Digital' && (product.slug.includes('kentucky-derby') || product.slug.includes('party') || product.slug.includes('game') || product.slug.includes('betting') || product.slug.includes('cards') || product.slug.includes('mothers-day') || product.slug.includes('handprint') || product.slug.includes('craft') || product.slug.includes('keepsake'));
     
     // Full deep category paths per product type using numeric IDs to fix Uyarı 126
     let googleCategory: string;

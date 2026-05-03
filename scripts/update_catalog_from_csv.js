@@ -21,6 +21,10 @@ const NEW_LISTING_URLS = {
   'kentucky-derby-2026-wagering-ledger': 'https://www.etsy.com/listing/4496922638/kentucky-derby-2026-wagering-ledger',
   'kentucky-derby-2026-party-game-horse': 'https://www.etsy.com/listing/4496921575/kentucky-derby-2026-party-game-horse',
   '2026-kentucky-derby-jockey-silks-cards': 'https://www.etsy.com/listing/4496941166/2026-kentucky-derby-jockey-silks-cards',
+  'add-your-face-mothers-day-kids-craft': 'https://www.etsy.com/listing/4498678287/add-your-face-mothers-day-kids-craft',
+  'christian-mothers-day-handprint-craft-keepsake': 'https://www.etsy.com/listing/4498637947/christian-mothers-day-handprint-craft',
+  'christian-mothers-day-handprint-craft-poem': 'https://www.etsy.com/listing/4498627027/christian-mothers-day-handprint-craft',
+  'christian-mothers-day-handprint-craft-picked-you': 'https://www.etsy.com/listing/4498609775/christian-mothers-day-handprint-craft',
 };
 
 // --- CSV Parser (handles multi-line quoted fields) ---
@@ -106,11 +110,18 @@ function makeImages(csvRow, headers) {
 
 function determineCategory(title, tags) {
   const t = (title + ' ' + tags).toLowerCase();
+  
+  // Specific Digital Crafts / Printables
+  if (t.includes('mothers day') || t.includes('handprint') || t.includes('kentucky derby') || t.includes('portrait') || t.includes('costco') || t.includes('memorial')) {
+    return 'Digital';
+  }
+
   if (t.includes('mud kitchen') || t.includes('treehouse') || t.includes('playhouse') || t.includes('kids')) return 'Kids';
   if (t.includes('loft bed') || t.includes('murphy') || t.includes('bedroom') || t.includes('storage bench') || t.includes('bookshelf') || t.includes('bookcase') || t.includes('shoe rack') || t.includes('shoe carousel')) return 'Bedroom';
   if (t.includes('planter') || t.includes('garden') || t.includes('plant stand') || t.includes('farmstand') || t.includes('farm stand') || t.includes('raised bed') || t.includes('raised garden')) return 'Garden';
   if (t.includes('shed') || t.includes('firewood') || t.includes('pergola') || t.includes('swing') || t.includes('arbor') || t.includes('sauna') || t.includes('chicken') || t.includes('picnic') || t.includes('adirondack') || t.includes('bench') || t.includes('outdoor') || t.includes('patio') || t.includes('chaise') || t.includes('lounge') || t.includes('corner bench')) return 'Outdoor';
-  if (t.includes('cart') || t.includes('bar cart') || t.includes('vendor') || t.includes('digital') || t.includes('wall art') || t.includes('portrait') || t.includes('kentucky derby') || t.includes('printable') || t.includes('pdf')) return 'Digital';
+  if (t.includes('cart') || t.includes('bar cart') || t.includes('vendor')) return 'Digital';
+  
   return 'Workshop';
 }
 
@@ -204,6 +215,14 @@ for (const product of products) {
         changed = true;
       }
     }
+
+    // Update category
+    const newCategory = determineCategory(csvMatch.title, csvMatch.tags.join(' '));
+    if (product.category !== newCategory) {
+      console.log(`  Updating category for "${product.name.slice(0,50)}": ${product.category} -> ${newCategory}`);
+      product.category = newCategory;
+      changed = true;
+    }
     
     if (changed) updatedCount++;
   }
@@ -229,7 +248,11 @@ const newProductTitles = [
   'DIY Collapsible Coffee Cart Plans PDF',
   'L Shaped Corner Bench Plans',
   'Modern Firewood Shed Plan',
-  '2026 Kentucky Derby Race Lineup'
+  '2026 Kentucky Derby Race Lineup',
+  'Add Your Face Mothers Day Kids Craft',
+  'Christian Mothers Day Handprint Craft Printable | God Picked You Mom Keepsake',
+  'Christian Mother\'s Day Handprint Craft | God Chose You Poem',
+  'Christian Mother\'s Day Handprint Craft Printable | God Picked You to Be My Mom'
 ];
 
 // Also check: which CSV rows are new
@@ -297,6 +320,14 @@ for (const row of dataRows) {
     etsyUrl = 'https://www.etsy.com/listing/4494192465/l-shaped-corner-bench-plans-built-in';
   } else if (titleWords.includes('modern firewood shed plan')) {
     etsyUrl = 'https://www.etsy.com/listing/4380408404/8x10-firewood-shed-plans-diy-sloped-roof';
+  } else if (titleWords.includes('add your face mothers day')) {
+    etsyUrl = 'https://www.etsy.com/listing/4498678287/add-your-face-mothers-day-kids-craft';
+  } else if (titleWords.includes('god picked you mom keepsake')) {
+    etsyUrl = 'https://www.etsy.com/listing/4498637947/christian-mothers-day-handprint-craft';
+  } else if (titleWords.includes('god chose you poem')) {
+    etsyUrl = 'https://www.etsy.com/listing/4498627027/christian-mothers-day-handprint-craft';
+  } else if (titleWords.includes('god picked you to be my mom')) {
+    etsyUrl = 'https://www.etsy.com/listing/4498609775/christian-mothers-day-handprint-craft';
   }
   
   const descShort = description.slice(0, 220).split('\n')[0];
