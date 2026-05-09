@@ -189,7 +189,7 @@
     "etsy_url": "https://www.etsy.com/listing/4491082737/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 10
+    "stockQuantity": 8
   },
   {
     "id": "etsy-4",
@@ -253,7 +253,7 @@
     "etsy_url": "https://www.etsy.com/listing/4491071176/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 3
+    "stockQuantity": 9
   },
   {
     "id": "etsy-5",
@@ -315,7 +315,7 @@
     "etsy_url": "https://www.etsy.com/listing/4491615123/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 7
+    "stockQuantity": 80
   },
   {
     "id": "etsy-6",
@@ -379,7 +379,7 @@
     "etsy_url": "https://www.etsy.com/listing/4375495325/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 72
+    "stockQuantity": 64
   },
   {
     "id": "etsy-7",
@@ -441,7 +441,7 @@
     "etsy_url": "https://www.etsy.com/listing/4472276699/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 27
+    "stockQuantity": 25
   },
   {
     "id": "etsy-8",
@@ -505,7 +505,7 @@
     "etsy_url": "https://www.etsy.com/listing/4367275115/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 90
+    "stockQuantity": 85
   },
   {
     "id": "etsy-9",
@@ -568,7 +568,7 @@
     "etsy_url": "https://www.etsy.com/listing/4377218039/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 97
+    "stockQuantity": 90
   },
   {
     "id": "etsy-10",
@@ -636,7 +636,7 @@
     "etsy_url": "https://www.etsy.com/listing/4463014207/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 10
+    "stockQuantity": 6
   },
   {
     "id": "etsy-11",
@@ -698,7 +698,7 @@
     "etsy_url": "https://www.etsy.com/listing/4375787443/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 71
+    "stockQuantity": 68
   },
   {
     "id": "etsy-12",
@@ -826,15 +826,15 @@
     "etsy_url": "https://www.etsy.com/listing/4484122950/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 19
+    "stockQuantity": 16
   },
   {
     "id": "etsy-14",
     "slug": "diy-arbor-swing-plans-pergola-roof-a-frame-freestanding-garden-pdf-download",
     "name": "DIY Arbor Swing Plans | Pergola Roof A-Frame Freestanding Garden (PDF Download)",
     "category": "Garden",
-    "price": 7.69,
-    "originalPrice": 25.63,
+    "price": 7.39,
+    "originalPrice": 24.63,
     "rating": 4.7,
     "reviewCount": 285,
     "difficulty": "Easy",
@@ -890,7 +890,7 @@
     "etsy_url": "https://www.etsy.com/listing/4491054968/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 9
+    "stockQuantity": 4
   },
   {
     "id": "etsy-15",
@@ -1254,7 +1254,7 @@
     "etsy_url": "https://www.etsy.com/listing/4490072169/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 18
+    "stockQuantity": 17
   },
   {
     "id": "etsy-21",
@@ -1318,7 +1318,7 @@
     "etsy_url": "https://www.etsy.com/listing/4486927175/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 90
+    "stockQuantity": 85
   },
   {
     "id": "etsy-22",
@@ -1386,7 +1386,7 @@
     "etsy_url": "https://www.etsy.com/listing/4489524870/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 2
+    "stockQuantity": 97
   },
   {
     "id": "etsy-23",
@@ -1512,7 +1512,7 @@
     "etsy_url": "https://www.etsy.com/listing/4490601202/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 3
+    "stockQuantity": 2
   },
   {
     "id": "etsy-25",
@@ -1572,7 +1572,7 @@
     "etsy_url": "https://www.etsy.com/listing/4487420597/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 97
+    "stockQuantity": 93
   },
   {
     "id": "etsy-26",
@@ -1884,7 +1884,7 @@
     "etsy_url": "https://www.etsy.com/listing/4367248406/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 24
+    "stockQuantity": 23
   },
   {
     "id": "etsy-31",
@@ -2260,7 +2260,7 @@
     "etsy_url": "https://www.etsy.com/listing/4488913068/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 4
+    "stockQuantity": 2
   },
   {
     "id": "etsy-37",
@@ -2836,7 +2836,7 @@
     "etsy_url": "https://www.etsy.com/listing/4469264015/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 22
+    "stockQuantity": 21
   },
   {
     "id": "etsy-46",
@@ -3802,7 +3802,7 @@
     "etsy_url": "https://www.etsy.com/listing/4392803241/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 86
+    "stockQuantity": 85
   },
   {
     "id": "etsy-61",
@@ -4176,7 +4176,7 @@
     "etsy_url": "https://www.etsy.com/listing/4461520558/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 24
+    "stockQuantity": 23
   },
   {
     "id": "etsy-67",
@@ -4694,7 +4694,7 @@
     "etsy_url": "https://www.etsy.com/listing/4494247378/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 2
+    "stockQuantity": 1
   },
   {
     "id": "etsy-75",
@@ -4760,7 +4760,7 @@
     "etsy_url": "https://www.etsy.com/listing/4494235412/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 99
+    "stockQuantity": 98
   },
   {
     "id": "etsy-76",
@@ -4822,7 +4822,7 @@
     "etsy_url": "https://www.etsy.com/listing/4494721445/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 2,
+    "stockQuantity": 1,
     "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
   },
   {
@@ -5342,7 +5342,7 @@
     "etsy_url": "https://www.etsy.com/listing/4495741700/heavy-duty-workbench-plans-shelves",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 2,
+    "stockQuantity": 1,
     "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
   },
   {
@@ -6215,7 +6215,7 @@
     "etsy_url": "https://www.etsy.com/listing/4377578931/diy-mobile-coffee-cart-plans-collapsible",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 20,
+    "stockQuantity": 19,
     "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
   },
   {
@@ -6280,7 +6280,7 @@
     "etsy_url": "https://www.etsy.com/listing/4494192465/l-shaped-corner-bench-plans-built-in",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 3,
+    "stockQuantity": 2,
     "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
   },
   {
@@ -6550,7 +6550,7 @@
     "etsy_url": "https://www.etsy.com/listing/4498627027/christian-mothers-day-handprint-craft",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 3,
+    "stockQuantity": 7,
     "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
   },
   {
@@ -6624,6 +6624,272 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 3,
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+  },
+  {
+    "id": "etsy-104",
+    "slug": "printable-american-mahjong-tiles-pdf-complete-4-suit-set-digital-download",
+    "name": "Printable American Mahjong Tiles PDF | Complete 4-Suit Set (Digital Download)",
+    "category": "Digital",
+    "price": 5.1,
+    "originalPrice": 16.99,
+    "rating": 0,
+    "reviewCount": 0,
+    "difficulty": "Easy",
+    "estimatedTime": "Weekend",
+    "pages": 15,
+    "description": "Learn, teach, and practice American Mahjong with a complete set of tiles you can print at home. This Printable American Mah Jongg Tiles PDF gives you a full-color, print-ready tile set designed for efficient bulk cutting",
+    "longDescription": "Learn, teach, and practice American Mahjong with a complete set of tiles you can print at home. This Printable American Mah Jongg Tiles PDF gives you a full-color, print-ready tile set designed for efficient bulk cutting — perfect for classrooms, group lessons, and hands-on practice sessions.\nWhether you're a Mahjong Educator running a beginner class, a player searching for Mah Jong Printable Tiles to practice at home, or a group looking for a Printable American Mah Jongg Tiles set without buying a full physical game — this download has everything you need.\n✅ WHAT'S INCLUDED\n✔ Full-Color PDF — 4 pages of vibrant, easy-to-read American Mah Jongg tiles. Every tile is clearly illustrated for players of all skill levels.\n✔ Complete American Mahjong Tile Set — All necessary tiles included. A true Digital Mahjong Set that covers every suit, honor tile, and joker needed for a full game.\n✔ Optimized for Bulk Cutting — Tiles are laid out on the page for maximum efficiency. Designed specifically for Mahjong Classroom and Mahjong Teaching Posters-style group setups where multiple sets are needed fast.\n✔ Home Print Ready — No resizing or formatting needed. Print straight from any home printer on standard letter paper or cardstock.\n✔ Mahjong Tiles Cheat Sheet Compatible — Use alongside any Mahjong Tiles Cheat Sheet or hand card for a complete beginner learning toolkit.\n📂 WHAT'S INCLUDED IN YOUR DOWNLOAD\n✔ 4-page high-resolution PDF\n✔ Full American Mah Jongg tile set — all suits and honors\n✔ Instant digital download — available immediately after purchase\n✔ US Letter size — prints on standard home paper\n🙏 PERFECT FOR\n\nMahjong Educators and instructors running beginner Mahjong Classroom sessions.\nAnyone wanting Printable Mah Jong tiles for solo practice without a full tile set.\nBeginners building Mahjong Learning skills through hands-on tile recognition drills.\nGroups and clubs who need multiple Bulk Cut Mahjong sets for simultaneous games.\nTeachers creating a Mahjong Training curriculum with physical tile references.\nFamilies introducing Mahj Kids to the game with a low-cost, printable starter set.\n\n📥 INSTANT DIGITAL DOWNLOAD\nYour PDF is available immediately after purchase. Print at home, laminate for durability, or take to a local print shop for cardstock prints.\n⚠️ Please Note: Digital download only — no physical tiles will be shipped. For personal and classroom use only. Not for resale or commercial use.",
+    "features": [
+      "American_Mahjong",
+      "Mahjong_Printable",
+      "Mahjong_Practice",
+      "Digital_Mahjong_Set",
+      "Mahjong_Educator"
+    ],
+    "tags": [
+      "American_Mahjong",
+      "Mahjong_Printable",
+      "Mahjong_Practice",
+      "Digital_Mahjong_Set",
+      "Mahjong_Educator",
+      "Mahjong_Classroom",
+      "Bulk_Cut_Mahjong",
+      "Mahjong_Training",
+      "Mahjong_PDF_Download",
+      "Mahjong_Game_Aid",
+      "Mahjong_Learning",
+      "mah_jong_printable",
+      "mahjong_tiles_print"
+    ],
+    "materials": [
+      "Digital Download",
+      "PDF File",
+      "Instant Download"
+    ],
+    "image": "https://i.etsystatic.com/53333782/r/il/d8ef59/8001340358/il_fullxfull.8001340358_ch37.jpg",
+    "thumbnail": "https://i.etsystatic.com/53333782/r/il/d8ef59/8001340358/il_794xN.8001340358_ch37.jpg",
+    "images": [
+      "https://i.etsystatic.com/53333782/r/il/d8ef59/8001340358/il_fullxfull.8001340358_ch37.jpg",
+      "https://i.etsystatic.com/53333782/r/il/45c365/8049269759/il_fullxfull.8049269759_c7ib.jpg",
+      "https://i.etsystatic.com/53333782/r/il/301e75/8049269781/il_fullxfull.8049269781_9mln.jpg",
+      "https://i.etsystatic.com/53333782/r/il/4ecad7/8049269785/il_fullxfull.8049269785_81cn.jpg",
+      "https://i.etsystatic.com/53333782/r/il/f73bbc/8049269775/il_fullxfull.8049269775_7ysk.jpg"
+    ],
+    "imagesThumbnails": [
+      "https://i.etsystatic.com/53333782/r/il/d8ef59/8001340358/il_794xN.8001340358_ch37.jpg",
+      "https://i.etsystatic.com/53333782/r/il/45c365/8049269759/il_794xN.8049269759_c7ib.jpg",
+      "https://i.etsystatic.com/53333782/r/il/301e75/8049269781/il_794xN.8049269781_9mln.jpg",
+      "https://i.etsystatic.com/53333782/r/il/4ecad7/8049269785/il_794xN.8049269785_81cn.jpg",
+      "https://i.etsystatic.com/53333782/r/il/f73bbc/8049269775/il_794xN.8049269775_7ysk.jpg"
+    ],
+    "etsy_url": "https://www.etsy.com/listing/4502109743/printable-american-mahjong-tiles-pdf",
+    "bestseller": false,
+    "inStock": true,
+    "stockQuantity": 3,
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+  },
+  {
+    "id": "etsy-105",
+    "slug": "2026-mahjong-hand-tracker-pdf-nmjl-card-download-digital-download",
+    "name": "2026 Mahjong Hand Tracker PDF | NMJL Card Download (Digital Download)",
+    "category": "Digital",
+    "price": 5.4,
+    "originalPrice": 17.99,
+    "rating": 0,
+    "reviewCount": 0,
+    "difficulty": "Easy",
+    "estimatedTime": "Weekend",
+    "pages": 15,
+    "description": "Never lose track of your winning hands again. This 2026 Mahjong Hand Tracker is a simple, beautifully designed one-page PDF that keeps everything you need right at your fingertips — updated for the current season and rea",
+    "longDescription": "Never lose track of your winning hands again. This 2026 Mahjong Hand Tracker is a simple, beautifully designed one-page PDF that keeps everything you need right at your fingertips — updated for the current season and ready to print as many times as you need.\nWhether you're a seasoned player or searching for an Easy Mah Jong reference, a complete Mahjong Rules Guide, or a printable Mahjong Cheat Sheet for your group — this is the cleanest, most useful tracker available for 2026.\n\n✅ WHY PLAYERS LOVE THIS TRACKER\n✔ 2026 Season Ready — Fully updated layout for the current year's gameplay. A proper 2026 Mahjong Card PDF built for this season's hands — not last year's.\n✔ One-Page Format — Everything on a single high-resolution sheet. No flipping pages mid-game. Fits perfectly as a Mahjong Table Guide at any game night setup.\n✔ Unlimited Prints — Buy once, print forever. Share with your entire Mah Jong group — everyone gets their own Printable Mahjong Game Card at no extra cost.\n✔ Beginner Friendly — Clear, simple layout that works as a Beginner Mahjong reference for new players and a quick-glance Mahjong Cheat Card for experienced ones.\n✔ Travel Ready — Compact one-page design fits in any Mahj On the Go bag or card sleeve. The perfect Travel Mahjong companion for games away from home.\n✔ NMJL Compatible — Designed to complement your National Mahjong League Card. Works alongside any NMJL Card Download for a complete game night setup.\n\n📂 WHAT'S INCLUDED\n✔ One high-resolution PDF — print-ready, instant download\n✔ US Letter size — fits standard home printers\n✔ Compatible with Individual Mahjong Hands Sample-style tracking layouts\n✔ Works beautifully printed on cardstock or laminated for repeated use\n\n📥 INSTANT DIGITAL DOWNLOAD\nYour PDF is available immediately after purchase. Print at home, at Staples, or at any local print shop. Consider laminating for reuse across the full 2026 season.\n\n⚠️ Please Note: Personal use only. Not for resale, redistribution, or commercial use. Colors may vary slightly due to monitor and printer settings.\n\n\n\n\n\n 2026 mahjong card, mahjong hand tracker, printable mahjong card, mahjong cheat sheet, nmjl card download, mahjong rules guide, mahjong tracker pdf, beginner mahjong guide, travel mahjong card, mah jongg printable, mahjong cheat card 2026, easy mah jong, mahjong game card, mahj on the go, individual mahjong hands, mahjong card pdf, national mahjong league, mahjong table guide, downloadable mahjong 2026, mahjong card large print, mahjong one page, mahjong score tracker, mahjong card sleeve, mahjong card correction, simple mahjong guide, mahjong season card, mahjong quick reference, printable mah jongg, mahjong group game, mahjong instant download",
+    "features": [
+      "mahjong_hand_tracker",
+      "mahjong_cheat_sheet",
+      "mahjong_tracker",
+      "mahjong_card",
+      "beginner_mahjong"
+    ],
+    "tags": [
+      "mahjong_hand_tracker",
+      "mahjong_cheat_sheet",
+      "mahjong_tracker",
+      "mahjong_card",
+      "beginner_mahjong",
+      "travel_mahjong",
+      "mahjong_table_guide",
+      "printable_mahjong",
+      "nmjl_card_download",
+      "2026_mahjong_card",
+      "mahjong_rules_guide",
+      "mahj_on_the_go",
+      "mahjong_cheat_card"
+    ],
+    "materials": [
+      "Digital Download",
+      "PDF File",
+      "Instant Download"
+    ],
+    "image": "https://i.etsystatic.com/53333782/r/il/ee0e0a/8049110243/il_fullxfull.8049110243_fqsk.jpg",
+    "thumbnail": "https://i.etsystatic.com/53333782/r/il/ee0e0a/8049110243/il_794xN.8049110243_fqsk.jpg",
+    "images": [
+      "https://i.etsystatic.com/53333782/r/il/ee0e0a/8049110243/il_fullxfull.8049110243_fqsk.jpg",
+      "https://i.etsystatic.com/53333782/r/il/eb08c7/8001177154/il_fullxfull.8001177154_oxui.jpg",
+      "https://i.etsystatic.com/53333782/r/il/f4a91f/8049105709/il_fullxfull.8049105709_lmre.jpg",
+      "https://i.etsystatic.com/53333782/r/il/e7b6d8/8001177152/il_fullxfull.8001177152_gu62.jpg",
+      "https://i.etsystatic.com/53333782/r/il/9573da/8001177172/il_fullxfull.8001177172_4n2a.jpg"
+    ],
+    "imagesThumbnails": [
+      "https://i.etsystatic.com/53333782/r/il/ee0e0a/8049110243/il_794xN.8049110243_fqsk.jpg",
+      "https://i.etsystatic.com/53333782/r/il/eb08c7/8001177154/il_794xN.8001177154_oxui.jpg",
+      "https://i.etsystatic.com/53333782/r/il/f4a91f/8049105709/il_794xN.8049105709_lmre.jpg",
+      "https://i.etsystatic.com/53333782/r/il/e7b6d8/8001177152/il_794xN.8001177152_gu62.jpg",
+      "https://i.etsystatic.com/53333782/r/il/9573da/8001177172/il_794xN.8001177172_4n2a.jpg"
+    ],
+    "etsy_url": "https://www.etsy.com/listing/4502085775/2026-mahjong-hand-tracker-pdf-nmjl-card",
+    "bestseller": false,
+    "inStock": true,
+    "stockQuantity": 3,
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+  },
+  {
+    "id": "etsy-106",
+    "slug": "christian-mothers-day-handprint-craft-god-picked-you-poem-pdf",
+    "name": "Christian Mother's Day Handprint Craft | God Picked You Poem (PDF)",
+    "category": "Digital",
+    "price": 2.4,
+    "originalPrice": 8,
+    "rating": 0,
+    "reviewCount": 0,
+    "difficulty": "Easy",
+    "estimatedTime": "Weekend",
+    "pages": 15,
+    "description": "Give Mom a gift that reminds her her role was chosen on purpose. This \"God Picked You to Be My Mom\" Christian Mother's Day Handprint Printable is the perfect Sunday School Activity for Mother's Day — a faith-filled keeps",
+    "longDescription": "Give Mom a gift that reminds her her role was chosen on purpose. This \"God Picked You to Be My Mom\" Christian Mother's Day Handprint Printable is the perfect Sunday School Activity for Mother's Day — a faith-filled keepsake craft that turns your child's handprint into a blooming flower, paired with a heartfelt Christian poem about love, guidance, and God's purpose.\nIdeal for Sunday School Activity time, church classroom projects, homeschool Bible lessons, or a simple at-home craft. Whether you're searching for a Mothers Day Handprint Craft Religious activity, a Mothers Day Hand Print Christian keepsake, or a complete Mothers Day Crafts Toddlers Christian printable — this is the one.\n\n✅ WHAT MAKES THIS SPECIAL\n✔ Faith-Centered Message — \"God Picked You to Be My Mom\" — a scripture-inspired reminder that motherhood is a divine calling. A true Christian Craft Mum keepsake that goes far beyond a generic card.\n✔ Handprint Flower Design — Your child's handprint becomes the blooms of a beautiful flower. Simple, meaningful, and a Personalized Keepsake Craft moms and grandmas will treasure for years.\n✔ Heartfelt Christian Poem — Included alongside the handprint template. Covers love, faith, guidance, and gratitude — everything a Mothers Day Hand Print Church Sunday School Activity should express.\n✔ Instant Low-Prep Activity — Print, trace, cut, and create. No art supplies beyond paint or ink needed. Perfect for large-group Sunday School Activity sessions and Mothers Day Crafts Toddlers Christian classrooms.\n✔ Works for All Caretakers — Designed for moms, grandmas, Gigi, and any caregiver. Compatible with Gigi Mothers Day Craft Template-style projects and easily adaptable for any age group.\n\n📂 WHAT'S INCLUDED\n✔ 1 PDF file — US Letter size (8.5×11)\n✔ Instant digital download — files available immediately after purchase\n✔ Print at home or at any local print shop (Staples, Costco, Target)\n\n🙏 PERFECT FOR\n\nSunday School Activity — Mother's Day craft time for any church classroom or VBS program.\nPreschool and kindergarten faith-based projects and homeschool Bible lessons.\nDaycare and classroom Mothers Day activities — simple enough for toddlers.\nGifting to moms, grandmas, Gigi, and caregivers as a heartfelt Christian Mom Gift.\nAnyone wanting a meaningful, faith-based alternative to generic store-bought cards.\n\n💡 PRINT TIPS\n✔ For best results, use heavyweight matte paper or card stock.\n✔ Colors may vary slightly — local print shops offer the most consistent results.\n⚠️ Please Note: This is a DIGITAL DOWNLOAD only. No physical item will be shipped. For personal use only — reproduction or resale is not permitted. Instant downloads are non-refundable.\n\n\n\n\nmothers day handprint religious, god chose you mom, church mothers day craft, christian handprint art, faith gift for mom, handprint flower craft, sunday school mothers day, mom faith keepsake, bible based craft kids, church craft activity, preschool mothers day, christian craft printable, mothers day hand print church, religious mom gift kids, faith based mothers day, handprint keepsake craft, toddler handprint church, christian poem for mom, sunday school activity kids, mothers day craft toddlers, gigi mothers day craft, personalized keepsake craft, christian craft mum, church classroom craft, homeschool faith craft, kindergarten church craft, religious keepsake kids, mom handprint flower, faith poem printable, christian mothers day printable, bible activity printable, handprint art religious, church mothers day activity, preschool faith craft, toddler christian craft, religious handprint art, mothers day church activity, kids faith printable, christian mom keepsake, sunday school printable",
+    "features": [
+      "god_picked_you",
+      "sunday_school_craft",
+      "christian_handprint",
+      "faith_based_gift",
+      "mom_handprint"
+    ],
+    "tags": [
+      "god_picked_you",
+      "sunday_school_craft",
+      "christian_handprint",
+      "faith_based_gift",
+      "mom_handprint",
+      "mothers_day_craft",
+      "christian_mom_gift",
+      "bible_craft_kids",
+      "church_activity_kids",
+      "preschool_craft",
+      "christian_craft_mum",
+      "mom_keepsake",
+      "toddler_craft_kids"
+    ],
+    "materials": [
+      "Digital Download",
+      "PDF File",
+      "Instant Download"
+    ],
+    "image": "https://i.etsystatic.com/53333782/r/il/ebf08d/7978353850/il_fullxfull.7978353850_inc7.jpg",
+    "thumbnail": "https://i.etsystatic.com/53333782/r/il/ebf08d/7978353850/il_794xN.7978353850_inc7.jpg",
+    "images": [
+      "https://i.etsystatic.com/53333782/r/il/ebf08d/7978353850/il_fullxfull.7978353850_inc7.jpg",
+      "https://i.etsystatic.com/53333782/r/il/f70e9a/8026306873/il_fullxfull.8026306873_a3nf.jpg",
+      "https://i.etsystatic.com/53333782/r/il/b99455/8026306369/il_fullxfull.8026306369_fl8s.jpg",
+      "https://i.etsystatic.com/53333782/r/il/5d112c/7978353872/il_fullxfull.7978353872_rfph.jpg",
+      "https://i.etsystatic.com/53333782/r/il/c7bbfa/7978353856/il_fullxfull.7978353856_twir.jpg",
+      "https://i.etsystatic.com/53333782/r/il/e886d1/8026306865/il_fullxfull.8026306865_2np3.jpg",
+      "https://i.etsystatic.com/53333782/r/il/e2cae4/8026306811/il_fullxfull.8026306811_rd4n.jpg",
+      "https://i.etsystatic.com/53333782/r/il/4c0d65/8026306855/il_fullxfull.8026306855_a03k.jpg",
+      "https://i.etsystatic.com/53333782/r/il/c88729/8026306863/il_fullxfull.8026306863_lbn9.jpg",
+      "https://i.etsystatic.com/53333782/r/il/b381eb/7978353836/il_fullxfull.7978353836_1au6.jpg"
+    ],
+    "imagesThumbnails": [
+      "https://i.etsystatic.com/53333782/r/il/ebf08d/7978353850/il_794xN.7978353850_inc7.jpg",
+      "https://i.etsystatic.com/53333782/r/il/f70e9a/8026306873/il_794xN.8026306873_a3nf.jpg",
+      "https://i.etsystatic.com/53333782/r/il/b99455/8026306369/il_794xN.8026306369_fl8s.jpg",
+      "https://i.etsystatic.com/53333782/r/il/5d112c/7978353872/il_794xN.7978353872_rfph.jpg",
+      "https://i.etsystatic.com/53333782/r/il/c7bbfa/7978353856/il_794xN.7978353856_twir.jpg",
+      "https://i.etsystatic.com/53333782/r/il/e886d1/8026306865/il_794xN.8026306865_2np3.jpg",
+      "https://i.etsystatic.com/53333782/r/il/e2cae4/8026306811/il_794xN.8026306811_rd4n.jpg",
+      "https://i.etsystatic.com/53333782/r/il/4c0d65/8026306855/il_794xN.8026306855_a03k.jpg",
+      "https://i.etsystatic.com/53333782/r/il/c88729/8026306863/il_794xN.8026306863_lbn9.jpg",
+      "https://i.etsystatic.com/53333782/r/il/b381eb/7978353836/il_794xN.7978353836_1au6.jpg"
+    ],
+    "etsy_url": "",
+    "bestseller": false,
+    "inStock": true,
+    "stockQuantity": 1,
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+  },
+  {
+    "id": "etsy-107",
+    "slug": "christian-mothers-day-handprint-craft-god-picked-you-mom-keepsake-pdf-download",
+    "name": "Christian Mothers Day Handprint Craft | God Picked You Mom Keepsake (PDF Download)",
+    "category": "Digital",
+    "price": 1.5,
+    "originalPrice": 5,
+    "rating": 0,
+    "reviewCount": 0,
+    "difficulty": "Easy",
+    "estimatedTime": "Weekend",
+    "pages": 15,
+    "description": "Celebrate a meaningful Christian Mothers Day handprint craft printable designed to create a heartfelt keepsake for moms. This God picked you to be my mom printable turns your child’s handprint into a beautiful flower whi",
+    "longDescription": "Celebrate a meaningful Christian Mothers Day handprint craft printable designed to create a heartfelt keepsake for moms. This God picked you to be my mom printable turns your child’s handprint into a beautiful flower while sharing a faith-based message.\n\nPerfect as a Christian mom gift, this Bible craft for kids is ideal for Sunday school activities, church classrooms, preschool projects, and homeschool lessons.\n\nThis mothers day handprint craft combines creativity with faith, making it a memorable mom keepsake printable that families will treasure.\n\n✨ WHAT YOU GET\n1 High-quality PDF file\nUS Letter Size (8.5 x 11)\nInstant download printable\n\n💡 PERFECT FOR\nChristian Mothers Day gift from kids\n\nSunday school craft activity\n\nChurch classroom project\n\nPreschool & toddler handprint craft\n\nHomeschool Bible activity\n\n❤️ WHY IT SELLS\nHigh-demand: faith based mothers day gift\n\nEmotional trigger: personalized mom keepsake\n\nTrend: kids handprint art printable\n\nEvergreen niche: christian family printable\n\nThis faith based printable is more than a craft — it's a meaningful reminder of love, faith, and God’s purpose.\n\n\n\n\nchristian mothers day, god picked you, sunday school craft, christian handprint, faith based gift, mom handprint, mothers day craft, christian mom gift, bible craft kids, church activity kids, preschool craft, kids mothers day, mom keepsake, christian printable, religious mothers day, faith craft kids, church craft printable, homeschool bible craft, daycare craft, kindergarten craft, toddler craft, kids gift mom, baby handprint, toddler handprint art, preschool printable, christian keepsake, memory craft kids, kids art printable, printable moms day, mom love gift, sentimental gift mom, diy mom gift, mothers day diy, printable craft kids, classroom mothers day, homeschool printable, sunday school activity, child keepsake, easy kids craft, simple toddler craft, faith based printable, christian family gift, heartfelt gift mom, mom printable gift, kids diy gift, instant download craft, printable pdf craft, meaningful mom gift, christian art kids, bible activity kids",
+    "features": [
+      "god_picked_you",
+      "mom_handprint_craft",
+      "bible_craft_kids",
+      "sunday_school_craft",
+      "christian_mom_gift"
+    ],
+    "tags": [
+      "god_picked_you",
+      "mom_handprint_craft",
+      "bible_craft_kids",
+      "sunday_school_craft",
+      "christian_mom_gift",
+      "kids_handprint_art",
+      "church_craft_kids",
+      "mom_keepsake_gift",
+      "toddler_handprint",
+      "faith_based_gift",
+      "mothers_day_craft",
+      "mothers_day",
+      "christianmothers_day"
+    ],
+    "materials": [
+      "Digital Download",
+      "PDF File",
+      "Instant Download"
+    ],
+    "image": "https://i.etsystatic.com/53333782/r/il/20e1ce/8026513643/il_fullxfull.8026513643_ko3d.jpg",
+    "thumbnail": "https://i.etsystatic.com/53333782/r/il/20e1ce/8026513643/il_794xN.8026513643_ko3d.jpg",
+    "images": [
+      "https://i.etsystatic.com/53333782/r/il/20e1ce/8026513643/il_fullxfull.8026513643_ko3d.jpg",
+      "https://i.etsystatic.com/53333782/r/il/148bd4/8026514359/il_fullxfull.8026514359_50dy.jpg",
+      "https://i.etsystatic.com/53333782/r/il/c573d6/8026513613/il_fullxfull.8026513613_44tk.jpg",
+      "https://i.etsystatic.com/53333782/r/il/2ce560/7978561442/il_fullxfull.7978561442_k1xt.jpg",
+      "https://i.etsystatic.com/53333782/r/il/8f91b8/8026513661/il_fullxfull.8026513661_hkyz.jpg",
+      "https://i.etsystatic.com/53333782/r/il/56dba5/7978561434/il_fullxfull.7978561434_shhi.jpg",
+      "https://i.etsystatic.com/53333782/r/il/763eba/7978561432/il_fullxfull.7978561432_jzlk.jpg"
+    ],
+    "imagesThumbnails": [
+      "https://i.etsystatic.com/53333782/r/il/20e1ce/8026513643/il_794xN.8026513643_ko3d.jpg",
+      "https://i.etsystatic.com/53333782/r/il/148bd4/8026514359/il_794xN.8026514359_50dy.jpg",
+      "https://i.etsystatic.com/53333782/r/il/c573d6/8026513613/il_794xN.8026513613_44tk.jpg",
+      "https://i.etsystatic.com/53333782/r/il/2ce560/7978561442/il_794xN.7978561442_k1xt.jpg",
+      "https://i.etsystatic.com/53333782/r/il/8f91b8/8026513661/il_794xN.8026513661_hkyz.jpg",
+      "https://i.etsystatic.com/53333782/r/il/56dba5/7978561434/il_794xN.7978561434_shhi.jpg",
+      "https://i.etsystatic.com/53333782/r/il/763eba/7978561432/il_794xN.7978561432_jzlk.jpg"
+    ],
+    "etsy_url": "https://www.etsy.com/listing/4498637947/christian-mothers-day-handprint-craft",
+    "bestseller": false,
+    "inStock": true,
+    "stockQuantity": 1,
     "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
   }
 ]

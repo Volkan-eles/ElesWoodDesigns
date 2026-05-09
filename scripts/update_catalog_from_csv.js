@@ -112,7 +112,7 @@ function determineCategory(title, tags) {
   const t = (title + ' ' + tags).toLowerCase();
   
   // Specific Digital Crafts / Printables
-  if (t.includes('mothers day') || t.includes('handprint') || t.includes('kentucky derby') || t.includes('portrait') || t.includes('costco') || t.includes('memorial')) {
+  if (t.includes('mothers day') || t.includes('handprint') || t.includes('kentucky derby') || t.includes('portrait') || t.includes('costco') || t.includes('memorial') || t.includes('mahjong')) {
     return 'Digital';
   }
 
@@ -252,7 +252,9 @@ const newProductTitles = [
   'Add Your Face Mothers Day Kids Craft',
   'Christian Mothers Day Handprint Craft Printable | God Picked You Mom Keepsake',
   'Christian Mother\'s Day Handprint Craft | God Chose You Poem',
-  'Christian Mother\'s Day Handprint Craft Printable | God Picked You to Be My Mom'
+  'Christian Mother\'s Day Handprint Craft Printable | God Picked You to Be My Mom',
+  'Printable American Mahjong Tiles PDF | Complete 4-Suit Set (Digital Download)',
+  '2026 Mahjong Hand Tracker PDF | NMJL Card Download (Digital Download)'
 ];
 
 // Also check: which CSV rows are new
@@ -328,6 +330,10 @@ for (const row of dataRows) {
     etsyUrl = 'https://www.etsy.com/listing/4498627027/christian-mothers-day-handprint-craft';
   } else if (titleWords.includes('god picked you to be my mom')) {
     etsyUrl = 'https://www.etsy.com/listing/4498609775/christian-mothers-day-handprint-craft';
+  } else if (titleWords.includes('american mahjong tiles pdf')) {
+    etsyUrl = 'https://www.etsy.com/listing/4502109743/printable-american-mahjong-tiles-pdf';
+  } else if (titleWords.includes('mahjong hand tracker pdf')) {
+    etsyUrl = 'https://www.etsy.com/listing/4502085775/2026-mahjong-hand-tracker-pdf-nmjl-card';
   }
   
   const descShort = description.slice(0, 220).split('\n')[0];
