@@ -63,7 +63,7 @@
     "etsy_url": "https://www.etsy.com/listing/4493928541/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 1
+    "stockQuantity": 100
   },
   {
     "id": "etsy-2",
@@ -127,7 +127,7 @@
     "etsy_url": "https://www.etsy.com/listing/4493892575/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 3
+    "stockQuantity": 98
   },
   {
     "id": "etsy-3",
@@ -189,7 +189,7 @@
     "etsy_url": "https://www.etsy.com/listing/4491082737/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 8
+    "stockQuantity": 96
   },
   {
     "id": "etsy-4",
@@ -253,7 +253,7 @@
     "etsy_url": "https://www.etsy.com/listing/4491071176/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 9
+    "stockQuantity": 85
   },
   {
     "id": "etsy-5",
@@ -315,15 +315,15 @@
     "etsy_url": "https://www.etsy.com/listing/4491615123/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 80
+    "stockQuantity": 88
   },
   {
     "id": "etsy-6",
     "slug": "diy-collapsible-charcuterie-cart-plans-mobile-bar-cart-pdf",
     "name": "DIY Collapsible Charcuterie Cart Plans: Mobile Bar Cart (PDF)",
     "category": "Digital",
-    "price": 8.4,
-    "originalPrice": 27.99,
+    "price": 7.8,
+    "originalPrice": 25.99,
     "rating": 4.7,
     "reviewCount": 285,
     "difficulty": "Easy",
@@ -379,7 +379,7 @@
     "etsy_url": "https://www.etsy.com/listing/4375495325/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 64
+    "stockQuantity": 22
   },
   {
     "id": "etsy-7",
@@ -441,7 +441,7 @@
     "etsy_url": "https://www.etsy.com/listing/4472276699/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 25
+    "stockQuantity": 24
   },
   {
     "id": "etsy-8",
@@ -505,7 +505,7 @@
     "etsy_url": "https://www.etsy.com/listing/4367275115/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 85
+    "stockQuantity": 78
   },
   {
     "id": "etsy-9",
@@ -568,7 +568,7 @@
     "etsy_url": "https://www.etsy.com/listing/4377218039/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 90
+    "stockQuantity": 69
   },
   {
     "id": "etsy-10",
@@ -636,7 +636,7 @@
     "etsy_url": "https://www.etsy.com/listing/4463014207/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 6
+    "stockQuantity": 100
   },
   {
     "id": "etsy-11",
@@ -698,7 +698,7 @@
     "etsy_url": "https://www.etsy.com/listing/4375787443/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 68
+    "stockQuantity": 56
   },
   {
     "id": "etsy-12",
@@ -762,7 +762,7 @@
     "etsy_url": "https://www.etsy.com/listing/4461302426/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 97
+    "stockQuantity": 94
   },
   {
     "id": "etsy-13",
@@ -826,7 +826,7 @@
     "etsy_url": "https://www.etsy.com/listing/4484122950/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 16
+    "stockQuantity": 8
   },
   {
     "id": "etsy-14",
@@ -890,7 +890,7 @@
     "etsy_url": "https://www.etsy.com/listing/4491054968/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 4
+    "stockQuantity": 100
   },
   {
     "id": "etsy-15",
@@ -954,7 +954,7 @@
     "etsy_url": "https://www.etsy.com/listing/4469210639/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 23
+    "stockQuantity": 17
   },
   {
     "id": "etsy-16",
@@ -1014,7 +1014,7 @@
     "etsy_url": "https://www.etsy.com/listing/4491583951/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 100
+    "stockQuantity": 96
   },
   {
     "id": "etsy-17",
@@ -1072,7 +1072,7 @@
     "etsy_url": "https://www.etsy.com/listing/4379794366/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 16
+    "stockQuantity": 14
   },
   {
     "id": "etsy-18",
@@ -1136,7 +1136,7 @@
     "etsy_url": "https://www.etsy.com/listing/4352466955/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 1
+    "stockQuantity": 95
   },
   {
     "id": "etsy-19",
@@ -1318,7 +1318,7 @@
     "etsy_url": "https://www.etsy.com/listing/4486927175/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 85
+    "stockQuantity": 66
   },
   {
     "id": "etsy-22",
@@ -1386,7 +1386,7 @@
     "etsy_url": "https://www.etsy.com/listing/4489524870/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 97
+    "stockQuantity": 71
   },
   {
     "id": "etsy-23",
@@ -1450,7 +1450,7 @@
     "etsy_url": "https://www.etsy.com/listing/4490612122/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 20
+    "stockQuantity": 17
   },
   {
     "id": "etsy-24",
@@ -1572,7 +1572,7 @@
     "etsy_url": "https://www.etsy.com/listing/4487420597/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 93
+    "stockQuantity": 82
   },
   {
     "id": "etsy-26",
@@ -1636,7 +1636,7 @@
     "etsy_url": "https://www.etsy.com/listing/4472225250/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 29
+    "stockQuantity": 27
   },
   {
     "id": "etsy-27",
@@ -1820,7 +1820,7 @@
     "etsy_url": "https://www.etsy.com/listing/4490120003/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 5
+    "stockQuantity": 4
   },
   {
     "id": "etsy-30",
@@ -1884,7 +1884,7 @@
     "etsy_url": "https://www.etsy.com/listing/4367248406/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 23
+    "stockQuantity": 22
   },
   {
     "id": "etsy-31",
@@ -2196,7 +2196,7 @@
     "etsy_url": "https://www.etsy.com/listing/4470278765/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 98
+    "stockQuantity": 95
   },
   {
     "id": "etsy-36",
@@ -2260,7 +2260,7 @@
     "etsy_url": "https://www.etsy.com/listing/4488913068/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 2
+    "stockQuantity": 95
   },
   {
     "id": "etsy-37",
@@ -2328,7 +2328,7 @@
     "etsy_url": "https://www.etsy.com/listing/4372709098/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 28
+    "stockQuantity": 26
   },
   {
     "id": "etsy-38",
@@ -2514,7 +2514,7 @@
     "etsy_url": "https://www.etsy.com/listing/4472103774/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 26
+    "stockQuantity": 24
   },
   {
     "id": "etsy-41",
@@ -2713,8 +2713,8 @@
     "slug": "diy-queen-murphy-bed-with-desk-plans-horizontal-wall-bed-woodworking-pdf",
     "name": "DIY Queen Murphy Bed with Desk Plans | Horizontal Wall Bed Woodworking PDF",
     "category": "Bedroom",
-    "price": 5.25,
-    "originalPrice": 17.5,
+    "price": 4.65,
+    "originalPrice": 15.5,
     "rating": 4.7,
     "reviewCount": 285,
     "difficulty": "Easy",
@@ -2772,7 +2772,7 @@
     "etsy_url": "https://www.etsy.com/listing/4462561503/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 22
+    "stockQuantity": 17
   },
   {
     "id": "etsy-45",
@@ -2836,7 +2836,7 @@
     "etsy_url": "https://www.etsy.com/listing/4469264015/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 21
+    "stockQuantity": 17
   },
   {
     "id": "etsy-46",
@@ -3460,7 +3460,7 @@
     "etsy_url": "https://www.etsy.com/listing/4472252157/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 29
+    "stockQuantity": 28
   },
   {
     "id": "etsy-56",
@@ -4121,8 +4121,8 @@
     "slug": "modern-outdoor-sauna-plans-4-person-diy-cabin-blueprint-instant-download",
     "name": "Modern Outdoor Sauna Plans | 4 Person DIY Cabin Blueprint (Instant Download)",
     "category": "Outdoor",
-    "price": 9.3,
-    "originalPrice": 30.99,
+    "price": 7.8,
+    "originalPrice": 25.99,
     "rating": 4.7,
     "reviewCount": 285,
     "difficulty": "Easy",
@@ -4176,7 +4176,7 @@
     "etsy_url": "https://www.etsy.com/listing/4461520558/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 23
+    "stockQuantity": 19
   },
   {
     "id": "etsy-67",
@@ -4760,7 +4760,7 @@
     "etsy_url": "https://www.etsy.com/listing/4494235412/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 98
+    "stockQuantity": 96
   },
   {
     "id": "etsy-76",
@@ -4822,7 +4822,7 @@
     "etsy_url": "https://www.etsy.com/listing/4494721445/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 1,
+    "stockQuantity": 100,
     "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
   },
   {
@@ -4950,7 +4950,7 @@
     "etsy_url": "https://www.etsy.com/listing/4494429592/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 3,
+    "stockQuantity": 2,
     "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
   },
   {
@@ -5080,7 +5080,7 @@
     "etsy_url": "https://www.etsy.com/listing/4494953670/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 3,
+    "stockQuantity": 2,
     "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
   },
   {
@@ -5145,7 +5145,7 @@
     "etsy_url": "https://www.etsy.com/listing/4494896809/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 2,
+    "stockQuantity": 100,
     "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
   },
   {
@@ -5210,7 +5210,7 @@
     "etsy_url": "https://www.etsy.com/listing/4495651856/diy-wardrobe-plans-montessori-kids?sr_prefetch=1&pf_from=shop_home&ref=shop_home_active_1&pro=1&dd=1&logging_key=19da5e1810faa3b19e4b8917615df4d21a97af91%3A4495651856",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 3,
+    "stockQuantity": 1,
     "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
   },
   {
@@ -5342,7 +5342,7 @@
     "etsy_url": "https://www.etsy.com/listing/4495741700/heavy-duty-workbench-plans-shelves",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 1,
+    "stockQuantity": 100,
     "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
   },
   {
@@ -5407,7 +5407,7 @@
     "etsy_url": "https://www.etsy.com/listing/4378150447/diy-heavy-duty-workbench-plan-garage",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 19,
+    "stockQuantity": 16,
     "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
   },
   {
@@ -5478,7 +5478,7 @@
     "etsy_url": "https://www.etsy.com/listing/4496575305/mid-century-modern-bookshelf-plans",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 3,
+    "stockQuantity": 1,
     "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
   },
   {
@@ -5551,7 +5551,7 @@
     "etsy_url": "https://www.etsy.com/listing/4496558846/outdoor-dining-set-plans-table-and-six",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 3,
+    "stockQuantity": 2,
     "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
   },
   {
@@ -6215,7 +6215,7 @@
     "etsy_url": "https://www.etsy.com/listing/4377578931/diy-mobile-coffee-cart-plans-collapsible",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 19,
+    "stockQuantity": 17,
     "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
   },
   {
@@ -6345,7 +6345,7 @@
     "etsy_url": "https://www.etsy.com/listing/4380408404/8x10-firewood-shed-plans-diy-sloped-roof",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 3,
+    "stockQuantity": 2,
     "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
   },
   {
@@ -6550,7 +6550,7 @@
     "etsy_url": "https://www.etsy.com/listing/4498627027/christian-mothers-day-handprint-craft",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 7,
+    "stockQuantity": 4,
     "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
   },
   {
@@ -6686,7 +6686,7 @@
     "etsy_url": "https://www.etsy.com/listing/4502109743/printable-american-mahjong-tiles-pdf",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 3,
+    "stockQuantity": 100,
     "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
   },
   {
@@ -6749,7 +6749,7 @@
     "etsy_url": "https://www.etsy.com/listing/4502085775/2026-mahjong-hand-tracker-pdf-nmjl-card",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 3,
+    "stockQuantity": 100,
     "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
   },
   {
@@ -6819,7 +6819,7 @@
       "https://i.etsystatic.com/53333782/r/il/c88729/8026306863/il_794xN.8026306863_lbn9.jpg",
       "https://i.etsystatic.com/53333782/r/il/b381eb/7978353836/il_794xN.7978353836_1au6.jpg"
     ],
-    "etsy_url": "",
+    "etsy_url": "https://www.etsy.com/listing/4498609775/christian-mothers-day-handprint-craft",
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 1,
@@ -6890,6 +6890,270 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 1,
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+  },
+  {
+    "id": "etsy-108",
+    "slug": "triple-wheelie-bin-storage-plans-wooden-trash-can-enclosure-blueprint-pdf-download",
+    "name": "Triple Wheelie Bin Storage Plans | Wooden Trash Can Enclosure Blueprint (PDF Download)",
+    "category": "Outdoor",
+    "price": 5.4,
+    "originalPrice": 17.99,
+    "rating": 0,
+    "reviewCount": 0,
+    "difficulty": "Easy",
+    "estimatedTime": "Weekend",
+    "pages": 15,
+    "description": "Hide three ugly wheelie bins behind a beautiful slatted wooden enclosure — and instantly transform your driveway or garden. This Triple Wheelie Bin Storage Plans PDF gives you a complete step-by-step blueprint for a heav",
+    "longDescription": "Hide three ugly wheelie bins behind a beautiful slatted wooden enclosure — and instantly transform your driveway or garden. This Triple Wheelie Bin Storage Plans PDF gives you a complete step-by-step blueprint for a heavy-duty Wooden Garbage Shed that houses three standard 240L bins side by side, with individual front doors and lift-up lids.\nThis is the Diy Bin Store build that homeowners have been searching for — a proper Bin Shed Plan that delivers professional curb appeal on a weekend DIY timeline. Whether you're looking for Outdoor Trash Bin Screen Plans, a complete Garbage Bin Storage Enclosure, or a full Wooden Bin Storage Instructions guide — this download covers everything.\n\n✅ WHY YOU'LL LOVE THIS BUILD\n✔ Hides Three 240L Wheelie Bins — Perfectly sized for three standard bins side by side. A true Trash Can Cover 3 Plan and 3 Unit Garbage Can Shed solution in one blueprint.\n✔ Individual Front Doors — Each bin has its own door for easy access. A genuine Trash Bin with Gate Plans-style design that makes bin day effortless.\n✔ Lift-Up Top Lids — Easy top access for quick disposal without opening the doors. A Garbage Wooden Cover feature that keeps the whole structure looking clean and tidy.\n✔ Slatted Design — Proper airflow keeps odors down and pests out. A Garbage Bin Screen Plan-quality build, not just a box with a lid.\n✔ Weather-Resistant Build — Heavy-duty solid wood construction. A Wooden Bin Shelter built to outlast flimsy plastic covers for years of outdoor use.\n✔ Beginner Weekend Build — Clear 3D illustrated instructions make this one of the most accessible Wooden Bin Storage Instructions projects available. No professional skills needed.\n\n📐 DIMENSIONS (Metric)\nWidth: 240.0 cm\nDepth: 98.4 cm\nHeight: 118.1 cm\nPerfectly sized for three 240L bins. Also works as a Garbage Bin Storage with Wood solution for smaller bin configurations.\n\n📂 WHAT'S IN YOUR DOWNLOAD\n✔ Step-by-Step PDF Instructions — Clear, easy-to-read Wooden Bin Storage Instructions with detailed 3D illustrations for every stage of the build.\n✔ Complete Shopping List — Every piece of lumber, hinge, and handle specified. A proper Garbage Container Plans-style reference straight to the timber yard.\n✔ Efficient Cut List — Minimize waste and save money. Full metric measurements throughout — a complete Trashbin Storage Plan with no guesswork.\n✔ 3D Illustrations — Visual guidance for the frame, doors, lids, and slatted cladding. Covers the full Diy Garbage Bin Hideaway workflow from foundation to finish.\n🔨 PERFECT FOR\n\nHomeowners wanting a Diy Garbage Can Storage solution that actually looks good.\nAnyone searching for a Trash Bin Shed or Wooden Garbage Shed to hide bins from the street.\nBuilders wanting an Outside Trash Can Container enclosure for a driveway or side passage.\nDIYers searching for Yard Project Plans with a high visual impact and practical function.\nAnyone wanting a Garbage Bin Storage Enclosure that keeps pests out and curb appeal in.\nEasy Hardwood Diy Projects builders looking for a satisfying weekend build with lasting results.\n\n📥 INSTANT DIGITAL DOWNLOAD\nYour PDF arrives immediately after purchase. No waiting, no shipping.\n⚠️ Please Note: This is a DIGITAL PRODUCT only. No physical items will be shipped. Metric measurements throughout.\nSay goodbye to ugly bins and hello to a beautiful, clutter-free yard. Download today and start building this weekend.",
+    "features": [
+      "wheelie_bin_storage",
+      "trash_bin_shed",
+      "wooden_garbage_shed",
+      "DIY_build_plans",
+      "garbage_bin_screen"
+    ],
+    "tags": [
+      "wheelie_bin_storage",
+      "trash_bin_shed",
+      "wooden_garbage_shed",
+      "DIY_build_plans",
+      "garbage_bin_screen",
+      "bin_shed_plan",
+      "diy_garbage_bin",
+      "wooden_bin_shelter",
+      "trash_can_shelter",
+      "trash_rubbish_refuse",
+      "dustbin_dumpster",
+      "garbage_container",
+      "diy_bin_store"
+    ],
+    "materials": [
+      "Digital Download",
+      "PDF File",
+      "Instant Download"
+    ],
+    "image": "https://i.etsystatic.com/53333782/r/il/f6caf8/8116703453/il_fullxfull.8116703453_8x0k.jpg",
+    "thumbnail": "https://i.etsystatic.com/53333782/r/il/f6caf8/8116703453/il_794xN.8116703453_8x0k.jpg",
+    "images": [
+      "https://i.etsystatic.com/53333782/r/il/f6caf8/8116703453/il_fullxfull.8116703453_8x0k.jpg",
+      "https://i.etsystatic.com/53333782/r/il/326879/8116714273/il_fullxfull.8116714273_pfuj.jpg",
+      "https://i.etsystatic.com/53333782/r/il/7afab9/8068784204/il_fullxfull.8068784204_pynt.jpg",
+      "https://i.etsystatic.com/53333782/r/il/2df4b2/8116703437/il_fullxfull.8116703437_kokv.jpg",
+      "https://i.etsystatic.com/53333782/r/il/1dbd1f/8116703467/il_fullxfull.8116703467_otqt.jpg",
+      "https://i.etsystatic.com/53333782/r/il/83668a/8068784176/il_fullxfull.8068784176_2j6t.jpg"
+    ],
+    "imagesThumbnails": [
+      "https://i.etsystatic.com/53333782/r/il/f6caf8/8116703453/il_794xN.8116703453_8x0k.jpg",
+      "https://i.etsystatic.com/53333782/r/il/326879/8116714273/il_794xN.8116714273_pfuj.jpg",
+      "https://i.etsystatic.com/53333782/r/il/7afab9/8068784204/il_794xN.8068784204_pynt.jpg",
+      "https://i.etsystatic.com/53333782/r/il/2df4b2/8116703437/il_794xN.8116703437_kokv.jpg",
+      "https://i.etsystatic.com/53333782/r/il/1dbd1f/8116703467/il_794xN.8116703467_otqt.jpg",
+      "https://i.etsystatic.com/53333782/r/il/83668a/8068784176/il_794xN.8068784176_2j6t.jpg"
+    ],
+    "etsy_url": "https://www.etsy.com/listing/4512349542/triple-wheelie-bin-storage-plans-wooden",
+    "bestseller": false,
+    "inStock": true,
+    "stockQuantity": 3,
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+  },
+  {
+    "id": "etsy-109",
+    "slug": "easy-diy-mud-kitchen-plans-beginner-wooden-outdoor-play-blueprint-pdf-download",
+    "name": "Easy DIY Mud Kitchen Plans | Beginner Wooden Outdoor Play Blueprint (PDF Download)",
+    "category": "Kids",
+    "price": 5.4,
+    "originalPrice": 17.99,
+    "rating": 0,
+    "reviewCount": 0,
+    "difficulty": "Easy",
+    "estimatedTime": "Weekend",
+    "pages": 15,
+    "description": "Stop Googling \"how to build a mud kitchen\" — everything you need is right here. This Easy DIY Mud Kitchen Plans PDF gives you a beginner-friendly, step-by-step blueprint for a solid wooden Mud Kitchen your kids will play",
+    "longDescription": "Stop Googling \"how to build a mud kitchen\" — everything you need is right here. This Easy DIY Mud Kitchen Plans PDF gives you a beginner-friendly, step-by-step blueprint for a solid wooden Mud Kitchen your kids will play in for years.\nNo fancy tools, no confusing diagrams, no wasted lumber. This is the Mud Kitchen Easy Plans build designed for parents who want professional results on a weekend timeline. Whether you've been searching for a Pallet Mud Kitchen Blueprint, Mud Kitchen Building Instructions, or a complete Kids Outdoor Mud Kitchen PDF — this download delivers.\n✅ WHAT MAKES THIS BUILD SPECIAL\n✔ Easy Beginner Build — Designed for parents, not carpenters. Clear step-by-step instructions that even a first-time woodworker can follow. The most approachable Wood Mud Kitchen Diy plan available.\n✔ Wooden Mud Kitchen Design — Solid wood construction that outlasts any plastic toy. A true Children Mud Kitchen build that fits naturally into any garden or backyard setting.\n✔ Mud Kitchen Sink Cutout — Drop-in sink hole included for real water play. Compatible with Mud Kitchen Plans Running Water setups for full sensory engagement.\n✔ Pallet-Friendly Build — Can be adapted for pallet lumber. A great Pallet Mud Kitchen or Pallet Kitchen Pattern-style project for budget-conscious builders.\n✔ Storage Built In — Shelving, utensil rail, and lower deck included. A Mud Kitchen Plans with Shelves design that keeps outdoor play organized.\n📐 Finished Dimensions\n• Width: 35.4 inches (90 cm)\n• Height: 39.3 inches (100 cm)\n• Depth: 15.7 inches (40 cm)\nA Wide Mud Kitchen footprint — perfect for siblings, playdates, and Mud Kitchen for Daycare settings.\n📂 WHAT'S IN YOUR DOWNLOAD\n✔ Complete Cut List — Straight to the lumber yard. Full Mud Kitchen Measurements included.\n✔ Step-by-Step 3D Assembly — Mud Kitchen Download Instructions for every stage.\n✔ Full Material List — Every piece of lumber and hardware listed.\n✔ Printable PDF Pages — Compatible with Mud Kitchen Dxf File workflows.\n🔨 PERFECT FOR\n\nParents wanting an easy Diy Mudkitchen Outdoor weekend project.\nBuilders searching for a Homemade Mud Kitchen Template with a full cut list.\nAnyone wanting a Mud Kitchen Plan Montessori-inspired sensory play station.\nFamilies building a Backyard Playground centerpiece from natural wood.\nOutside Mud Kitchen Dramatic Play settings for imaginative, creative kids.\n\n📥 INSTANT DIGITAL DOWNLOAD\nYour PDF arrives immediately after purchase. No waiting, no shipping.\n⚠️ Digital Plans only — no physical mud kitchen, sink, or wood will be shipped.",
+    "features": [
+      "kids_mud_kitchen_diy",
+      "mud_pie_kitchen_plan",
+      "easy_mud_kitchen_diy",
+      "mud_kitchen_plan_pdf",
+      "mud_kitchen_sink_diy"
+    ],
+    "tags": [
+      "kids_mud_kitchen_diy",
+      "mud_pie_kitchen_plan",
+      "easy_mud_kitchen_diy",
+      "mud_kitchen_plan_pdf",
+      "mud_kitchen_sink_diy",
+      "children_mud_kitchen",
+      "wooden_mud_kitchen",
+      "mud_kitchen_build",
+      "mud_kitchen_diy_kit",
+      "backyard_playground",
+      "mud_kitchen_decking",
+      "mud_kitchen_toy_diy",
+      "mud_kitchen_ideas"
+    ],
+    "materials": [
+      "Digital Download",
+      "PDF File",
+      "Instant Download"
+    ],
+    "image": "https://i.etsystatic.com/53333782/r/il/5506cf/8068592074/il_fullxfull.8068592074_k9tt.jpg",
+    "thumbnail": "https://i.etsystatic.com/53333782/r/il/5506cf/8068592074/il_794xN.8068592074_k9tt.jpg",
+    "images": [
+      "https://i.etsystatic.com/53333782/r/il/5506cf/8068592074/il_fullxfull.8068592074_k9tt.jpg",
+      "https://i.etsystatic.com/53333782/r/il/14cdf2/8116510749/il_fullxfull.8116510749_angi.jpg",
+      "https://i.etsystatic.com/53333782/r/il/509fd9/8068592086/il_fullxfull.8068592086_a4ri.jpg",
+      "https://i.etsystatic.com/53333782/r/il/9b3f41/8068592082/il_fullxfull.8068592082_i5pu.jpg",
+      "https://i.etsystatic.com/53333782/r/il/3c8411/8068592070/il_fullxfull.8068592070_mzm7.jpg",
+      "https://i.etsystatic.com/53333782/r/il/8499c1/8068592080/il_fullxfull.8068592080_epqw.jpg",
+      "https://i.etsystatic.com/53333782/r/il/9411f6/8116510469/il_fullxfull.8116510469_97du.jpg"
+    ],
+    "imagesThumbnails": [
+      "https://i.etsystatic.com/53333782/r/il/5506cf/8068592074/il_794xN.8068592074_k9tt.jpg",
+      "https://i.etsystatic.com/53333782/r/il/14cdf2/8116510749/il_794xN.8116510749_angi.jpg",
+      "https://i.etsystatic.com/53333782/r/il/509fd9/8068592086/il_794xN.8068592086_a4ri.jpg",
+      "https://i.etsystatic.com/53333782/r/il/9b3f41/8068592082/il_794xN.8068592082_i5pu.jpg",
+      "https://i.etsystatic.com/53333782/r/il/3c8411/8068592070/il_794xN.8068592070_mzm7.jpg",
+      "https://i.etsystatic.com/53333782/r/il/8499c1/8068592080/il_794xN.8068592080_epqw.jpg",
+      "https://i.etsystatic.com/53333782/r/il/9411f6/8116510469/il_794xN.8116510469_97du.jpg"
+    ],
+    "etsy_url": "https://www.etsy.com/listing/4512316226/easy-diy-mud-kitchen-plans-pdf-kids",
+    "bestseller": false,
+    "inStock": true,
+    "stockQuantity": 5,
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+  },
+  {
+    "id": "etsy-110",
+    "slug": "printable-american-mahjong-tiles-pdf-nmjl-practice-set-color-black-white-digital-mah-jongg-tile-download-bulk-cut",
+    "name": "Printable American Mahjong Tiles PDF | NMJL Practice Set Color & Black White | Digital Mah Jongg Tile Download | Bulk Cut",
+    "category": "Digital",
+    "price": 2.4,
+    "originalPrice": 8,
+    "rating": 0,
+    "reviewCount": 0,
+    "difficulty": "Easy",
+    "estimatedTime": "Weekend",
+    "pages": 15,
+    "description": "Get the most complete Printable American Mahjong Tiles set available — in both full color AND black & white. This NMJL-compatible practice tile PDF gives you everything you need to learn, teach, or run group sessions wit",
+    "longDescription": "Get the most complete Printable American Mahjong Tiles set available — in both full color AND black & white. This NMJL-compatible practice tile PDF gives you everything you need to learn, teach, or run group sessions without the cost of a full physical tile set.\nTwo versions in one download means more flexibility: use the color set for vibrant visual learning, and the black & white version for ink-saving classroom printing or Bulk Cut Mahjong prep. If you've been searching for Printable Mahjong Practice Tiles, a complete Printable Mahjong Tiles PDF, or a proper Training Mahjong Card-compatible tile set — this is the one.\n✅ WHAT MAKES THIS SET DIFFERENT\n✔ Color AND Black & White Versions — Both included in one download. Use full color for individual Mahjong Practice sets, black & white for efficient Bulk Cut Mahjong classroom prep or ink-saving prints.\n✔ NMJL Compatible — Designed to align with National Mahjong League-style gameplay. A proper Digital Mahjong Card American-style tile reference for NMJL players and educators.\n✔ Complete American Mah Jongg Tile Set — Every suit, honor tile, and joker included. A true Digital Mahjong Set covering everything needed for a full game of American Mahjong.\n✔ Optimized for Bulk Cutting — Tiles laid out for maximum page efficiency. Perfect for Mahjong Classroom and Mahjong Instructional Materials setups where multiple sets are needed quickly.\n✔ Home Print Ready — No resizing or formatting needed. Print straight from any home printer. Works on standard letter paper or cardstock for durability.\n✔ Laminate & Reuse — Print once, laminate, and use all season. A reusable Mahjong Game Aid that pays for itself after the first session.\n📂 WHAT'S IN YOUR DOWNLOAD\n✔ Full-Color PDF — vibrant, easy-to-read American Mah Jongg tiles across multiple pages\n✔ Black & White PDF — ink-saving version for Mahjong Classroom bulk printing\n✔ Complete NMJL-compatible tile set — all suits, honors, and jokers\n✔ Instant digital download — available immediately after purchase\n✔ US Letter size — prints on any standard home printer\n🙏 PERFECT FOR\n\nMahjong Educators running beginner Mahjong Training and Mahjong Classroom sessions.\nNMJL players wanting a Printable Mahjong Practice Set for home study.\nGroups and clubs needing Bulk Cut Mahjong tile sets for simultaneous games.\nBeginners building Mahjong Learning skills through hands-on tile recognition.\nTeachers creating a Printable Mahjong Pretty Guide-style learning toolkit.\nAnyone wanting a Printable Mahjong Game Card-compatible tile reference without buying a full set.\n\n📥 INSTANT DIGITAL DOWNLOAD\nAvailable immediately after purchase. Print at home, laminate for durability, or take to a local print shop for premium cardstock prints.\n⚠️ Please Note: Digital download only — no physical tiles will be shipped. For personal and classroom use only. Not for resale or commercial use.",
+    "features": [
+      "Mahjong_PDF_Download",
+      "Digital_Mahjong_Set",
+      "Mahjong_Learning",
+      "Mahjong_Printable",
+      "American_Mahjong"
+    ],
+    "tags": [
+      "Mahjong_PDF_Download",
+      "Digital_Mahjong_Set",
+      "Mahjong_Learning",
+      "Mahjong_Printable",
+      "American_Mahjong",
+      "Bulk_Cut_Mahjong",
+      "nmjl_printable",
+      "Mahjong_Educator",
+      "Mahjong_Game_Aid",
+      "Mahjong_Training",
+      "Mahjong_Classroom",
+      "Mahjong_Practice",
+      "mahjong_tiles_pdf"
+    ],
+    "materials": [
+      "Digital Download",
+      "PDF File",
+      "Instant Download"
+    ],
+    "image": "https://i.etsystatic.com/53333782/r/il/d2947f/8051497855/il_fullxfull.8051497855_ce9c.jpg",
+    "thumbnail": "https://i.etsystatic.com/53333782/r/il/d2947f/8051497855/il_794xN.8051497855_ce9c.jpg",
+    "images": [
+      "https://i.etsystatic.com/53333782/r/il/d2947f/8051497855/il_fullxfull.8051497855_ce9c.jpg",
+      "https://i.etsystatic.com/53333782/r/il/fa8f31/8051506835/il_fullxfull.8051506835_93e6.jpg",
+      "https://i.etsystatic.com/53333782/r/il/793fda/8051506887/il_fullxfull.8051506887_sqoc.jpg",
+      "https://i.etsystatic.com/53333782/r/il/4f6ef1/8003584606/il_fullxfull.8003584606_ruc9.jpg",
+      "https://i.etsystatic.com/53333782/r/il/ed375c/8051506891/il_fullxfull.8051506891_asxw.jpg"
+    ],
+    "imagesThumbnails": [
+      "https://i.etsystatic.com/53333782/r/il/d2947f/8051497855/il_794xN.8051497855_ce9c.jpg",
+      "https://i.etsystatic.com/53333782/r/il/fa8f31/8051506835/il_794xN.8051506835_93e6.jpg",
+      "https://i.etsystatic.com/53333782/r/il/793fda/8051506887/il_794xN.8051506887_sqoc.jpg",
+      "https://i.etsystatic.com/53333782/r/il/4f6ef1/8003584606/il_794xN.8003584606_ruc9.jpg",
+      "https://i.etsystatic.com/53333782/r/il/ed375c/8051506891/il_794xN.8051506891_asxw.jpg"
+    ],
+    "etsy_url": "https://www.etsy.com/listing/4502109743/printable-american-mahjong-tiles-pdf",
+    "bestseller": false,
+    "inStock": true,
+    "stockQuantity": 96,
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+  },
+  {
+    "id": "etsy-111",
+    "slug": "kids-mud-kitchen-woodworking-plans-outdoor-play-station-blueprint-pdf-download",
+    "name": "Kids Mud Kitchen Woodworking Plans | Outdoor Play Station Blueprint (PDF Download)",
+    "category": "Kids",
+    "price": 6.6,
+    "originalPrice": 22,
+    "rating": 0,
+    "reviewCount": 0,
+    "difficulty": "Easy",
+    "estimatedTime": "Weekend",
+    "pages": 15,
+    "description": "Give your toddler or child the outdoor play station they'll choose over screens every single time. These Kids Mud Kitchen Woodworking Plans PDF give you a complete printable blueprint for a durable outdoor play kitchen —",
+    "longDescription": "Give your toddler or child the outdoor play station they'll choose over screens every single time. These Kids Mud Kitchen Woodworking Plans PDF give you a complete printable blueprint for a durable outdoor play kitchen — with a sink, stovetop, storage shelves, and room for multiple kids.\nThis is the Mud Kitchen Diy Plan Instructions build for parents who want professional-looking results without professional skills. If you've been searching for Mud Kitchen Plans Cut List format, a complete Mud Kitchen Download Instructions guide, or a printable Kids Mud Table Plans blueprint — this is it.\n✅ WHY THIS PLAN STANDS OUT\n✔ Beginner Woodworking Friendly — No advanced tools or skills needed. One of the most accessible Woodworking PDF builds for parents tackling their first big outdoor project.\n✔ Toddler & Kids Sized — Proportioned perfectly for toddlers and young children. A true Toddler Mud Kitchen and Pretend Play Kitchen build that grows with your child.\n✔ Outdoor Kitchen Sink Built In — Real water play sink cutout included. Works beautifully as a Sensory Table Water Table alternative with mud play capability.\n✔ Full Shelving & Storage — Upper shelf, utensil wall, and lower deck. A Mud Kitchen Plans with Shelves layout that keeps the Backyard Play Ideas organized and fun.\n✔ Printable at Home — Full Woodworking PDF ready to print on any home printer. Use straight from the download — no resizing needed.\n📐 Finished Dimensions\n• Width: 35.4 inches (90 cm)\n• Height: 39.3 inches (100 cm)\n• Depth: 15.7 inches (40 cm)\nSized as a genuine Kids Outdoor Project centerpiece — wide enough for the whole family.\n📂 WHAT'S IN YOUR DOWNLOAD\n✔ Mud Kitchen Plans Cut List — Lumber yard ready, zero waste.\n✔ 3D Step-by-Step Assembly Guide — Mud Kitchen Download Instructions for every stage.\n✔ Full Material List — Hardware and lumber fully specified.\n✔ Printable PDF — Compatible with Mud Kitchen Dxf File digital workflows.\n🔨 PERFECT FOR\n\nFamilies wanting a Mud Kitchen Plan Montessori outdoor sensory station.\nParents searching for Mud Kitchen Plans for Twins — wide enough for two kids side by side.\nEducators wanting a Mud Kitchen for Daycare-scale outdoor play station.\nAnyone wanting a Diy Mudkitchen Outdoor build with a complete cut list.\nBuilders wanting a Pallet Mud Kitchen adaptation using budget lumber.\n\n📥 INSTANT DIGITAL DOWNLOAD\nYour PDF arrives immediately after purchase. No waiting, no shipping.\n⚠️ Digital Plans only — no physical mud kitchen, sink, or wood will be shipped.\nBuild the backyard memory your kids will talk about for years. Download today.",
+    "features": [
+      "mud_kitchen_plans",
+      "outdoor_mud_kitchen",
+      "diy_mud_kitchen",
+      "kids_play_kitchen",
+      "woodworking_plans"
+    ],
+    "tags": [
+      "mud_kitchen_plans",
+      "outdoor_mud_kitchen",
+      "diy_mud_kitchen",
+      "kids_play_kitchen",
+      "woodworking_plans",
+      "kids_outdoor_project",
+      "pretend_play_kitchen",
+      "toddler_mud_kitchen",
+      "beginner_woodworking",
+      "woodworking_pdf",
+      "kids_outdoor_play",
+      "backyard_play_ideas",
+      "kids_outdoor_toy"
+    ],
+    "materials": [
+      "Digital Download",
+      "PDF File",
+      "Instant Download"
+    ],
+    "image": "https://i.etsystatic.com/53333782/r/il/6b2d36/8107671791/il_fullxfull.8107671791_b4qu.jpg",
+    "thumbnail": "https://i.etsystatic.com/53333782/r/il/6b2d36/8107671791/il_794xN.8107671791_b4qu.jpg",
+    "images": [
+      "https://i.etsystatic.com/53333782/r/il/6b2d36/8107671791/il_fullxfull.8107671791_b4qu.jpg",
+      "https://i.etsystatic.com/53333782/r/il/245b7f/8107672029/il_fullxfull.8107672029_j657.jpg",
+      "https://i.etsystatic.com/53333782/r/il/75cf8f/8059759064/il_fullxfull.8059759064_r1kh.jpg",
+      "https://i.etsystatic.com/53333782/r/il/9f8a97/8059759066/il_fullxfull.8059759066_6x8e.jpg",
+      "https://i.etsystatic.com/53333782/r/il/33f4f1/8107671781/il_fullxfull.8107671781_gg3t.jpg",
+      "https://i.etsystatic.com/53333782/r/il/d08a68/8059759044/il_fullxfull.8059759044_kt5k.jpg",
+      "https://i.etsystatic.com/53333782/r/il/bda58c/8107671793/il_fullxfull.8107671793_sw9g.jpg",
+      "https://i.etsystatic.com/53333782/r/il/444d2f/8059759304/il_fullxfull.8059759304_myvt.jpg"
+    ],
+    "imagesThumbnails": [
+      "https://i.etsystatic.com/53333782/r/il/6b2d36/8107671791/il_794xN.8107671791_b4qu.jpg",
+      "https://i.etsystatic.com/53333782/r/il/245b7f/8107672029/il_794xN.8107672029_j657.jpg",
+      "https://i.etsystatic.com/53333782/r/il/75cf8f/8059759064/il_794xN.8059759064_r1kh.jpg",
+      "https://i.etsystatic.com/53333782/r/il/9f8a97/8059759066/il_794xN.8059759066_6x8e.jpg",
+      "https://i.etsystatic.com/53333782/r/il/33f4f1/8107671781/il_794xN.8107671781_gg3t.jpg",
+      "https://i.etsystatic.com/53333782/r/il/d08a68/8059759044/il_794xN.8059759044_kt5k.jpg",
+      "https://i.etsystatic.com/53333782/r/il/bda58c/8107671793/il_794xN.8107671793_sw9g.jpg",
+      "https://i.etsystatic.com/53333782/r/il/444d2f/8059759304/il_794xN.8059759304_myvt.jpg"
+    ],
+    "etsy_url": "https://www.etsy.com/listing/4511085223/kids-mud-kitchen-woodworking-plans-pdf",
+    "bestseller": false,
+    "inStock": true,
+    "stockQuantity": 5,
     "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
   }
 ]

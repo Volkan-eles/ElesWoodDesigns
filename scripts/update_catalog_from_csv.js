@@ -25,6 +25,10 @@ const NEW_LISTING_URLS = {
   'christian-mothers-day-handprint-craft-keepsake': 'https://www.etsy.com/listing/4498637947/christian-mothers-day-handprint-craft',
   'christian-mothers-day-handprint-craft-poem': 'https://www.etsy.com/listing/4498627027/christian-mothers-day-handprint-craft',
   'christian-mothers-day-handprint-craft-picked-you': 'https://www.etsy.com/listing/4498609775/christian-mothers-day-handprint-craft',
+  // NEW listings added 2026-05-28
+  'triple-wheelie-bin-storage-plans-wooden-trash-can-enclosure-blueprint-pdf-download': 'https://www.etsy.com/listing/4512349542/triple-wheelie-bin-storage-plans-wooden',
+  'easy-diy-mud-kitchen-plans-beginner-wooden-outdoor-play-blueprint-pdf-download': 'https://www.etsy.com/listing/4512316226/easy-diy-mud-kitchen-plans-pdf-kids',
+  'kids-mud-kitchen-woodworking-plans-outdoor-play-station-blueprint-pdf-download': 'https://www.etsy.com/listing/4511085223/kids-mud-kitchen-woodworking-plans-pdf',
 };
 
 // --- CSV Parser (handles multi-line quoted fields) ---
@@ -254,7 +258,11 @@ const newProductTitles = [
   'Christian Mother\'s Day Handprint Craft | God Chose You Poem',
   'Christian Mother\'s Day Handprint Craft Printable | God Picked You to Be My Mom',
   'Printable American Mahjong Tiles PDF | Complete 4-Suit Set (Digital Download)',
-  '2026 Mahjong Hand Tracker PDF | NMJL Card Download (Digital Download)'
+  '2026 Mahjong Hand Tracker PDF | NMJL Card Download (Digital Download)',
+  // NEW 2026-05-28
+  'Triple Wheelie Bin Storage Plans | Wooden Trash Can Enclosure Blueprint (PDF Download)',
+  'Easy DIY Mud Kitchen Plans | Beginner Wooden Outdoor Play Blueprint (PDF Download)',
+  'Kids Mud Kitchen Woodworking Plans | Outdoor Play Station Blueprint (PDF Download)',
 ];
 
 // Also check: which CSV rows are new
@@ -334,6 +342,12 @@ for (const row of dataRows) {
     etsyUrl = 'https://www.etsy.com/listing/4502109743/printable-american-mahjong-tiles-pdf';
   } else if (titleWords.includes('mahjong hand tracker pdf')) {
     etsyUrl = 'https://www.etsy.com/listing/4502085775/2026-mahjong-hand-tracker-pdf-nmjl-card';
+  } else if (titleWords.includes('triple wheelie bin storage')) {
+    etsyUrl = 'https://www.etsy.com/listing/4512349542/triple-wheelie-bin-storage-plans-wooden';
+  } else if (titleWords.includes('easy diy mud kitchen plans | beginner')) {
+    etsyUrl = 'https://www.etsy.com/listing/4512316226/easy-diy-mud-kitchen-plans-pdf-kids';
+  } else if (titleWords.includes('kids mud kitchen woodworking plans')) {
+    etsyUrl = 'https://www.etsy.com/listing/4511085223/kids-mud-kitchen-woodworking-plans-pdf';
   }
   
   const descShort = description.slice(0, 220).split('\n')[0];
