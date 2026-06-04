@@ -29,6 +29,10 @@ const NEW_LISTING_URLS = {
   'triple-wheelie-bin-storage-plans-wooden-trash-can-enclosure-blueprint-pdf-download': 'https://www.etsy.com/listing/4512349542/triple-wheelie-bin-storage-plans-wooden',
   'easy-diy-mud-kitchen-plans-beginner-wooden-outdoor-play-blueprint-pdf-download': 'https://www.etsy.com/listing/4512316226/easy-diy-mud-kitchen-plans-pdf-kids',
   'kids-mud-kitchen-woodworking-plans-outdoor-play-station-blueprint-pdf-download': 'https://www.etsy.com/listing/4511085223/kids-mud-kitchen-woodworking-plans-pdf',
+  // NEW listings added 2026-06-04
+  'world-cup-2026-sweepstake-kit-printable-pdf-a4-us-letter-football-office-pool-game-soccer-tournament-tracker-instant-dow': 'https://www.etsy.com/listing/4516380026/world-cup-2026-sweepstake-kit-printable',
+  'diy-farmstand-plans-pdf-roadside-stand-blueprint-egg-flower-produce-sourdough-market-cart-instant-download-woodworking-g': 'https://www.etsy.com/listing/4516095370/diy-farmstand-plans-pdf-roadside-stand',
+  'diy-farmstand-plans-pdf-roadside-mobile-market-stand-blueprint-bakery-egg-flower-produce-stand-woodworking-plans': 'https://www.etsy.com/listing/4515978768/diy-farmstand-plans-pdf-roadside-mobile',
 };
 
 // --- CSV Parser (handles multi-line quoted fields) ---
@@ -116,7 +120,7 @@ function determineCategory(title, tags) {
   const t = (title + ' ' + tags).toLowerCase();
   
   // Specific Digital Crafts / Printables
-  if (t.includes('mothers day') || t.includes('handprint') || t.includes('kentucky derby') || t.includes('portrait') || t.includes('costco') || t.includes('memorial') || t.includes('mahjong')) {
+  if (t.includes('mothers day') || t.includes('handprint') || t.includes('kentucky derby') || t.includes('portrait') || t.includes('costco') || t.includes('memorial') || t.includes('mahjong') || t.includes('sweepstake') || t.includes('world cup')) {
     return 'Digital';
   }
 
@@ -263,6 +267,10 @@ const newProductTitles = [
   'Triple Wheelie Bin Storage Plans | Wooden Trash Can Enclosure Blueprint (PDF Download)',
   'Easy DIY Mud Kitchen Plans | Beginner Wooden Outdoor Play Blueprint (PDF Download)',
   'Kids Mud Kitchen Woodworking Plans | Outdoor Play Station Blueprint (PDF Download)',
+  // NEW 2026-06-04
+  'World Cup 2026 Sweepstake Kit – Printable PDF | A4 & US Letter | Football Office Pool Game | Soccer Tournament Tracker | Instant Download',
+  'DIY Farmstand Plans PDF | Roadside Stand Blueprint | Egg Flower Produce Sourdough Market Cart | Instant Download Woodworking Guide',
+  'DIY Farmstand Plans PDF | Roadside Mobile Market Stand Blueprint | Bakery Egg Flower Produce Stand | Woodworking Plans',
 ];
 
 // Also check: which CSV rows are new
@@ -348,7 +356,14 @@ for (const row of dataRows) {
     etsyUrl = 'https://www.etsy.com/listing/4512316226/easy-diy-mud-kitchen-plans-pdf-kids';
   } else if (titleWords.includes('kids mud kitchen woodworking plans')) {
     etsyUrl = 'https://www.etsy.com/listing/4511085223/kids-mud-kitchen-woodworking-plans-pdf';
+  } else if (titleWords.includes('world cup 2026 sweepstake kit')) {
+    etsyUrl = 'https://www.etsy.com/listing/4516380026/world-cup-2026-sweepstake-kit-printable';
+  } else if (titleWords.includes('roadside stand blueprint | egg flower produce')) {
+    etsyUrl = 'https://www.etsy.com/listing/4516095370/diy-farmstand-plans-pdf-roadside-stand';
+  } else if (titleWords.includes('roadside mobile market stand blueprint')) {
+    etsyUrl = 'https://www.etsy.com/listing/4515978768/diy-farmstand-plans-pdf-roadside-mobile';
   }
+
   
   const descShort = description.slice(0, 220).split('\n')[0];
   

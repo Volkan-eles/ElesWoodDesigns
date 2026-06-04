@@ -40,7 +40,7 @@ function getGoogleCategory(product) {
   const cat = product.category || '';
   const isPortrait = slug.includes('portrait') || slug.includes('sketch');
   const isDigitalArt = cat === 'Digital' && (slug.includes('christmas') || slug.includes('costco') || slug.includes('watercolour') || slug.includes('memorial'));
-  const isPartyPrintable = cat === 'Digital' && (slug.includes('kentucky-derby') || slug.includes('party') || slug.includes('game') || slug.includes('betting') || slug.includes('cards') || slug.includes('mothers-day') || slug.includes('handprint') || slug.includes('craft') || slug.includes('keepsake') || slug.includes('mahjong'));
+  const isPartyPrintable = cat === 'Digital' && (slug.includes('kentucky-derby') || slug.includes('party') || slug.includes('game') || slug.includes('betting') || slug.includes('cards') || slug.includes('mothers-day') || slug.includes('handprint') || slug.includes('craft') || slug.includes('keepsake') || slug.includes('mahjong') || slug.includes('sweepstake') || slug.includes('world-cup'));
   if (isPortrait || isDigitalArt || isPartyPrintable) return '500044';
   return '505378';
 }
@@ -50,7 +50,7 @@ function getProductType(product) {
   const cat = product.category || '';
   const isPortrait = slug.includes('portrait') || slug.includes('sketch');
   const isDigitalArt = cat === 'Digital' && (slug.includes('christmas') || slug.includes('costco') || slug.includes('watercolour') || slug.includes('memorial'));
-  const isPartyPrintable = cat === 'Digital' && (slug.includes('kentucky-derby') || slug.includes('party') || slug.includes('game') || slug.includes('betting') || slug.includes('cards') || slug.includes('mothers-day') || slug.includes('handprint') || slug.includes('craft') || slug.includes('keepsake') || slug.includes('mahjong'));
+  const isPartyPrintable = cat === 'Digital' && (slug.includes('kentucky-derby') || slug.includes('party') || slug.includes('game') || slug.includes('betting') || slug.includes('cards') || slug.includes('mothers-day') || slug.includes('handprint') || slug.includes('craft') || slug.includes('keepsake') || slug.includes('mahjong') || slug.includes('sweepstake') || slug.includes('world-cup'));
   const isKids = cat === 'Kids' || slug.includes('treehouse') || slug.includes('mud-kitchen') || slug.includes('playhouse');
   const isGarden = cat === 'Garden' || slug.includes('planter') || slug.includes('plant-stand') || slug.includes('garden') || slug.includes('farmstand') || slug.includes('farm-stand');
   const isOutdoor = cat === 'Outdoor' || slug.includes('pergola') || slug.includes('swing') || slug.includes('arbor') || slug.includes('sauna') || slug.includes('treehouse') || slug.includes('chicken-coop') || slug.includes('fence') || slug.includes('shed') || slug.includes('windmill');
