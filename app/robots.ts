@@ -5,12 +5,17 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: '*',
-        allow: '/',
+        allow: ['/', '/api/pin/'],
         disallow: ['/admin/', '/api/'],
       },
       {
         userAgent: 'Googlebot',
         allow: '/',
+        disallow: ['/admin/'],
+      },
+      {
+        userAgent: 'Pinterestbot',
+        allow: ['/', '/api/pin/'],
         disallow: ['/admin/'],
       },
     ],
