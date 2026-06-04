@@ -60,6 +60,8 @@ const headers = [
 
 const csvRows = [headers.join(',')];
 
+const usedImages = new Set();
+
 products.forEach((product) => {
   const title = cleanText(product.name).slice(0, 100);
   
@@ -70,7 +72,16 @@ products.forEach((product) => {
   const description = cleanText(rawDescription + featuresStr + materialsStr + tagsString).slice(0, 500);
 
   const siteUrl = `${baseUrl}/products/${product.slug}/`;
-  const primaryImage = product.images?.[0] || '';
+  
+  // Deduplicate images to avoid Pinterest Bulk Uploader "Duplicate Pin image" errors
+  let primaryImage = product.images?.[0] || '';
+  let imgIndex = 0;
+  while (usedImages.has(primaryImage) && product.images && imgIndex < product.images.length - 1) {
+    imgIndex++;
+    primaryImage = product.images[imgIndex];
+  }
+  usedImages.add(primaryImage);
+
   const boardName = getBoardName(product.category);
 
   const row = [
