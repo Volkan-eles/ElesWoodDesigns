@@ -9,7 +9,7 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
-const CSV_PATH = path.join(ROOT, 'EtsyListingsDownload.csv');
+const CSV_PATH = path.join(ROOT, 'EtsyListingsDownload (1).csv');
 const JSON_PATH = path.join(ROOT, 'data', 'etsy_products.json');
 
 const NEW_LISTING_URLS = {
@@ -33,6 +33,9 @@ const NEW_LISTING_URLS = {
   'world-cup-2026-sweepstake-kit-printable-pdf-a4-us-letter-football-office-pool-game-soccer-tournament-tracker-instant-dow': 'https://www.etsy.com/listing/4516380026/world-cup-2026-sweepstake-kit-printable',
   'diy-farmstand-plans-pdf-roadside-stand-blueprint-egg-flower-produce-sourdough-market-cart-instant-download-woodworking-g': 'https://www.etsy.com/listing/4516095370/diy-farmstand-plans-pdf-roadside-stand',
   'diy-farmstand-plans-pdf-roadside-mobile-market-stand-blueprint-bakery-egg-flower-produce-stand-woodworking-plans': 'https://www.etsy.com/listing/4515978768/diy-farmstand-plans-pdf-roadside-mobile',
+  // NEW listings added 2026-06-07
+  'fifa-world-cup-2026-bracket-poster-group-stage-knockout-tournament-chart-printable-pdf': 'https://www.etsy.com/listing/4517674909/fifa-world-cup-2026-bracket-poster-group',
+  'fifa-world-cup-2026-wall-chart-poster-printable-tournament-schedule-pdf': 'https://www.etsy.com/listing/4517694674/fifa-world-cup-2026-wall-chart-poster',
 };
 
 // --- CSV Parser (handles multi-line quoted fields) ---
@@ -271,6 +274,9 @@ const newProductTitles = [
   'World Cup 2026 Sweepstake Kit – Printable PDF | A4 & US Letter | Football Office Pool Game | Soccer Tournament Tracker | Instant Download',
   'DIY Farmstand Plans PDF | Roadside Stand Blueprint | Egg Flower Produce Sourdough Market Cart | Instant Download Woodworking Guide',
   'DIY Farmstand Plans PDF | Roadside Mobile Market Stand Blueprint | Bakery Egg Flower Produce Stand | Woodworking Plans',
+  // NEW 2026-06-07
+  'FIFA World Cup 2026 Bracket Poster | Group Stage & Knockout Tournament Chart | Printable PDF',
+  'FIFA World Cup 2026 Wall Chart Poster | Printable Tournament Schedule & Results Tracker PDF',
 ];
 
 // Also check: which CSV rows are new
@@ -362,6 +368,10 @@ for (const row of dataRows) {
     etsyUrl = 'https://www.etsy.com/listing/4516095370/diy-farmstand-plans-pdf-roadside-stand';
   } else if (titleWords.includes('roadside mobile market stand blueprint')) {
     etsyUrl = 'https://www.etsy.com/listing/4515978768/diy-farmstand-plans-pdf-roadside-mobile';
+  } else if (titleWords.includes('fifa world cup 2026 bracket poster')) {
+    etsyUrl = 'https://www.etsy.com/listing/4517674909/fifa-world-cup-2026-bracket-poster-group';
+  } else if (titleWords.includes('fifa world cup 2026 wall chart poster')) {
+    etsyUrl = 'https://www.etsy.com/listing/4517694674/fifa-world-cup-2026-wall-chart-poster';
   }
 
   
