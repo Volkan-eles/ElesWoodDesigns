@@ -298,15 +298,17 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
           </div>
 
           <div className="flex flex-col gap-4">
-            <a 
-              href={product.etsy_url} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="btn-neo text-2xl h-24 md:h-28 group text-center flex items-center justify-center gap-4"
-            >
-              DOWNLOAD PLANS ON ETSY
-              <ExternalLink className="w-8 h-8 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-            </a>
+            {product.etsy_url && product.etsy_url.trim() !== '' && (
+              <a 
+                href={product.etsy_url} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="btn-neo text-2xl h-24 md:h-28 group text-center flex items-center justify-center gap-4"
+              >
+                DOWNLOAD PLANS ON ETSY
+                <ExternalLink className="w-8 h-8 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              </a>
+            )}
 
             {product.polar_price_id && (
               <Link 
