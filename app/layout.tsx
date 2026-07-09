@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Script from "next/script";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -136,6 +137,7 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans antialiased text-black bg-[#FFFDF0]" suppressHydrationWarning>
+        <ClerkProvider>
         {/* Google Tag (gtag.js) */}
         <Script 
           src="https://www.googletagmanager.com/gtag/js?id=G-144E244HYN"
@@ -171,6 +173,7 @@ export default function RootLayout({
           <main className="flex-grow">{children}</main>
           <Footer />
         </div>
+        </ClerkProvider>
       </body>
     </html>
   );
