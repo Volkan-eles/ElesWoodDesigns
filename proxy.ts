@@ -1,5 +1,4 @@
 import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
-import { NextResponse } from 'next/server'
 
 // Routes that require authentication
 const isProtectedRoute = createRouteMatcher([
@@ -13,7 +12,6 @@ export default clerkMiddleware(async (auth, req) => {
   if (isProtectedRoute(req)) {
     await auth.protect()
   }
-  return NextResponse.next()
 })
 
 export const config = {
@@ -23,6 +21,6 @@ export const config = {
     // Always run for API routes
     '/(api|trpc)(.*)',
     // Always run for Clerk-specific frontend API routes
-    '/__clerk/(.*)',
+    '/__clerk/:path*',
   ],
 }
