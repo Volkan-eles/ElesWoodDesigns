@@ -3,6 +3,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { SignInButton, SignUpButton, UserButton, Show } from "@clerk/nextjs";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -45,6 +46,22 @@ export default function Navbar() {
           >
             SHOP ON ETSY
           </a>
+          {/* Desktop Auth */}
+          <Show when="signed-out">
+            <SignInButton mode="redirect">
+              <button className="font-bold border-2 border-black px-4 py-2 hover:bg-black hover:text-white transition-colors text-sm">
+                SIGN IN
+              </button>
+            </SignInButton>
+            <SignUpButton mode="redirect">
+              <button className="font-bold border-2 border-black bg-[#FFE500] px-4 py-2 shadow-[3px_3px_0_black] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all text-sm">
+                SIGN UP
+              </button>
+            </SignUpButton>
+          </Show>
+          <Show when="signed-in">
+            <UserButton />
+          </Show>
         </div>
 
         {/* Mobile Toggle */}
@@ -87,6 +104,24 @@ export default function Navbar() {
           >
             SHOP ON ETSY
           </a>
+          {/* Mobile Auth */}
+          <Show when="signed-out">
+            <SignInButton mode="redirect">
+              <button className="text-2xl font-black border-4 border-black px-8 py-4 hover:bg-black hover:text-white transition-colors" onClick={() => setIsOpen(false)}>
+                SIGN IN
+              </button>
+            </SignInButton>
+            <SignUpButton mode="redirect">
+              <button className="text-2xl font-black border-4 border-black bg-[#FFE500] px-8 py-4 shadow-[6px_6px_0_black]" onClick={() => setIsOpen(false)}>
+                SIGN UP
+              </button>
+            </SignUpButton>
+          </Show>
+          <Show when="signed-in">
+            <div className="flex justify-center">
+              <UserButton />
+            </div>
+          </Show>
         </div>
       </div>
     </nav>
