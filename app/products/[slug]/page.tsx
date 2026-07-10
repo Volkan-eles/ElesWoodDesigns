@@ -312,7 +312,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
 
             {product.polar_price_id && (
               <Link 
-                href={`/api/checkout?price_id=${product.polar_price_id}`}
+                href={`/api/checkout?products=${product.polar_price_id}`}
                 className="btn-neo text-2xl h-24 md:h-28 group text-center flex items-center justify-center gap-4 bg-[#FFE500]"
               >
                 BUY PDF PLANS DIRECTLY
