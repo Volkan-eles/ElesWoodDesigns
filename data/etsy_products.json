@@ -63,7 +63,8 @@
     "etsy_url": "https://www.etsy.com/listing/4493928541/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 96
+    "stockQuantity": 96,
+    "polar_price_id": "d13a7658-20b1-4288-b8c8-fc57fef7dc0f"
   },
   {
     "id": "etsy-2",
@@ -127,7 +128,8 @@
     "etsy_url": "https://www.etsy.com/listing/4493892575/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 96
+    "stockQuantity": 96,
+    "polar_price_id": "519d7a49-6cd0-4363-b393-48dd997fbc25"
   },
   {
     "id": "etsy-3",
@@ -189,7 +191,8 @@
     "etsy_url": "https://www.etsy.com/listing/4491082737/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 88
+    "stockQuantity": 88,
+    "polar_price_id": "006cac52-5b50-4192-8f65-6afc92b3f290"
   },
   {
     "id": "etsy-4",
@@ -253,7 +256,8 @@
     "etsy_url": "https://www.etsy.com/listing/4491071176/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 69
+    "stockQuantity": 69,
+    "polar_price_id": "6226233c-da19-463f-a9e1-9a0569e3cd64"
   },
   {
     "id": "etsy-5",
@@ -315,7 +319,8 @@
     "etsy_url": "https://www.etsy.com/listing/4491615123/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 65
+    "stockQuantity": 65,
+    "polar_price_id": "6865cbd9-4691-485f-8b5c-8256f761e27e"
   },
   {
     "id": "etsy-6",
@@ -379,7 +384,8 @@
     "etsy_url": "https://www.etsy.com/listing/4375495325/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 12
+    "stockQuantity": 12,
+    "polar_price_id": "a78983da-00ef-42aa-830b-12103d190ab1"
   },
   {
     "id": "etsy-7",
@@ -441,7 +447,8 @@
     "etsy_url": "https://www.etsy.com/listing/4472276699/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 24
+    "stockQuantity": 24,
+    "polar_price_id": "7bc33fb7-59e7-43b3-998d-2bf2671294b3"
   },
   {
     "id": "etsy-8",
@@ -505,7 +512,8 @@
     "etsy_url": "https://www.etsy.com/listing/4367275115/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 77
+    "stockQuantity": 77,
+    "polar_price_id": "0a76f95c-f882-4a26-90f1-7f374eca5dd5"
   },
   {
     "id": "etsy-9",
@@ -568,7 +576,8 @@
     "etsy_url": "https://www.etsy.com/listing/4377218039/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 61
+    "stockQuantity": 61,
+    "polar_price_id": "f82ac691-182a-4cf0-8582-d35493b32ecf"
   },
   {
     "id": "etsy-10",
@@ -636,7 +645,8 @@
     "etsy_url": "https://www.etsy.com/listing/4463014207/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 91
+    "stockQuantity": 91,
+    "polar_price_id": "76bf179d-5512-4ecd-8432-65f28c6b9763"
   },
   {
     "id": "etsy-11",
@@ -698,7 +708,8 @@
     "etsy_url": "https://www.etsy.com/listing/4375787443/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 55
+    "stockQuantity": 55,
+    "polar_price_id": "d38d1685-8faf-45db-bc16-ae50342a78f6"
   },
   {
     "id": "etsy-12",
@@ -762,7 +773,8 @@
     "etsy_url": "https://www.etsy.com/listing/4461302426/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 93
+    "stockQuantity": 93,
+    "polar_price_id": "09014c3d-e844-4e6f-8b75-24901a44ad8b"
   },
   {
     "id": "etsy-13",
@@ -826,7 +838,8 @@
     "etsy_url": "https://www.etsy.com/listing/4484122950/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 2
+    "stockQuantity": 2,
+    "polar_price_id": "3e62cc49-a2b2-4f40-9f5e-26fca929bbaa"
   },
   {
     "id": "etsy-14",
@@ -890,7 +903,8 @@
     "etsy_url": "https://www.etsy.com/listing/4491054968/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 97
+    "stockQuantity": 97,
+    "polar_price_id": "353edcd5-71c5-4b07-9577-5f64eece46ab"
   },
   {
     "id": "etsy-15",
@@ -954,7 +968,8 @@
     "etsy_url": "https://www.etsy.com/listing/4469210639/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 17
+    "stockQuantity": 17,
+    "polar_price_id": "e7420734-d09d-4261-a2a2-1cdb614acd28"
   },
   {
     "id": "etsy-16",
@@ -1014,7 +1029,8 @@
     "etsy_url": "https://www.etsy.com/listing/4491583951/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 92
+    "stockQuantity": 92,
+    "polar_price_id": "2a863fa4-b760-4b8c-9da0-d94d000b08fc"
   },
   {
     "id": "etsy-17",
@@ -1072,7 +1088,8 @@
     "etsy_url": "https://www.etsy.com/listing/4379794366/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 13
+    "stockQuantity": 13,
+    "polar_price_id": "fbeb1383-7307-4649-8140-2ce47fdbbb37"
   },
   {
     "id": "etsy-18",
@@ -1136,7 +1153,8 @@
     "etsy_url": "https://www.etsy.com/listing/4352466955/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 92
+    "stockQuantity": 92,
+    "polar_price_id": "df4b2b35-39ae-43e0-97f0-5e10c80bddbc"
   },
   {
     "id": "etsy-19",
@@ -1194,7 +1212,8 @@
     "etsy_url": "https://www.etsy.com/listing/4487620243/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 96
+    "stockQuantity": 96,
+    "polar_price_id": "37c2eb75-87be-4f63-8e8a-5d857c04b15f"
   },
   {
     "id": "etsy-20",
@@ -1254,7 +1273,8 @@
     "etsy_url": "https://www.etsy.com/listing/4490072169/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 16
+    "stockQuantity": 16,
+    "polar_price_id": "3900b9ee-4d50-4623-b1dc-e6e707fb6e01"
   },
   {
     "id": "etsy-21",
@@ -1318,7 +1338,8 @@
     "etsy_url": "https://www.etsy.com/listing/4486927175/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 65
+    "stockQuantity": 65,
+    "polar_price_id": "c8032c4d-2956-4e7c-8164-e64e00889155"
   },
   {
     "id": "etsy-22",
@@ -1386,7 +1407,8 @@
     "etsy_url": "https://www.etsy.com/listing/4489524870/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 61
+    "stockQuantity": 61,
+    "polar_price_id": "b945893a-9261-4b27-a47f-780f35b0d11d"
   },
   {
     "id": "etsy-23",
@@ -1450,7 +1472,8 @@
     "etsy_url": "https://www.etsy.com/listing/4490612122/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 15
+    "stockQuantity": 15,
+    "polar_price_id": "7f9d39c1-5b79-413b-a351-ffca16118347"
   },
   {
     "id": "etsy-24",
@@ -1512,7 +1535,8 @@
     "etsy_url": "https://www.etsy.com/listing/4490601202/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 99
+    "stockQuantity": 99,
+    "polar_price_id": "6092565c-8361-4762-a494-af86b5214a25"
   },
   {
     "id": "etsy-25",
@@ -1572,7 +1596,8 @@
     "etsy_url": "https://www.etsy.com/listing/4487420597/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 79
+    "stockQuantity": 79,
+    "polar_price_id": "c5915338-d02c-45dc-a092-ef924ccc20ab"
   },
   {
     "id": "etsy-26",
@@ -1636,7 +1661,8 @@
     "etsy_url": "https://www.etsy.com/listing/4472225250/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 26
+    "stockQuantity": 26,
+    "polar_price_id": "82f7e62c-7a28-4e8f-a371-de7675f8b269"
   },
   {
     "id": "etsy-27",
@@ -1698,7 +1724,8 @@
     "etsy_url": "https://www.etsy.com/listing/4471950351/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 28
+    "stockQuantity": 28,
+    "polar_price_id": "61de8916-aa73-4edf-a699-625f24b2b858"
   },
   {
     "id": "etsy-28",
@@ -1760,7 +1787,8 @@
     "etsy_url": "https://www.etsy.com/listing/4487526543/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 99
+    "stockQuantity": 99,
+    "polar_price_id": "8288753e-c28a-4b17-bea5-abf46bd2edfe"
   },
   {
     "id": "etsy-29",
@@ -1820,7 +1848,8 @@
     "etsy_url": "https://www.etsy.com/listing/4490120003/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 4
+    "stockQuantity": 4,
+    "polar_price_id": "aa32a615-52f3-47c7-9d62-f2b57813286f"
   },
   {
     "id": "etsy-30",
@@ -1884,7 +1913,8 @@
     "etsy_url": "https://www.etsy.com/listing/4367248406/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 21
+    "stockQuantity": 21,
+    "polar_price_id": "71f4839d-f770-4140-b08c-b15143f5632a"
   },
   {
     "id": "etsy-31",
@@ -1947,7 +1977,8 @@
     "etsy_url": "https://www.etsy.com/listing/4377936723/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 18
+    "stockQuantity": 18,
+    "polar_price_id": "e8b86f21-1f6c-468d-b407-4f2acb0651d7"
   },
   {
     "id": "etsy-32",
@@ -2010,7 +2041,8 @@
     "etsy_url": "https://www.etsy.com/listing/4377932628/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 11
+    "stockQuantity": 11,
+    "polar_price_id": "0136aba5-3902-4251-b2f2-4b8c63ec40ca"
   },
   {
     "id": "etsy-33",
@@ -2068,7 +2100,8 @@
     "etsy_url": "https://www.etsy.com/listing/4489568684/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 3
+    "stockQuantity": 3,
+    "polar_price_id": "cd36384f-9b3d-4ca5-97d0-0af0f5adf5a1"
   },
   {
     "id": "etsy-34",
@@ -2132,7 +2165,8 @@
     "etsy_url": "https://www.etsy.com/listing/4472269006/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 26
+    "stockQuantity": 26,
+    "polar_price_id": "2c94c762-8e27-48b1-a59a-1886ae0681bd"
   },
   {
     "id": "etsy-35",
@@ -2196,7 +2230,8 @@
     "etsy_url": "https://www.etsy.com/listing/4470278765/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 95
+    "stockQuantity": 95,
+    "polar_price_id": "ed75dbbb-9cda-4cdf-8648-37fd7c9b8f7a"
   },
   {
     "id": "etsy-36",
@@ -2260,7 +2295,8 @@
     "etsy_url": "https://www.etsy.com/listing/4488913068/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 94
+    "stockQuantity": 94,
+    "polar_price_id": "a8b5d2f2-27df-4ab8-a42d-9ad4eb350e9c"
   },
   {
     "id": "etsy-37",
@@ -2328,7 +2364,8 @@
     "etsy_url": "https://www.etsy.com/listing/4372709098/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 25
+    "stockQuantity": 25,
+    "polar_price_id": "3bf501c9-9e29-45b4-9052-5b71fa3a72d8"
   },
   {
     "id": "etsy-38",
@@ -2390,7 +2427,8 @@
     "etsy_url": "https://www.etsy.com/listing/4487753775/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 5
+    "stockQuantity": 5,
+    "polar_price_id": "c16b66ca-6641-4c07-8324-aee0e2767d5c"
   },
   {
     "id": "etsy-39",
@@ -2452,7 +2490,8 @@
     "etsy_url": "https://www.etsy.com/listing/4472221930/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 26
+    "stockQuantity": 26,
+    "polar_price_id": "48096f9e-e9d7-49e8-9cfc-398ce736fe29"
   },
   {
     "id": "etsy-40",
@@ -2514,7 +2553,8 @@
     "etsy_url": "https://www.etsy.com/listing/4472103774/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 24
+    "stockQuantity": 24,
+    "polar_price_id": "b75c6397-d2c6-48c4-8cba-30364f7bcefc"
   },
   {
     "id": "etsy-41",
@@ -2580,7 +2620,8 @@
     "etsy_url": "https://www.etsy.com/listing/4487332329/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 100
+    "stockQuantity": 100,
+    "polar_price_id": "4f06d4c5-217e-4997-b7f7-1f06d03049fe"
   },
   {
     "id": "etsy-42",
@@ -2642,7 +2683,8 @@
     "etsy_url": "https://www.etsy.com/listing/4487257877/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 100
+    "stockQuantity": 100,
+    "polar_price_id": "372744b7-c4b7-4ec9-bd87-4e29e386936a"
   },
   {
     "id": "etsy-43",
@@ -2706,7 +2748,8 @@
     "etsy_url": "https://www.etsy.com/listing/4463035923/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 23
+    "stockQuantity": 23,
+    "polar_price_id": "bd23c219-fbdb-41d5-a640-d1f08dbe1303"
   },
   {
     "id": "etsy-44",
@@ -2772,7 +2815,8 @@
     "etsy_url": "https://www.etsy.com/listing/4462561503/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 17
+    "stockQuantity": 17,
+    "polar_price_id": "81540449-d09a-4883-a18b-25956168b2cd"
   },
   {
     "id": "etsy-45",
@@ -2836,7 +2880,8 @@
     "etsy_url": "https://www.etsy.com/listing/4469264015/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 14
+    "stockQuantity": 14,
+    "polar_price_id": "b6ad0764-78b3-4347-9ecf-2d7a225c8443"
   },
   {
     "id": "etsy-46",
@@ -2900,7 +2945,8 @@
     "etsy_url": "https://www.etsy.com/listing/4377578931/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 21
+    "stockQuantity": 21,
+    "polar_price_id": "503b2acd-e3ac-40b2-8783-ef9fd4316fb2"
   },
   {
     "id": "etsy-47",
@@ -2964,7 +3010,8 @@
     "etsy_url": "https://www.etsy.com/listing/4471895354/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 23
+    "stockQuantity": 23,
+    "polar_price_id": "df4b65a4-6446-4770-8450-48315a6a5ffc"
   },
   {
     "id": "etsy-48",
@@ -3026,7 +3073,8 @@
     "etsy_url": "https://www.etsy.com/listing/4378150447/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 21
+    "stockQuantity": 21,
+    "polar_price_id": "f2cf74a2-e51a-4e05-aa84-44435e0643ae"
   },
   {
     "id": "etsy-49",
@@ -3082,7 +3130,8 @@
     "etsy_url": "https://www.etsy.com/listing/4409731864/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 25
+    "stockQuantity": 25,
+    "polar_price_id": "72f9d4a7-6ee0-4df2-b220-58cd76b78d75"
   },
   {
     "id": "etsy-50",
@@ -3150,7 +3199,8 @@
     "etsy_url": "https://www.etsy.com/listing/4471814434/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 2
+    "stockQuantity": 2,
+    "polar_price_id": "79ec7fbb-da16-4b4d-bdb0-cbfe9add483d"
   },
   {
     "id": "etsy-51",
@@ -3212,7 +3262,8 @@
     "etsy_url": "https://www.etsy.com/listing/4380408404/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 20
+    "stockQuantity": 20,
+    "polar_price_id": "76301f76-67fe-4dde-b211-9969a453fd53"
   },
   {
     "id": "etsy-52",
@@ -3276,7 +3327,8 @@
     "etsy_url": "https://www.etsy.com/listing/4377977620/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 20
+    "stockQuantity": 20,
+    "polar_price_id": "7c124165-3464-497a-aa34-daa296e9ab1a"
   },
   {
     "id": "etsy-53",
@@ -3336,7 +3388,8 @@
     "etsy_url": "https://www.etsy.com/listing/4471846483/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 27
+    "stockQuantity": 27,
+    "polar_price_id": "8b66c447-f27f-42e6-afcc-26e998cc6399"
   },
   {
     "id": "etsy-54",
@@ -3398,7 +3451,8 @@
     "etsy_url": "https://www.etsy.com/listing/4472262068/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 30
+    "stockQuantity": 30,
+    "polar_price_id": "8fc24995-5e72-4c31-9cca-8c66f23be247"
   },
   {
     "id": "etsy-55",
@@ -3460,7 +3514,8 @@
     "etsy_url": "https://www.etsy.com/listing/4472252157/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 28
+    "stockQuantity": 28,
+    "polar_price_id": "2e001996-f192-487d-9c12-485d0728cabe"
   },
   {
     "id": "etsy-56",
@@ -3526,7 +3581,8 @@
     "etsy_url": "https://www.etsy.com/listing/4470474973/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 29
+    "stockQuantity": 29,
+    "polar_price_id": "860f10ee-da2e-46bc-b672-095b957775de"
   },
   {
     "id": "etsy-57",
@@ -3598,7 +3654,8 @@
     "etsy_url": "https://www.etsy.com/listing/4400838472/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 100
+    "stockQuantity": 100,
+    "polar_price_id": "31938fd9-b291-454f-aa15-da9c21922e53"
   },
   {
     "id": "etsy-58",
@@ -3668,7 +3725,8 @@
     "etsy_url": "https://www.etsy.com/listing/4400536294/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 100
+    "stockQuantity": 100,
+    "polar_price_id": "d273525d-4589-4505-b3c8-2cf3f7301c97"
   },
   {
     "id": "etsy-59",
@@ -3740,7 +3798,8 @@
     "etsy_url": "https://www.etsy.com/listing/4398107797/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 100
+    "stockQuantity": 100,
+    "polar_price_id": "cd3a3c12-83d9-4cda-82fe-532c1b1c2c3e"
   },
   {
     "id": "etsy-60",
@@ -3802,7 +3861,8 @@
     "etsy_url": "https://www.etsy.com/listing/4392803241/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 85
+    "stockQuantity": 85,
+    "polar_price_id": "1d0f79b2-ccae-4a19-8dca-45c3b61523d4"
   },
   {
     "id": "etsy-61",
@@ -3862,7 +3922,8 @@
     "etsy_url": "https://www.etsy.com/listing/4396494290/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 100
+    "stockQuantity": 100,
+    "polar_price_id": "ced041c3-e14e-47c2-b33d-78b956d5764e"
   },
   {
     "id": "etsy-62",
@@ -3927,7 +3988,8 @@
     "etsy_url": "https://www.etsy.com/listing/4392635304/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 2
+    "stockQuantity": 2,
+    "polar_price_id": "fb8f8093-fc14-4f20-8a4f-5b21ae1a132c"
   },
   {
     "id": "etsy-63",
@@ -3986,7 +4048,8 @@
     "etsy_url": "https://www.etsy.com/listing/4377939039/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 14
+    "stockQuantity": 14,
+    "polar_price_id": "06142076-c42d-49fb-8f47-a6097920cd8e"
   },
   {
     "id": "etsy-64",
@@ -4052,7 +4115,8 @@
     "etsy_url": "https://www.etsy.com/listing/4376012845/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 11
+    "stockQuantity": 11,
+    "polar_price_id": "c129c539-ae12-4e3b-a356-b429cbac1310"
   },
   {
     "id": "etsy-65",
@@ -4114,7 +4178,8 @@
     "etsy_url": "https://www.etsy.com/listing/4463022172/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 29
+    "stockQuantity": 29,
+    "polar_price_id": "ba0c6644-b17a-421b-a636-c004bbd59796"
   },
   {
     "id": "etsy-66",
@@ -4176,7 +4241,8 @@
     "etsy_url": "https://www.etsy.com/listing/4461520558/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 18
+    "stockQuantity": 18,
+    "polar_price_id": "bd71c122-13cd-4aa1-b73b-4847c45299f0"
   },
   {
     "id": "etsy-67",
@@ -4242,7 +4308,8 @@
     "etsy_url": "https://www.etsy.com/listing/4440362308/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 21
+    "stockQuantity": 21,
+    "polar_price_id": "989beb0d-9799-4b6b-b66c-d5676f46e009"
   },
   {
     "id": "etsy-68",
@@ -4306,7 +4373,8 @@
     "etsy_url": "https://www.etsy.com/listing/4380558646/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 22
+    "stockQuantity": 22,
+    "polar_price_id": "6c4908d8-be57-4de6-927d-7fc3b9657969"
   },
   {
     "id": "etsy-69",
@@ -4367,7 +4435,8 @@
     "etsy_url": "https://www.etsy.com/listing/4379214236/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 25
+    "stockQuantity": 25,
+    "polar_price_id": "4625b0d3-39b1-4db6-9ad8-e42b09953df4"
   },
   {
     "id": "etsy-70",
@@ -4437,7 +4506,8 @@
     "etsy_url": "https://www.etsy.com/listing/4443614124/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 28
+    "stockQuantity": 28,
+    "polar_price_id": "dc605b2c-5d39-4cfb-8c83-9d48cafddf2e"
   },
   {
     "id": "etsy-71",
@@ -4500,7 +4570,8 @@
     "etsy_url": "https://www.etsy.com/listing/4440354589/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 30
+    "stockQuantity": 30,
+    "polar_price_id": "22418b7c-55df-4537-b45e-c33639827f5e"
   },
   {
     "id": "etsy-72",
@@ -4566,7 +4637,8 @@
     "etsy_url": "https://www.etsy.com/listing/4439950228/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 25
+    "stockQuantity": 25,
+    "polar_price_id": "b6d8bde4-01d0-4805-8c13-6fb10017572a"
   },
   {
     "id": "etsy-73",
@@ -4630,7 +4702,8 @@
     "etsy_url": "https://www.etsy.com/listing/4377252223/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 21
+    "stockQuantity": 21,
+    "polar_price_id": "f5ec36d8-3ff0-4fb3-9267-805796d9a5e5"
   },
   {
     "id": "etsy-74",
@@ -4694,7 +4767,8 @@
     "etsy_url": "https://www.etsy.com/listing/4494247378/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 100
+    "stockQuantity": 100,
+    "polar_price_id": "eb9e0324-9e33-4815-9f24-e052414ad456"
   },
   {
     "id": "etsy-75",
@@ -4760,7 +4834,8 @@
     "etsy_url": "https://www.etsy.com/listing/4494235412/",
     "bestseller": false,
     "inStock": true,
-    "stockQuantity": 95
+    "stockQuantity": 95,
+    "polar_price_id": "3f0e20cc-f409-4dec-ada6-821a3cc6cadc"
   },
   {
     "id": "etsy-76",
@@ -4823,7 +4898,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 99,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "54616b69-7f15-41fd-8095-af83880ed16e"
   },
   {
     "id": "etsy-77",
@@ -4888,7 +4964,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 2,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "63ffca03-e791-4256-8503-76ab755d6a2c"
   },
   {
     "id": "etsy-78",
@@ -4951,7 +5028,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 100,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "52bfd5ab-879e-4c46-b29a-41f36d2a9ae2"
   },
   {
     "id": "etsy-79",
@@ -5016,7 +5094,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 3,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "8f5510a6-95a9-4c5b-87df-113f14bb3ffa"
   },
   {
     "id": "etsy-80",
@@ -5081,7 +5160,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 100,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "4c4138cb-9ed3-4c69-b595-2cdd782e7de1"
   },
   {
     "id": "etsy-81",
@@ -5146,7 +5226,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 99,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "d9de1282-7558-4304-bbce-ce01423040ce"
   },
   {
     "id": "etsy-82",
@@ -5211,7 +5292,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 100,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "0e1f8b34-214a-4e0a-b020-b0d7272d167a"
   },
   {
     "id": "etsy-83",
@@ -5276,7 +5358,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 2,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "ea912531-9529-4c6f-80a1-fb4810a2b73a"
   },
   {
     "id": "etsy-84",
@@ -5343,7 +5426,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 100,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "d09a96b6-97ad-4c64-89ce-24fae70a6f88"
   },
   {
     "id": "etsy-85",
@@ -5408,7 +5492,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 15,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "db218cb8-3e18-4bc8-9047-99f98ed20e3e"
   },
   {
     "id": "etsy-86",
@@ -5479,7 +5564,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 100,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "6a258857-63e9-4d98-8f35-7e1fe5d6045f"
   },
   {
     "id": "etsy-87",
@@ -5552,7 +5638,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 2,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "752e517f-f0c5-464d-b418-4e5b07925c79"
   },
   {
     "id": "etsy-88",
@@ -5625,7 +5712,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 5,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "51690122-e868-4b1c-9eb7-2b8d993f0a1d"
   },
   {
     "id": "etsy-89",
@@ -5686,7 +5774,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 78,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "5c91ae99-6a44-40c0-92c4-40332f05c50d"
   },
   {
     "id": "etsy-90",
@@ -5749,7 +5838,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 39,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "68eaa52e-aae4-4339-a036-2c4346e7bc8a"
   },
   {
     "id": "etsy-91",
@@ -5822,7 +5912,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 79,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "6a8117fc-d754-47b1-b9f0-dad85413cf20"
   },
   {
     "id": "etsy-92",
@@ -5883,7 +5974,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 61,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "a47a5669-73e9-4597-bf12-7bc2a351c961"
   },
   {
     "id": "etsy-93",
@@ -5944,7 +6036,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 59,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "2600cb72-f174-4d2a-a2a6-33fa72170471"
   },
   {
     "id": "etsy-94",
@@ -6017,7 +6110,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 16,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "2d6b11c8-5a02-4466-a728-a7e901c6a585"
   },
   {
     "id": "etsy-95",
@@ -6090,7 +6184,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 19,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "e1e8a79c-1e62-48cc-8910-3df36c39d456"
   },
   {
     "id": "etsy-96",
@@ -6151,7 +6246,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 30,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "9a435046-7450-40d5-a64a-3ce8751932d6"
   },
   {
     "id": "etsy-97",
@@ -6216,7 +6312,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 16,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "0ea4fe2b-7428-491c-99c5-c885735de623"
   },
   {
     "id": "etsy-98",
@@ -6281,7 +6378,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 100,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "a9abfe73-772f-436d-b907-ba0acb173017"
   },
   {
     "id": "etsy-99",
@@ -6346,7 +6444,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 1,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "c3e8019a-3bbf-4497-80cd-54ba0a0cc206"
   },
   {
     "id": "etsy-100",
@@ -6419,7 +6518,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 30,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "12d64a0f-3d55-474f-811a-fab91ab27fd2"
   },
   {
     "id": "etsy-101",
@@ -6486,7 +6586,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 3,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "712d09c3-aff0-4abc-8a7a-f21c2b21845f"
   },
   {
     "id": "etsy-102",
@@ -6551,7 +6652,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 4,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "0a72abef-a7a0-4122-8ecd-d367967f1649"
   },
   {
     "id": "etsy-103",
@@ -6624,7 +6726,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 3,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "fd4e1618-f1f3-409b-9b3d-3289367e5951"
   },
   {
     "id": "etsy-104",
@@ -6687,7 +6790,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 97,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "66e52c8a-6b37-4197-98f3-6edcbfc2a09c"
   },
   {
     "id": "etsy-105",
@@ -6750,7 +6854,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 99,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "9b2c1a39-7f98-4cd3-9753-9196b971a994"
   },
   {
     "id": "etsy-106",
@@ -6823,7 +6928,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 1,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "9fc1c4c2-e4ab-4ebc-a194-658b686619aa"
   },
   {
     "id": "etsy-107",
@@ -6890,7 +6996,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 1,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "ce46899f-1be3-4327-a5b9-4c2de68a2689"
   },
   {
     "id": "etsy-108",
@@ -6955,7 +7062,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 99,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "71c18cd1-bca7-4aaf-8daf-1268558485b1"
   },
   {
     "id": "etsy-109",
@@ -7022,7 +7130,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 1,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "2ec63c5f-edcb-40ec-976b-a754d4fc1a69"
   },
   {
     "id": "etsy-110",
@@ -7085,7 +7194,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 94,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "edb1ac1c-2462-4a35-aed3-4a4136d834b1"
   },
   {
     "id": "etsy-111",
@@ -7154,7 +7264,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 5,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "b2513e63-3587-4753-b8e1-29f96726851b"
   },
   {
     "id": "etsy-112",
@@ -7221,7 +7332,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 3,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "73079fb0-e933-4099-8446-0261c30c80f3"
   },
   {
     "id": "etsy-113",
@@ -7288,7 +7400,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 3,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "af29a258-79bf-4a10-8207-6c326cddb9b3"
   },
   {
     "id": "etsy-114",
@@ -7353,7 +7466,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 3,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "57218b2e-c339-41d8-a086-1ecd815f69ec"
   },
   {
     "id": "etsy-117",
@@ -7416,7 +7530,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 3,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "39dc2656-af3c-4758-afca-588190c5851a"
   },
   {
     "id": "etsy-118",
@@ -7479,7 +7594,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 3,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "72644db2-6709-4776-bef1-1f61ce0a4317"
   },
   {
     "id": "etsy-119",
@@ -7548,7 +7664,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 92,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "7e74aa42-e2de-45ea-9026-c0aabb5e011b"
   },
   {
     "id": "etsy-120",
@@ -7613,7 +7730,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 89,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "3ead1ed6-3c40-4837-9272-f2bd76ef83f0"
   },
   {
     "id": "etsy-122",
@@ -7674,7 +7792,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 98,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "f9076761-a882-4767-a382-0f36d45508aa"
   },
   {
     "id": "etsy-123",
@@ -7741,7 +7860,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 3,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "fbe89f1d-44ec-418b-9784-13a9d2eef4c5"
   },
   {
     "id": "etsy-124",
@@ -7804,7 +7924,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 3,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "078629bb-52be-4f67-9673-ca70bdefc5aa"
   },
   {
     "id": "etsy-125",
@@ -7873,7 +7994,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 47,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "ef2b0bd8-c3eb-45e9-a4a9-962199648996"
   },
   {
     "id": "etsy-126",
@@ -7946,7 +8068,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 27,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "69f0211a-a0fa-40ed-a6ce-acde09e9fc6a"
   },
   {
     "id": "etsy-127",
@@ -8011,7 +8134,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 3,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "621cfada-91af-4379-85be-df2f7775dca9"
   },
   {
     "id": "etsy-128",
@@ -8072,7 +8196,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 3,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "50dad5da-a4f6-4be4-91d4-fdc4a35f02ec"
   },
   {
     "id": "etsy-129",
@@ -8139,7 +8264,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 3,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "20e28382-c518-4ceb-a412-fabf4eeb59c3"
   },
   {
     "id": "etsy-130",
@@ -8207,7 +8333,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 3,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "5dff46f0-4c5f-475b-918c-89dc7a549f0c"
   },
   {
     "id": "etsy-131",
@@ -8275,7 +8402,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 3,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "4acf1971-adca-42dd-adbf-86357c726505"
   },
   {
     "id": "etsy-132",
@@ -8338,7 +8466,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 78,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "f93eff40-c44e-47c2-9a98-13c739738232"
   },
   {
     "id": "etsy-133",
@@ -8401,7 +8530,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 3,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "696c59f7-0553-42f7-a5ca-244e337e092f"
   },
   {
     "id": "etsy-134",
@@ -8471,7 +8601,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 3,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "ee87a964-0a16-45f5-b39e-8eec554b0012"
   },
   {
     "id": "etsy-135",
@@ -8537,7 +8668,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 3,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "16708a5f-ea5d-472c-9146-00204bdc96d3"
   },
   {
     "id": "etsy-136",
@@ -8601,7 +8733,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 3,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "b99591f4-35a2-43e2-8a78-740cd1b197f0"
   },
   {
     "id": "etsy-137",
@@ -8665,7 +8798,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 3,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "6872ece2-f6d4-4637-b74e-46050ca0379d"
   },
   {
     "id": "etsy-138",
@@ -8733,7 +8867,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 2,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "1249bb28-2390-4496-a156-420168e4eba9"
   },
   {
     "id": "etsy-139",
@@ -8805,7 +8940,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 3,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "571f038b-19c6-4523-b4b6-0f15adda611c"
   },
   {
     "id": "etsy-140",
@@ -8871,7 +9007,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 2,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "a41db7e9-00f2-493d-a0d7-79a302ff2378"
   },
   {
     "id": "etsy-141",
@@ -8937,7 +9074,8 @@
     "bestseller": true,
     "inStock": true,
     "stockQuantity": 3,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "c4a05eac-d364-4389-bed6-34b3f2256307"
   },
   {
     "id": "etsy-142",
@@ -9003,7 +9141,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 3,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "4dd39603-e4f1-44b1-9403-2f3fb3475f4a"
   },
   {
     "id": "etsy-143",
@@ -9067,7 +9206,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 3,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "33b35a73-5800-422e-bd5d-b620b0dda6d8"
   },
   {
     "id": "etsy-144",
@@ -9136,7 +9276,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 3,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "16962368-b219-42cd-b34b-1646444ce559"
   },
   {
     "id": "etsy-145",
@@ -9202,7 +9343,8 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 3,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "f717b6fa-1e67-4749-9f42-7fa975802d0b"
   },
   {
     "id": "etsy-146",
@@ -9269,6 +9411,7 @@
     "bestseller": false,
     "inStock": true,
     "stockQuantity": 3,
-    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking"
+    "google_product_category": "Arts & Entertainment > Hobbies & Creative Arts > Crafts & Hobbies > Woodworking",
+    "polar_price_id": "b0b327f0-38e1-44f0-8446-89528ecb7283"
   }
 ]
