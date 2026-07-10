@@ -170,6 +170,11 @@ export default function RootLayout({
         </noscript>
         <div className="flex flex-col min-h-screen border-t-4 border-black">
           <Navbar />
+          <Script 
+            src="https://cdn.jsdelivr.net/npm/@polar-sh/checkout@latest/dist/embed.global.js"
+            strategy="lazyOnload"
+            data-auto-init="true"
+          />
           <main className="flex-grow">{children}</main>
           <Footer />
         </div>

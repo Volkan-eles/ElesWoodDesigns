@@ -311,13 +311,15 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
             )}
 
             {product.polar_price_id && (
-              <Link 
-                href={`/api/checkout?products=${product.polar_price_id}`}
+              <a 
+                href={`https://buy.polar.sh/${product.polar_price_id}`}
+                data-polar-checkout="true"
+                data-polar-checkout-theme="light"
                 className="btn-neo text-2xl h-24 md:h-28 group text-center flex items-center justify-center gap-4 bg-[#FFE500]"
               >
                 BUY PDF PLANS DIRECTLY
                 <ShoppingBag className="w-8 h-8 group-hover:scale-110 transition-transform" />
-              </Link>
+              </a>
             )}
 
             <PinterestSaveButton 
