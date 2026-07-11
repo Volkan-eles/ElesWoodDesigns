@@ -1,88 +1,91 @@
-"use client";
-
-import React, { createContext, useContext, useState, useEffect, ReactNode } from "react";
-import { Product } from "@/data/products";
+'use client';
+import React, { createContext, useContext, useState, useEffect } from 'react';
+import { Product } from '@/lib/products';
 
 interface CartItem {
   product: Product;
-  quantity: number;
 }
 
 interface CartContextType {
-  items: CartItem[];
-  addItem: (product: Product) => void;
-  removeItem: (productId: string) => void;
-  updateQuantity: (productId: string, quantity: number) => void;
+  cart: CartItem[];
+  isCartOpen: boolean;
+  addToCart: (product: Product) => void;
+  removeFromCart: (productId: string) => void;
   clearCart: () => void;
+  toggleCart: () => void;
+  setIsCartOpen: (open: boolean) => void;
+  subtotal: number;
   totalItems: number;
-  totalPrice: number;
-  isOpen: boolean;
-  setIsOpen: (open: boolean) => void;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
-export function CartProvider({ children }: { children: ReactNode }) {
-  const [items, setItems] = useState<CartItem[]>([]);
-  const [isOpen, setIsOpen] = useState(false);
+export function CartProvider({ children }: { children: React.ReactNode }) {
+  const [cart, setCart] = useState<CartItem[]>([]);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
+  // Load cart from localStorage on mount
   useEffect(() => {
-    const stored = localStorage.getItem("eleswood-cart");
-    if (stored) {
+    setIsMounted(true);
+    const savedCart = localStorage.getItem('woodcraft_cart');
+    if (savedCart) {
       try {
-        setItems(JSON.parse(stored));
-      } catch {}
+        setCart(JSON.parse(savedCart));
+      } catch (e) {
+        console.error('Failed to parse cart from localStorage:', e);
+      }
     }
   }, []);
 
+  // Save cart to localStorage on change
   useEffect(() => {
-    localStorage.setItem("eleswood-cart", JSON.stringify(items));
-  }, [items]);
-
-  const addItem = (product: Product) => {
-    setItems((prev) => {
-      const existing = prev.find((i) => i.product.id === product.id);
-      if (existing) {
-        return prev.map((i) =>
-          i.product.id === product.id ? { ...i, quantity: i.quantity + 1 } : i
-        );
-      }
-      return [...prev, { product, quantity: 1 }];
-    });
-    setIsOpen(true);
-  };
-
-  const removeItem = (productId: string) => {
-    setItems((prev) => prev.filter((i) => i.product.id !== productId));
-  };
-
-  const updateQuantity = (productId: string, quantity: number) => {
-    if (quantity <= 0) {
-      removeItem(productId);
-      return;
+    if (isMounted) {
+      localStorage.setItem('woodcraft_cart', JSON.stringify(cart));
     }
-    setItems((prev) =>
-      prev.map((i) => (i.product.id === productId ? { ...i, quantity } : i))
-    );
+  }, [cart, isMounted]);
+
+  const addToCart = (product: Product) => {
+    setCart((prev) => {
+      // Since plans are digital, check if it's already in the cart (max 1 of each)
+      const exists = prev.some((item) => item.product.id === product.id);
+      if (exists) {
+        setIsCartOpen(true); // Open the cart to show them it's there
+        return prev;
+      }
+      const newCart = [...prev, { product }];
+      setIsCartOpen(true); // Open the cart immediately when adding
+      return newCart;
+    });
   };
 
-  const clearCart = () => setItems([]);
+  const removeFromCart = (productId: string) => {
+    setCart((prev) => prev.filter((item) => item.product.id !== productId));
+  };
 
-  const totalItems = items.reduce((sum, i) => sum + i.quantity, 0);
-  const totalPrice = items.reduce((sum, i) => sum + i.product.price * i.quantity, 0);
+  const clearCart = () => {
+    setCart([]);
+  };
+
+  const toggleCart = () => {
+    setIsCartOpen((prev) => !prev);
+  };
+
+  const subtotal = cart.reduce((sum, item) => sum + item.product.price, 0);
+  const totalItems = cart.length;
 
   return (
     <CartContext.Provider
       value={{
-        items,
-        addItem,
-        removeItem,
-        updateQuantity,
+        cart,
+        isCartOpen,
+        addToCart,
+        removeFromCart,
         clearCart,
+        toggleCart,
+        setIsCartOpen,
+        subtotal,
         totalItems,
-        totalPrice,
-        isOpen,
-        setIsOpen,
       }}
     >
       {children}
@@ -91,7 +94,9 @@ export function CartProvider({ children }: { children: ReactNode }) {
 }
 
 export function useCart() {
-  const ctx = useContext(CartContext);
-  if (!ctx) throw new Error("useCart must be used within CartProvider");
-  return ctx;
+  const context = useContext(CartContext);
+  if (!context) {
+    throw new Error('useCart must be used within a CartProvider');
+  }
+  return context;
 }

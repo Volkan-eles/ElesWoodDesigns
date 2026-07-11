@@ -4,9 +4,11 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { SignInButton, SignUpButton, UserButton, Show } from "@clerk/nextjs";
+import { useCart } from "@/context/CartContext";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { toggleCart, totalItems } = useCart();
 
   const navLinks = [
     { name: "ABOUT", href: "/about/" },
@@ -28,7 +30,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex gap-8 items-center">
+        <div className="hidden md:flex gap-6 items-center">
           {navLinks.map((link) => (
             <Link 
               key={link.name} 
@@ -46,6 +48,20 @@ export default function Navbar() {
           >
             SHOP ON ETSY
           </a>
+
+          {/* Cart Icon Button - Desktop */}
+          <button 
+            className="icon-btn cart-btn-nav border-2 border-black bg-white hover:bg-gray-100 p-2 shadow-[2px_2px_0px_rgba(0,0,0,1)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none transition-all cursor-pointer relative" 
+            onClick={toggleCart} 
+            aria-label="Open cart"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+            </svg>
+            {totalItems > 0 && <span className="cart-badge">{totalItems}</span>}
+          </button>
+
           {/* Desktop Auth */}
           <Show when="signed-out">
             <SignInButton mode="redirect">
@@ -64,13 +80,28 @@ export default function Navbar() {
           </Show>
         </div>
 
-        {/* Mobile Toggle */}
-        <button 
-          className="md:hidden p-2 border-4 border-black bg-[#FFE500] hover:translate-x-1 hover:translate-y-1 hover:shadow-none shadow-[4px_4px_0_black] transition-all"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        {/* Mobile Toggle & Actions */}
+        <div className="flex md:hidden items-center gap-3">
+          {/* Cart Icon Button - Mobile */}
+          <button 
+            className="icon-btn cart-btn-nav border-4 border-black bg-white p-2 shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none transition-all cursor-pointer relative" 
+            onClick={toggleCart} 
+            aria-label="Open cart"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+            </svg>
+            {totalItems > 0 && <span className="cart-badge">{totalItems}</span>}
+          </button>
+
+          <button 
+            className="p-2 border-4 border-black bg-[#FFE500] hover:translate-x-1 hover:translate-y-1 hover:shadow-none shadow-[4px_4px_0_black] transition-all"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu Overlay */}

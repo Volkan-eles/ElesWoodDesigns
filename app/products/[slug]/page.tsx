@@ -7,6 +7,7 @@ import Badge from "@/components/Badge";
 import RelatedProducts from "@/components/RelatedProducts";
 import Link from "next/link";
 import PinterestSaveButton from "@/components/PinterestSaveButton";
+import ProductBuyActions from "@/components/ProductBuyActions";
 import { Star, CheckCircle, ExternalLink, ArrowLeft, Clock, Ruler, BarChart, BookOpen, ShoppingBag } from "lucide-react";
 
 export async function generateStaticParams() {
@@ -298,29 +299,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
           </div>
 
           <div className="flex flex-col gap-4">
-            {product.etsy_url && product.etsy_url.trim() !== '' && (
-              <a 
-                href={product.etsy_url} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="btn-neo text-2xl h-24 md:h-28 group text-center flex items-center justify-center gap-4"
-              >
-                DOWNLOAD PLANS ON ETSY
-                <ExternalLink className="w-8 h-8 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-              </a>
-            )}
-
-            {product.polar_price_id && (
-              <a 
-                href={`https://buy.polar.sh/${product.polar_price_id}`}
-                data-polar-checkout="true"
-                data-polar-checkout-theme="light"
-                className="btn-neo text-2xl h-24 md:h-28 group text-center flex items-center justify-center gap-4 bg-[#FFE500]"
-              >
-                BUY PDF PLANS DIRECTLY
-                <ShoppingBag className="w-8 h-8 group-hover:scale-110 transition-transform" />
-              </a>
-            )}
+            <ProductBuyActions product={product} />
 
             <PinterestSaveButton 
               url={`${baseUrl}/products/${product.slug}/`}
@@ -329,10 +308,6 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
               variant="large"
               className="h-24 md:h-28 text-2xl"
             />
-
-            <p className="text-center font-bold text-xs text-gray-400 uppercase tracking-widest bg-gray-100 py-3 border-2 border-black border-dashed">
-              Instant PDF Access • Secure Checkout • 5-Star Rated
-            </p>
           </div>
 
           <div className="border-4 border-black p-8 bg-white shadow-neo">

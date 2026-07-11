@@ -5,8 +5,11 @@ import Image from "next/image";
 import { Product } from "@/lib/products";
 import Badge from "./Badge";
 import { Star } from "lucide-react";
+import { useCart } from "@/context/CartContext";
 
 export default function ProductCard({ product }: { product: Product }) {
+  const { addToCart } = useCart();
+
   return (
     <div className="card-neo flex flex-col h-full group">
       <div className="relative aspect-video border-b-2 border-black overflow-hidden">
@@ -42,18 +45,38 @@ export default function ProductCard({ product }: { product: Product }) {
           {product.originalPrice && (
             <div className="flex items-center gap-2">
               <span className="bg-[#FF5C00] text-white font-black text-[10px] px-2 py-0.5 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] uppercase">
-                70% OFF
-              </span>
-              <span className="text-gray-400 line-through font-bold text-sm">
-                ${product.originalPrice.toFixed(2)}
+                {product.discount}% OFF
               </span>
             </div>
           )}
-          <div className="flex items-center justify-between gap-4">
-            <span className="text-2xl font-black text-black">${product.price.toFixed(2)}</span>
-            <Link href={`/products/${product.slug}/`} className="btn-neo py-2 px-4 text-xs uppercase whitespace-nowrap">
-              View Plan
-            </Link>
+          <div className="flex items-center justify-between gap-2 mt-2">
+            <div className="flex flex-col">
+              <span className="text-xl font-black text-black">${product.price.toFixed(2)}</span>
+              {product.originalPrice && (
+                <span className="text-gray-400 line-through font-bold text-xs">
+                  ${product.originalPrice.toFixed(2)}
+                </span>
+              )}
+            </div>
+            <div className="flex gap-2">
+              <button 
+                onClick={(e) => {
+                  e.preventDefault();
+                  addToCart(product);
+                }}
+                className="btn-neo py-1.5 px-3 text-xs uppercase font-black cursor-pointer"
+                style={{ background: 'var(--amber)', display: 'flex', alignItems: 'center', gap: '0.2rem' }}
+              >
+                🛒 + Cart
+              </button>
+              <Link 
+                href={`/products/${product.slug}/`} 
+                className="btn-neo py-1.5 px-3 text-xs uppercase font-bold" 
+                style={{ background: 'white', display: 'flex', alignItems: 'center' }}
+              >
+                View Plan
+              </Link>
+            </div>
           </div>
         </div>
       </div>

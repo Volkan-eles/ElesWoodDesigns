@@ -4,12 +4,19 @@ export interface Product {
   id: string;
   slug: string;
   name: string;
+  title: string;
+  shortTitle: string;
   category: string;
+  categorySlug: string;
   price: number;
+  originalPrice?: number;
+  discount: number;
   rating: number;
   reviewCount: number;
+  reviews: number;
   difficulty: "Easy" | "Medium" | "Hard";
   estimatedTime: string;
+  timeEstimate: string;
   pages: number;
   description: string;
   longDescription: string;
@@ -21,8 +28,9 @@ export interface Product {
   images: string[];
   imagesThumbnails: string[];
   etsy_url: string;
+  etsyUrl?: string;
   polar_price_id?: string;
-  originalPrice?: number;
+  polarCheckoutUrl?: string;
   bestseller?: boolean;
 }
 
@@ -37,10 +45,25 @@ function normalizeSlug(slug: string): string {
     .replace(/ç/g, 'c').replace(/Ç/g, 'c');
 }
 
-const products: Product[] = (productsData as Product[]).map(p => ({
-  ...p,
-  slug: normalizeSlug(p.slug),
-}));
+const products: Product[] = (productsData as any[]).map(p => {
+  const name = p.name || "";
+  const shortTitle = name.split('|')[0].trim().split(':')[0].trim();
+  const originalPrice = p.originalPrice || p.price;
+  const discount = originalPrice > 0 ? Math.round((1 - p.price / originalPrice) * 100) : 0;
+  const categorySlug = p.category ? p.category.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-') : "";
+  return {
+    ...p,
+    slug: normalizeSlug(p.slug),
+    title: name,
+    shortTitle,
+    reviews: p.reviewCount || 0,
+    discount,
+    categorySlug,
+    timeEstimate: p.estimatedTime || "8 hours",
+    polarCheckoutUrl: p.polar_price_id ? `https://buy.polar.sh/${p.polar_price_id}` : undefined,
+    etsyUrl: p.etsy_url,
+  };
+});
 
 export function getProducts(): Product[] {
   return products;

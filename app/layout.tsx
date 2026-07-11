@@ -5,6 +5,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Script from "next/script";
 import { ClerkProvider } from "@clerk/nextjs";
+import { CartProvider } from "@/context/CartContext";
+import CartDrawer from "@/components/CartDrawer";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -168,16 +170,19 @@ export default function RootLayout({
           <img height="1" width="1" style={{ display: 'none' }} alt=""
             src="https://ct.pinterest.com/v3/?tid=1133781412349401127&event=init&noscript=1" />
         </noscript>
-        <div className="flex flex-col min-h-screen border-t-4 border-black">
-          <Navbar />
-          <Script 
-            src="https://cdn.jsdelivr.net/npm/@polar-sh/checkout@latest/dist/embed.global.js"
-            strategy="lazyOnload"
-            data-auto-init="true"
-          />
-          <main className="flex-grow">{children}</main>
-          <Footer />
-        </div>
+        <CartProvider>
+          <div className="flex flex-col min-h-screen border-t-4 border-black">
+            <Navbar />
+            <Script 
+              src="https://cdn.jsdelivr.net/npm/@polar-sh/checkout@latest/dist/embed.global.js"
+              strategy="lazyOnload"
+              data-auto-init="true"
+            />
+            <main className="flex-grow">{children}</main>
+            <Footer />
+          </div>
+          <CartDrawer />
+        </CartProvider>
         </ClerkProvider>
       </body>
     </html>
