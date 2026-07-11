@@ -65,30 +65,27 @@ export default function ProductBuyActions({ product }: Props) {
             googlePayRef.current.appendChild(btn);
           }
         } else {
-          // Not supported — show Polar fallback button
-          showPolarFallback();
+          // Not supported — show fallback
+          showGooglePayFallback();
         }
       })
-      .catch(() => showPolarFallback());
+      .catch(() => showGooglePayFallback());
   }
 
-  function showPolarFallback() {
+  function showGooglePayFallback() {
     if (googlePayRef.current) {
       googlePayRef.current.innerHTML = `
-        <a 
-          href="${product.polarCheckoutUrl || 'https://polar.sh'}"
-          data-polar-checkout
-          data-polar-checkout-theme="light"
+        <button 
           style="
-            display:flex; align-items:center; justify-content:center; gap:0.5rem;
-            width:100%; padding:0.75rem 1rem; background:#000; color:#fff;
-            font-weight:800; font-size:0.95rem; text-decoration:none;
-            border:2px solid #000; letter-spacing:0.02em; cursor:pointer;
+            display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+            width: 100%; padding: 0.75rem 1rem; background: #000; color: #fff;
+            font-weight: 800; font-size: 0.95rem; text-decoration: none;
+            border: 2px solid #000; letter-spacing: 0.02em; cursor: pointer;
+            border-radius: 0px; height: 48px;
           "
         >
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
-          Buy Now — $${product.price.toFixed(2)}
-        </a>`;
+          Buy with G Pay
+        </button>`;
     }
   }
 
@@ -129,38 +126,43 @@ export default function ProductBuyActions({ product }: Props) {
       {/* ── 1. Google Pay Button ── */}
       <div ref={googlePayRef} style={{ width: '100%', minHeight: '48px' }}>
         {/* Google Pay JS will render here, fallback shown while loading */}
-        <a
-          href={product.polarCheckoutUrl || 'https://polar.sh'}
-          data-polar-checkout
-          data-polar-checkout-theme="light"
+        <button
           style={{
             display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem',
             width: '100%', padding: '0.75rem 1rem', background: '#000', color: '#fff',
-            fontWeight: 800, fontSize: '0.95rem', textDecoration: 'none',
+            fontWeight: 800, fontSize: '0.95rem',
             border: '2px solid #000', letterSpacing: '0.02em', cursor: 'pointer',
+            borderRadius: '0px', height: '48px',
           }}
         >
-          <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 90 36" fill="none">
-            <text x="0" y="26" fontFamily="Arial" fontSize="22" fontWeight="bold" fill="white">G</text>
-            <text x="18" y="26" fontFamily="Arial" fontSize="22" fill="white">Pay</text>
-          </svg>
-          <span style={{ fontSize: '0.85rem', opacity: 0.85, fontWeight: 600 }}>— ${product.price.toFixed(2)}</span>
-        </a>
+          Buy with G Pay
+        </button>
       </div>
 
       {/* ── 2. Add to Cart Button ── */}
       <button
         onClick={() => addToCart(product)}
-        className="btn-neo-secondary w-full text-center py-3 text-base justify-center font-bold"
         style={{
-          display: 'flex', alignItems: 'center',
-          background: 'var(--white)', color: 'var(--black)',
-          border: '2px solid var(--black)',
-          boxShadow: '3px 3px 0 var(--black)', cursor: 'pointer',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: '0.5rem',
+          width: '100%',
+          padding: '0.75rem 1rem',
+          background: '#ffffff',
+          color: '#000000',
+          border: '3px solid #000000',
+          boxShadow: '0px 5px 0px 0px #000000',
+          cursor: 'pointer',
+          fontFamily: 'inherit',
+          fontWeight: '900',
+          fontSize: '1rem',
           textTransform: 'uppercase',
+          letterSpacing: '0.05em',
+          borderRadius: '0px',
         }}
       >
-        🛒 Add to Cart
+        🛒 ADD TO CART
       </button>
 
       {/* ── 3. Polar Buy Now Button ── */}
@@ -168,17 +170,28 @@ export default function ProductBuyActions({ product }: Props) {
         href={product.polarCheckoutUrl || 'https://polar.sh'}
         data-polar-checkout
         data-polar-checkout-theme="light"
-        className="btn-neo w-full text-center py-3 text-base justify-center font-bold"
         style={{
-          display: 'flex', alignItems: 'center',
-          background: 'var(--amber)', color: 'var(--black)',
-          border: '2px solid var(--black)',
-          boxShadow: '3px 3px 0 var(--black)', cursor: 'pointer',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: '0.5rem',
+          width: '100%',
+          padding: '0.75rem 1rem',
+          background: '#FFE500',
+          color: '#000000',
+          border: '3px solid #000000',
+          boxShadow: '0px 5px 0px 0px #000000',
+          cursor: 'pointer',
+          fontFamily: 'inherit',
+          fontWeight: '900',
+          fontSize: '1rem',
           textTransform: 'uppercase',
+          letterSpacing: '0.05em',
           textDecoration: 'none',
+          borderRadius: '0px',
         }}
       >
-        ⚡ Buy Now — ${product.price.toFixed(2)}
+        ⚡ BUY NOW — ${product.price.toFixed(2)}
       </a>
 
       {/* ── 4. Etsy Button ── */}
@@ -188,17 +201,37 @@ export default function ProductBuyActions({ product }: Props) {
           target="_blank"
           rel="noopener noreferrer"
           style={{
-            display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem',
-            width: '100%', padding: '0.65rem 1rem',
-            background: 'var(--white)', color: '#F1641E',
-            fontWeight: 700, fontSize: '0.9rem', textDecoration: 'none',
-            border: '2px solid #F1641E', letterSpacing: '0.02em',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '0.5rem',
+            width: '100%',
+            padding: '0.75rem 1rem',
+            background: '#ffffff',
+            color: '#F1641E',
+            border: '2px solid #F1641E',
+            textDecoration: 'none',
             cursor: 'pointer',
+            fontFamily: 'inherit',
+            fontWeight: '700',
+            fontSize: '0.95rem',
+            borderRadius: '0px',
           }}
         >
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#F1641E">
-            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.016 8.016h-3v1.5h2.484v1.5H14.016v3h-1.5v-7.5h4.5v1.5zm-6 6h-4.5v-7.5h1.5v6h3v1.5z"/>
-          </svg>
+          <span style={{
+            background: '#F1641E',
+            color: '#ffffff',
+            fontSize: '0.55rem',
+            fontWeight: '900',
+            width: '18px',
+            height: '18px',
+            borderRadius: '50%',
+            display: 'inline-flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            marginRight: '0.2rem',
+            lineHeight: '1'
+          }}>LF</span>
           Also Available on Etsy
         </a>
       )}
