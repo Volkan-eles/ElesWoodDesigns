@@ -29,7 +29,7 @@ export default function ProductBuyActions({ product }: Props) {
     const paymentsClient = new (window as any).google.payments.api.PaymentsClient({
       environment: 'PRODUCTION',
       merchantInfo: {
-        merchantId: 'BCR2DN5TW7T2H32L',
+        merchantId: 'BCR2DN6D7LI6NUKF',
         merchantName: 'ElesWoodDesigns',
       },
     });
@@ -95,7 +95,7 @@ export default function ProductBuyActions({ product }: Props) {
       apiVersionMinor: 0,
       allowedPaymentMethods,
       merchantInfo: {
-        merchantId: 'BCR2DN5TW7T2H32L',
+        merchantId: 'BCR2DN6D7LI6NUKF',
         merchantName: 'ElesWoodDesigns',
       },
       transactionInfo: {
