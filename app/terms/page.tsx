@@ -43,7 +43,17 @@ export default function TermsPage() {
         </section>
 
         <section className="bg-[#FFE500] border-4 border-black p-8 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
-          <h2 className="text-3xl font-black uppercase mb-6">4. Modifications</h2>
+          <h2 className="text-3xl font-black uppercase mb-6">4. Refund Policy</h2>
+          <p className="mb-4">
+            Due to the digital nature of our products (instant PDF woodworking plans), all sales are final. We do not offer refunds, cancellations, or exchanges once a purchase is completed and the files have been delivered.
+          </p>
+          <p>
+            If you experience any technical issues downloading or using your files, please contact us at <strong>eleswooddesigns@gmail.com</strong>, and we will be happy to assist you in resolving the issue.
+          </p>
+        </section>
+
+        <section className="bg-white border-4 border-black p-8 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] hover:shadow-none transition-all">
+          <h2 className="text-3xl font-black uppercase mb-6 bg-[#FFE500] inline-block px-2 border-2 border-black">5. Modifications</h2>
           <p>
             We reserve the right to change these conditions from time to time as it sees fit and your continued use of the site will signify your acceptance of any adjustment to these terms.
           </p>
