@@ -1,7 +1,8 @@
 /**
  * generate_feed_xml.js
  * Generates /feed.xml (static copy) from data/etsy_products.json
- * Mirrors the logic in app/feed.xml/route.ts
+ * Pinterest-optimized with: enriched descriptions, custom_label targeting,
+ * keyword-rich content, and proper product_type taxonomy.
  */
 const fs = require('fs');
 const path = require('path');
@@ -39,8 +40,8 @@ function getGoogleCategory(product) {
   const slug = product.slug || '';
   const cat = product.category || '';
   const isPortrait = slug.includes('portrait') || slug.includes('sketch');
-  const isDigitalArt = cat === 'Digital' && (slug.includes('christmas') || slug.includes('costco') || slug.includes('watercolour') || slug.includes('memorial'));
-  const isPartyPrintable = cat === 'Digital' && (slug.includes('kentucky-derby') || slug.includes('party') || slug.includes('game') || slug.includes('betting') || slug.includes('cards') || slug.includes('mothers-day') || slug.includes('handprint') || slug.includes('craft') || slug.includes('keepsake') || slug.includes('mahjong') || slug.includes('sweepstake') || slug.includes('world-cup'));
+  const isDigitalArt = cat === 'Digital' && (slug.includes('christmas') || slug.includes('costco') || slug.includes('wholesale') || slug.includes('watercolour') || slug.includes('memorial'));
+  const isPartyPrintable = cat === 'Digital' && (slug.includes('kentucky-derby') || slug.includes('derby') || slug.includes('party') || slug.includes('game') || slug.includes('betting') || slug.includes('cards') || slug.includes('mothers-day') || slug.includes('handprint') || slug.includes('craft') || slug.includes('keepsake') || slug.includes('mahjong') || slug.includes('sweepstake') || slug.includes('world-cup') || slug.includes('world-soccer') || slug.includes('soccer') || slug.includes('coloring'));
   if (isPortrait || isDigitalArt || isPartyPrintable) return '500044';
   return '505378';
 }
@@ -48,36 +49,86 @@ function getGoogleCategory(product) {
 function getProductType(product) {
   const slug = product.slug || '';
   const cat = product.category || '';
+  const name = (product.name || '').toLowerCase();
   const isPortrait = slug.includes('portrait') || slug.includes('sketch');
-  const isDigitalArt = cat === 'Digital' && (slug.includes('christmas') || slug.includes('costco') || slug.includes('watercolour') || slug.includes('memorial'));
-  const isPartyPrintable = cat === 'Digital' && (slug.includes('kentucky-derby') || slug.includes('party') || slug.includes('game') || slug.includes('betting') || slug.includes('cards') || slug.includes('mothers-day') || slug.includes('handprint') || slug.includes('craft') || slug.includes('keepsake') || slug.includes('mahjong') || slug.includes('sweepstake') || slug.includes('world-cup'));
-  const isKids = cat === 'Kids' || slug.includes('treehouse') || slug.includes('mud-kitchen') || slug.includes('playhouse');
-  const isGarden = cat === 'Garden' || slug.includes('planter') || slug.includes('plant-stand') || slug.includes('garden') || slug.includes('farmstand') || slug.includes('farm-stand');
-  const isOutdoor = cat === 'Outdoor' || slug.includes('pergola') || slug.includes('swing') || slug.includes('arbor') || slug.includes('sauna') || slug.includes('treehouse') || slug.includes('chicken-coop') || slug.includes('fence') || slug.includes('shed') || slug.includes('windmill');
-  const isBedroom = cat === 'Bedroom' || slug.includes('loft-bed') || slug.includes('murphy-desk') || slug.includes('storage-bench');
+  const isDigitalArt = cat === 'Digital' && (slug.includes('christmas') || slug.includes('wholesale') || slug.includes('costco') || slug.includes('watercolour') || slug.includes('memorial'));
+  const isPartyPrintable = cat === 'Digital';
+  const isKids = cat === 'Kids' || name.includes('treehouse') || name.includes('mud kitchen') || name.includes('playhouse');
+  const isGarden = cat === 'Garden' || name.includes('planter') || name.includes('plant stand') || name.includes('garden') || name.includes('farmstand') || name.includes('strawberry');
+  const isOutdoor = cat === 'Outdoor' || name.includes('pergola') || name.includes('swing') || name.includes('arbor') || name.includes('sauna') || name.includes('gazebo') || name.includes('shed') || name.includes('chicken') || name.includes('catio') || name.includes('food cart');
+  const isBedroom = slug.includes('loft-bed') || slug.includes('murphy-desk') || slug.includes('storage-bench') || slug.includes('bunk-bed');
 
   if (isPortrait || isDigitalArt) return 'Decor > Digital Art > Printable Designs > Portrait & Wall Art';
   if (isPartyPrintable) return 'Decor > Digital Art > Printable Designs > Party Games & Printables';
-  if (isKids) return `Woodworking Plans > ${cat} > DIY Blueprint > Outdoor Play Structures`;
-  if (isGarden) return `Woodworking Plans > ${cat} > DIY Blueprint > Garden & Planter Builds`;
-  if (isOutdoor) return `Woodworking Plans > ${cat} > DIY Blueprint > Outdoor Furniture & Structures`;
-  if (isBedroom) return `Woodworking Plans > ${cat} > DIY Blueprint > Bedroom & Storage Furniture`;
+  if (isKids) return `Woodworking Plans > Kids > DIY Blueprint > Outdoor Play Structures`;
+  if (isGarden) return `Woodworking Plans > Garden > DIY Blueprint > Garden & Planter Builds`;
+  if (isOutdoor) return `Woodworking Plans > Outdoor > DIY Blueprint > Outdoor Furniture & Structures`;
+  if (isBedroom) return `Woodworking Plans > Furniture > DIY Blueprint > Bedroom & Storage Furniture`;
   return `Woodworking Plans > ${cat} > DIY Blueprint > Beginner-Friendly PDF`;
+}
+
+// Build an enriched description for Pinterest SEO
+function buildEnrichedDescription(product) {
+  const rawDescription = product.longDescription || product.description || '';
+  const cleanDesc = cleanText(rawDescription);
+
+  // Pinterest-optimized keyword suffix by category
+  const cat = (product.category || '').toLowerCase();
+  let keywords = 'Instant download PDF. Easy to follow step-by-step instructions, cut list, and material list included.';
+  if (cat === 'garden') keywords += ' DIY woodworking project for beginners and intermediate builders. Perfect for outdoor garden beds and raised planters.';
+  else if (cat === 'outdoor') keywords += ' Build your own outdoor furniture or structure with this easy woodworking plan. Great DIY project for the backyard.';
+  else if (cat === 'furniture') keywords += ' Build beautiful handcrafted furniture with this woodworking blueprint. Beginner-friendly with detailed diagrams.';
+  else if (cat === 'kids') keywords += ' Safe, fun woodworking project for kids play areas. Detailed plans with safety notes.';
+  else if (cat === 'digital') keywords += ' Printable digital download. Print at home instantly after purchase.';
+
+  const tagsStr = product.tags && product.tags.length > 0 ? `Keywords: ${product.tags.slice(0, 10).join(', ')}.` : '';
+
+  const fullDesc = [cleanDesc, keywords, tagsStr].filter(Boolean).join(' ').slice(0, 4990);
+  return fullDesc.length > 80
+    ? fullDesc
+    : `${product.name} - Professional PDF woodworking plan with detailed diagrams, cut list, and step-by-step instructions. Instant digital download.`;
+}
+
+// Custom labels for Pinterest campaign targeting (retargeting & audience segmentation)
+function getCustomLabels(product) {
+  const cat = (product.category || '').toLowerCase();
+  const price = product.price || 0;
+  const rating = product.rating || 0;
+  const bestseller = product.bestseller ? 'bestseller' : 'standard';
+
+  // label_0: category bucket for Pinterest audience targeting
+  const label0 = cat === 'garden' ? 'garden-plans' :
+    cat === 'outdoor' ? 'outdoor-plans' :
+    cat === 'furniture' ? 'furniture-plans' :
+    cat === 'kids' ? 'kids-plans' :
+    cat === 'digital' ? 'printables' : 'woodworking-plans';
+
+  // label_1: price tier for bid strategy
+  const label1 = price < 2 ? 'price-under-2' : price < 5 ? 'price-2-5' : price < 8 ? 'price-5-8' : 'price-over-8';
+
+  // label_2: rating tier
+  const label2 = rating >= 4.8 ? 'top-rated' : rating >= 4.5 ? 'high-rated' : 'standard';
+
+  // label_3: bestseller flag for promoted pins
+  const label3 = bestseller;
+
+  // label_4: skill level
+  const diff = (product.difficulty || '').toLowerCase();
+  const label4 = diff === 'easy' ? 'beginner-friendly' : diff === 'hard' ? 'advanced' : 'intermediate';
+
+  return { label0, label1, label2, label3, label4 };
 }
 
 const items = products.map((product) => {
   const title = cleanText(product.name).slice(0, 100);
-  const rawDescription = product.longDescription || product.description || title;
-  const featuresStr = (product.features && product.features.length > 0) ? ` Features: ${product.features.join(', ')}.` : '';
-  const materialsStr = (product.materials && product.materials.length > 0) ? ` Materials: ${product.materials.join(', ')}.` : '';
-  const tagsString = (product.tags && product.tags.length > 0) ? ` | Tags: ${product.tags.join(', ')}` : '';
-  const description = cleanText(rawDescription + featuresStr + materialsStr + tagsString).slice(0, 4990);
+  const description = buildEnrichedDescription(product);
 
   const siteUrl = `${baseUrl}/products/${product.slug}/`;
-  const etsyUrl = product.etsy_url || null;
+  const etsyUrl = product.etsy_url && product.etsy_url.startsWith('https://www.etsy.com/listing/') ? product.etsy_url : null;
   const primaryImage = (product.images && product.images[0]) ? product.images[0] : '';
   const pinImage = `${baseUrl}/api/pin/${product.slug}/pin.jpg`;
 
+  // Pinterest prefers portrait/square images — Pinterest-generated pin image goes first
   const extraImagesList = [
     pinImage,
     ...(product.images || []).slice(1, 9).filter(Boolean),
@@ -98,6 +149,7 @@ const items = products.map((product) => {
         <g:price>0.00 USD</g:price>
       </g:shipping>`;
 
+  // ads_redirect → real Etsy listing URL for better conversion tracking
   const adsRedirectXml = etsyUrl
     ? `      <g:ads_redirect>${escapeXml(etsyUrl)}</g:ads_redirect>`
     : '';
@@ -105,6 +157,7 @@ const items = products.map((product) => {
   const googleCategory = getGoogleCategory(product);
   const productType = getProductType(product);
   const pinterestId = product.slug.slice(0, 100);
+  const labels = getCustomLabels(product);
 
   return `
     <item>
@@ -126,6 +179,11 @@ ${adsRedirectXml}
       <g:product_type>${escapeXml(productType)}</g:product_type>
       <g:item_group_id>${escapeXml(pinterestId)}</g:item_group_id>
       <g:identifier_exists>no</g:identifier_exists>
+      <g:custom_label_0>${escapeXml(labels.label0)}</g:custom_label_0>
+      <g:custom_label_1>${escapeXml(labels.label1)}</g:custom_label_1>
+      <g:custom_label_2>${escapeXml(labels.label2)}</g:custom_label_2>
+      <g:custom_label_3>${escapeXml(labels.label3)}</g:custom_label_3>
+      <g:custom_label_4>${escapeXml(labels.label4)}</g:custom_label_4>
 ${shippingXml}
     </item>`;
 }).join('');
