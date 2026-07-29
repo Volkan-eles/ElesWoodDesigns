@@ -18,7 +18,28 @@ export default function Footer() {
           <Link href="/terms/" className="hover:text-[#FFE500] font-bold uppercase tracking-widest text-xs sm:text-[10px] text-gray-400">Terms of Service</Link>
           <a href="https://www.etsy.com/shop/ElesWoodDesigns" target="_blank" className="hover:text-[#FFE500] font-bold uppercase tracking-widest text-xs sm:text-[10px] text-gray-400">Etsy Shop</a>
         </div>
-        <div className="text-[10px] font-mono text-gray-600 mt-4">
+
+        {/* Accepted Payment Methods & E-Wallets for Google Store Quality */}
+        <div className="flex flex-wrap justify-center items-center gap-3 pt-4 border-t border-gray-900">
+          <span className="text-[11px] font-bold uppercase text-gray-400 tracking-wider mr-2">Accepted Payment Methods:</span>
+          <span className="bg-white text-black font-extrabold text-[11px] px-2.5 py-1 rounded border border-gray-300 flex items-center gap-1 shadow-sm">
+            <span className="text-blue-600 font-black">G</span><span className="text-red-500 font-black">o</span><span className="text-yellow-500 font-black">o</span><span className="text-blue-600 font-black">g</span><span className="text-green-600 font-black">l</span><span className="text-red-500 font-black">e</span> <span className="text-black font-black">Pay</span>
+          </span>
+          <span className="bg-white text-black font-extrabold text-[11px] px-2.5 py-1 rounded border border-gray-300 flex items-center gap-1 shadow-sm">
+            🍏 <span className="font-black text-black">Apple Pay</span>
+          </span>
+          <span className="bg-white text-blue-900 font-extrabold text-[11px] px-2.5 py-1 rounded border border-gray-300 flex items-center gap-1 shadow-sm">
+            <span className="font-black italic text-blue-800">Pay</span><span className="font-black italic text-cyan-600">Pal</span>
+          </span>
+          <span className="bg-white text-purple-900 font-extrabold text-[11px] px-2.5 py-1 rounded border border-gray-300 flex items-center gap-1 shadow-sm">
+            💳 <span className="font-black text-indigo-900">Stripe</span>
+          </span>
+          <span className="bg-white text-black font-extrabold text-[11px] px-2.5 py-1 rounded border border-gray-300 flex items-center gap-1 shadow-sm">
+            <span className="font-black text-blue-900">VISA</span> / <span className="font-black text-red-600">Mastercard</span>
+          </span>
+        </div>
+
+        <div className="text-[10px] font-mono text-gray-600 mt-6">
           © {new Date().getFullYear()} ELESWOODDESIGNS. ALL RIGHTS RESERVED.
         </div>
       </div>
