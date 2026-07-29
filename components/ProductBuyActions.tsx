@@ -27,7 +27,7 @@ export default function ProductBuyActions({ product }: Props) {
 
   function initGooglePay() {
     const paymentsClient = new (window as any).google.payments.api.PaymentsClient({
-      environment: 'PRODUCTION',
+      environment: 'TEST',
       merchantInfo: {
         merchantId: 'BCR2DN6D7LI6NUKF',
         merchantName: 'ElesWoodDesigns',
