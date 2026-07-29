@@ -7,6 +7,7 @@ import Script from "next/script";
 import { ClerkProvider } from "@clerk/nextjs";
 import { CartProvider } from "@/context/CartContext";
 import CartDrawer from "@/components/CartDrawer";
+import ChatbotWidget from "@/components/ChatbotWidget";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -182,6 +183,7 @@ export default function RootLayout({
             <Footer />
           </div>
           <CartDrawer />
+          <ChatbotWidget />
         </CartProvider>
         </ClerkProvider>
       </body>
