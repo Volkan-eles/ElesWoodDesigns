@@ -141,7 +141,14 @@ export default function ProductBuyActions({ product }: Props) {
 
       {/* ── 2. Add to Cart Button ── */}
       <button
-        onClick={() => addToCart(product)}
+        onClick={() => {
+          addToCart(product);
+          fetch('/api/analytics', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ slug: product.slug, action: 'cart' }),
+          }).catch(() => {});
+        }}
         style={{
           display: 'flex',
           alignItems: 'center',

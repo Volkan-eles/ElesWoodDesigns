@@ -8,6 +8,7 @@ import RelatedProducts from "@/components/RelatedProducts";
 import Link from "next/link";
 import PinterestSaveButton from "@/components/PinterestSaveButton";
 import ProductBuyActions from "@/components/ProductBuyActions";
+import SocialProofBadges from "@/components/SocialProofBadges";
 import { Star, CheckCircle, ExternalLink, ArrowLeft, Clock, Ruler, BarChart, BookOpen, ShoppingBag } from "lucide-react";
 
 export async function generateStaticParams() {
@@ -298,6 +299,8 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
               </div>
             </div>
           </div>
+
+          <SocialProofBadges slug={product.slug} />
 
           <div className="flex flex-col gap-4">
             <ProductBuyActions product={product} />
