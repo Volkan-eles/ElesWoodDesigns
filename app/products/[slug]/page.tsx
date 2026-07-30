@@ -87,6 +87,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
       url: `${baseUrl}/products/${product.slug}/`,
       priceCurrency: 'USD',
       price: product.price,
+      validFrom: '2024-01-01',
       priceValidUntil: '2027-12-31',
       availability: 'https://schema.org/InStock',
       itemCondition: 'https://schema.org/NewCondition',
