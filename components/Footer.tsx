@@ -16,6 +16,7 @@ export default function Footer() {
         <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-x-8 gap-y-4 mb-8 border-t border-gray-800 pt-8">
           <Link href="/privacy/" className="hover:text-[#FFE500] font-bold uppercase tracking-widest text-xs sm:text-[10px] text-gray-400">Privacy Policy</Link>
           <Link href="/terms/" className="hover:text-[#FFE500] font-bold uppercase tracking-widest text-xs sm:text-[10px] text-gray-400">Terms of Service</Link>
+          <Link href="/refund-policy/" className="hover:text-[#FFE500] font-bold uppercase tracking-widest text-xs sm:text-[10px] text-gray-400">Refund Policy</Link>
           <a href="https://www.etsy.com/shop/ElesWoodDesigns" target="_blank" className="hover:text-[#FFE500] font-bold uppercase tracking-widest text-xs sm:text-[10px] text-gray-400">Etsy Shop</a>
         </div>
 

@@ -43,12 +43,18 @@ export default function TermsPage() {
         </section>
 
         <section className="bg-[#FFE500] border-4 border-black p-8 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
-          <h2 className="text-3xl font-black uppercase mb-6">4. Refund Policy</h2>
+          <h2 className="text-3xl font-black uppercase mb-6">4. 30-Day Money-Back Guarantee & Return Policy</h2>
           <p className="mb-4">
-            Due to the digital nature of our products (instant PDF woodworking plans), all sales are final. We do not offer refunds, cancellations, or exchanges once a purchase is completed and the files have been delivered.
+            At ElesWoodDesigns, we stand behind the quality of our DIY woodworking plans. We offer a <strong>30-Day 100% Money-Back Guarantee</strong> on all digital PDF blueprints for customers in the United States and worldwide.
           </p>
+          <ul className="list-disc list-inside space-y-2 mb-4">
+            <li><strong>Return Window:</strong> You have 30 calendar days from the date of purchase to request a full refund.</li>
+            <li><strong>Return Fees & Shipping:</strong> $0 / Free. There are no restocking fees or return shipping costs.</li>
+            <li><strong>Eligible Items:</strong> Applies to all digital PDF woodworking plans, blueprints, and cut lists (both defective and non-defective).</li>
+            <li><strong>Refund Processing:</strong> Refunds are processed within 1 to 3 business days back to your original payment method (Google Pay, Credit Card, PayPal).</li>
+          </ul>
           <p>
-            If you experience any technical issues downloading or using your files, please contact us at <strong>eleswooddesigns@gmail.com</strong>, and we will be happy to assist you in resolving the issue.
+            To request a refund or get assistance with your order, simply email our customer support team at <strong>eleswooddesigns@gmail.com</strong> with your order details.
           </p>
         </section>
 
