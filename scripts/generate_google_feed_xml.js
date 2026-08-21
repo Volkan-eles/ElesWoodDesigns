@@ -103,15 +103,16 @@ const items = products.map((product) => {
   const salePriceStr = `${salePrice.toFixed(2)} USD`;
   const origPriceStr = `${origPrice.toFixed(2)} USD`;
 
-  const shippingXml = `      <g:shipping>
-        <g:country>US</g:country>
-        <g:service>Digital Download</g:service>
+  const targetCountries = ['US', 'CA', 'GB', 'AU', 'DE', 'FR', 'NL'];
+  const shippingXml = targetCountries.map(country => `      <g:shipping>
+        <g:country>${country}</g:country>
+        <g:service>Standard</g:service>
         <g:price>0.00 USD</g:price>
         <g:min_handling_time>0</g:min_handling_time>
         <g:max_handling_time>0</g:max_handling_time>
         <g:min_transit_time>0</g:min_transit_time>
         <g:max_transit_time>0</g:max_transit_time>
-      </g:shipping>`;
+      </g:shipping>`).join('\n');
 
   const adsRedirectXml = etsyUrl
     ? `      <g:ads_redirect>${escapeXml(etsyUrl)}</g:ads_redirect>`
@@ -143,6 +144,9 @@ ${adsRedirectXml}
       <g:product_type>${escapeXml(productType)}</g:product_type>
       <g:item_group_id>${escapeXml(googleId)}</g:item_group_id>
       <g:identifier_exists>no</g:identifier_exists>
+      <g:min_handling_time>0</g:min_handling_time>
+      <g:max_handling_time>0</g:max_handling_time>
+      <g:shipping_label>Free_Digital_Delivery</g:shipping_label>
 ${shippingXml}
     </item>`;
 }).join('');
