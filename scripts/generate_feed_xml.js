@@ -128,10 +128,11 @@ const items = products.map((product) => {
   const primaryImage = (product.images && product.images[0]) ? product.images[0] : '';
   const pinImage = `${baseUrl}/api/pin/${product.slug}/pin.jpg`;
 
-  // Pinterest prefers portrait/square images — Pinterest-generated pin image goes first
+  // Prioritize reliable, fast Etsy CDN images first so Pinterest scraper never times out
+  const cdnImages = (product.images || []).slice(1, 8).filter(Boolean);
   const extraImagesList = [
+    ...cdnImages,
     pinImage,
-    ...(product.images || []).slice(1, 9).filter(Boolean),
   ];
 
   const extraImagesXml = extraImagesList
@@ -143,11 +144,12 @@ const items = products.map((product) => {
   const salePriceStr = `${salePrice.toFixed(2)} USD`;
   const origPriceStr = `${origPrice.toFixed(2)} USD`;
 
-  const shippingXml = `      <g:shipping>
-        <g:country>US</g:country>
+  const targetCountries = ['US', 'CA', 'GB', 'AU', 'DE', 'FR', 'NL'];
+  const shippingXml = targetCountries.map(country => `      <g:shipping>
+        <g:country>${country}</g:country>
         <g:service>Digital Download</g:service>
         <g:price>0.00 USD</g:price>
-      </g:shipping>`;
+      </g:shipping>`).join('\n');
 
   // ads_redirect → real Etsy listing URL for better conversion tracking
   const adsRedirectXml = etsyUrl

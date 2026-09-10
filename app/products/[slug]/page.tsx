@@ -33,6 +33,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     : ogDescription;
 
   const baseUrl = 'https://eleswooddesigns.com';
+  const priceStr = product.price.toFixed(2);
+  const primaryImg = product.image.startsWith('http') ? product.image : `https://eleswooddesigns.com${product.image}`;
+
   return {
     title: product.name,
     alternates: {
@@ -40,25 +43,33 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     },
     description: seoDescription,
     openGraph: {
-      title: product.name,
+      title: `${product.name} | DIY Woodworking Plans PDF`,
       description: ogDescription,
       url: `https://eleswooddesigns.com/products/${product.slug}/`,
       type: 'website',
+      siteName: 'ElesWoodDesigns',
       images: [
         {
-          url: product.image.startsWith('http') ? product.image : `https://eleswooddesigns.com${product.image}`,
+          url: primaryImg,
           width: 1000,
           height: 1500,
-          alt: `${product.name} DIY Woodworking Plans`,
+          alt: `${product.name} DIY Woodworking Blueprint PDF`,
         },
       ],
     },
     other: {
-      'product:price:amount': product.price.toString(),
+      // Pinterest Product Rich Pins & Shopping Graph
+      'og:type': 'og:product',
+      'product:price:amount': priceStr,
       'product:price:currency': 'USD',
+      'og:price:amount': priceStr,
+      'og:price:currency': 'USD',
       'og:availability': 'instock',
+      'product:availability': 'in stock',
       'product:retailer_item_id': product.id,
       'product:condition': 'new',
+      'product:brand': 'ElesWoodDesigns',
+      'pinterest-rich-pin': 'true',
     }
   };
 }
@@ -227,6 +238,22 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      {/* Pinterest Tag - Product PageVisit Event */}
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            if (typeof window !== 'undefined' && typeof window.pintrk === 'function') {
+              window.pintrk('track', 'pagevisit', {
+                product_id: ${JSON.stringify(product.id)},
+                product_name: ${JSON.stringify(product.name)},
+                product_price: ${product.price},
+                currency: 'USD',
+                product_category: ${JSON.stringify(product.category || 'Woodworking Plans')}
+              });
+            }
+          `
+        }}
       />
       <Link href="/products/" className="inline-flex items-center gap-2 font-black uppercase text-sm mb-8 hover:underline decoration-4 underline-offset-4 decoration-[#FFE500]">
         <ArrowLeft className="w-4 h-4" />

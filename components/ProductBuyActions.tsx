@@ -143,6 +143,16 @@ export default function ProductBuyActions({ product }: Props) {
       <button
         onClick={() => {
           addToCart(product);
+          if (typeof window !== 'undefined' && (window as any).pintrk) {
+            (window as any).pintrk('track', 'addtocart', {
+              product_id: product.id,
+              product_name: product.name,
+              product_price: product.price,
+              currency: 'USD',
+              value: product.price,
+              order_quantity: 1,
+            });
+          }
           fetch('/api/analytics', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -177,6 +187,17 @@ export default function ProductBuyActions({ product }: Props) {
         href={product.polarCheckoutUrl || 'https://polar.sh'}
         data-polar-checkout
         data-polar-checkout-theme="light"
+        onClick={() => {
+          if (typeof window !== 'undefined' && (window as any).pintrk) {
+            (window as any).pintrk('track', 'lead', {
+              product_id: product.id,
+              product_name: product.name,
+              value: product.price,
+              currency: 'USD',
+              lead_type: 'Polar Checkout',
+            });
+          }
+        }}
         style={{
           display: 'flex',
           alignItems: 'center',
@@ -207,6 +228,17 @@ export default function ProductBuyActions({ product }: Props) {
           href={product.etsyUrl}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => {
+            if (typeof window !== 'undefined' && (window as any).pintrk) {
+              (window as any).pintrk('track', 'lead', {
+                product_id: product.id,
+                product_name: product.name,
+                value: product.price,
+                currency: 'USD',
+                lead_type: 'Etsy Outbound',
+              });
+            }
+          }}
           style={{
             display: 'flex',
             alignItems: 'center',
