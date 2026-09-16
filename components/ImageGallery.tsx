@@ -10,6 +10,7 @@ interface ImageGalleryProps {
   alt: string;
   productName: string;
   productUrl: string;
+  productSlug: string;
 }
 
 export default function ImageGallery({ 
@@ -17,9 +18,14 @@ export default function ImageGallery({
   thumbnails, 
   alt,
   productName,
-  productUrl
+  productUrl,
+  productSlug,
 }: ImageGalleryProps) {
   const [activeIdx, setActiveIdx] = useState(0);
+
+  // Use the portrait-format pin image for Pinterest saves (better Pinterest UX)
+  const pinImageUrl = `https://eleswooddesigns.com/api/pin/${productSlug}/pin.jpg`;
+  const pinDescription = `${productName} — DIY Woodworking Plans PDF | Step-by-step blueprint with cut list & 3D diagrams | Instant Download by ElesWoodDesigns`;
 
   return (
     <div className="flex flex-col gap-4">
@@ -35,16 +41,26 @@ export default function ImageGallery({
             priority
           />
           
-          <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity z-20">
+          {/* Pinterest Save — always visible on mobile, hover on desktop */}
+          <div className="absolute top-4 right-4 opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity z-20">
             <PinterestSaveButton 
               url={productUrl}
-              media={images[activeIdx]}
-              description={`${productName} - DIY Woodworking Plans by ElesWoodDesigns`}
+              media={pinImageUrl}
+              description={pinDescription}
               variant="small"
             />
           </div>
         </div>
       </div>
+
+      {/* Prominent Pinterest Save Button below image */}
+      <PinterestSaveButton
+        url={productUrl}
+        media={pinImageUrl}
+        description={pinDescription}
+        variant="large"
+        className="w-full"
+      />
 
       {/* Thumbnails */}
       <div className="grid grid-cols-4 sm:grid-cols-5 gap-2 md:gap-4">

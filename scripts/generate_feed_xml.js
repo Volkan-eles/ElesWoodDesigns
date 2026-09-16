@@ -67,26 +67,44 @@ function getProductType(product) {
   return `Woodworking Plans > ${cat} > DIY Blueprint > Beginner-Friendly PDF`;
 }
 
-// Build an enriched description for Pinterest SEO
+// Build an enriched description for Pinterest SEO — keywords + hashtags + CTA
 function buildEnrichedDescription(product) {
   const rawDescription = product.longDescription || product.description || '';
-  const cleanDesc = cleanText(rawDescription);
+  const cleanDesc = cleanText(rawDescription).slice(0, 300);
 
-  // Pinterest-optimized keyword suffix by category
+  // Pinterest-optimized keyword suffix by category with hashtags
   const cat = (product.category || '').toLowerCase();
-  let keywords = 'Instant download PDF. Easy to follow step-by-step instructions, cut list, and material list included.';
-  if (cat === 'garden') keywords += ' DIY woodworking project for beginners and intermediate builders. Perfect for outdoor garden beds and raised planters.';
-  else if (cat === 'outdoor') keywords += ' Build your own outdoor furniture or structure with this easy woodworking plan. Great DIY project for the backyard.';
-  else if (cat === 'furniture') keywords += ' Build beautiful handcrafted furniture with this woodworking blueprint. Beginner-friendly with detailed diagrams.';
-  else if (cat === 'kids') keywords += ' Safe, fun woodworking project for kids play areas. Detailed plans with safety notes.';
-  else if (cat === 'digital') keywords += ' Printable digital download. Print at home instantly after purchase.';
+  const price = `$${(product.price || 0).toFixed(2)}`;
 
-  const tagsStr = product.tags && product.tags.length > 0 ? `Keywords: ${product.tags.slice(0, 10).join(', ')}.` : '';
+  let cta = `Get the complete step-by-step PDF blueprint for only ${price}. Instant download — cut list, 3D diagrams & material list included.`;
 
-  const fullDesc = [cleanDesc, keywords, tagsStr].filter(Boolean).join(' ').slice(0, 4990);
+  let hashtags = '';
+  if (cat === 'garden') {
+    cta += ' Perfect DIY garden project for beginners and intermediate builders.';
+    hashtags = '#diygarden #gardenproject #woodworkingplans #diywoodworking #raisedbed #gardenbed #backyarddiy #diyprojects #homeimprovement #gardendesign';
+  } else if (cat === 'outdoor') {
+    cta += ' Build beautiful outdoor furniture and structures for your backyard.';
+    hashtags = '#outdoorfurniture #diyoutdoor #woodworkingplans #backyardideas #diywoodworking #pergola #patio #outdoorliving #diyprojects #homeimprovement';
+  } else if (cat === 'furniture') {
+    cta += ' Create beautiful handcrafted furniture with this beginner-friendly blueprint.';
+    hashtags = '#diyfurniture #woodworkingplans #diywoodworking #furnitureplans #handmadefurniture #farmhousestyle #rusticfurniture #diyhomedecor #homeimprovement #diyprojects';
+  } else if (cat === 'kids') {
+    cta += ' Safe, fun woodworking project for kids play areas — detailed plans with safety notes.';
+    hashtags = '#kidsfurniture #diykids #playhouse #treehouse #diywoodworking #woodworkingplans #familyproject #diyprojects #kidsoutdoor #backyardplay';
+  } else if (cat === 'digital') {
+    cta += ' Printable digital download — print at home and create instantly.';
+    hashtags = '#printable #instantdownload #digitaldownload #diycraft #homedecor #printabledecor #diydecor #craftideas #diyhomedecor #crafting';
+  } else {
+    hashtags = '#woodworking #diywoodworking #woodworkingplans #diyprojects #diyhome #craftsman #buildyourown #homeimprovement #makersmovement #workshop';
+  }
+
+  const tagsFromProduct = product.tags && product.tags.length > 0 ? product.tags.slice(0, 5).join(', ') : '';
+
+  const fullDesc = [cleanDesc, cta, tagsFromProduct ? `Keywords: ${tagsFromProduct}.` : '', hashtags]
+    .filter(Boolean).join(' ').slice(0, 4990);
   return fullDesc.length > 80
     ? fullDesc
-    : `${product.name} - Professional PDF woodworking plan with detailed diagrams, cut list, and step-by-step instructions. Instant digital download.`;
+    : `${product.name} - Professional PDF woodworking plan with detailed diagrams, cut list, and step-by-step instructions. Instant digital download. ${hashtags}`;
 }
 
 // Custom labels for Pinterest campaign targeting (retargeting & audience segmentation)

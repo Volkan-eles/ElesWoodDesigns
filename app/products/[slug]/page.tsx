@@ -269,6 +269,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
             alt={`DIY ${product.name} Woodworking Blueprint - Step-by-Step Plan`} 
             productName={product.name}
             productUrl={`${baseUrl}/products/${product.slug}/`}
+            productSlug={product.slug}
           />
         </div>
 
