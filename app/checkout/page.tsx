@@ -17,6 +17,25 @@ export default function CheckoutPage() {
     setIsMounted(true);
   }, []);
 
+  // Fire begin_checkout Google signal when cart is loaded
+  useEffect(() => {
+    if (!isMounted || cart.length === 0) return;
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'begin_checkout', {
+        currency: 'USD',
+        value: subtotal,
+        items: cart.map(({ product }) => ({
+          item_id: product.id,
+          item_name: product.name,
+          item_category: product.category,
+          price: product.price,
+          quantity: 1,
+        })),
+      });
+    }
+  }, [isMounted]);
+
+
   // Prevent accessing checkout with empty cart
   useEffect(() => {
     if (isMounted && cart.length === 0) {
@@ -105,6 +124,22 @@ export default function CheckoutPage() {
                     rel="noopener noreferrer"
                     className="btn-neo py-2.5 px-5 text-sm uppercase font-black"
                     style={{ background: 'var(--amber)' }}
+                    onClick={() => {
+                      if (typeof window !== 'undefined' && (window as any).gtag) {
+                        (window as any).gtag('event', 'add_payment_info', {
+                          currency: 'USD',
+                          value: product.price,
+                          payment_type: 'Polar',
+                          items: [{
+                            item_id: product.id,
+                            item_name: product.name,
+                            item_category: product.category,
+                            price: product.price,
+                            quantity: 1,
+                          }],
+                        });
+                      }
+                    }}
                   >
                     💳 Pay — ${product.price.toFixed(2)}
                   </a>

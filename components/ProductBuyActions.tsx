@@ -12,6 +12,23 @@ export default function ProductBuyActions({ product }: Props) {
   const { addToCart } = useCart();
 
   useEffect(() => {
+    // Fire view_item event for Google Merchant Center signals
+    if ((window as any).gtag) {
+      (window as any).gtag('event', 'view_item', {
+        currency: 'USD',
+        value: product.price,
+        items: [{
+          item_id: product.id,
+          item_name: product.name,
+          item_category: product.category,
+          price: product.price,
+          quantity: 1,
+        }],
+      });
+    }
+  }, [product.id]);
+
+  useEffect(() => {
     // Load Google Pay JS API
     const script = document.createElement('script');
     script.src = 'https://pay.google.com/gp/p/js/pay.js';
@@ -188,7 +205,29 @@ export default function ProductBuyActions({ product }: Props) {
         data-polar-checkout
         data-polar-checkout-theme="light"
         onClick={() => {
-          if (typeof window !== 'undefined' && (window as any).pintrk) {
+          // Store purchase info for confirmation page to fire gtag purchase event
+          sessionStorage.setItem('last_purchase', JSON.stringify({
+            id: product.id,
+            name: product.name,
+            category: product.category,
+            price: product.price,
+          }));
+          // Fire gtag begin_checkout signal
+          if ((window as any).gtag) {
+            (window as any).gtag('event', 'begin_checkout', {
+              currency: 'USD',
+              value: product.price,
+              items: [{
+                item_id: product.id,
+                item_name: product.name,
+                item_category: product.category,
+                price: product.price,
+                quantity: 1,
+              }],
+            });
+          }
+          // Pinterest lead signal
+          if ((window as any).pintrk) {
             (window as any).pintrk('track', 'lead', {
               product_id: product.id,
               product_name: product.name,

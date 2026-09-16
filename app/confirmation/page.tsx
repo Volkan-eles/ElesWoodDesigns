@@ -1,12 +1,46 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect } from 'react';
 import Link from 'next/link';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 
 export default function ConfirmationPage() {
+  useEffect(() => {
+    // Read last purchased product info from sessionStorage (set when user clicks Buy Now)
+    const raw = typeof window !== 'undefined' ? sessionStorage.getItem('last_purchase') : null;
+    const purchase = raw ? JSON.parse(raw) : null;
+
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      // GA4 purchase event — required for Google Merchant Center "Signals"
+      (window as any).gtag('event', 'purchase', {
+        transaction_id: `polar-${Date.now()}`,
+        currency: 'USD',
+        value: purchase?.price ?? 0,
+        tax: 0,
+        shipping: 0,
+        items: purchase ? [{
+          item_id: purchase.id,
+          item_name: purchase.name,
+          item_category: purchase.category || 'Woodworking Plans',
+          price: purchase.price,
+          quantity: 1,
+        }] : [],
+      });
+
+      // Google Ads conversion (Merchant Center uses this for store quality signals)
+      (window as any).gtag('event', 'conversion', {
+        send_to: 'G-144E244HYN',
+        value: purchase?.price ?? 0,
+        currency: 'USD',
+        transaction_id: `polar-${Date.now()}`,
+      });
+    }
+
+    // Clear session after firing
+    sessionStorage.removeItem('last_purchase');
+  }, []);
+
   return (
     <>
-      <Navbar />
       <main className="border-t-4 border-black bg-[#FFFDF0] min-h-[85vh] py-20 flex items-center">
         <div className="max-w-xl mx-auto px-4 text-center">
           {/* Neon Icon badge */}
@@ -32,7 +66,7 @@ export default function ConfirmationPage() {
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-green-600 text-base leading-none">✓</span>
-                <span>Check your spam or junk folder if you don't receive the email within 2-3 minutes.</span>
+                <span>Check your spam or junk folder if you don&apos;t receive the email within 2-3 minutes.</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-green-600 text-base leading-none">✓</span>
@@ -42,8 +76,8 @@ export default function ConfirmationPage() {
           </div>
 
           <div className="flex gap-4 justify-center">
-            <Link 
-              href="/products/" 
+            <Link
+              href="/products/"
               className="btn-neo py-3 px-8 text-sm uppercase font-black bg-[#FFE500] border-3 border-black text-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
             >
               Continue Browsing
@@ -51,7 +85,6 @@ export default function ConfirmationPage() {
           </div>
         </div>
       </main>
-      <Footer />
     </>
   );
 }
