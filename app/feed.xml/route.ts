@@ -1,6 +1,5 @@
 import { getProducts } from '@/lib/products';
-import fs from 'fs';
-import path from 'path';
+import { PINTEREST_PIN_FILES } from '@/lib/pinterest-pins';
 
 export const dynamic = 'force-dynamic';
 
@@ -114,7 +113,6 @@ function getCustomLabels(product: any) {
 export async function GET() {
   const products = getProducts();
   const baseUrl = 'https://eleswooddesigns.com';
-  const staticPinDir = path.join(process.cwd(), 'public', 'pinterest-images');
 
   const items = products.map((product) => {
     const title = cleanText(product.name).slice(0, 100);
@@ -122,8 +120,7 @@ export async function GET() {
     const siteUrl = `${baseUrl}/products/${product.slug}/`;
 
     // Static 2:3 Pinterest Pin image (pre-generated, serves in 20ms from Vercel Edge CDN)
-    const pinImagePath = path.join(staticPinDir, `${product.slug}.jpg`);
-    const hasStaticPin = fs.existsSync(pinImagePath);
+    const hasStaticPin = PINTEREST_PIN_FILES.has(`${product.slug}.jpg`);
     const staticPinUrl = `${baseUrl}/pinterest-images/${product.slug}.jpg`;
     const rawProductImage = (product.images && product.images[0]) ? product.images[0] : '';
 
