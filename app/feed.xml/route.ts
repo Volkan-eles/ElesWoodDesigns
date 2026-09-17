@@ -1,10 +1,11 @@
 import { getProducts } from '@/lib/products';
+import fs from 'fs';
+import path from 'path';
 
 export const dynamic = 'force-dynamic';
 
-// Escape XML special characters outside of CDATA
 function escapeXml(str: string): string {
-  return str
+  return String(str || '')
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
@@ -12,117 +13,150 @@ function escapeXml(str: string): string {
     .replace(/'/g, '&apos;');
 }
 
-// Strip emoji and normalize whitespace for feed
 function cleanText(str: string): string {
   if (!str) return '';
   return str
-    // Remove broad range of emojis and symbols (including checkmarks, arrows, etc.)
     .replace(/[\u{1F300}-\u{1FFFF}\u{2600}-\u{27BF}\u{2300}-\u{23FF}\u{2B50}]/gu, '')
-    // Replace non-ASCII dashes and quotes with ASCII equivalents for maximal compatibility
     .replace(/[\u2013\u2014]/g, '-')
     .replace(/[\u2018\u2019]/g, "'")
     .replace(/[\u201C\u201D]/g, '"')
-    // Remove potential CDATA break sequence
     .replace(/\]\]>/g, ']] ')
     .replace(/\n+/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
 }
 
+function getGoogleCategory(slug: string, cat: string): string {
+  const isPortrait = slug.includes('portrait') || slug.includes('sketch');
+  const isDigitalArt = cat === 'Digital' && (slug.includes('christmas') || slug.includes('costco') || slug.includes('wholesale') || slug.includes('watercolour') || slug.includes('memorial'));
+  const isPartyPrintable = cat === 'Digital' && (slug.includes('kentucky-derby') || slug.includes('derby') || slug.includes('party') || slug.includes('game') || slug.includes('betting') || slug.includes('cards') || slug.includes('mothers-day') || slug.includes('handprint') || slug.includes('craft') || slug.includes('keepsake') || slug.includes('mahjong') || slug.includes('sweepstake') || slug.includes('world-cup') || slug.includes('world-soccer') || slug.includes('soccer') || slug.includes('coloring'));
+  if (isPortrait || isDigitalArt || isPartyPrintable) return '500044';
+  return '505378';
+}
+
+function getProductType(slug: string, cat: string, name: string): string {
+  const lowerName = (name || '').toLowerCase();
+  const isPortrait = slug.includes('portrait') || slug.includes('sketch');
+  const isDigitalArt = cat === 'Digital' && (slug.includes('christmas') || slug.includes('wholesale') || slug.includes('costco') || slug.includes('watercolour') || slug.includes('memorial'));
+  const isPartyPrintable = cat === 'Digital';
+  const isKids = cat === 'Kids' || lowerName.includes('treehouse') || lowerName.includes('mud kitchen') || lowerName.includes('playhouse');
+  const isGarden = cat === 'Garden' || lowerName.includes('planter') || lowerName.includes('plant stand') || lowerName.includes('garden') || lowerName.includes('farmstand') || lowerName.includes('strawberry');
+  const isOutdoor = cat === 'Outdoor' || lowerName.includes('pergola') || lowerName.includes('swing') || lowerName.includes('arbor') || lowerName.includes('sauna') || lowerName.includes('gazebo') || lowerName.includes('shed') || lowerName.includes('chicken') || lowerName.includes('catio') || lowerName.includes('food cart');
+  const isBedroom = slug.includes('loft-bed') || slug.includes('murphy-desk') || slug.includes('storage-bench') || slug.includes('bunk-bed');
+
+  if (isPortrait || isDigitalArt) return 'Decor > Digital Art > Printable Designs > Portrait & Wall Art';
+  if (isPartyPrintable) return 'Decor > Digital Art > Printable Designs > Party Games & Printables';
+  if (isKids) return `Woodworking Plans > Kids > DIY Blueprint > Outdoor Play Structures`;
+  if (isGarden) return `Woodworking Plans > Garden > DIY Blueprint > Garden & Planter Builds`;
+  if (isOutdoor) return `Woodworking Plans > Outdoor > DIY Blueprint > Outdoor Furniture & Structures`;
+  if (isBedroom) return `Woodworking Plans > Furniture > DIY Blueprint > Bedroom & Storage Furniture`;
+  return `Woodworking Plans > ${cat} > DIY Blueprint > Beginner-Friendly PDF`;
+}
+
+function buildEnrichedDescription(product: any): string {
+  const rawDescription = product.longDescription || product.description || '';
+  const cleanDesc = cleanText(rawDescription).slice(0, 300);
+  const cat = (product.category || '').toLowerCase();
+  const price = `$${(product.price || 0).toFixed(2)}`;
+
+  let cta = `Get the complete step-by-step PDF blueprint for only ${price}. Instant download - cut list, 3D diagrams & material list included.`;
+  let hashtags = '';
+
+  if (cat === 'garden') {
+    cta += ' Perfect DIY garden project for beginners and intermediate builders.';
+    hashtags = '#diygarden #gardenproject #woodworkingplans #diywoodworking #raisedbed #gardenbed #backyarddiy #diyprojects #homeimprovement #gardendesign';
+  } else if (cat === 'outdoor') {
+    cta += ' Build beautiful outdoor furniture and structures for your backyard.';
+    hashtags = '#outdoorfurniture #diyoutdoor #woodworkingplans #backyardideas #diywoodworking #pergola #patio #outdoorliving #diyprojects #homeimprovement';
+  } else if (cat === 'furniture') {
+    cta += ' Create beautiful handcrafted furniture with this beginner-friendly blueprint.';
+    hashtags = '#diyfurniture #woodworkingplans #diywoodworking #furnitureplans #handmadefurniture #farmhousestyle #rusticfurniture #diyhomedecor #homeimprovement #diyprojects';
+  } else if (cat === 'kids') {
+    cta += ' Safe, fun woodworking project for kids play areas - detailed plans with safety notes.';
+    hashtags = '#kidsfurniture #diykids #playhouse #treehouse #diywoodworking #woodworkingplans #familyproject #diyprojects #kidsoutdoor #backyardplay';
+  } else if (cat === 'digital') {
+    cta += ' Printable digital download - print at home and create instantly.';
+    hashtags = '#printable #instantdownload #digitaldownload #diycraft #homedecor #printabledecor #diydecor #craftideas #diyhomedecor #crafting';
+  } else {
+    hashtags = '#woodworking #diywoodworking #woodworkingplans #diyprojects #diyhome #craftsman #buildyourown #homeimprovement #makersmovement #workshop';
+  }
+
+  const tagsFromProduct = product.tags && product.tags.length > 0 ? product.tags.slice(0, 5).join(', ') : '';
+  const fullDesc = [cleanDesc, cta, tagsFromProduct ? `Keywords: ${tagsFromProduct}.` : '', hashtags]
+    .filter(Boolean).join(' ').slice(0, 4990);
+
+  return fullDesc.length > 80
+    ? fullDesc
+    : `${product.name} - Professional PDF woodworking plan with detailed diagrams, cut list, and step-by-step instructions. Instant digital download. ${hashtags}`;
+}
+
+function getCustomLabels(product: any) {
+  const cat = (product.category || '').toLowerCase();
+  const price = product.price || 0;
+  const rating = product.rating || 0;
+  const bestseller = product.bestseller ? 'bestseller' : 'standard';
+
+  const label0 = cat === 'garden' ? 'garden-plans' :
+    cat === 'outdoor' ? 'outdoor-plans' :
+    cat === 'furniture' ? 'furniture-plans' :
+    cat === 'kids' ? 'kids-plans' :
+    cat === 'digital' ? 'printables' : 'woodworking-plans';
+
+  const label1 = price < 2 ? 'price-under-2' : price < 5 ? 'price-2-5' : price < 8 ? 'price-5-8' : 'price-over-8';
+  const label2 = rating >= 4.8 ? 'top-rated' : rating >= 4.5 ? 'high-rated' : 'standard';
+  const label3 = bestseller;
+  const diff = (product.difficulty || '').toLowerCase();
+  const label4 = diff === 'easy' ? 'beginner-friendly' : diff === 'hard' ? 'advanced' : 'intermediate';
+
+  return { label0, label1, label2, label3, label4 };
+}
+
 export async function GET() {
   const products = getProducts();
   const baseUrl = 'https://eleswooddesigns.com';
+  const staticPinDir = path.join(process.cwd(), 'public', 'pinterest-images');
 
   const items = products.map((product) => {
-    // Pinterest titles are best kept under 100 chars
     const title = cleanText(product.name).slice(0, 100);
-
-    // Full description cleaned up and trimmed (Google Merchant Center max 5000 chars)
-    const rawDescription = product.longDescription || product.description || title;
-    const featuresStr = (product.features && product.features.length > 0) ? ` Features: ${product.features.join(', ')}.` : '';
-    const materialsStr = (product.materials && product.materials.length > 0) ? ` Materials: ${product.materials.join(', ')}.` : '';
-    const tagsString = (product.tags && product.tags.length > 0) ? ` | Tags: ${product.tags.join(', ')}` : '';
-    const description = cleanText(rawDescription + featuresStr + materialsStr + tagsString).slice(0, 4990);
-
-    // Product URL — must always be the verified domain for Pinterest
+    const description = buildEnrichedDescription(product);
     const siteUrl = `${baseUrl}/products/${product.slug}/`;
-    const etsyUrl = product.etsy_url || null;
 
-    // Main image
-    const primaryImage = (product.images && product.images[0]) ? product.images[0] : '';
-    
-    // Pinterest branded pin image
-    const pinImage = `${baseUrl}/api/pin/${product.slug}/pin.jpg`;
+    // Static 2:3 Pinterest Pin image (pre-generated, serves in 20ms from Vercel Edge CDN)
+    const pinImagePath = path.join(staticPinDir, `${product.slug}.jpg`);
+    const hasStaticPin = fs.existsSync(pinImagePath);
+    const staticPinUrl = `${baseUrl}/pinterest-images/${product.slug}.jpg`;
+    const rawProductImage = (product.images && product.images[0]) ? product.images[0] : '';
 
-    // Additional images (skip the first one already used as primary, add pin image)
-    const extraImagesList = [
-      pinImage,
-      ...(product.images || []).slice(1, 9).filter(Boolean),
-    ];
-    
+    const primaryImage = hasStaticPin ? staticPinUrl : rawProductImage;
+
+    const extraImagesList = (product.images || []).filter((img: string) => img && img !== primaryImage).slice(0, 9);
+    if (hasStaticPin && rawProductImage) {
+      extraImagesList.unshift(rawProductImage);
+    }
+
     const extraImagesXml = extraImagesList
-      .map((img) => `      <g:additional_image_link>${escapeXml(img)}</g:additional_image_link>`)
+      .map((img: string) => `      <g:additional_image_link>${escapeXml(img)}</g:additional_image_link>`)
       .join('\n');
 
-    // Prices
     const salePrice = product.price;
-    const origPrice = product.originalPrice ?? Math.round((salePrice / 0.30) * 100) / 100;
+    const origPrice = product.originalPrice != null ? product.originalPrice : Math.round((salePrice / 0.30) * 100) / 100;
     const salePriceStr = `${salePrice.toFixed(2)} USD`;
     const origPriceStr = `${origPrice.toFixed(2)} USD`;
 
-    // Shipping
-    const shippingXml = `      <g:shipping>
-        <g:country>US</g:country>
+    const targetCountries = ['US', 'CA', 'GB', 'AU', 'DE', 'FR', 'NL'];
+    const shippingXml = targetCountries.map(country => `      <g:shipping>
+        <g:country>${country}</g:country>
         <g:service>Digital Download</g:service>
         <g:price>0.00 USD</g:price>
-      </g:shipping>`;
+      </g:shipping>`).join('\n');
 
-    const adsRedirectXml = etsyUrl
-      ? `      <g:ads_redirect>${escapeXml(etsyUrl)}</g:ads_redirect>`
-      : '';
-
-    // Correct Google Product Category (GPC) — Full multi-level paths (fixes Uyarı 126)
-    // Using 4+ level paths for maximum search visibility on Pinterest
-    const isPortrait = product.slug.includes('portrait') || product.slug.includes('sketch');
-    const isKids = product.category === 'Kids' || product.slug.includes('treehouse') || product.slug.includes('mud-kitchen') || product.slug.includes('playhouse');
-    const isBedroom = product.category === 'Bedroom' || product.slug.includes('loft-bed') || product.slug.includes('murphy-desk') || product.slug.includes('storage-bench');
-    const isGarden = product.category === 'Garden' || product.slug.includes('planter') || product.slug.includes('plant-stand') || product.slug.includes('garden') || product.slug.includes('farmstand') || product.slug.includes('farm-stand');
-    const isOutdoor = product.category === 'Outdoor' || product.slug.includes('pergola') || product.slug.includes('swing') || product.slug.includes('arbor') || product.slug.includes('sauna') || product.slug.includes('treehouse') || product.slug.includes('chicken-coop') || product.slug.includes('fence') || product.slug.includes('shed') || product.slug.includes('windmill');
-    const isDigitalArt = product.category === 'Digital' && (product.slug.includes('christmas') || product.slug.includes('costco') || product.slug.includes('watercolour') || product.slug.includes('memorial'));
-    const isPartyPrintable = product.category === 'Digital' && (product.slug.includes('kentucky-derby') || product.slug.includes('party') || product.slug.includes('game') || product.slug.includes('betting') || product.slug.includes('cards') || product.slug.includes('mothers-day') || product.slug.includes('handprint') || product.slug.includes('craft') || product.slug.includes('keepsake') || product.slug.includes('mahjong') || product.slug.includes('sweepstake') || product.slug.includes('world-cup'));
-    
-    // Full deep category paths per product type using numeric IDs to fix Uyarı 126
-    let googleCategory: string;
-    if (isPortrait || isDigitalArt || isPartyPrintable) {
-      // Arts > Artwork > Prints
-      googleCategory = '500044';
-    } else {
-      // Woodworking plans — full 4-level path (Crafting Patterns & Molds)
-      googleCategory = '505378';
-    }
-
-    // Pinterest limits g:id and g:item_group_id to 100 chars
+    const googleCategory = getGoogleCategory(product.slug, product.category || '');
+    const productType = getProductType(product.slug, product.category || '', product.name);
     const pinterestId = product.slug.slice(0, 100);
+    const labels = getCustomLabels(product);
+    const nowIso = new Date().toISOString();
 
-    // Product Type (Internal taxonomy) — 4+ levels for Pinterest recommendations (fixes Uyarı 126)
-    const internalCategory = product.category || 'Workshop';
-    let productType: string;
-    if (isPortrait || isDigitalArt) {
-      productType = 'Decor > Digital Art > Printable Designs > Portrait & Wall Art';
-    } else if (isPartyPrintable) {
-      productType = 'Decor > Digital Art > Printable Designs > Party Games & Printables';
-    } else if (isKids) {
-      productType = `Woodworking Plans > ${internalCategory} > DIY Blueprint > Outdoor Play Structures`;
-    } else if (isGarden) {
-      productType = `Woodworking Plans > ${internalCategory} > DIY Blueprint > Garden & Planter Builds`;
-    } else if (isOutdoor) {
-      productType = `Woodworking Plans > ${internalCategory} > DIY Blueprint > Outdoor Furniture & Structures`;
-    } else if (isBedroom) {
-      productType = `Woodworking Plans > ${internalCategory} > DIY Blueprint > Bedroom & Storage Furniture`;
-    } else {
-      productType = `Woodworking Plans > ${internalCategory} > DIY Blueprint > Beginner-Friendly PDF`;
-    }
-
+    // STRICT COMPLIANCE: NO <g:ads_redirect> to external marketplaces like etsy.com
     return `
     <item>
       <g:id>${escapeXml(pinterestId)}</g:id>
@@ -133,7 +167,6 @@ export async function GET() {
       <g:description>${escapeXml(description)}</g:description>
       <g:image_link>${escapeXml(primaryImage)}</g:image_link>
 ${extraImagesXml}
-${adsRedirectXml}
       <g:price>${origPriceStr}</g:price>
       <g:sale_price>${salePriceStr}</g:sale_price>
       <g:availability>in stock</g:availability>
@@ -143,6 +176,12 @@ ${adsRedirectXml}
       <g:product_type>${escapeXml(productType)}</g:product_type>
       <g:item_group_id>${escapeXml(pinterestId)}</g:item_group_id>
       <g:identifier_exists>no</g:identifier_exists>
+      <g:custom_label_0>${escapeXml(labels.label0)}</g:custom_label_0>
+      <g:custom_label_1>${escapeXml(labels.label1)}</g:custom_label_1>
+      <g:custom_label_2>${escapeXml(labels.label2)}</g:custom_label_2>
+      <g:custom_label_3>${escapeXml(labels.label3)}</g:custom_label_3>
+      <g:custom_label_4>${escapeXml(labels.label4)}</g:custom_label_4>
+      <g:updated_at>${nowIso}</g:updated_at>
 ${shippingXml}
     </item>`;
   }).join('');
@@ -153,6 +192,7 @@ ${shippingXml}
     <title>ElesWoodDesigns – DIY Woodworking Plans</title>
     <link>${baseUrl}/</link>
     <description>Professional DIY woodworking PDF plans with 3D diagrams, cut lists, and material lists. Instant download.</description>
+    <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     ${items}
   </channel>
 </rss>`;

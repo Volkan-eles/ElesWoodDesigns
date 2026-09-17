@@ -41,8 +41,8 @@ export async function GET() {
     const primaryImage = product.images?.[0] ?? '';
     const origPrice = product.originalPrice ?? Math.round((product.price / 0.30) * 100) / 100;
     const salePrice = product.price;
-    // Link directly to the Etsy listing
-    const productLink = product.etsy_url || `${baseUrl}/products/${product.slug}/`;
+    // Must always point to claimed domain to avoid Pinterest domain mismatch
+    const productLink = `${baseUrl}/products/${product.slug}/`;
 
     // Dynamic categorizations
     const isPortrait = product.slug.includes('portrait') || product.slug.includes('sketch');
