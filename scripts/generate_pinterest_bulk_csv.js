@@ -119,7 +119,10 @@ function buildDescVariants(product) {
 
 // Collect images for the product (portrait pin image first, then CDN images)
 function getImages(product) {
-  const pinImg = `${baseUrl}/api/pin/${product.slug}/pin.jpg`;
+  const staticPinPath = path.join(ROOT, 'public', 'pinterest-images', `${product.slug}.jpg`);
+  const pinImg = fs.existsSync(staticPinPath)
+    ? `${baseUrl}/pinterest-images/${product.slug}.jpg`
+    : `${baseUrl}/api/pin/${product.slug}/pin.jpg`;
   const cdnImgs = (product.images || []).filter(Boolean);
   return [pinImg, ...cdnImgs];
 }
