@@ -23,8 +23,8 @@ export default function ImageGallery({
 }: ImageGalleryProps) {
   const [activeIdx, setActiveIdx] = useState(0);
 
-  // Use the portrait-format pin image for Pinterest saves (better Pinterest UX)
-  const pinImageUrl = `https://eleswooddesigns.com/api/pin/${productSlug}/pin.jpg`;
+  // Use the fast pre-generated static portrait-format pin image (serves in 20ms from CDN)
+  const pinImageUrl = `https://eleswooddesigns.com/pinterest-images/${productSlug}.jpg`;
   const pinDescription = `${productName} — DIY Woodworking Plans PDF | Step-by-step blueprint with cut list & 3D diagrams | Instant Download by ElesWoodDesigns`;
 
   return (

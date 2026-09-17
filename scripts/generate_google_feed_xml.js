@@ -123,10 +123,6 @@ const items = products.map((product) => {
         <g:max_transit_time>0</g:max_transit_time>
       </g:shipping>`).join('\n');
 
-  const adsRedirectXml = etsyUrl
-    ? `      <g:ads_redirect>${escapeXml(etsyUrl)}</g:ads_redirect>`
-    : '';
-
   const googleCategory = getGoogleCategory(product);
   const productType = getProductType(product);
   
@@ -143,7 +139,6 @@ const items = products.map((product) => {
       <g:description>${escapeXml(description)}</g:description>
       <g:image_link>${escapeXml(primaryImage)}</g:image_link>
 ${extraImagesXml}
-${adsRedirectXml}
       <g:price>${origPriceStr}</g:price>
       <g:sale_price>${salePriceStr}</g:sale_price>
       <g:availability>in stock</g:availability>

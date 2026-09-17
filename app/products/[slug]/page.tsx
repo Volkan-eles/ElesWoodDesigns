@@ -36,6 +36,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const priceStr = product.price.toFixed(2);
   const primaryImg = product.image.startsWith('http') ? product.image : `https://eleswooddesigns.com${product.image}`;
 
+  const pinImgStatic = `${baseUrl}/pinterest-images/${product.slug}.jpg`;
+
   return {
     title: product.name,
     alternates: {
@@ -50,10 +52,16 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       siteName: 'ElesWoodDesigns',
       images: [
         {
-          url: primaryImg,
+          url: pinImgStatic,
           width: 1000,
           height: 1500,
           alt: `${product.name} DIY Woodworking Blueprint PDF`,
+        },
+        {
+          url: primaryImg,
+          width: 800,
+          height: 800,
+          alt: `${product.name} Product Photo`,
         },
       ],
     },

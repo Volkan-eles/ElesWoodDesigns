@@ -142,16 +142,23 @@ const items = products.map((product) => {
   const description = buildEnrichedDescription(product);
 
   const siteUrl = `${baseUrl}/products/${product.slug}/`;
-  const etsyUrl = product.etsy_url && product.etsy_url.startsWith('https://www.etsy.com/listing/') ? product.etsy_url : null;
-  const primaryImage = (product.images && product.images[0]) ? product.images[0] : '';
-  const pinImage = `${baseUrl}/api/pin/${product.slug}/pin.jpg`;
+  
+  // Static 2:3 Pinterest Pin image (pre-generated, serves in 20ms from Vercel Edge CDN)
+  const pinImagePath = path.join(ROOT, 'public', 'pinterest-images', `${product.slug}.jpg`);
+  const hasStaticPin = fs.existsSync(pinImagePath);
+  const staticPinUrl = `${baseUrl}/pinterest-images/${product.slug}.jpg`;
+  const rawProductImage = (product.images && product.images[0]) ? product.images[0] : '';
 
-  // Prioritize reliable, fast Etsy CDN images first so Pinterest scraper never times out
-  const cdnImages = (product.images || []).slice(1, 8).filter(Boolean);
-  const extraImagesList = [
-    ...cdnImages,
-    pinImage,
-  ];
+  // Use vertical 2:3 pin image as primary for maximum Pinterest click-through rate, fallback to raw photo
+  const primaryImage = hasStaticPin ? staticPinUrl : rawProductImage;
+
+  // Additional images: raw product photos from Etsy CDN + any other angles
+  const extraImagesList = (product.images || []).filter(img => img && img !== primaryImage).slice(0, 9);
+  if (!hasStaticPin && rawProductImage) {
+    // If static pin wasn't used as primary, don't duplicate
+  } else if (hasStaticPin && rawProductImage) {
+    extraImagesList.unshift(rawProductImage);
+  }
 
   const extraImagesXml = extraImagesList
     .map((img) => `      <g:additional_image_link>${escapeXml(img)}</g:additional_image_link>`)
@@ -169,16 +176,13 @@ const items = products.map((product) => {
         <g:price>0.00 USD</g:price>
       </g:shipping>`).join('\n');
 
-  // ads_redirect → real Etsy listing URL for better conversion tracking
-  const adsRedirectXml = etsyUrl
-    ? `      <g:ads_redirect>${escapeXml(etsyUrl)}</g:ads_redirect>`
-    : '';
-
   const googleCategory = getGoogleCategory(product);
   const productType = getProductType(product);
   const pinterestId = product.slug.slice(0, 100);
   const labels = getCustomLabels(product);
+  const nowIso = new Date().toISOString();
 
+  // IMPORTANT: No <g:ads_redirect> to external etsy.com — caused Pinterest domain mismatch violation
   return `
     <item>
       <g:id>${escapeXml(pinterestId)}</g:id>
@@ -189,7 +193,6 @@ const items = products.map((product) => {
       <g:description>${escapeXml(description)}</g:description>
       <g:image_link>${escapeXml(primaryImage)}</g:image_link>
 ${extraImagesXml}
-${adsRedirectXml}
       <g:price>${origPriceStr}</g:price>
       <g:sale_price>${salePriceStr}</g:sale_price>
       <g:availability>in stock</g:availability>
@@ -204,6 +207,7 @@ ${adsRedirectXml}
       <g:custom_label_2>${escapeXml(labels.label2)}</g:custom_label_2>
       <g:custom_label_3>${escapeXml(labels.label3)}</g:custom_label_3>
       <g:custom_label_4>${escapeXml(labels.label4)}</g:custom_label_4>
+      <g:updated_at>${nowIso}</g:updated_at>
 ${shippingXml}
     </item>`;
 }).join('');
@@ -214,6 +218,7 @@ const xml = `<?xml version="1.0" encoding="UTF-8"?>
     <title>ElesWoodDesigns – DIY Woodworking Plans</title>
     <link>${baseUrl}/</link>
     <description>Professional DIY woodworking PDF plans with 3D diagrams, cut lists, and material lists. Instant download.</description>
+    <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     ${items}
   </channel>
 </rss>`;
