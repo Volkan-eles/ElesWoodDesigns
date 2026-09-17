@@ -26,7 +26,23 @@ export default function ProductBuyActions({ product }: Props) {
         }],
       });
     }
-  }, [product.id]);
+
+    // Fire pagevisit event for Pinterest Shopping Signals
+    if (typeof window !== 'undefined' && (window as any).pintrk) {
+      (window as any).pintrk('track', 'pagevisit', {
+        product_id: product.slug,
+        product_name: product.name,
+        product_price: product.price,
+        currency: 'USD',
+        line_items: [{
+          product_name: product.name,
+          product_id: product.slug,
+          product_price: product.price,
+          product_quantity: 1,
+        }],
+      });
+    }
+  }, [product.id, product.slug]);
 
   useEffect(() => {
     // Load Google Pay JS API
@@ -162,12 +178,18 @@ export default function ProductBuyActions({ product }: Props) {
           addToCart(product);
           if (typeof window !== 'undefined' && (window as any).pintrk) {
             (window as any).pintrk('track', 'addtocart', {
-              product_id: product.id,
+              product_id: product.slug,
               product_name: product.name,
               product_price: product.price,
               currency: 'USD',
               value: product.price,
               order_quantity: 1,
+              line_items: [{
+                product_name: product.name,
+                product_id: product.slug,
+                product_price: product.price,
+                product_quantity: 1,
+              }],
             });
           }
           fetch('/api/analytics', {
