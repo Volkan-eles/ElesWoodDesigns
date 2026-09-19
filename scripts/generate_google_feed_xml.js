@@ -113,7 +113,7 @@ const items = products.map((product) => {
   const origPriceStr = `${origPrice.toFixed(2)} USD`;
 
   // Digital download: 0-day handling and transit for all markets, local currency
-  const countryConfig = ['US', 'CA', 'GB', 'AU', 'DE', 'FR', 'NL'];
+  const countryConfig = ['US'];
   const shippingXml = countryConfig.map((code) => `      <g:shipping>
         <g:country>${code}</g:country>
         <g:service>Digital Instant Download</g:service>
