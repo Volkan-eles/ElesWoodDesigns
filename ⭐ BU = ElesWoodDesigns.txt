@@ -1,0 +1,8 @@
+🌐 BU PROJE: ElesWoodDesigns
+=====================================
+Site URL  : https://eleswooddesigns.com
+GitHub    : https://github.com/Volkan-eles/ElesWoodDesigns
+Klasör    : C:\Users\vlkne\.gemini\antigravity\scratch\woodcraft-plans
+Vercel    : eleswooddesigns (ayrı proje)
+
+Bu klasörü BuildWoodPlans ile KARIŞTIIRMAYIN!

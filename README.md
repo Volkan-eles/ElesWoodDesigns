@@ -1,3 +1,12 @@
+# ⭐ ElesWoodDesigns — eleswooddesigns.com
+
+> **Bu klasör:** `C:\Users\vlkne\.gemini\antigravity\scratch\woodcraft-plans`
+> **GitHub:** https://github.com/Volkan-eles/ElesWoodDesigns
+> **Site:** https://eleswooddesigns.com
+> **⚠️ BuildWoodPlans ile KARIŞTIRMAYIN → o klasör: `C:\Users\vlkne\Desktop\BuildWoodPlans`**
+
+---
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
