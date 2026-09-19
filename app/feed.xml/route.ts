@@ -145,6 +145,10 @@ export async function GET() {
         <g:country>${country}</g:country>
         <g:service>Digital Download</g:service>
         <g:price>0.00 USD</g:price>
+        <g:min_handling_time>0</g:min_handling_time>
+        <g:max_handling_time>0</g:max_handling_time>
+        <g:min_transit_time>0</g:min_transit_time>
+        <g:max_transit_time>0</g:max_transit_time>
       </g:shipping>`).join('\n');
 
     const googleCategory = getGoogleCategory(product.slug, product.category || '');
