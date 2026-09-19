@@ -92,7 +92,16 @@ const items = products.map((product) => {
   const primaryImage = (product.images && product.images[0]) ? product.images[0] : '';
 
   // Google does not allow Pinterest text-overlays. We ONLY use raw product images.
-  const extraImagesList = (product.images || []).slice(1, 10).filter(Boolean);
+  const seenImages = new Set();
+  if (primaryImage) seenImages.add(primaryImage);
+  const extraImagesList = [];
+  for (const img of (product.images || [])) {
+    if (img && !seenImages.has(img)) {
+      seenImages.add(img);
+      extraImagesList.push(img);
+      if (extraImagesList.length >= 9) break;
+    }
+  }
 
   const extraImagesXml = extraImagesList
     .map((img) => `      <g:additional_image_link>${escapeXml(img)}</g:additional_image_link>`)

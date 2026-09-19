@@ -126,12 +126,27 @@ export async function GET() {
 
     const primaryImage = hasStaticPin ? staticPinUrl : rawProductImage;
 
-    const extraImagesList = (product.images || []).filter((img: string) => img && img !== primaryImage).slice(0, 9);
-    if (hasStaticPin && rawProductImage) {
-      extraImagesList.unshift(rawProductImage);
+    // Deduplicate additional images: never duplicate primaryImage or each other (fixes Pinterest Warning 203)
+    const seenImages = new Set<string>();
+    if (primaryImage) {
+      seenImages.add(primaryImage);
     }
 
-    const extraImagesXml = extraImagesList
+    const uniqueExtraImages: string[] = [];
+    if (hasStaticPin && rawProductImage && !seenImages.has(rawProductImage)) {
+      seenImages.add(rawProductImage);
+      uniqueExtraImages.push(rawProductImage);
+    }
+
+    for (const img of (product.images || [])) {
+      if (img && !seenImages.has(img)) {
+        seenImages.add(img);
+        uniqueExtraImages.push(img);
+        if (uniqueExtraImages.length >= 9) break;
+      }
+    }
+
+    const extraImagesXml = uniqueExtraImages
       .map((img: string) => `      <g:additional_image_link>${escapeXml(img)}</g:additional_image_link>`)
       .join('\n');
 
