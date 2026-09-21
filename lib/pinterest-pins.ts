@@ -138,6 +138,7 @@ export const PINTEREST_PIN_FILES = new Set<string>([
   "diy-rainwater-collection-system-plans-pdf-ibc-tote-enclosure-blueprint-rain-barrel-shed.jpg",
   "diy-raised-chicken-coop-plans-backyard-hen-house-for-6-8-chickens-pdf-download.jpg",
   "diy-raised-chicken-coop-plans.jpg",
+  "diy-rolling-plywood-cart-plans-mobile-woodshop-organizer-pdf-blueprint.jpg",
   "diy-rolling-tool-station-plans-mobile-woodworking-cabinet-on-wheels-pdf-download.jpg",
   "diy-rotating-shoe-rack-plans-spinning-shoe-carousel-tower-woodworking-blueprint-.jpg",
   "diy-rotating-shoe-rack-plans.jpg",
