@@ -42,11 +42,12 @@ const KNOWN_ETSY_URLS = {
   '4553098371': 'https://www.etsy.com/listing/4553098371/mud-kitchen-plans-pdf-wide-outdoor-play',
   '4553758718': 'https://www.etsy.com/listing/4553758718/modern-platform-bed-frame-plan-wood-bed',
   '4558600916': 'https://www.etsy.com/listing/4558600916/diy-modern-mailbox-post-plans-wooden',
-  '4562895426': 'https://www.etsy.com/listing/4562895426/trunk-or-treat-printable-decor-wholesale',
-  '4532014878': 'https://www.etsy.com/listing/4532014878/log-cabin-birdhouse-plans-large-purple',
-  '4516095370': 'https://www.etsy.com/listing/4516095370/farmstand-plans-pdf-enclosed-roadside',
+  '4502157281': 'https://www.etsy.com/listing/4502157281/american-mahjong-tile-svg-png-bundle',
+  '4502472107': 'https://www.etsy.com/listing/4502472107/mahjong-svg-png-bundle-american-mahjong',
+  '4515978768': 'https://www.etsy.com/listing/4515978768/diy-farmstand-plans-pdf-mobile-market',
   '4513149219': 'https://www.etsy.com/listing/4513149219/diy-farmstand-plans-pdf-mobile-roadside',
-};
+  '4562895426': 'https://www.etsy.com/listing/4562895426/trunk-or-treat-printable-decor-wholesale',
+  '4392635304': 'https://www.etsy.com/listing/4392635304/costco-halloween-trunk-or-treat-decor',
 
 // Anahtar kelime bazlı URL eşleme (title içeriğine göre)
 const KEYWORD_URL_MAP = [
@@ -60,8 +61,8 @@ const KEYWORD_URL_MAP = [
   { keywords: ['triple bunk bed', 'storage stairs'], id: '4536174938' },
   { keywords: ['bunk bed', 'loft bed', 'wooden loft'], id: '4536174938' },
   { keywords: ['wall shelf', 'shoe rack', 'entryway console'], id: '4533934502' },
-  { keywords: ['mahjong svg png bundle', 'american mahjong tile pattern'], id: '4502472107' },
-  { keywords: ['american mahjong tile svg', 'cricut pattern'], id: '4502472107' },
+  { keywords: ['cricut pattern files'], id: '4502157281' },
+  { keywords: ['cricut cut files'], id: '4502472107' },
   { keywords: ['mahjong tiles pdf', 'printable american mahjong'], id: '4502465597' },
   { keywords: ['mahjong hand tracker', 'nmjl card'], id: '4502465597' },
   { keywords: ['circular pergola porch swing'], id: '4532889137' },
@@ -83,6 +84,8 @@ const KEYWORD_URL_MAP = [
   { keywords: ['outdoor sauna plans', 'backyard sauna'], id: '4540775980' },
   { keywords: ['tree bookshelf', 'bookcase plans'], id: '4541313061' },
   { keywords: ['tree bookshelf', 'tree bookcase'], id: '4541313061' },
+  { keywords: ['roadside bakery cart'], id: '4513149219' },
+  { keywords: ['mobile market stand'], id: '4515978768' },
   { keywords: ['farm stand plans', 'mobile market cart'], id: '4546712958' },
   { keywords: ['diy farm stand', 'farmers market cart'], id: '4546712958' },
   { keywords: ['rainwater collection system plans', 'ibc tote enclosure'], id: '4547917822' },
@@ -111,7 +114,8 @@ const KEYWORD_URL_MAP = [
   { keywords: ['modern mailbox post'], id: '4558600916' },
   { keywords: ['mailbox post plans'], id: '4558600916' },
   { keywords: ['wooden mailbox post'], id: '4558600916' },
-  { keywords: ['trunk or treat printable decor'], id: '4562895426' },
+  { keywords: ['trunk or treat printables'], id: '4562895426' },
+  { keywords: ['trunk or treat decor'], id: '4392635304' },
   { keywords: ['trunk or treat'], id: '4562895426' },
 ];
 
