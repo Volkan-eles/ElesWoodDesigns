@@ -13,6 +13,20 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/products/diy-firewood-shed-plans-pdf-lean-to-log-storage-blueprint-outdoor-wood-rack/",
+        destination: "/products/firewood-shed-plans-pdf-modern-slatted-woodshed-2-cord-capacity-diy-backyard-wood-storage-blueprint/",
+        permanent: true,
+      },
+      {
+        source: "/products/diy-firewood-shed-plans-lean-to-log-storage-blueprint-pdf-download/",
+        destination: "/products/firewood-shed-plans-pdf-modern-slatted-woodshed-2-cord-capacity-diy-backyard-wood-storage-blueprint/",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

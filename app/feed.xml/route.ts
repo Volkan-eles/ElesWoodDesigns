@@ -181,6 +181,12 @@ export async function GET() {
       <g:link>${escapeXml(siteUrl)}</g:link>
       <description>${escapeXml(description)}</description>
       <g:description>${escapeXml(description)}</g:description>
+      <enclosure url="${escapeXml(primaryImage)}" type="image/jpeg" length="50000" />
+      <media:content url="${escapeXml(primaryImage)}" medium="image" type="image/jpeg">
+        <media:title>${escapeXml(title)}</media:title>
+        <media:description>${escapeXml(description)}</media:description>
+      </media:content>
+      <media:thumbnail url="${escapeXml(primaryImage)}" />
       <g:image_link>${escapeXml(primaryImage)}</g:image_link>
 ${extraImagesXml}
       <g:price>${origPriceStr}</g:price>
@@ -203,7 +209,7 @@ ${shippingXml}
   }).join('');
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">
+<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>ElesWoodDesigns – DIY Woodworking Plans</title>
     <link>${baseUrl}/</link>

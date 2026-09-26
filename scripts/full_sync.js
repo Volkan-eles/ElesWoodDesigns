@@ -48,7 +48,8 @@ const KNOWN_ETSY_URLS = {
   '4513149219': 'https://www.etsy.com/listing/4513149219/diy-farmstand-plans-pdf-mobile-roadside',
   '4562895426': 'https://www.etsy.com/listing/4562895426/trunk-or-treat-printable-decor-wholesale',
   '4392635304': 'https://www.etsy.com/listing/4392635304/costco-halloween-trunk-or-treat-decor',
-
+  '4580616210': 'https://www.etsy.com/listing/4580616210/diy-firewood-shed-plans-pdf-lean-to-log',
+};
 // Anahtar kelime bazlı URL eşleme (title içeriğine göre)
 const KEYWORD_URL_MAP = [
   { keywords: ['arbor swing', 'freestanding', 'a-frame', 'pergola canopy'], id: '4529554773' },
@@ -117,6 +118,7 @@ const KEYWORD_URL_MAP = [
   { keywords: ['trunk or treat printables'], id: '4562895426' },
   { keywords: ['trunk or treat decor'], id: '4392635304' },
   { keywords: ['trunk or treat'], id: '4562895426' },
+  { keywords: ['firewood shed plans', 'lean-to log storage blueprint'], id: '4580616210' },
 ];
 
 function parseCSV(content) {
