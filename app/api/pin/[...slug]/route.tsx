@@ -102,7 +102,7 @@ export async function GET(
           }}
         >
           <span style={{ fontSize: 64, fontWeight: 900, color: 'white', lineHeight: 1 }}>
-            70%
+            25%
           </span>
           <span style={{ fontSize: 30, fontWeight: 900, color: 'white', letterSpacing: '2px' }}>
             OFF
