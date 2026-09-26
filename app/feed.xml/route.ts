@@ -155,7 +155,7 @@ export async function GET() {
     const salePriceStr = `${salePrice.toFixed(2)} USD`;
     const origPriceStr = `${origPrice.toFixed(2)} USD`;
 
-    const targetCountries = ['US'];
+    const targetCountries = ['US', 'CA', 'GB', 'AU', 'DE', 'FR', 'NL'];
     const shippingXml = targetCountries.map(country => `      <g:shipping>
         <g:country>${country}</g:country>
         <g:service>Digital Download</g:service>
