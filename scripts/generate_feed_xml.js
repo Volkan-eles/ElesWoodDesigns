@@ -165,7 +165,7 @@ const items = products.map((product) => {
     .join('\n');
 
   const salePrice = product.price;
-  const origPrice = product.originalPrice != null ? product.originalPrice : Math.round((salePrice / 0.30) * 100) / 100;
+  const origPrice = product.originalPrice != null ? product.originalPrice : Math.round((salePrice / 0.75) * 100) / 100;
   const salePriceStr = `${salePrice.toFixed(2)} USD`;
   const origPriceStr = `${origPrice.toFixed(2)} USD`;
 

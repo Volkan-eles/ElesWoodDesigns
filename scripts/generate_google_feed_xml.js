@@ -108,12 +108,12 @@ const items = products.map((product) => {
     .join('\n');
 
   const salePrice = product.price;
-  const origPrice = product.originalPrice != null ? product.originalPrice : Math.round((salePrice / 0.30) * 100) / 100;
+  const origPrice = product.originalPrice != null ? product.originalPrice : Math.round((salePrice / 0.75) * 100) / 100;
   const salePriceStr = `${salePrice.toFixed(2)} USD`;
   const origPriceStr = `${origPrice.toFixed(2)} USD`;
 
   // Digital download: 0-day handling and transit for all markets, local currency
-  const countryConfig = ['US'];
+  const countryConfig = ['US', 'CA', 'GB', 'AU', 'DE', 'FR', 'NL'];
   const shippingXml = countryConfig.map((code) => `      <g:shipping>
         <g:country>${code}</g:country>
         <g:service>Digital Instant Download</g:service>
