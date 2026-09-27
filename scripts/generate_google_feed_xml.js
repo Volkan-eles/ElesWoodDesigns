@@ -118,10 +118,6 @@ const items = products.map((product) => {
         <g:country>${code}</g:country>
         <g:service>Digital Instant Download</g:service>
         <g:price>0.00 USD</g:price>
-        <g:min_handling_time>0</g:min_handling_time>
-        <g:max_handling_time>0</g:max_handling_time>
-        <g:min_transit_time>0</g:min_transit_time>
-        <g:max_transit_time>0</g:max_transit_time>
       </g:shipping>`).join('\n');
 
   const googleCategory = getGoogleCategory(product);
@@ -151,8 +147,6 @@ ${extraImagesXml}
       <g:identifier_exists>no</g:identifier_exists>
       <g:min_handling_time>0</g:min_handling_time>
       <g:max_handling_time>0</g:max_handling_time>
-      <g:min_transit_time>0</g:min_transit_time>
-      <g:max_transit_time>0</g:max_transit_time>
       <g:shipping_label>Free_Digital_Delivery</g:shipping_label>
 ${shippingXml}
     </item>`;
