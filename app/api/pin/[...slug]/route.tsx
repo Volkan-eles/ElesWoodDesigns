@@ -194,8 +194,8 @@ export async function GET(
                 boxShadow: '10px 10px 0px 0px rgba(0,0,0,1)',
               }}
             >
-              <span style={{ fontSize: 38, fontWeight: 900, color: 'black', textTransform: 'uppercase', letterSpacing: '-1px' }}>
-                ⚡ GET PLANS
+               <span style={{ fontSize: 38, fontWeight: 900, color: 'black', textTransform: 'uppercase', letterSpacing: '-1px' }}>
+                GET PLANS
               </span>
               <span style={{ fontSize: 26, fontWeight: 700, color: '#333', textTransform: 'uppercase' }}>
                 INSTANT DOWNLOAD
@@ -214,10 +214,10 @@ export async function GET(
               paddingTop: '20px',
             }}
           >
-            <span style={{ fontSize: 26, color: '#aaaaaa', fontWeight: 600 }}>✅ Cut List</span>
-            <span style={{ fontSize: 26, color: '#aaaaaa', fontWeight: 600 }}>✅ 3D Diagrams</span>
-            <span style={{ fontSize: 26, color: '#aaaaaa', fontWeight: 600 }}>✅ Material List</span>
-            <span style={{ fontSize: 26, color: '#FFE500', fontWeight: 900 }}>PDF ↓</span>
+            <span style={{ fontSize: 26, color: '#aaaaaa', fontWeight: 600 }}>+ Cut List</span>
+            <span style={{ fontSize: 26, color: '#aaaaaa', fontWeight: 600 }}>+ 3D Diagrams</span>
+            <span style={{ fontSize: 26, color: '#aaaaaa', fontWeight: 600 }}>+ Material List</span>
+            <span style={{ fontSize: 26, color: '#FFE500', fontWeight: 900 }}>PDF</span>
           </div>
         </div>
       </div>
