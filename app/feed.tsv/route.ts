@@ -39,7 +39,7 @@ export async function GET() {
     ).slice(0, 500);
 
     const primaryImage = product.images?.[0] ?? '';
-    const origPrice = product.originalPrice ?? Math.round((product.price / 0.30) * 100) / 100;
+    const origPrice = product.originalPrice ?? Math.round((product.price / 0.75) * 100) / 100;
     const salePrice = product.price;
     // Must always point to claimed domain to avoid Pinterest domain mismatch
     const productLink = `${baseUrl}/products/${product.slug}/`;
@@ -80,8 +80,8 @@ export async function GET() {
     }
 
     return [
-      product.slug,
-      cleanText(product.name),
+      product.slug.slice(0, 100),
+      cleanText(product.name).replace(/&/g, 'and').slice(0, 95),
       desc,
       productLink,
       primaryImage,
@@ -92,7 +92,7 @@ export async function GET() {
       'ElesWoodDesigns',
       googleCategory,
       productType,
-      'US::Digital Download:0.00 USD',
+      'US::Digital Download:0.00 USD,CA::Digital Download:0.00 USD,GB::Digital Download:0.00 USD,AU::Digital Download:0.00 USD,DE::Digital Download:0.00 USD,FR::Digital Download:0.00 USD,NL::Digital Download:0.00 USD',
     ].join('\t');
   });
 

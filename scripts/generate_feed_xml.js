@@ -138,27 +138,17 @@ function getCustomLabels(product) {
 }
 
 const items = products.map((product) => {
-  const title = cleanText(product.name).slice(0, 100);
+  const title = cleanText(product.name).replace(/&/g, 'and').slice(0, 95);
   const description = buildEnrichedDescription(product);
 
   const siteUrl = `${baseUrl}/products/${product.slug}/`;
   
-  // Static 2:3 Pinterest Pin image (pre-generated, serves in 20ms from Vercel Edge CDN)
-  const pinImagePath = path.join(ROOT, 'public', 'pinterest-images', `${product.slug}.jpg`);
-  const hasStaticPin = fs.existsSync(pinImagePath);
-  const staticPinUrl = `${baseUrl}/pinterest-images/${product.slug}.jpg`;
-  const rawProductImage = (product.images && product.images[0]) ? product.images[0] : '';
+  // Use original clean product photo with NO text overlays
+  const rawProductImage = (product.images && product.images[0]) ? product.images[0] : (product.image || '');
+  const primaryImage = rawProductImage;
 
-  // Use vertical 2:3 pin image as primary for maximum Pinterest click-through rate, fallback to raw photo
-  const primaryImage = hasStaticPin ? staticPinUrl : rawProductImage;
-
-  // Additional images: raw product photos from Etsy CDN + any other angles
+  // Additional images: raw product photos from Etsy CDN
   const extraImagesList = (product.images || []).filter(img => img && img !== primaryImage).slice(0, 9);
-  if (!hasStaticPin && rawProductImage) {
-    // If static pin wasn't used as primary, don't duplicate
-  } else if (hasStaticPin && rawProductImage) {
-    extraImagesList.unshift(rawProductImage);
-  }
 
   const extraImagesXml = extraImagesList
     .map((img) => `      <g:additional_image_link>${escapeXml(img)}</g:additional_image_link>`)

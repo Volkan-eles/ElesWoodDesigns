@@ -115,16 +115,13 @@ export async function GET() {
   const baseUrl = 'https://eleswooddesigns.com';
 
   const items = products.map((product) => {
-    const title = cleanText(product.name).slice(0, 100);
+    const title = cleanText(product.name).replace(/&/g, 'and').slice(0, 95);
     const description = buildEnrichedDescription(product);
     const siteUrl = `${baseUrl}/products/${product.slug}/`;
 
-    // Static 2:3 Pinterest Pin image (pre-generated, serves in 20ms from Vercel Edge CDN)
-    const hasStaticPin = PINTEREST_PIN_FILES.has(`${product.slug}.jpg`);
-    const staticPinUrl = `${baseUrl}/pinterest-images/${product.slug}.jpg`;
-    const rawProductImage = (product.images && product.images[0]) ? product.images[0] : '';
-
-    const primaryImage = hasStaticPin ? staticPinUrl : rawProductImage;
+    // Use original clean product photo with NO text overlays
+    const rawProductImage = (product.images && product.images[0]) ? product.images[0] : (product.image || '');
+    const primaryImage = rawProductImage;
 
     // Deduplicate additional images: never duplicate primaryImage or each other (fixes Pinterest Warning 203)
     const seenImages = new Set<string>();
@@ -133,10 +130,6 @@ export async function GET() {
     }
 
     const uniqueExtraImages: string[] = [];
-    if (hasStaticPin && rawProductImage && !seenImages.has(rawProductImage)) {
-      seenImages.add(rawProductImage);
-      uniqueExtraImages.push(rawProductImage);
-    }
 
     for (const img of (product.images || [])) {
       if (img && !seenImages.has(img)) {

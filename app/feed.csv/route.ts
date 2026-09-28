@@ -1,40 +1,27 @@
-/**
- * generate_feed_csv.js
- * Generates a Pinterest-compliant public/feed.csv from data/etsy_products.json.
- * Uses standard CSV escaping and mimics the categorization logic of feed.xml and feed.tsv.
- */
-const fs = require('fs');
-const path = require('path');
+import { getProducts } from '@/lib/products';
 
-const ROOT = path.join(__dirname, '..');
-const JSON_PATH = path.join(ROOT, 'data', 'etsy_products.json');
-const CSV_PATH = path.join(ROOT, 'public', 'feed.csv');
+export const dynamic = 'force-dynamic';
 
-const products = JSON.parse(fs.readFileSync(JSON_PATH, 'utf8'));
-const baseUrl = 'https://eleswooddesigns.com';
-
-function cleanText(str) {
+function cleanText(str: string): string {
   if (!str) return '';
   return str
-    .replace(/[\u{1F300}-\u{1FFFF}\u{2600}-\u{27BF}\u{2300}-\u{23FF}\u{2B50}]/gu, '') // strip emojis
+    .replace(/[\u{1F300}-\u{1FFFF}\u{2600}-\u{27BF}\u{2300}-\u{23FF}\u{2B50}]/gu, '')
     .replace(/\r/g, ' ')
     .replace(/\n+/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
 }
 
-function escapeCsvValue(val) {
+function escapeCsvValue(val: any): string {
   if (val === null || val === undefined) return '';
-  let str = String(val);
+  const str = String(val);
   if (str.includes('"') || str.includes(',') || str.includes('\n') || str.includes('\r')) {
     return '"' + str.replace(/"/g, '""') + '"';
   }
   return str;
 }
 
-function getGoogleCategory(product) {
-  const slug = product.slug || '';
-  const cat = product.category || '';
+function getGoogleCategory(slug: string, cat: string): string {
   const isPortrait = slug.includes('portrait') || slug.includes('sketch');
   const isDigitalArt = cat === 'Digital' && (slug.includes('christmas') || slug.includes('costco') || slug.includes('watercolour') || slug.includes('memorial'));
   const isPartyPrintable = cat === 'Digital' && (slug.includes('kentucky-derby') || slug.includes('party') || slug.includes('game') || slug.includes('betting') || slug.includes('cards') || slug.includes('mothers-day') || slug.includes('handprint') || slug.includes('craft') || slug.includes('keepsake') || slug.includes('mahjong') || slug.includes('sweepstake') || slug.includes('world-cup'));
@@ -42,9 +29,7 @@ function getGoogleCategory(product) {
   return '505378';
 }
 
-function getProductType(product) {
-  const slug = product.slug || '';
-  const cat = product.category || '';
+function getProductType(slug: string, cat: string): string {
   const isPortrait = slug.includes('portrait') || slug.includes('sketch');
   const isDigitalArt = cat === 'Digital' && (slug.includes('christmas') || slug.includes('costco') || slug.includes('watercolour') || slug.includes('memorial'));
   const isPartyPrintable = cat === 'Digital' && (slug.includes('kentucky-derby') || slug.includes('party') || slug.includes('game') || slug.includes('betting') || slug.includes('cards') || slug.includes('mothers-day') || slug.includes('handprint') || slug.includes('craft') || slug.includes('keepsake') || slug.includes('mahjong') || slug.includes('sweepstake') || slug.includes('world-cup'));
@@ -62,64 +47,74 @@ function getProductType(product) {
   return `Woodworking Plans > ${cat} > DIY Blueprint > Beginner-Friendly PDF`;
 }
 
-const headers = [
-  'id',
-  'title',
-  'description',
-  'link',
-  'image_link',
-  'price',
-  'sale_price',
-  'availability',
-  'condition',
-  'brand',
-  'google_product_category',
-  'product_type',
-  'shipping',
-];
+export async function GET() {
+  const products = getProducts();
+  const baseUrl = 'https://eleswooddesigns.com';
 
-const csvRows = [headers.join(',')];
-
-const shippingStr = 'US::Digital Download:0.00 USD,CA::Digital Download:0.00 USD,GB::Digital Download:0.00 USD,AU::Digital Download:0.00 USD,DE::Digital Download:0.00 USD,FR::Digital Download:0.00 USD,NL::Digital Download:0.00 USD';
-
-products.forEach((product) => {
-  const pinterestId = product.slug.slice(0, 100);
-  const title = cleanText(product.name).replace(/&/g, 'and').slice(0, 95);
-  
-  const rawDescription = product.longDescription || product.description || title;
-  const featuresStr = (product.features && product.features.length > 0) ? ` Features: ${product.features.join(', ')}.` : '';
-  const materialsStr = (product.materials && product.materials.length > 0) ? ` Materials: ${product.materials.join(', ')}.` : '';
-  const tagsString = (product.tags && product.tags.length > 0) ? ` | Tags: ${product.tags.join(', ')}` : '';
-  const description = cleanText(rawDescription + featuresStr + materialsStr + tagsString).slice(0, 4990);
-
-  const siteUrl = `${baseUrl}/products/${product.slug}/`;
-  const primaryImage = (product.images && product.images[0]) ? product.images[0] : (product.image || '');
-  
-  const salePrice = product.price;
-  const origPrice = product.originalPrice ?? Math.round((salePrice / 0.75) * 100) / 100;
-  
-  const googleCategory = getGoogleCategory(product);
-  const productType = getProductType(product);
-
-  const row = [
-    pinterestId,
-    title,
-    description,
-    siteUrl,
-    primaryImage,
-    `${origPrice.toFixed(2)} USD`,
-    `${salePrice.toFixed(2)} USD`,
-    'in stock',
-    'new',
-    'ElesWoodDesigns',
-    googleCategory,
-    productType,
-    shippingStr,
+  const headers = [
+    'id',
+    'title',
+    'description',
+    'link',
+    'image_link',
+    'price',
+    'sale_price',
+    'availability',
+    'condition',
+    'brand',
+    'google_product_category',
+    'product_type',
+    'shipping',
   ];
 
-  csvRows.push(row.map(escapeCsvValue).join(','));
-});
+  const shippingStr = 'US::Digital Download:0.00 USD,CA::Digital Download:0.00 USD,GB::Digital Download:0.00 USD,AU::Digital Download:0.00 USD,DE::Digital Download:0.00 USD,FR::Digital Download:0.00 USD,NL::Digital Download:0.00 USD';
 
-fs.writeFileSync(CSV_PATH, csvRows.join('\n'), 'utf8');
-console.log(`✅ feed.csv written to ${CSV_PATH}`);
-console.log(`   Products in CSV feed: ${products.length}`);
+  const csvRows = [headers.join(',')];
+
+  products.forEach((product) => {
+    const pinterestId = product.slug.slice(0, 100);
+    const title = cleanText(product.name).replace(/&/g, 'and').slice(0, 95);
+
+    const rawDescription = product.longDescription || product.description || title;
+    const featuresStr = (product.features && product.features.length > 0) ? ` Features: ${product.features.join(', ')}.` : '';
+    const materialsStr = (product.materials && product.materials.length > 0) ? ` Materials: ${product.materials.join(', ')}.` : '';
+    const tagsString = (product.tags && product.tags.length > 0) ? ` | Tags: ${product.tags.join(', ')}` : '';
+    const description = cleanText(rawDescription + featuresStr + materialsStr + tagsString).slice(0, 4990);
+
+    const siteUrl = `${baseUrl}/products/${product.slug}/`;
+    // Clean original product photo without overlays
+    const primaryImage = (product.images && product.images[0]) ? product.images[0] : (product.image || '');
+
+    const salePrice = product.price;
+    const origPrice = product.originalPrice ?? Math.round((salePrice / 0.75) * 100) / 100;
+
+    const googleCategory = getGoogleCategory(product.slug, product.category || '');
+    const productType = getProductType(product.slug, product.category || '');
+
+    const row = [
+      pinterestId,
+      title,
+      description,
+      siteUrl,
+      primaryImage,
+      `${origPrice.toFixed(2)} USD`,
+      `${salePrice.toFixed(2)} USD`,
+      'in stock',
+      'new',
+      'ElesWoodDesigns',
+      googleCategory,
+      productType,
+      shippingStr,
+    ];
+
+    csvRows.push(row.map(escapeCsvValue).join(','));
+  });
+
+  return new Response(csvRows.join('\n'), {
+    headers: {
+      'Content-Type': 'text/csv; charset=utf-8',
+      'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400',
+      'Content-Disposition': 'inline; filename="pinterest-feed.csv"',
+    },
+  });
+}
