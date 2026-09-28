@@ -227,7 +227,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
         'name': 'How do I receive the plans?',
         'acceptedAnswer': {
           '@type': 'Answer',
-          'text': 'All plans are instant digital downloads. Once your payment is processed on Etsy, you can download the PDF files immediately.'
+          'text': 'All plans are instant digital downloads. Once your payment is processed, you can download the PDF files immediately.'
         }
       }
     ]

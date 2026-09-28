@@ -61,7 +61,7 @@ const products: Product[] = (productsData as any[]).map(p => {
     categorySlug,
     timeEstimate: p.estimatedTime || "8 hours",
     polarCheckoutUrl: p.polar_price_id ? `https://buy.polar.sh/${p.polar_price_id}` : undefined,
-    etsyUrl: p.etsy_url,
+    etsyUrl: p.etsy_url?.trim() || undefined,
   };
 });
 
