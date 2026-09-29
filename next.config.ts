@@ -25,6 +25,26 @@ const nextConfig: NextConfig = {
         destination: "/products/firewood-shed-plans-pdf-modern-slatted-woodshed-2-cord-capacity-diy-backyard-wood-storage-blueprint/",
         permanent: true,
       },
+      {
+        source: "/products/kids-mud-kitchen-plans-wooden-outdoor-play-station-blueprint-pdf-download/",
+        destination: "/products/diy-mud-kitchen-plans-wide-montessori-inspired-kids-outdoor-kitchen-building/",
+        permanent: true,
+      },
+      {
+        source: "/products/kids-mud-kitchen-plans-diy-wooden-outdoor-play-station-blueprint-pdf-download/",
+        destination: "/products/diy-kids-mud-kitchen-plans-montessori-outdoor-play-station-pdf-download/",
+        permanent: true,
+      },
+      {
+        source: "/products/mud-kitchen-plans-pdf-wide-outdoor-play-kitchen-blueprint-for-kids-diy-sink-stove-build/",
+        destination: "/products/diy-wooden-mud-kitchen-building-plans-outdoor-play-station-with-sink-pdf/",
+        permanent: true,
+      },
+      {
+        source: "/products/easy-diy-mud-kitchen-plans-beginner-wooden-outdoor-play-blueprint-pdf-download/",
+        destination: "/products/diy-wooden-mud-kitchen-plans-outdoor-play-kitchen-blueprint-digital-download/",
+        permanent: true,
+      },
     ];
   },
   async headers() {
