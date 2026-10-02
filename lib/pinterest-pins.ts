@@ -1,5 +1,6 @@
 // Auto-generated list of static Pinterest pin images (eliminates fs bundling in serverless functions)
 export const PINTEREST_PIN_FILES = new Set<string>([
+  "10x24-backyard-gazebo-plans-pdf-diy-wood-pavilion-blueprint-digital-download.jpg",
   "10x24-gazebo-build-plans-diy-backyard-pergola-pavilion-guide-pdf-download.jpg",
   "2026-mahjong-hand-tracker-pdf-nmjl-card-download-digital-download.jpg",
   "2026-mahjong-hand-tracker.jpg",
@@ -27,6 +28,7 @@ export const PINTEREST_PIN_FILES = new Set<string>([
   "christian-mothers-day-handprint-craft-god-picked-you-mom-keepsake-pdf-download.jpg",
   "christian-mothers-day-handprint-craft.jpg",
   "circular-pergola-porch-swing-plans-freestanding-wood-canopy-arbor-blueprint-pdf.jpg",
+  "circular-pergola-swing-plans-diy-porch-swing-with-canopy-pdf-blueprint.jpg",
   "collapsible-food-cart-plans-mobile-coffee-charcuterie-dessert-blueprint-pdf.jpg",
   "corner-bookshelf-plans-pdf-modern-freestanding-bookcase-blueprint-digital-downlo.jpg",
   "corner-bookshelf-plans.jpg",
@@ -64,6 +66,7 @@ export const PINTEREST_PIN_FILES = new Set<string>([
   "diy-circular-pergola-porch-swing-plans-pdf-freestanding-wood-canopy-swing-stand-.jpg",
   "diy-collapsible-charcuterie-cart-plans-mobile-bar-cart-pdf.jpg",
   "diy-collapsible-charcuterie-cart-plans.jpg",
+  "diy-collapsible-coffee-cart-plans-mobile-food-bar-blueprint-pdf-download.jpg",
   "diy-collapsible-coffee-cart-plans-pdf-folding-mobile-bar-blueprint-vendor-cart-w.jpg",
   "diy-collapsible-coffee-cart-plans.jpg",
   "diy-cordless-drill-storage-organizer-plans-pdf-power-tool-rack-blueprint-battery.jpg",
@@ -85,9 +88,11 @@ export const PINTEREST_PIN_FILES = new Set<string>([
   "diy-full-size-loft-bed-plans-built-in-stair-shelves-storage-woodworking-blueprin.jpg",
   "diy-full-size-loft-bed-plans.jpg",
   "diy-garage-cabinet-plans-with-drawers-pdf-base-cabinet-woodworking-blueprint-ply.jpg",
+  "diy-garage-workbench-plans-heavy-duty-pegboard-mobile-option-pdf-download.jpg",
   "diy-garden-pergola-plans-complete-wood-pergola-build-blueprint-arbor-pdf-downloa.jpg",
   "diy-garden-pergola-plans.jpg",
   "diy-lean-to-greenhouse-plans-wood-patio-garden-glasshouse-blueprint-pdf-download.jpg",
+  "diy-lean-to-greenhouse-plans-wooden-attached-greenhouse-blueprint-pdf-download.jpg",
   "diy-lean-to-greenhouse-plans.jpg",
   "diy-lego-train-table-plans-pdf-kids-activity-table-blueprint-montessori-toy-stor.jpg",
   "diy-lift-top-coffee-table-plans-mid-century-modern-storage-blueprint-pdf-downloa.jpg",
@@ -252,5 +257,5 @@ export const PINTEREST_PIN_FILES = new Set<string>([
   "wholesale-club-halloween-trunk-or-treat-printable-decor-digital-download.jpg",
   "world-cup-2026-printable-tracker-for-kids-soccer-football-tournament-bracket-cha.jpg",
   "world-cup-2026-sweepstake-kit-pdf-football-office-pool-game-soccer-party-printab.jpg",
-  "world-cup-2026-sweepstake-kit-printable-football-office-pool-game-pdf-download.jpg"
+  "world-cup-2026-sweepstake-kit-printable-football-office-pool-game-pdf-download.jpg",
 ]);

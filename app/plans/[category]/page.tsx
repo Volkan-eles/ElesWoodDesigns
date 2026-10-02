@@ -104,8 +104,59 @@ export default async function CategoryPage({
     }
   };
 
+  const baseUrl = "https://eleswooddesigns.com";
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": baseUrl,
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Plans",
+        "item": `${baseUrl}/products/`,
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": `${dataCategory} Plans`,
+        "item": `${baseUrl}/plans/${category}/`,
+      },
+    ],
+  };
+
+  const itemListJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": `${dataCategory} DIY Woodworking Plans`,
+    "description": getCategoryDescription(category),
+    "url": `${baseUrl}/plans/${category}/`,
+    "numberOfItems": filteredProducts.length,
+    "itemListElement": filteredProducts.map((p, idx) => ({
+      "@type": "ListItem",
+      "position": idx + 1,
+      "url": `${baseUrl}/products/${p.slug}/`,
+      "name": p.name,
+      "image": p.image,
+    })),
+  };
+
   return (
     <div className="max-w-7xl mx-auto px-4 py-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
+      />
       <div className="mb-12 border-b-4 border-black pb-12">
         <div className="inline-block bg-[#FFE500] text-black border-2 border-black px-3 py-1 font-bold text-xs uppercase tracking-widest mb-6 shadow-neo-sm">
           Category: {dataCategory}

@@ -6,8 +6,25 @@ import { ArrowRight, Hammer, Download, CheckCircle, Mail, Star } from "lucide-re
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  title: "DIY Woodworking Plans & Blueprints PDF | Build It Yourself | ElesWoodDesigns",
+  description: "Browse 130+ professional DIY woodworking plans with 3D diagrams, cut lists, and material lists. Instant PDF download for furniture, garden, outdoor, kids, and workshop builds.",
   alternates: {
     canonical: "https://eleswooddesigns.com/",
+  },
+  openGraph: {
+    title: "DIY Woodworking Plans & Blueprints PDF | ElesWoodDesigns",
+    description: "Download step-by-step woodworking blueprints. Precise, bold, and beginner-friendly. 130+ plans for furniture, garden, outdoor & more.",
+    url: "https://eleswooddesigns.com/",
+    siteName: "ElesWoodDesigns",
+    type: "website",
+    images: [
+      {
+        url: "https://eleswooddesigns.com/logo.png",
+        width: 800,
+        height: 600,
+        alt: "ElesWoodDesigns DIY Woodworking Plans",
+      },
+    ],
   },
 };
 
@@ -89,25 +106,46 @@ export default function HomePage() {
           <h2 className="text-5xl md:text-6xl font-black tracking-tighter uppercase inline-block border-b-8 border-[#FFE500] px-4">Shop By Category</h2>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <Link href="/products/" className="group card-neo block">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <Link href="/plans/outdoor/" className="group card-neo block">
              <div className="aspect-video bg-blue-100 border-b-2 border-black flex flex-col items-center justify-center p-8 group-hover:bg-[#FFE500] transition-colors relative overflow-hidden">
                 <Hammer className="w-16 h-16 mb-4 z-10" />
                 <h3 className="text-3xl font-black uppercase z-10">Outdoor</h3>
                 <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjZmZmIiAvPgo8cGF0aCBkPSJNMCAwTDggOFpNOCAwTDAgOFoiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLXdpZHRoPSIxIiAvPgo8L3N2Zz4=')]"></div>
              </div>
           </Link>
-          <Link href="/products/" className="group card-neo block">
+          <Link href="/plans/furniture/" className="group card-neo block">
              <div className="aspect-video bg-green-100 border-b-2 border-black flex flex-col items-center justify-center p-8 group-hover:bg-[#FFE500] transition-colors relative overflow-hidden">
                 <Hammer className="w-16 h-16 mb-4 z-10" />
                 <h3 className="text-3xl font-black uppercase z-10">Furniture</h3>
                 <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjZmZmIiAvPgo8cGF0aCBkPSJNMCAwTDggOFpNOCAwTDAgOFoiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLXdpZHRoPSIxIiAvPgo8L3N2Zz4=')]"></div>
              </div>
           </Link>
-          <Link href="/products/" className="group card-neo block">
+          <Link href="/plans/garden/" className="group card-neo block">
+             <div className="aspect-video bg-emerald-100 border-b-2 border-black flex flex-col items-center justify-center p-8 group-hover:bg-[#FFE500] transition-colors relative overflow-hidden">
+                <Hammer className="w-16 h-16 mb-4 z-10" />
+                <h3 className="text-3xl font-black uppercase z-10">Garden</h3>
+                <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjZmZmIiAvPgo8cGF0aCBkPSJNMCAwTDggOFpNOCAwTDAgOFoiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLXdpZHRoPSIxIiAvPgo8L3N2Zz4=')]"></div>
+             </div>
+          </Link>
+          <Link href="/plans/kids/" className="group card-neo block">
              <div className="aspect-video bg-red-100 border-b-2 border-black flex flex-col items-center justify-center p-8 group-hover:bg-[#FFE500] transition-colors relative overflow-hidden">
                 <Hammer className="w-16 h-16 mb-4 z-10" />
                 <h3 className="text-3xl font-black uppercase z-10">Kids & Play</h3>
+                <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjZmZmIiAvPgo8cGF0aCBkPSJNMCAwTDggOFpNOCAwTDAgOFoiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLXdpZHRoPSIxIiAvPgo8L3N2Zz4=')]"></div>
+             </div>
+          </Link>
+          <Link href="/plans/workshop/" className="group card-neo block">
+             <div className="aspect-video bg-amber-100 border-b-2 border-black flex flex-col items-center justify-center p-8 group-hover:bg-[#FFE500] transition-colors relative overflow-hidden">
+                <Hammer className="w-16 h-16 mb-4 z-10" />
+                <h3 className="text-3xl font-black uppercase z-10">Workshop</h3>
+                <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjZmZmIiAvPgo8cGF0aCBkPSJNMCAwTDggOFpNOCAwTDAgOFoiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLXdpZHRoPSIxIiAvPgo8L3N2Zz4=')]"></div>
+             </div>
+          </Link>
+          <Link href="/plans/kitchen/" className="group card-neo block">
+             <div className="aspect-video bg-purple-100 border-b-2 border-black flex flex-col items-center justify-center p-8 group-hover:bg-[#FFE500] transition-colors relative overflow-hidden">
+                <Hammer className="w-16 h-16 mb-4 z-10" />
+                <h3 className="text-3xl font-black uppercase z-10">Kitchen & Bars</h3>
                 <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjZmZmIiAvPgo8cGF0aCBkPSJNMCAwTDggOFpNOCAwTDAgOFoiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLXdpZHRoPSIxIiAvPgo8L3N2Zz4=')]"></div>
              </div>
           </Link>

@@ -4,7 +4,7 @@ import { getPosts } from '@/lib/blog';
 
 // Static date — update this when you publish new content
 // Using a fixed date prevents Google from thinking all URLs change every second
-const LAST_UPDATED = '2026-07-09';
+const LAST_UPDATED = '2026-10-02';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://eleswooddesigns.com';
@@ -37,6 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'digital',
     'kids',
     'bedroom',
+    'decoration',
   ];
   const categoryUrls = categories.map((cat) => ({
     url: `${baseUrl}/plans/${cat}/`,
